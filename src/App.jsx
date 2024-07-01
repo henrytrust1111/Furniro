@@ -1,11 +1,11 @@
-import './App.css'
+import Routers from "./Router/Routers";
 
 function App() {
   return (
     <>
-    <p className='text-xl font-bold text-red-500 qodef-icon-font-elegant icon_link qodef-icon-element'>fdgf </p>
+      <Routers />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
