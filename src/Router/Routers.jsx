@@ -2,6 +2,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "../Pages/Home/Home";
 import AllPages from "../Containers/AllPages";
 import Shop from "../Pages/Shop/Shop";
+import SingleProduct from "../Pages/SingleProduct/SingleProduct";
+import ProductComparisonPage from "../Pages/ProductComparisonPage/ProductComparisonPage";
 
 const route = createBrowserRouter([
   {
@@ -13,8 +15,16 @@ const route = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/",
+        path: "/shop",
         element: <Shop />,
+      },
+      {
+        path: "/single-product",
+        element: <SingleProduct />,
+      },
+      {
+        path: "/pcp",
+        element: <ProductComparisonPage />,
       },
     ],
   },
