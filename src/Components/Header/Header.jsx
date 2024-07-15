@@ -1,13 +1,11 @@
-import "./header.css"
 import logo from '/icons/logo.svg';
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { useState, useEffect } from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
-import "./Header.css";
+import { RxHamburgerMenu } from "react-icons/rx"
 import { CSSTransition } from "react-transition-group";
-import { FaBlog, FaEnvelopeOpen, FaHome, FaInfoCircle, FaShopify, FaShoppingCart, FaTimes } from "react-icons/fa";
-import { FaShop } from "react-icons/fa6";
+import { FaBlog, FaEnvelopeOpen, FaHome, FaInfoCircle, FaShopify, FaShoppingCart } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import "./header.css"
 
 export default function Header() {
   const [isNavVisible, setNavVisibility] = useState(false);
