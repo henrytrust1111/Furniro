@@ -12,8 +12,7 @@
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   font-family: Montserrat;
-  padding: 0 50px;
-  /* padding-inline: 40px; */
+  padding: 10px 50px;
   /* height: 100px; */
 }
 
@@ -119,6 +118,7 @@
   .Nav a {
     width: 100px;
     display: flex;
+    font-size: 16px;
     color: #fff;
     align-items: center;
     gap: 10px;
