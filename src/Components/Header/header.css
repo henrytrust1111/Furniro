@@ -12,9 +12,9 @@
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   font-family: Montserrat;
-  /* padding: 0 50px; */
-  padding-inline: 40px;
-  height: 100px;
+  padding: 0 50px;
+  /* padding-inline: 40px; */
+  /* height: 100px; */
 }
 
 .Logo {
@@ -99,7 +99,9 @@
   .Header {
     grid-template-areas: "logo burger" "nav nav";
     padding-inline: 0px;
+    /* position: relative; */
   }
+  
   .Nav {
     grid-template-rows: repeat(4, auto);
     grid-template-columns: none;
@@ -110,7 +112,8 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    /* position: absolute; */
   }
 
   .Nav a {
