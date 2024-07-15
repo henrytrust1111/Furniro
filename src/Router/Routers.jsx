@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, createHashRouter } from "react-router-dom";
 import Home from "../Pages/Home/Home";
 import AllPages from "../Containers/AllPages";
 import Shop from "../Pages/Shop/Shop";
@@ -9,7 +9,7 @@ import Cart from "../Pages/Cart/Cart";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 
-const route = createBrowserRouter([
+const route = createHashRouter([
   {
     path: "/",
     element: <AllPages />,
