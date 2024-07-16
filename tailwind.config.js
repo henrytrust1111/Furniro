@@ -16,6 +16,7 @@ export default {
         "--clr-secondary": "#1e1611",
         "--clr-light-gray-v1": "#B0B0B0",
         "--clr-light-gray": "#898989",
+        "--clr-black-shade-v1": "#3A3A3A",
       },
       // backgroundImage: {
       //   'bg1': "url('/images/bgImage.jpg')",

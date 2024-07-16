@@ -14,7 +14,7 @@ const Categories = () => {
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl font-bold ">Browse The Range</h2>
         <p className='mb-8 px-6'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-11">
           {data.map((e) => (
            <div key={e.id}>
             <div  className="rounded-lg">
