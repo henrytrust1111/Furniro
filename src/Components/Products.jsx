@@ -9,6 +9,7 @@ import pingky from '/images/pingky.png'
 import potty from '/images/potty.png'
 import { IoMdCart, IoMdShare } from 'react-icons/io';
 import { MdCompareArrows } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 
 const products = [
@@ -24,6 +25,7 @@ const products = [
 ];
 
 const Products = () => {
+  const nav = useNavigate()
   return (
     <section className="py-16 font-[poppins]">
       <div className="container mx-auto px-4">
@@ -41,12 +43,14 @@ const Products = () => {
               </div>
               </div>
               <div className="-bg--clr-secondary absolute inset-0 opacity-0 hover:opacity-75  transition-all ease cursor-pointer grid place-items-center">
-              <button className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold">Add to Cart</button>
-              <div className="flex">
-                <p><IoMdShare /> <span>Share</span></p>
-                <p><MdCompareArrows /> <span>Compare</span></p>
-                <p><IoMdCart /> <span>Cart</span></p>
+             <div className="flex flex-col items-center space-y-2">
+             <button className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold">Preview</button>
+              <div className="flex text-white gap-3 font-semibold">
+                <div className='flex items-center gap-1 hover:-text--clr-primary'><IoMdShare /> <span>Share</span></div>
+                <div className='flex items-center gap-1 hover:-text--clr-primary'><MdCompareArrows /> <span>Compare</span></div>
+                <div className='flex items-center gap-1 hover:-text--clr-primary'><IoMdCart /> <span>Cart</span></div>
               </div>
+             </div>
               </div>
               {product.discount && <span className="text-white absolute bg-[#E97171] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4">{product.discount}</span>}
               {product.new && <span className="text-white absolute bg-[#2EC1AC] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4">{product.new}</span>}
