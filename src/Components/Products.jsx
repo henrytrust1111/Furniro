@@ -1,4 +1,6 @@
 import React from 'react';
+import syltherine from '/images/syltherine.png'
+
 
 const products = [
   { id: 1, name: 'Syltherine', price: 'Rp 2.500.000', discount: '30%', image: 'product1.jpg' },

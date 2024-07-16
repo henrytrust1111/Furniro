@@ -48,12 +48,12 @@ export default function Header() {
         unmountOnExit
       >
         <nav className="Nav">
-        <a href="/#/" className={pathname === "/" ? "active" : ""}><FaHome className="icon"/> Home</a>
-          <a href="/#/shop" className={pathname === "/shop" ? "active" : ""}><FaShopify className="icon"/> Shop</a>
-          <a href="/#/about" className={pathname === "/about" ? "active" : ""}><FaInfoCircle className="icon"/> About</a>
-          <a href="/#/contact" className={pathname === "/contact" ? "active" : ""}><FaEnvelopeOpen className="icon"/> Contact</a>
-          <a href="/#/blog" className={pathname === "/blog" ? "active" : ""}><FaBlog className="icon"/> Blog</a>
-          <a href="/#/cart" className={pathname === "/cart" ? "active" : ""}><FaShoppingCart className="icon"/> Cart</a>
+        <a href="/#/" className={pathname === "/" ? "active" : ""} onClick={toggleNav}><FaHome className="icon"/> Home</a>
+          <a href="/#/shop" className={pathname === "/shop" ? "active" : ""} onClick={toggleNav}><FaShopify className="icon"/> Shop</a>
+          <a href="/#/about" className={pathname === "/about" ? "active" : ""} onClick={toggleNav}><FaInfoCircle className="icon"/> About</a>
+          <a href="/#/contact" className={pathname === "/contact" ? "active" : ""} onClick={toggleNav}><FaEnvelopeOpen className="icon"/> Contact</a>
+          <a href="/#/blog" className={pathname === "/blog" ? "active" : ""} onClick={toggleNav}><FaBlog className="icon"/> Blog</a>
+          <a href="/#/cart" className={pathname === "/cart" ? "active" : ""} onClick={toggleNav}><FaShoppingCart className="icon"/> Cart</a>
           <button>Login</button>
         </nav>
       </CSSTransition>
