@@ -6,10 +6,12 @@ import { CSSTransition } from "react-transition-group";
 import { FaBlog, FaEnvelopeOpen, FaHome, FaInfoCircle, FaShopify, FaShoppingCart } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import "./header.css"
+import { useLocation } from 'react-router-dom';
 
 export default function Header() {
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const {pathname} = useLocation()
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 700px)");
@@ -46,12 +48,12 @@ export default function Header() {
         unmountOnExit
       >
         <nav className="Nav">
-        <a href="/" className="active"><FaHome className="icon"/> Home</a>
-          <a href="/shop"><FaShopify className="icon"/> Shop</a>
-          <a href="/about"><FaInfoCircle className="icon"/> About</a>
-          <a href="/contact"><FaEnvelopeOpen className="icon"/> Contact</a>
-          <a href="/blog"><FaBlog className="icon"/> Blog</a>
-          <a href="/cart"><FaShoppingCart className="icon"/> Cart</a>
+        <a href="/#/" className={pathname === "/" ? "active" : ""}><FaHome className="icon"/> Home</a>
+          <a href="/#/shop" className={pathname === "/shop" ? "active" : ""}><FaShopify className="icon"/> Shop</a>
+          <a href="/#/about" className={pathname === "/about" ? "active" : ""}><FaInfoCircle className="icon"/> About</a>
+          <a href="/#/contact" className={pathname === "/contact" ? "active" : ""}><FaEnvelopeOpen className="icon"/> Contact</a>
+          <a href="/#/blog" className={pathname === "/blog" ? "active" : ""}><FaBlog className="icon"/> Blog</a>
+          <a href="/#/cart" className={pathname === "/cart" ? "active" : ""}><FaShoppingCart className="icon"/> Cart</a>
           <button>Login</button>
         </nav>
       </CSSTransition>

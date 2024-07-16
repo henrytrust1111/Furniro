@@ -3,11 +3,11 @@ import Home from "../Pages/Home/Home";
 import AllPages from "../Containers/AllPages";
 import Shop from "../Pages/Shop/Shop";
 import SingleProduct from "../Pages/SingleProduct/SingleProduct";
-import ProductComparisonPage from "../Pages/ProductComparisonPage/ProductComparisonPage";
 import Blog from "../Pages/Blog/Blog";
 import Cart from "../Pages/Cart/Cart";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
+import ProductComparisonPage from "../Pages/ProductComparisonPage/ProductComparisonPage";
 
 const route = createHashRouter([
   {
@@ -25,6 +25,10 @@ const route = createHashRouter([
       {
         path: "/single-product",
         element: <SingleProduct />,
+      },
+      {
+        path: "/comparison",
+        element: <ProductComparisonPage />,
       },
       {
         path: "/blog",
