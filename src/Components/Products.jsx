@@ -26,11 +26,14 @@ const products = [
 
 const Products = () => {
   const nav = useNavigate()
+  const handlePreview = ()=> {
+    nav("/single-product")
+  }
   return (
     <section className="py-16 font-[poppins]">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl font-bold mb-8 text-center">Our Products</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-11">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-11 lg:px-11 md:px-0 ">
           {products.map((product) => (
             <div key={product.id} className="bg-[#F4F5F7] shadow relative">
               <img src={product.image} alt={product.name} className="mb-4 w-full h-72 object-cover "/>
@@ -44,7 +47,7 @@ const Products = () => {
               </div>
               <div className="-bg--clr-secondary absolute inset-0 opacity-0 hover:opacity-75  transition-all ease cursor-pointer grid place-items-center">
              <div className="flex flex-col items-center space-y-2">
-             <button className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold">Preview</button>
+             <button className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold" onClick={handlePreview}>Preview</button>
               <div className="flex text-white gap-3 font-semibold">
                 <div className='flex items-center gap-1 hover:-text--clr-primary'><IoMdShare /> <span>Share</span></div>
                 <div className='flex items-center gap-1 hover:-text--clr-primary'><MdCompareArrows /> <span>Compare</span></div>
@@ -57,6 +60,7 @@ const Products = () => {
             </div>
           ))}
         </div>
+        <button className='bg-white -text--clr-primary px-4 py-2 z-40 hover:scale-110 font-semibold border -border--clr-primary mt-8 max-w-[300px] md:w-[300px]'>Show More</button>
       </div>
     </section>
   );
