@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import syltherine from '/images/syltherine.png'
 import lolito from '/images/lolito.png'
 import leviosa from '/images/leviosa.png'
@@ -25,6 +25,11 @@ const products = [
 ];
 
 const Products = () => {
+  const [visibleProducts, setVisibleProducts] = useState(4);
+
+  const showMoreProducts = () => {
+    setVisibleProducts((prevCount) => prevCount + 4);
+  };
   const nav = useNavigate()
   const handlePreview = ()=> {
     nav("/single-product")
@@ -34,8 +39,8 @@ const Products = () => {
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl font-bold mb-8 text-center">Our Products</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-11 lg:px-11 md:px-0 ">
-          {products.map((product) => (
-            <div key={product.id} className="bg-[#F4F5F7] shadow relative">
+          {products.slice(0, visibleProducts).map((product) => (
+            <div key={product.id} className="bg-[#F4F5F7] shadow-custom relative">
               <img src={product.image} alt={product.name} className="mb-4 w-full h-72 object-cover "/>
               <div className="px-3 mb-5 flex flex-col gap-2">
               <h3 className="text-lg font-bold -text--clr-black-shade-v1 capitalize">{product.name}</h3>
@@ -60,7 +65,7 @@ const Products = () => {
             </div>
           ))}
         </div>
-        <button className='bg-white -text--clr-primary px-4 py-2 z-40 hover:scale-110 font-semibold border -border--clr-primary mt-8 max-w-[300px] md:w-[300px]'>Show More</button>
+        <button onClick={showMoreProducts} className='bg-white -text--clr-primary px-4 py-2 z-40 hover:scale-110 font-semibold border -border--clr-primary mt-8 max-w-[300px] md:w-[300px]'>Show More</button>
       </div>
     </section>
   );
