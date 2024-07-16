@@ -7,6 +7,8 @@ import grifo from '/images/grifo.png'
 import muggo from '/images/muggo.png'
 import pingky from '/images/pingky.png'
 import potty from '/images/potty.png'
+import { IoMdCart, IoMdShare } from 'react-icons/io';
+import { MdCompareArrows } from 'react-icons/md';
 
 
 const products = [
@@ -40,6 +42,11 @@ const Products = () => {
               </div>
               <div className="-bg--clr-secondary absolute inset-0 opacity-0 hover:opacity-75  transition-all ease cursor-pointer grid place-items-center">
               <button className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold">Add to Cart</button>
+              <div className="flex">
+                <p><IoMdShare /> <span>Share</span></p>
+                <p><MdCompareArrows /> <span>Compare</span></p>
+                <p><IoMdCart /> <span>Cart</span></p>
+              </div>
               </div>
               {product.discount && <span className="text-white absolute bg-[#E97171] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4">{product.discount}</span>}
               {product.new && <span className="text-white absolute bg-[#2EC1AC] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4">{product.new}</span>}
