@@ -4,7 +4,7 @@ const ProductDetails = () => {
   return (
     <section className="w-full flex flex-col lg:flex-row">
       <div className="w-full lg:w-[50%] lg:pt-14 lg:pl-24 p-4">
-        <img src="public/Group 102.png" alt="Asgard Sofa" />
+        <img src="/Group 102.png" alt="Asgard Sofa" />
       </div>
       <div className="md:w-full lg:w-[50%] pt-14 flex flex-col gap-4 p-4">
         <h4>Asgaard sofa</h4>

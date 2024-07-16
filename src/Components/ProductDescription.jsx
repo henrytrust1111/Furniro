@@ -23,8 +23,8 @@ const ProductDescription = () => {
             enables easy and stylish travel.
           </p>
           <div className="flex justify-center">
-            <img src="public/Group 109.png" alt="Product" className="hidden lg:flex"/>
-            <img src="public/Group 109.png" alt="Product" className="flex lg:hidden w-full max-w-lg object-cover" />
+            <img src="/Group 109.png" alt="Product" className="hidden lg:flex"/>
+            <img src="/Group 109.png" alt="Product" className="flex lg:hidden w-full max-w-lg object-cover" />
           </div>
         </div>
       </div>
