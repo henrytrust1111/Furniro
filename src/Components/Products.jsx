@@ -1,22 +1,23 @@
 import React from 'react';
 import syltherine from '/images/syltherine.png'
-// import syltherine from '/images/syltherine.png'
-// import syltherine from '/images/syltherine.png'
-// import syltherine from '/images/syltherine.png'
-// import syltherine from '/images/syltherine.png'
-// import syltherine from '/images/syltherine.png'
-// import syltherine from '/images/syltherine.png'
+import lolito from '/images/lolito.png'
+import leviosa from '/images/leviosa.png'
+import respira from '/images/respira.png'
+import grifo from '/images/grifo.png'
+import muggo from '/images/muggo.png'
+import pingky from '/images/pingky.png'
+import potty from '/images/potty.png'
 
 
 const products = [
   { id: 1, new:'', name: 'Syltherine', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-30%', image: syltherine, des: "Stylish cafe chair" },
-  { id: 2, new:'New', name: 'Leviosa', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '', image: syltherine, des: "Stylish cafe chair" },
-  { id: 3, new:'', name: 'Syltherine', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-30%', image: syltherine, des: "Stylish cafe chair" },
-  { id: 4, new:'', name: 'Syltherine', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-30%', image: syltherine, des: "Stylish cafe chair" },
-  { id: 5, new:'', name: 'Syltherine', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-30%', image: syltherine, des: "Stylish cafe chair" },
-  { id: 6, new:'', name: 'Syltherine', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-30%', image: syltherine, des: "Stylish cafe chair" },
-  { id: 7, new:'', name: 'Syltherine', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-30%', image: syltherine, des: "Stylish cafe chair" },
-  { id: 8, new:'', name: 'Syltherine', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-30%', image: syltherine, des: "Stylish cafe chair" },
+  { id: 2, new:'New', name: 'Leviosa', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '', image: leviosa, des: "Stylish cafe chair" },
+  { id: 3, new:'', name: 'Lolito', price: 'Rp 7.000.000', deprecated: 'Rp 14.000.000', discount: '-50%', image: lolito, des: "Luxury big sofa" },
+  { id: 4, new:'New', name: 'respira', price: 'Rp 500.000', deprecated: '', discount: '', image: respira, des: "Outdoor bar table and stool" },
+  { id: 5, new:'', name: 'grifo', price: 'Rp 1.500.000', deprecated: '', discount: '', image: grifo, des: "Night lamp" },
+  { id: 6, new:'New', name: 'muggo', price: 'Rp 150.000', deprecated: '', discount: '', image: muggo, des: "small mug" },
+  { id: 7, new:'', name: 'pingky', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-50%', image: pingky, des: "Cute bed sets" },
+  { id: 8, new:'New', name: 'potty', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '', image: potty, des: "Stylish cafe chair" },
   // Add more products as needed
 ];
 
@@ -30,10 +31,10 @@ const Products = () => {
             <div key={product.id} className="bg-[#F4F5F7] shadow relative">
               <img src={product.image} alt={product.name} className="mb-4 w-full h-72 object-cover "/>
               <div className="px-3 mb-5 flex flex-col gap-2">
-              <h3 className="text-lg font-bold -text--clr-black-shade-v1">{product.name}</h3>
+              <h3 className="text-lg font-bold -text--clr-black-shade-v1 capitalize">{product.name}</h3>
               <p className="-text--clr-light-gray text-sm font-medium">{product.des}</p>
               <div className="flex items-center space-x-2 justify-between">
-              {product.discount && <span className="-text--clr-black-shade-v1 font-semibold">{product.price}</span>}
+              {product.price && <span className="-text--clr-black-shade-v1 font-semibold">{product.price}</span>}
               <s className="text-xs">{product.deprecated}</s>
               </div>
               </div>
