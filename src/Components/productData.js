@@ -27,7 +27,18 @@ const productsData = [
       image: "/Images.png", 
       style:"synthetic", 
       price: "Rs. 90,000.00" },
-    // Add more products as needed
+    { id: 5, 
+      image: "public/Images.png", 
+      style:"synthetic", 
+      price: "Rs. 90,000.00" },
+    { id: 5, 
+      image: "public/Images.png", 
+      style:"synthetic", 
+      price: "Rs. 90,000.00" },
+    { id: 5, 
+      image: "public/Images.png", 
+      style:"synthetic", 
+      price: "Rs. 90,000.00" },
   ];
   
   export default productsData;
