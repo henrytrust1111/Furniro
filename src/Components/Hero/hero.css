@@ -1,0 +1,5 @@
+.hero {
+    background-image: url("/images/LandingPageHero.png");
+    background-position: center;
+    background-size: cover;
+  }

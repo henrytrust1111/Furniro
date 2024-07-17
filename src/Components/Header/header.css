@@ -1,0 +1,174 @@
+.Header {
+  position: fixed;
+  top: 0; /* Stick it to the top */
+  max-height: 70px;
+  width: 100vw;
+
+  display: grid;
+  grid-template-areas: "logo nav";
+
+  /* Cosmetics */
+  /* background-color: #282c34; */
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  font-family: Montserrat;
+  padding: 10px 50px;
+  z-index: 9999999;
+  /* height: 100px; */
+}
+
+.Logo {
+  grid-area: logo;
+  /* height: 70px; */
+  width: 50px;
+}
+
+.Nav {
+  display: grid;
+  grid-area: nav;
+  grid-template-columns: repeat(7, auto);
+  align-items: center;
+  justify-items: center;
+}
+.Nav a {
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s;
+  position: relative;
+  text-decoration: none;
+}
+
+.Nav a:hover,
+.Nav a.active {
+  transform: scale(1.1);
+  color: #b88e2f;
+}
+
+.Nav a:hover::after,
+.Nav a.active::after {
+  content: "";
+  width: 40%;
+  height: 2px;
+  background-color: #b88e2f;
+  position: absolute;
+  bottom: -4px;
+  left: 3px;
+}
+
+.Nav button {
+  padding: 7px 20px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  background-color: #b88e2f;
+  /* box-shadow: 0px 5px 0px 0px rgba(255, 0, 0, 0.25); */
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 70ms;
+}
+
+.Nav button:active {
+  transform: translateY(3px);
+  box-shadow: 0px 2px 0px 0px rgba(255, 0, 0, 0.25);
+}
+
+.Nav button:hover {
+  background-color: #fff;
+  border: 1px solid #b88e2f;
+  transition: all ease-in-out;
+  color: #b88e2f;
+}
+
+.Burger {
+  display: none;
+  grid-area: burger;
+  margin: 0 20px 0 0;
+  padding: 0;
+  justify-self: end;
+  font-size: 40px;
+  border: none;
+  background: none;
+  outline: none;
+  transition: 0.1s;
+}
+.Burger:active {
+  transform: scale(1.2);
+}
+
+.Nav a .icon {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .Header {
+    grid-template-areas: "logo burger" "nav nav";
+    padding-inline: 0px;
+    /* position: relative; */
+  }
+  
+  .Nav {
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: none;
+    grid-row-gap: 20px;
+
+    padding: 30px 0 30px;
+    /* background: rgba(40, 44, 47, 0.95); */
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* margin-top: 20px; */
+    /* position: absolute; */
+  }
+
+  .Nav a {
+    width: 100px;
+    display: flex;
+    font-size: 16px;
+    color: #000;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .Nav a:hover::after,
+  .Nav a.active::after {
+    width: 20%;
+    left: 25px;
+  }
+
+  .Nav a .icon {
+    display: flex;
+  }
+
+  .Nav button{
+    background-color: #fff;
+    border: 1px solid #b88e2f;
+    transition: all ease-in-out;
+    color: #b88e2f;
+  }
+
+  .Burger {
+    display: inline;
+  }
+}
+
+.NavAnimation-enter {
+  opacity: 0;
+  transform: scale(0.5);
+}
+.NavAnimation-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 350ms, transform 350ms;
+}
+.NavAnimation-exit {
+  opacity: 1;
+}
+.NavAnimation-exit-active {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 350ms, transform 350ms;
+}

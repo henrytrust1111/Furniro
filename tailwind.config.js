@@ -6,7 +6,22 @@ export default {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        custom: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+      },
+      colors: {
+        "--clr-primary": "#B88E2F",
+        "--clr-primar-light": "#FFF3E3",
+        "--clr-secondary": "#1e1611",
+        "--clr-light-gray-v1": "#B0B0B0",
+        "--clr-light-gray": "#898989",
+        "--clr-black-shade-v1": "#3A3A3A",
+      },
+      // backgroundImage: {
+      //   'bg1': "url('/images/bgImage.jpg')",
+      // }
+    },
   },
   plugins: [],
 }
