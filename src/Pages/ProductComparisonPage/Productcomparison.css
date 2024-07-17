@@ -1,0 +1,135 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.ProductcomparisonContainer{
+    width: 100%;
+    height: 60vh;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ProductcomparisonConWrapper{
+    width: 90%;
+    height: 100%;
+    /* background-color: darkcyan; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ProductComParBox{
+    width: 25%;
+    height: 100%;
+    /* background-color: black; */
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+
+}
+
+.ProductComParBoxup{
+    width: 100%;
+    height: 18%;
+    /* background-color: burlywood; */
+    display: flex;
+    align-items: center;
+}
+
+.ProductComParBoxup h3{
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 2.8rem;
+    font-family: sans-serif;
+    padding-left: 2%;
+
+}
+
+.ProductComParBoxdown{
+    width: 100%;
+    height: 82%;
+    /* background-color: blueviolet; */
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    gap: 30px;
+}
+
+.ProductComParBoxdown p{
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 500;
+    line-height: 1.6rem;
+    padding-left: 2%;
+    
+}
+
+@media screen and (Width <=765px) {
+
+    .ProductcomparisonContainer{
+        width: 100%;
+        height: 70vh;
+        /* background-color: blue; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ProductcomparisonConWrapper{
+        width: 95%;
+        height: 100%;
+        /* background-color: darkcyan; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ProductComParBox{
+        width: 25%;
+        height: 100%;
+        /* background-color: black; */
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    
+    }
+    
+    .ProductComParBoxup{
+        width: 100%;
+        height: 18%;
+        /* background-color: burlywood; */
+        display: flex;
+        align-items: center;
+    }
+    
+    .ProductComParBoxup h3{
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 2.7rem;
+        font-family: sans-serif;
+        padding-left: 2%;
+    
+    }
+    
+    .ProductComParBoxdown{
+        width: 100%;
+        height: 82%;
+        /* background-color: blueviolet; */
+        display: flex;
+        /* align-items: center; */
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .ProductComParBoxdown p{
+        font-size: 16px;
+        font-family: sans-serif;
+        font-weight: 500;
+        line-height: 1.8rem;
+        padding-left: 2%;
+        
+    }
+
+}
