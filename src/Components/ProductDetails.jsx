@@ -1,12 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ProductDetails = () => {
+  const [bgColor, setBgColor] = useState("");
+
+  const onColorChange = (color) => {
+    setBgColor(color);
+  };
+
   return (
     <section className="w-full flex flex-col lg:flex-row">
-      <div className="w-full lg:w-[50%] lg:pt-14 lg:pl-24 p-4">
-        <img src="public/Group 102.png" alt="Asgard Sofa" />
+      <div className="w-full lg:w-[50%] lg:pt-14 p-4 flex flex-col gap-4 justify-center">
+        <div className="w-full flex flex-col lg:flex-row gap-4 justify-center">
+          <div className={`lg:hidden flex w-full lg:w-[50%] lg:h-[400px] ${bgColor}`}>
+            <img
+              src="public/singleProduct.png"
+              className="object-cover w-full h-full"
+              alt="Asgard Sofa"
+            />
+          </div>
+          <div className="w-full lg:w-[15%] grid grid-cols-2 lg:grid-cols-1 gap-4">
+            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
+            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
+            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
+            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
+          </div>
+
+          <div className={`hidden lg:flex w-full lg:w-[50%] lg:h-[400px] rounded-sm ${bgColor}`}>
+            <img
+              src="public/singleProduct.png"
+              className="object-cover w-full h-full"
+              alt="Asgard Sofa"
+            />
+          </div>
+        </div>
       </div>
-      <div className="md:w-full lg:w-[50%] pt-14 flex flex-col gap-4 p-4">
+
+      <div className="w-full lg:w-[50%] pt-14 flex flex-col gap-4 p-4">
         <h4>Asgaard sofa</h4>
         <h5 className="text-xs text-[#b7b7b7]">Rs. 250,000.00</h5>
         <div className="flex gap-4">
@@ -25,9 +54,8 @@ const ProductDetails = () => {
         <div>
           <p className="text-xs lg:text-sm w-full lg:w-[400px]">
             Setting the bar as one of the loudest speakers in its class, the
-            Kilburn is a compact, stout-hearted hero with a well-balanced
-            audio which boasts a clear midrange and extended highs for a
-            sound.
+            Kilburn is a compact, stout-hearted hero with a well-balanced audio
+            which boasts a clear midrange and extended highs for a sound.
           </p>
         </div>
         <div className="flex flex-col gap-4">
@@ -45,9 +73,18 @@ const ProductDetails = () => {
           </div>
           <span className="text-xs">Color:</span>
           <div className="flex gap-4">
-            <div className="w-6 h-6 rounded-full bg-[#F9F1E7] flex items-center justify-center text-xs"></div>
-            <div className="w-6 h-6 rounded-full bg-[#F9F1E7] flex items-center justify-center text-xs"></div>
-            <div className="w-6 h-6 rounded-full bg-[#F9F1E7] flex items-center justify-center text-xs"></div>
+            <div
+              className="w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center text-xs cursor-pointer"
+              onClick={() => onColorChange("bg-purple-500")}
+            ></div>
+            <div
+              className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-xs cursor-pointer"
+              onClick={() => onColorChange("bg-green-500")}
+            ></div>
+            <div
+              className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-xs cursor-pointer"
+              onClick={() => onColorChange("bg-blue-500")}
+            ></div>
           </div>
         </div>
         <div className="flex gap-4 mb-6">
@@ -56,12 +93,44 @@ const ProductDetails = () => {
             <p className="text-sm">1</p>
             <p className="text-sm">+</p>
           </div>
-          <div className="w-32 lg:w-40 h-12 border-[0.8px] border-[#242424] rounded-lg flex items-center p-2 shadow-sm text-xs lg:text-sm">
+          <div className="w-32 lg:w-40 h-12 border-[0.8px] border-[#242424] rounded-lg flex items-center justify-center p-2 shadow-sm text-xs lg:text-sm">
             Add to cart
           </div>
           <div className="w-32 lg:w-40 border-[0.8px] border-[#242424] rounded-lg flex gap-4 items-center justify-center p-2 shadow-sm">
             <p className="text-sm">+</p>
             <p className="text-sm">Compare</p>
+          </div>
+        </div>
+        {/* Product Info Section */}
+        <div className="w-[480px] h-[0.8px] border-b"></div>
+        <div className="product-info flex flex-col gap-3 mt-4">
+          <div className="info-row flex gap-8">
+            <div className="label text-[#b7b7b7] text-xs w-20">SKU</div>
+            <div className="value text-[#b7b7b7] text-xs">:&nbsp;ss001</div>
+          </div>
+          <div className="info-row flex gap-8">
+            <div className="label text-[#b7b7b7] text-xs w-20">Category</div>
+            <div className="value text-[#b7b7b7] text-xs">:&nbsp;sofas</div>
+          </div>
+          <div className="info-row flex gap-8">
+            <div className="label text-[#b7b7b7] text-xs w-20">Tags</div>
+            <div className="value text-[#b7b7b7] text-xs">
+              :&nbsp;Sofa, Chair, Home, Shop
+            </div>
+          </div>
+          <div className="info-row flex gap-8">
+            <div className="label text-[#b7b7b7] text-xs w-20">Share</div>
+            <div className="value text-[#b7b7b7] text-xs flex items-center gap-4">
+              <div>
+                :&nbsp;<i className="bx bxl-facebook-circle"></i>
+              </div>
+              <div>
+                <i className="bx bxl-linkedin-square"></i>
+              </div>
+              <div>
+                <i className="bx bxl-twitter"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>

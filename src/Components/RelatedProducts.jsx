@@ -8,7 +8,7 @@ const RelatedProducts = ({products}) => {
   };
 
   return (
-    <section className="w-full h-auto">
+    <section className="w-full h-auto mb-16">
       <div className="flex flex-wrap justify-center gap-8 px-4 lg:px-24">
         {products.slice(0, visibleProducts).map((product) => (
           <div key={product.id} className="w-full h-96 bg-gray-500 lg:w-72 rounded-md flex flex-col">
