@@ -1,11 +1,15 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, createHashRouter } from "react-router-dom";
 import Home from "../Pages/Home/Home";
 import AllPages from "../Containers/AllPages";
 import Shop from "../Pages/Shop/Shop";
 import SingleProduct from "../Pages/SingleProduct/SingleProduct";
+import Blog from "../Pages/Blog/Blog";
+import Cart from "../Pages/Cart/Cart";
+import About from "../Pages/About/About";
+import Contact from "../Pages/Contact/Contact";
 import ProductComparisonPage from "../Pages/ProductComparisonPage/ProductComparisonPage";
 
-const route = createBrowserRouter([
+const route = createHashRouter([
   {
     path: "/",
     element: <AllPages />,
@@ -23,8 +27,24 @@ const route = createBrowserRouter([
         element: <SingleProduct />,
       },
       {
-        path: "/pcp",
+        path: "/comparison",
         element: <ProductComparisonPage />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
