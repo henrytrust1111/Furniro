@@ -43,17 +43,19 @@ const Products = () => {
             <div key={product.id} className="bg-[#F4F5F7] shadow-custom relative">
               <img src={product.image} alt={product.name} className="mb-4 w-full h-72 object-cover "/>
               <div className="px-3 mb-5 flex flex-col gap-2">
+              <div className="w-full flex flex-col items-start ">
               <h3 className="text-lg font-bold -text--clr-black-shade-v1 capitalize">{product.name}</h3>
-              <p className="-text--clr-light-gray text-sm font-medium">{product.des}</p>
+              <p className="-text--clr-light-gray text-sm font-medium text-left">{product.des}</p>
+              </div>
               <div className="flex items-center space-x-2 justify-between">
               {product.price && <span className="-text--clr-black-shade-v1 font-semibold">{product.price}</span>}
               <s className="text-xs">{product.deprecated}</s>
               </div>
               </div>
               <div className="-bg--clr-secondary absolute inset-0 opacity-0 hover:opacity-75  transition-all ease cursor-pointer grid place-items-center">
-             <div className="flex flex-col items-center space-y-2">
+             <div className="flex flex-col items-center space-y-2 justify-center max-w-full">
              <button className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold" onClick={handlePreview}>Preview</button>
-              <div className="flex text-white gap-3 font-semibold">
+              <div className="flex text-white gap-3 font-semibold max-w-full flex-wrap justify-center">
                 <div className='flex items-center gap-1 hover:-text--clr-primary'><IoMdShare /> <span>Share</span></div>
                 <div className='flex items-center gap-1 hover:-text--clr-primary'><MdCompareArrows /> <span>Compare</span></div>
                 <div className='flex items-center gap-1 hover:-text--clr-primary'><IoMdCart /> <span>Cart</span></div>
