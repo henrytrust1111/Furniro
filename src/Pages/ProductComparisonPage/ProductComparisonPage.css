@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-image: url(); */
+    background-image: url(/images/image4.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -103,7 +103,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .ProcomparisonlHome h3{
@@ -176,11 +176,12 @@
 }
 
 .Productpageslettercon1 h3{
-    font-size: 25.5px;
+    font-size: 23.5px;
     font-weight: 500;
-    line-height: 2.8rem;
+    line-height: 2.9rem;
     font-family:  sans-serif;
     padding-left: 2%;
+
 }
 
 
@@ -248,14 +249,15 @@
 }
 
 .AsgaadsofaLetters h3{
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 600;
     font-family: sans-serif;
-    line-height: 2.8rem;
+    line-height: 2.9rem;
     padding-left: 2%;
+    /* color: red; */
 }
 .AsgaadsofaLetters p{
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     font-family: sans-serif;
     line-height: 2.5rem; 
@@ -279,7 +281,7 @@
     gap: 5px;
 }
 .AsgaadsofaStar1 p{
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     font-family: sans-serif;
     line-height: 2.5rem; 
@@ -288,7 +290,7 @@
 
 .AsgaadsofaStar1 img{
     width: 75%;
-    height: 60%;
+    height: 55%;
  
 }
 
@@ -309,7 +311,7 @@
 
 
 .AsgaadsofaStar3 p,span{
-    font-size: 14;
+    font-size: 13;
     font-weight: 400;
     font-family: sans-serif;
     line-height: 2rem;
@@ -345,15 +347,15 @@
 }
 
 .OutdoorsofasetLetter h3{
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 600;
     font-family: sans-serif;
-    line-height: 2.8rem;
+    line-height: 2.9rem;
     padding-left: 2%;
 }
 
 .OutdoorsofasetLetter p{
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     font-family: sans-serif;
     line-height: 2.5rem; 
@@ -378,7 +380,7 @@
 }
 
 .OutdoorStarsboxz1 p{
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     font-family: sans-serif;
     line-height: 2.5rem;
@@ -387,11 +389,11 @@
 
 .OutdoorStarsboxz1 img{
     width: 75%;
-    height: 60%;
+    height: 55%;
 }
 
 .OutdoorStarsboxz2{
-    width: 1%;
+    width: 0.8%;
     height: 100%;
     background-color: rgba(114, 114, 114, 1);
 }
@@ -406,7 +408,7 @@
 }
 
 .OutdoorStarsboxz3 p{
-    font-size: 14;
+    font-size: 13;
     font-weight: 400;
     font-family: sans-serif;
     line-height: 2rem;
@@ -414,7 +416,7 @@
 }
 
 .OutdoorStarsboxz3 span{
-    font-size: 14;
+    font-size: 13;
     font-weight: 400;
     font-family: sans-serif;
     line-height: 2rem;
@@ -433,7 +435,7 @@
 
 .AddAProductBoxwrapper{
     width: 100%;
-    height: 80%;
+    height: 65%;
     /* background-color: darkgreen; */
 }
 
@@ -447,7 +449,7 @@
 }
 
 .AddproductBox1 h3{
-    font-size: 23px;
+    font-size: 21px;
     font-weight: 600;
     line-height: 35.36px;
     margin-top: 20px;
@@ -493,25 +495,26 @@
 .ProComparisonHerocon{
     width: 100%;
     height: 250px;
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
     display: flex;
     align-items: center;
     justify-content: center;
     /* background-image: url(); */
-    background-size: cover;
+    /* background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    object-fit: contain;
+    object-fit: contain; */
 }
 
 .Procomparisonlogob{
     width: 50%;
-    height: 90%;
+    height: 55%;
     /* background-color: darkcyan; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .procomparisonup{
@@ -644,14 +647,14 @@
 }
 
 .Productpageslettercon1{
-    width: 70%;
+    width: 50%;
     height: 70%;
     /* background-color: gray; */
     /* display: flex; */
 }
 
 .Productpageslettercon1 h3{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 2.1rem;
     font-family:  sans-serif;
@@ -673,7 +676,7 @@
 }
 
 .ProductViewmore1 p{
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 2rem;
     color: rgba(114, 114, 114, 1)  ;
@@ -690,8 +693,9 @@
 
 .Viewmorlinee{
     width: 50%;
-    height: 6%;
+    height: 5%;
     background-color: rgba(114, 114, 114, 1);
+    
 }
 
 .AsgaadsofaBox{
@@ -720,22 +724,22 @@
 }
 
 .AsgaadsofaLetters h3{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     font-family: sans-serif;
-    line-height: 2rem;
+    line-height: 2.6rem;
 }
 .AsgaadsofaLetters p{
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     font-family: sans-serif;
-    line-height: 1.9rem; 
+    line-height: 2.5rem; 
 }
 
 
 .AsgaadsofaStar1 img{
     width: 63%;
-    height: 33%;
+    height: 35%;
 
  
 }
@@ -758,7 +762,7 @@
 
 
 .AsgaadsofaStar3 p,span{
-    font-size: 10.5px;
+    font-size: 8.5px;
     font-weight: 400;
     font-family: sans-serif;
     line-height: 1.8rem;
@@ -795,17 +799,17 @@
 }
 
 .OutdoorsofasetLetter h3{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     font-family: sans-serif;
-    line-height: 2rem;
+    line-height:2.6rem;
 }
 
 .OutdoorsofasetLetter p{
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     font-family: sans-serif;
-    line-height: 1.9rem; 
+    line-height: 2.5rem; 
 
 }
 
@@ -826,19 +830,19 @@
 }
 
 .OutdoorStarsboxz1 p{
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     font-family: sans-serif;
-    line-height: 1.9rem; 
+    line-height: 2.5rem; 
 }
 
 .OutdoorStarsboxz1 img{
     width: 63%;
-    height: 33%;
+    height: 35%;
 }
 
 .OutdoorStarsboxz2{
-    width: 2%;
+    width: 1%;
     height: 70%;
     background-color: rgba(114, 114, 114, 1);
 }
@@ -853,7 +857,7 @@
 }
 
 .OutdoorStarsboxz3 p{
-    font-size: 10.5px;
+    font-size: 8.5px;
     font-weight: 400;
     font-family: sans-serif;
     line-height: 1.8rem;
@@ -898,9 +902,9 @@
 }
 
 .AddproductBox1 h3{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    line-height: 2rem;
+    line-height: 2.6rem;
     margin-top: 20px;
     font-family: sans-serif;
  
@@ -913,7 +917,7 @@
 }
 
 .Chooseaproductbox{
-    width: 100%;
+    width: 95%;
     height: 30%;
     /* background-color: aqua; */
 }
@@ -923,13 +927,476 @@
     height: 100%;
     color: white;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 12px;
     font-family: sans-serif;
     font-weight: 600;
     line-height: 2rem;
     background-color: rgba(184, 142, 47, 1);
 }
+     
+}
 
+
+
+@media screen and (Width <=480px) {
+    
+.ProductComparisonCon{
+    width: 100%;
+    /* height: 100vh; */
+    height: max-content;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.ProComparisonHerocon{
+    width: 100%;
+    height: 250px;
+    /* background-color: gainsboro; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url(); */
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain; */
+}
+
+.Procomparisonlogob{
+    width: 50%;
+    height: 50%;
+    /* background-color: darkcyan; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.procomparisonup{
+    width: 100%;
+    height: 50%;
+    /* background-color: brown; */
+}
+
+.procomparisonupBox{
+    width: 100%;
+    height: 50%;
+    /* background-color: red; */
+}
+.procomparisonupBox1{
+    width: 100%;
+    height: 50%;
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ComparisonLogo{
+    width: 18%;
+    height: 90%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.ComparisonLogo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.procomparisondown{
+    width: 100%;
+    height: 50%;
+    /* background-color: gray; */
+}
+
+.Procomparisonletter{
+    width: 100%;
+    height: 50%;
+    /* background-color: blueviolet; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Procomparisonletter h2{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 2.5rem;
+    /* color: red; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ProcomparisonlHome{
+    width: 100%;
+    height: 50%;
+    /* background-color: darkorange; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ProcomparisonlHome h3{
+    font-size: 14px;
+    font-weight: 550;
+    line-height: 1.8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ProcomparisonlHome span{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.Productpagescon{
+    width: 100%;
+    height: 1300px;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+}
+
+.ProductpagesconmainBoxwrapp{
+    width: 90%;
+    height: 95%;
+    display: flex;
+    /* background-color: red; */
+    align-items: center;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    gap: 10px;
+  
+    
+}
+
+.ProductpagesconmainBox{
+    width: 70%;
+    height: 50%;
+    cursor: pointer;
+    /* background-color: darkgrey; */
+}
+
+.ProductpagesconmainBoxup{
+    width: 100%;
+    height: 65%;
+    /* background-color: darkmagenta; */
+}
+
+.ProductpagesconmainBoxup img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ProductpagesconmainBoxdown{
+    width: 100%;
+    height: 45%;
+    /* background-color: aqua; */
+    
+}
+
+.Productpageslettercon1{
+    width: 70%;
+    height: 35%;
+    /* background-color: gray; */
+    /* display: flex; */
+
+}
+
+.Productpageslettercon1 h3{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.6rem;
+    font-family:  sans-serif;
+}
+
+
+.Productpageslettercon2{
+    width: 100%;
+    /* height: 65%; */
+    /* background-color: blue; */
+}
+
+.ProductViewmore1{
+    width: 100%;
+    height: 60%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+}
+
+.ProductViewmore1 p{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 2.5rem;
+    color: rgba(114, 114, 114, 1)  ;
+    font-family: sans-serif;
+    margin-top: 5%;
+
+}
+
+.ProductViewmore2{
+    width: 100%;
+    height: 40%;
+    /* background-color: gray; */
+    display: flex;
+ 
+}
+
+.Viewmorlinee{
+    width: 23%;
+    height: 5%;
+    background-color: rgba(114, 114, 114, 1);
+    
+}
+
+.AsgaadsofaBox{
+    width: 100%;
+    height: 100%;
+    /* background-color: darkcyan; */
+    display: flex;
+    align-items: center;
+}
+
+.AsgaadsofaBoxwrapper{
+    width: 100%;
+    height: 50%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.AsgaadsofaLetters{
+    width: 100%;
+    height: 30%;
+    /* background-color: darkorchid; */
+    display: flex;
+    align-items: center;
+}
+
+.AsgaadsofaLetters h3{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: sans-serif;
+    line-height: 2.6rem;
+}
+.AsgaadsofaLetters p{
+    font-size: 13px;
+    font-weight: 500;
+    font-family: sans-serif;
+    line-height: 2.5rem; 
+}
+
+
+.AsgaadsofaStar1 img{
+    width: 63%;
+    height: 68%;
+
+ 
+}
+
+.AsgaadsofaStar2{
+    width: 0.8%;
+    height: 70%;
+    background-color:rgba(114, 114, 114, 1);
+    /* opacity: 50%; */
+}
+.AsgaadsofaStar3{
+    width: 39%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.AsgaadsofaStar3 p,span{
+    font-size: 8.5px;
+    font-weight: 400;
+    font-family: sans-serif;
+    line-height: 1.8rem;
+    color:  rgba(114, 114, 114, 1)
+
+}
+
+
+.Outdoorsofaset{
+    width: 100%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Outdoorsofasetwrapper{
+    width: 100%;
+    height: 50%;
+    /* background-color: blueviolet; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.OutdoorsofasetLetter{
+    width:100%;
+    height: 30%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+}
+
+.OutdoorsofasetLetter h3{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: sans-serif;
+    line-height:2.6rem;
+}
+
+.OutdoorsofasetLetter p{
+    font-size: 13px;
+    font-weight: 500;
+    font-family: sans-serif;
+    line-height: 2.5rem; 
+
+}
+
+.OutdoorStars{
+    width: 100%;
+    height: 100%;
+    /* background-color: blueviolet; */
+    display: flex;
+}
+
+.OutdoorStarsboxz1{
+    width: 60%;
+    height: 100%;
+    /* background-color: darkgoldenrod; */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.OutdoorStarsboxz1 p{
+    font-size: 13px;
+    font-weight: 500;
+    font-family: sans-serif;
+    line-height: 2.5rem; 
+}
+
+.OutdoorStarsboxz1 img{
+    width: 63%;
+    height: 68%;
+}
+
+.OutdoorStarsboxz2{
+    width: 0.8%;
+    height: 70%;
+    background-color: rgba(114, 114, 114, 1);
+}
+.OutdoorStarsboxz3{
+    width: 39%;
+    height: 100%;
+    /* background-color: darkgoldenrod; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.OutdoorStarsboxz3 p{
+    font-size: 8.5px;
+    font-weight: 400;
+    font-family: sans-serif;
+    line-height: 1.8rem;
+    color:  rgba(114, 114, 114, 1);
+}
+
+.OutdoorStarsboxz3 span{
+    font-size: 10.5px;
+    font-weight: 400;
+    font-family: sans-serif;
+    line-height: 1.8rem;
+    color:  rgba(114, 114, 114, 1);
+
+}
+
+.AddAProductBoxs{
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AddAProductBoxwrapper{
+    width: 100%;
+    height: 95%;
+    /* background-color: darkgreen; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.AddproductBox1{
+    width: 99%;
+    height: 25%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    
+}
+
+.AddproductBox1 h3{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 2.6rem;
+    margin-top: 10px;
+    font-family: sans-serif;
+ 
+}
+
+.AddproductBox2{
+    width: 100%;
+    height: 50%;
+    /* background-color: gray; */
+}
+
+.Chooseaproductbox{
+    width: 70%;
+    height: 38%;
+    /* background-color: aqua; */
+}
+
+.Chooseaproductbox button{
+    width: 100%;
+    height: 100%;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: 600;
+    line-height: 2rem;
+    background-color: rgba(184, 142, 47, 1);
+}
      
 }
 

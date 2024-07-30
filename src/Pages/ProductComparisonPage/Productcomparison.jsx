@@ -18,7 +18,7 @@ const Productcomparison =()=>{
             </div>
         </div>
         <div className='ProductComParBox'>
-            <div className='ProductComParBoxup'>
+            <div className='ProductComParBoxup1'>
             </div>
             <div className='ProductComParBoxdown'>
                 <p>Sales Package</p>
@@ -30,7 +30,7 @@ const Productcomparison =()=>{
             </div>
         </div>
         <div className='ProductComParBox'>
-            <div className='ProductComParBoxup'>
+            <div className='ProductComParBoxup1'>
             </div>
             <div className='ProductComParBoxdown'>
                 <p>Sales Package</p>
@@ -41,7 +41,7 @@ const Productcomparison =()=>{
                 <p>Uphasltery Color</p>
             </div>
         </div>
-        <div className='ProductComParBox'>
+        <div className='ProductComParBox1'>
             <div className='ProductComParBoxup'>
             </div>
             <div className='ProductComParBoxdown'></div>

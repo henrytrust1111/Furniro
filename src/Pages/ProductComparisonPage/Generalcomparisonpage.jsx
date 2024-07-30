@@ -19,7 +19,7 @@ const General =()=>{
             </div>
         </div>
         <div className="GeneralCompari">
-            <div className="GeneralCompariBoxup">
+            <div className="GeneralCompariBoxup1">
             </div>
             <div className="GeneralCompariBoxdown">
                 <p>Sales Package</p>
@@ -31,7 +31,7 @@ const General =()=>{
             </div>
         </div>
         <div className="GeneralCompari">
-            <div className="GeneralCompariBoxup">
+            <div className="GeneralCompariBoxup1">
             </div>
             <div className="GeneralCompariBoxdown">
                 <p>Sales Package</p>
@@ -42,7 +42,7 @@ const General =()=>{
                 <p>Uphasltery Color</p>
             </div>
         </div>
-        <div className="GeneralCompari">
+        <div className="GeneralCompari1">
             <div className="GeneralCompariBoxup">
             </div>
             <div className="GeneralCompariBoxdown"></div>

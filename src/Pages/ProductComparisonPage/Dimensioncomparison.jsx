@@ -19,7 +19,7 @@ const Dimensioncomparison =()=>{
             </div>
         </div>
         <div className='DmensioncomparBoxz'>
-            <div className='DmensioncomparBoxzUp'>
+            <div className='DmensioncomparBoxzUp2'>
             </div>
             <div className='DmensioncomparBoxzDown'>
                 <p>Sales Package</p>
@@ -31,7 +31,7 @@ const Dimensioncomparison =()=>{
             </div>
         </div>
         <div className='DmensioncomparBoxz'>
-            <div className='DmensioncomparBoxzUp'>
+            <div className='DmensioncomparBoxzUp2'>
             </div>
             <div className='DmensioncomparBoxzDown'>
                 <p>Sales Package</p>
@@ -42,7 +42,7 @@ const Dimensioncomparison =()=>{
                 <p>Uphasltery Color</p>
             </div>
         </div>
-        <div className='DmensioncomparBoxz'>
+        <div className='DmensioncomparBoxz2'>
             <div className='DmensioncomparBoxzUp'>
             </div>
             <div className='DmensioncomparBoxzDown'>

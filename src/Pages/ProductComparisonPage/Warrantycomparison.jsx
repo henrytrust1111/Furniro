@@ -42,13 +42,13 @@ const Warrantycomparison =()=>{
                      <p>1 Year Manufacturing Warranty</p>
                         </div>
                     <div className='WarrantyPtagboxs'>
-                    <p>For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com</p>
+                    <p>For Warranty Claims or Any Product Related Issues Please Email at ope@trevfurniture.com</p>
                         </div>
                     <div className='WarrantyPtagboxs'>
                     <p>Warranty Against Manufacturing Defect</p>
                         </div>
                     <div className='WarrantyPtagboxs'>
-                    <p>The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.</p>
+                    <p>The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear.</p>
                         </div>
                     <div className='WarrantyPtagboxs'>
                     <p>1 Year</p>
@@ -93,7 +93,7 @@ const Warrantycomparison =()=>{
                 </div>
             </div>
         </div>
-        <div className='WarrantycomparisonBoxz'>
+        <div className='WarrantycomparisonBoxz1'>
             <div className='WarrantycomparisonBoxzUp'>
             </div>
             <div className='WarrantycomparisonBoxzDown'>
