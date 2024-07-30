@@ -12,7 +12,11 @@ import grid9 from "/images/grid9.png";
 const GridImages = () => {
   return (
     <>
-    <section className="max-h-screen my-28">
+    <section className="max-h-screen my-28 font-[poppins]">
+      <div className="text-center">
+        <p className="font-semibold"> Share your setup with</p>
+        <h1 className="font-bold text-[2rem] -text--clr-secondary">#FurniroFurniture</h1>
+      </div>
     <div className="grid grid-cols-9 grid-rows-4 gap-4 h-[400px] lg:h-screen">
         <div className="row-start-1 col-start-1 row-end-3 col-end-4">
           <img src={grid1} alt="" className="w-full h-full object-cover" />
