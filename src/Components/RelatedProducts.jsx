@@ -8,8 +8,9 @@ const RelatedProducts = ({products}) => {
   };
 
   return (
-    <section className="w-full h-auto mb-16">
-      <div className="flex flex-wrap justify-center gap-8 px-4 lg:px-24">
+    <section className="w-full mt-14 mb-16">
+      <div className="w-full h-[0.8px] mb-14 border-b"></div>
+      <div className="flex flex-wrap justify-center gap-8 px-4 lg:px-16">
         {products.slice(0, visibleProducts).map((product) => (
           <div key={product.id} className="w-full h-96 bg-gray-500 lg:w-72 rounded-md flex flex-col">
             <img src={product.image} alt={`Product ${product.id}`} className="w-full rounded-t-md h-64 object-cover" />

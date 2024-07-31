@@ -1,14 +1,25 @@
 import React, { useState } from "react";
 
-const ProductDetails = () => {
+const ProductDetails = ({onAddtocart}) => {
   const [bgColor, setBgColor] = useState("");
+  const [quantity,setquantity] = useState(0);
+  // const [decrease,setdecrease] = useState(0);
 
   const onColorChange = (color) => {
     setBgColor(color);
   };
 
+  const increment = ()=>{
+    setquantity (prevQuantity => prevQuantity + 1);
+  }
+  const decrement = ()=>{
+    setquantity (prevQuantity => prevQuantity > 0 ? prevQuantity - 1 : 0);
+  }
+
+ 
+
   return (
-    <section className="w-full flex flex-col lg:flex-row">
+    <section className="w-full flex flex-col md:flex-row">
       <div className="w-full lg:w-[50%] lg:pt-14 p-4 flex flex-col gap-4 justify-center">
         <div className="w-full flex flex-col lg:flex-row gap-4 justify-center">
           <div className={`lg:hidden flex w-full lg:w-[50%] lg:h-[400px] ${bgColor}`}>
@@ -19,7 +30,9 @@ const ProductDetails = () => {
             />
           </div>
           <div className="w-full lg:w-[15%] grid grid-cols-2 lg:grid-cols-1 gap-4">
-            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
+            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}>
+                <img src="public/Group 94.png" className="" alt="" />
+            </div>
             <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
             <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
             <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
@@ -89,15 +102,15 @@ const ProductDetails = () => {
         </div>
         <div className="flex gap-4 mb-6">
           <div className="w-32 h-12 border-2 rounded-lg flex justify-between items-center p-2">
-            <p className="text-sm">-</p>
-            <p className="text-sm">1</p>
-            <p className="text-sm">+</p>
+            <p onClick={decrement} className="text-sm cursor-pointer">-</p>
+            <p className="text-sm">{quantity}</p>
+            <p onClick={increment} className="text-sm cursor-pointer">+</p>
           </div>
-          <div className="w-32 lg:w-40 h-12 border-[0.8px] border-[#242424] rounded-lg flex items-center justify-center p-2 shadow-sm text-xs lg:text-sm">
+          <div onClick={onAddtocart} className="w-32 lg:w-40 h-12 border-[0.8px] cursor-pointer border-[#242424] rounded-lg flex items-center justify-center p-2 shadow-sm text-xs lg:text-sm">
             Add to cart
           </div>
           <div className="w-32 lg:w-40 border-[0.8px] border-[#242424] rounded-lg flex gap-4 items-center justify-center p-2 shadow-sm">
-            <p className="text-sm">+</p>
+            <p className="text-sm cursor-pointer">+</p>
             <p className="text-sm">Compare</p>
           </div>
         </div>

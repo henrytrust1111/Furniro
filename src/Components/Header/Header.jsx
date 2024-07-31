@@ -36,7 +36,7 @@ export default function Header() {
   };
 
   return (
-    <header className="Header">
+    <header className="Header z-10">
       <div className="flex items-center text-2xl space-x-2 font-bold w-max ml-6 h-full">
       <img src={logo} className="Logo" alt="logo"  />
       <h2>Furniro</h2>

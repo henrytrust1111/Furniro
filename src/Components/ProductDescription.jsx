@@ -51,8 +51,9 @@ const ProductDescription = () => {
   };
 
   return (
-    <section className="mt-10 w-full h-screen">
-      <div className="w-full h-[0.8px]">
+    <section className="w-full mt-14">
+      <div className="w-full">
+        <div className="w-full h-[0.8px] border-b"></div>
         <div className="flex flex-col gap-8 px-4 lg:px-24">
           <div className="flex justify-center gap-4 lg:gap-14">
             <div
