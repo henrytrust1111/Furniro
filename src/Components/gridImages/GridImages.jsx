@@ -13,7 +13,7 @@ const GridImages = () => {
   return (
     <>
     <section className="max-h-screen my-28 font-[poppins]">
-      <div className="text-center">
+      <div className="text-center mb-8">
         <p className="font-semibold"> Share your setup with</p>
         <h1 className="font-bold text-[2rem] -text--clr-secondary">#FurniroFurniture</h1>
       </div>
