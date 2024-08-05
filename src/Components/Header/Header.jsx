@@ -144,6 +144,7 @@ export default function Header() {
           </div>
         </nav>
       </CSSTransition>
+      
       <button onClick={toggleNav} className="Burger">
         {isNavVisible ? <IoClose /> : <RxHamburgerMenu />}
       </button>

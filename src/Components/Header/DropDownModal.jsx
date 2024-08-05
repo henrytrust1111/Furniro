@@ -16,7 +16,7 @@ const DropDownModal = ({ dropdownRef, handleMouseDown }) => {
   return (
     <div
       ref={dropdownRef}
-      className="absolute right-0 mt-2 w-64 bg-white border rounded-lg shadow-lg p-4 z-[99]"
+      className="absolute right-0 mt-5 w-64 bg-white border rounded-lg shadow-lg p-4 z-[99]"
       onMouseDown={handleMouseDown}
       style={{ cursor: "move" }}
     >
