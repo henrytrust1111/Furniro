@@ -13,7 +13,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   font-family: Montserrat;
   padding: 10px 50px;
-  z-index: 9999999;
+  z-index: 999;
   /* height: 100px; */
 }
 
@@ -43,6 +43,7 @@
 .Nav a.active {
   transform: scale(1.1);
   color: #b88e2f;
+  /* color: #bb9a4d; */
 }
 
 .Nav a:hover::after,
