@@ -48,7 +48,7 @@ const Products = () => {
               <p className="-text--clr-light-gray text-sm font-medium text-left">{product.des}</p>
               </div>
               <div className="flex items-center space-x-2 justify-between">
-              {product.price && <span className="-text--clr-black-shade-v1 font-semibold">{product.price}</span>}
+              {product.price && <span className="-text--clr-black-shade-v1 font-semibold text-base">{product.price}</span>}
               <s className="text-xs">{product.deprecated}</s>
               </div>
               </div>
@@ -56,14 +56,14 @@ const Products = () => {
              <div className="flex flex-col items-center space-y-2 justify-center max-w-full">
              <button className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold" onClick={handlePreview}>Preview</button>
               <div className="flex text-white gap-3 font-semibold max-w-full flex-wrap justify-center">
-                <div className='flex items-center gap-1 hover:-text--clr-primary'><IoMdShare /> <span>Share</span></div>
-                <div className='flex items-center gap-1 hover:-text--clr-primary'><MdCompareArrows /> <span>Compare</span></div>
-                <div className='flex items-center gap-1 hover:-text--clr-primary'><IoMdCart /> <span>Cart</span></div>
+                <div className='flex items-center gap-1 hover:-text--clr-primary text-base'><IoMdShare className='text-base' /> <span className='text-base'>Share</span></div>
+                <div className='flex items-center gap-1 hover:-text--clr-primary text-base'><MdCompareArrows className='text-base' /> <span className='text-base'>Compare</span></div>
+                <div className='flex items-center gap-1 hover:-text--clr-primary text-base'><IoMdCart className='text-base' /> <span className='text-base'>Cart</span></div>
               </div>
              </div>
               </div>
-              {product.discount && <span className="text-white absolute bg-[#E97171] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4">{product.discount}</span>}
-              {product.new && <span className="text-white absolute bg-[#2EC1AC] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4">{product.new}</span>}
+              {product.discount && <span className="text-white absolute bg-[#E97171] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4 text-base">{product.discount}</span>}
+              {product.new && <span className="text-white absolute bg-[#2EC1AC] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4 text-base">{product.new}</span>}
             </div>
           ))}
         </div>
