@@ -18,9 +18,10 @@ export default {
         "--clr-light-gray": "#898989",
         "--clr-black-shade-v1": "#3A3A3A",
       },
-      // backgroundImage: {
-      //   'bg1': "url('/images/bgImage.jpg')",
-      // }
+      backgroundImage: {
+        'room': "url('/images/room.png')",
+        'room1': "url('/images/room1.png')",
+      }
     },
   },
   plugins: [],
