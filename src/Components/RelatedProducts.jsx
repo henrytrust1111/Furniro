@@ -12,7 +12,7 @@ const RelatedProducts = ({products}) => {
       <div className="w-full h-[0.8px] mb-14 border-b"></div>
       <div className="flex flex-wrap justify-center gap-8 px-4 lg:px-16">
         {products.slice(0, visibleProducts).map((product) => (
-          <div key={product.id} className="w-full h-96 bg-gray-500 lg:w-72 rounded-md flex flex-col">
+          <div key={product.id} className="h-96 bg-gray-500 lg:w-72 rounded-md flex flex-col">
             <img src={product.image} alt={`Product ${product.id}`} className="w-full rounded-t-md h-64 object-cover" />
             <div className="flex flex-col justify-center p-2">
                 <p className="mt-2 text-sm lg:text-sm text-[#b242424]">{product.style}</p>

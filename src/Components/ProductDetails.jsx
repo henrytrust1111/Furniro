@@ -19,7 +19,7 @@ const ProductDetails = ({onAddtocart}) => {
  
 
   return (
-    <section className="w-full flex flex-col md:flex-row">
+    <section className="w-full flex flex-col lg:flex-row">
       <div className="w-full lg:w-[50%] lg:pt-14 p-4 flex flex-col gap-4 justify-center">
         <div className="w-full flex flex-col lg:flex-row gap-4 justify-center">
           <div className={`lg:hidden flex w-full lg:w-[50%] lg:h-[400px] ${bgColor}`}>
@@ -106,12 +106,12 @@ const ProductDetails = ({onAddtocart}) => {
             <p className="text-sm">{quantity}</p>
             <p onClick={increment} className="text-sm cursor-pointer">+</p>
           </div>
-          <div onClick={onAddtocart} className="w-32 lg:w-40 h-12 border-[0.8px] cursor-pointer border-[#242424] rounded-lg flex items-center justify-center p-2 shadow-sm text-xs lg:text-sm">
+          <div onClick={onAddtocart} className="w-32 lg:w-40 h-12 border-[0.8px] cursor-pointer border-[#242424] rounded-lg flex items-center justify-center p-2 shadow-sm text-[10px] lg:text-sm">
             Add to cart
           </div>
           <div className="w-32 lg:w-40 border-[0.8px] border-[#242424] rounded-lg flex gap-4 items-center justify-center p-2 shadow-sm">
             <p className="text-sm cursor-pointer">+</p>
-            <p className="text-sm">Compare</p>
+            <p className="text-[10px] lg:text-sm">Compare</p>
           </div>
         </div>
         {/* Product Info Section */}
