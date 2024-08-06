@@ -20,20 +20,20 @@ const DropDownModal = ({ dropdownRef, handleMouseDown }) => {
       onMouseDown={handleMouseDown}
       style={{ cursor: "move" }}
     >
-      <p className="text-gray-600">Welcome to Funiro!</p>
+      <p className="text-gray-600 text-lg">Welcome to Funiro!</p>
       <div
         onClick={()=>handleClick("login")}
-        className="-bg--clr-primary text-white py-2 px-4 rounded-md w-full my-2 text-center wow animate__animatedanimated animate__fadeIn cursor-pointer"
+        className="-bg--clr-primary h-10 text-lg text-white py-2 px-4 rounded-md w-full my-2 text-center wow animate__animatedanimated animate__fadeIn cursor-pointer"
       >
         Sign In
       </div>
       <div
         onClick={()=>handleClick("signup")}
-        className="-text--clr-primary border -border--clr-primary py-2 px-4 rounded-md w-full my-2 text-center wow animate__animatedanimated animate__fadeIn cursor-pointer"
+        className="-text--clr-primary h-10 text-lg border -border--clr-primary py-2 px-4 rounded-md w-full my-2 text-center wow animate__animatedanimated animate__fadeIn cursor-pointer"
       >
         Sign Up
       </div>
-      <p className="text-center my-2 text-gray-600">Continue with:</p>
+      <p className="text-center my-2 text-gray-600 text-xs">Continue with:</p>
 
       <div className="flex justify-center space-x-4 my-2">
         <a href="https://asianpacificexpress-api.onrender.com/googlelogin">

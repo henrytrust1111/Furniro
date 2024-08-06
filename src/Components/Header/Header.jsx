@@ -2,6 +2,7 @@ import logo from "/icons/logo.svg";
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { useState, useEffect, useRef } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { RiMenu2Line } from "react-icons/ri";
 import { CSSTransition } from "react-transition-group";
 import {
   FaBlog,
@@ -77,7 +78,6 @@ export default function Header() {
     setNavVisibility(!isNavVisible);
   };
 
-
   return (
     <header className="Header">
       <div className="flex items-center text-2xl space-x-2 font-bold w-max ml-6 h-full">
@@ -135,18 +135,37 @@ export default function Header() {
           </a>
           {/* <button>Login</button> */}
           <div
-            className="relative"
+            className="relative profile__container1"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             <FaUser className="-text--clr-primary cursor-pointer" size={24} />
-            {showDropdown && <DropDownModal dropdownRef={dropdownRef} handleMouseDown={handleMouseDown} />}
+            {showDropdown && (
+              <DropDownModal
+                dropdownRef={dropdownRef}
+                handleMouseDown={handleMouseDown}
+              />
+            )}
           </div>
         </nav>
       </CSSTransition>
-      
+      <div className="profile__container">
+        <div
+          className="relative "
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <FaUser className="-text--clr-primary cursor-pointer" size={24} />
+          {showDropdown && (
+            <DropDownModal
+              dropdownRef={dropdownRef}
+              handleMouseDown={handleMouseDown}
+            />
+          )}
+        </div>
+      </div>
       <button onClick={toggleNav} className="Burger">
-        {isNavVisible ? <IoClose /> : <RxHamburgerMenu />}
+        {isNavVisible ? <IoClose /> : <RiMenu2Line />}
       </button>
     </header>
   );
