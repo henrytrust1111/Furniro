@@ -1,6 +1,7 @@
 // productsData.js
 const productsData = [
-    { id: 1, image: "/Images.png",
+    { id: 1, 
+      image: "/Images.png",
       style:"Slytherine" ,
       detail:"Stylish cafe chair",
       price: "Rs. 50,000.00" 

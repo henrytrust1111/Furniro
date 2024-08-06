@@ -24,7 +24,7 @@ const ProductDetails = ({onAddtocart}) => {
         <div className="w-full flex flex-col lg:flex-row gap-4 justify-center">
           <div className={`lg:hidden flex w-full lg:w-[50%] lg:h-[400px] ${bgColor}`}>
             <img
-              src="public/singleProduct.png"
+              src="/singleProduct.png"
               className="object-cover w-full h-full"
               alt="Asgard Sofa"
             />
@@ -40,7 +40,7 @@ const ProductDetails = ({onAddtocart}) => {
 
           <div className={`hidden lg:flex w-full lg:w-[50%] lg:h-[400px] rounded-sm ${bgColor}`}>
             <img
-              src="public/singleProduct.png"
+              src="/singleProduct.png"
               className="object-cover w-full h-full"
               alt="Asgard Sofa"
             />
