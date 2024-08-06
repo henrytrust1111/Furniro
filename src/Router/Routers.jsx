@@ -8,6 +8,9 @@ import Cart from "../Pages/Cart/Cart";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import ProductComparisonPage from "../Pages/ProductComparisonPage/ProductComparisonPage";
+import Login from "../auth/Login";
+import SignUp from "../auth/SignUp";
+
 
 const route = createHashRouter([
   {
@@ -48,6 +51,17 @@ const route = createHashRouter([
       },
     ],
   },
+
+  {
+    path: "/login",
+    element: <Login />,
+  },
+
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  
 ]);
 
 function Routers() {

@@ -15,7 +15,7 @@ const Section = () => {
                 data-wow-delay=".3s"
               >
                 Simple Designs for{" "}
-                <span className="-text--clr-primary">Complex</span> Buildings
+                <span className="-text--clr-primary text-3xl md:text-4xl">Complex</span> Buildings
               </h2>
               <p
                 className="text-xs md:text-base text-blueGray-400 leading-loose wow animate__animated animate__fadeIn"
