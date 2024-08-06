@@ -1,35 +1,8 @@
-// import ScrollToTop from "react-scroll-up";
-
-// export default function BackToTop() {
-//   return (
-//     <ScrollToTop showUnder={160}>
-//       <a id="scrollUp" >
-//         <svg
-//           className="w-4 h-4"
-//           fill="none"
-//           stroke="currentColor"
-//           viewBox="0 0 24 24"
-//           xmlns="http://www.w3.org/2000/svg"
-//         >
-//           <path
-//             strokeLinecap="round"
-//             strokeLinejoin="round"
-//             strokeWidth="2"
-//             d="M5 10l7-7m0 0l7 7m-7-7v18"
-//           ></path>
-//         </svg>
-//       </a>
-//     </ScrollToTop>
-//   );
-// }
-
-
 import { useEffect, useState } from "react";
 
 export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when page is scrolled down
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
       setIsVisible(true);
@@ -38,7 +11,6 @@ export default function BackToTop() {
     }
   };
 
-  // Scroll to the top of the page
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
