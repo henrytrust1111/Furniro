@@ -31,7 +31,7 @@ const ProductDetails = ({onAddtocart}) => {
           </div>
           <div className="w-full lg:w-[15%] grid grid-cols-2 lg:grid-cols-1 gap-4">
             <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}>
-                <img src="public/Group 94.png" className="" alt="" />
+                <img src="Group 94.png" className="" alt="" />
             </div>
             <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
             <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>

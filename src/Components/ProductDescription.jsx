@@ -83,8 +83,8 @@ const ProductDescription = () => {
           </div>
           {renderContent()}
           <div className="flex justify-center">
-            <img src="public/Group 109.png" alt="Product" className="hidden lg:flex"/>
-            <img src="public/Group 109.png" alt="Product" className="flex lg:hidden w-full" />
+            <img src="/Group 109.png" alt="Product" className="hidden lg:flex"/>
+            <img src="/Group 109.png" alt="Product" className="flex lg:hidden w-full" />
           </div>
         </div>
       </div>
