@@ -19,7 +19,7 @@ const Contact = () => {
               <div className="py-12">
                 <div className="max-w-lg lg:max-w-md mx-auto lg:mx-0 mb-8 text-center lg:text-left">
                   <h2 className="text-3xl lg:text-5xl mb-4 font-bold font-heading wow animate__animatedanimated animate__fadeIn">
-                    Dedicated to <span className="-text--clr-primary"> Quality</span>,
+                    Dedicated to <span className="-text--clr-primary text-3xl lg:text-5xl"> Quality</span>,
                      and Service
                   </h2>
                   <div className="text-blueGray-400 leading-relaxed wow animate__animatedanimated animate__fadeIn">
@@ -191,9 +191,9 @@ const Contact = () => {
         <div className="container">
           <div className="text-center max-w-xl mx-auto">
             <h2 className="mb-4 text-3xl lg:text-3xl text-white font-bold font-heading">
-              <span>Subscribe now to </span>
-              <span className="text-[#f6dbb7]">Our Newsletter</span> <br />
-              <span>and get our Latest Update.</span>
+              <span className="text-3xl lg:text-3xl text-white">Subscribe now to </span>
+              <span className="text-[#f6dbb7] text-3xl lg:text-3xl">Our Newsletter</span> <br />
+              <span className="text-3xl lg:text-3xl text-white">and get our Latest Update.</span>
             </h2>
             <p className="mb-8 text-blueGray-200">
               All your information is completely confidential
