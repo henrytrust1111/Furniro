@@ -77,7 +77,7 @@ const Contact = () => {
                 className="mt-2 text-4xl font-bold font-heading wow animate__animatedanimated animate__fadeIn"
                 data-wow-delay=".s"
               >
-                We will <span className="-text--clr-primary">be glad</span> to hear
+                We will <span className="-text--clr-primary text-4xl">be glad</span> to hear
                 from you!
               </h2>
             </div>
@@ -87,7 +87,7 @@ const Contact = () => {
                   className="mb-4 text-sm wow animate__animatedanimated animate__fadeIn"
                   data-wow-delay=".5s"
                 >
-                  <span className="mr-4 font-semibold">Departament:</span>
+                  <span className="mr-4 font-semibold text-sm">Departament:</span>
                   <label className="mr-4">
                     <input
                       className="mr-1"
@@ -96,7 +96,7 @@ const Contact = () => {
                       value="1"
                       checked=""
                     />
-                    <span>Support</span>
+                    <span className="text-sm">Support</span>
                   </label>
                   <label>
                     <input
@@ -105,7 +105,7 @@ const Contact = () => {
                       name="department"
                       value="2"
                     />
-                    <span>Sales</span>
+                    <span className="text-sm">Sales</span>
                   </label>
                 </div>
                 <div

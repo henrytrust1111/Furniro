@@ -25,6 +25,7 @@ export default function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
+  const navigate = useNavigate()
 
   const handleMouseDown = (e) => {
     const dropdown = dropdownRef.current;
@@ -47,6 +48,7 @@ export default function Header() {
 
   const handleMouseEnter = () => {
     clearTimeout(timeoutRef.current);
+    setNavVisibility(false)
     setShowDropdown(true);
   };
 
@@ -78,9 +80,18 @@ export default function Header() {
     setNavVisibility(!isNavVisible);
   };
 
+  const handleClick = (val) => {
+    if (val === "logo") {
+      navigate("/");
+    }
+  };
+
   return (
     <header className="Header">
-      <div className="flex items-center text-2xl space-x-2 font-bold w-max ml-6 h-full">
+      <div
+        className="flex items-center text-2xl space-x-2 font-bold w-max ml-6 h-full cursor-pointer"
+        onClick={() => handleClick("logo")}
+      >
         <img src={logo} className="Logo" alt="logo" />
         <h2>Furniro</h2>
       </div>
