@@ -11,8 +11,12 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleLogo = () => {
-    navigate("/");
+  const handleClick = (val) => {
+    if(val === 'logo'){
+      navigate("/");
+    }else if(val === 'signup'){
+      navigate("/signup");
+    }
   };
 
   return (
@@ -22,7 +26,7 @@ const Login = () => {
           <div className="mb-8">
             <div
               className="flex items-center text-2xl space-x-2 font-bold w-max ml-6 h-full cursor-pointer"
-              onClick={handleLogo}
+              onClick={()=>handleClick("logo")}
             >
               <img src={logo} className="Logo" alt="logo" />
               <h2>Furniro</h2>
@@ -42,7 +46,7 @@ const Login = () => {
           </p>
         </div>
         <div className="w-full md:w-1/2 p-3 sm:p-5 md:p-6 lg:p-8 flex flex-col justify-center items-center ">
-          <div className="flex visible items-center text-2xl space-x-2 font-bold w-max mb-4 md:!hidden cursor-pointer" onClick={handleLogo}>
+          <div className="flex visible items-center text-2xl space-x-2 font-bold w-max mb-4 md:!hidden cursor-pointer" onClick={()=>handleClick("logo")}>
             <img src={logo} className="Logo" alt="logo" />
             <h2>Furniro</h2>
           </div>
@@ -107,12 +111,13 @@ const Login = () => {
             </div>
             <div className="text-center text-sm">
               Don't have an account yet?{" "}
-              <a
-                href="#"
-                className="font-medium text-[#EF6911] hover:text-[#EF6911]"
+              <div
+                // href="/signup"
+                className="font-medium text-[#EF6911] hover:text-[#EF6911] cursor-pointer hover:underline"
+                onClick={()=>handleClick("signup")}
               >
                 Sign up
-              </a>
+              </div>
             </div>
           </form>
         </div>
