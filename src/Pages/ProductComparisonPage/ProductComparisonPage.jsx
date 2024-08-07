@@ -9,6 +9,8 @@ import General from './Generalcomparisonpage';
 import Productcomparison from './Productcomparison';
 import Dimensioncomparison from './Dimensioncomparison';
 import Warrantycomparison from './Warrantycomparison';
+import { MdArrowForwardIos } from "react-icons/md";
+import { IoIosArrowDown } from "react-icons/io";
 
 
 const ProductComparisonPage = () => {
@@ -32,6 +34,7 @@ const ProductComparisonPage = () => {
           </div>
           <div className='ProcomparisonlHome'>
             <h3>Home</h3>
+            <MdArrowForwardIos />
             <span>Comparison</span>
           </div>
         </div>
@@ -66,7 +69,7 @@ const ProductComparisonPage = () => {
                 <h3>Asgaard Sofa</h3>
               </div>
               <div className='AsgaadsofaLetters'>
-                <p>$.250.000.00</p>
+                <p>Rs.250.000.00</p>
               </div>
               <div className='AsgaadsofaLetters'>
                 <div className='AsgaadsofaStarbox'>
@@ -95,7 +98,7 @@ const ProductComparisonPage = () => {
                 <h3>Outdoor Sofa Set</h3>
               </div>
               <div className='OutdoorsofasetLetter'>
-                <p>$.224.000.00</p>
+                <p>Rs.224.000.00</p>
               </div>
               <div className='OutdoorsofasetLetter'>
                 <div className='OutdoorStars'>
@@ -122,7 +125,9 @@ const ProductComparisonPage = () => {
           </div>
           <div className='AddproductBox2'>
             <div className='Chooseaproductbox'>
-              <button>Choose a product</button>
+              <button>Choose a product
+              <IoIosArrowDown  style={{ color: "white" }}/>
+              </button>
             </div>
           </div>
             </div>
