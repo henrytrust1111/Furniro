@@ -28,7 +28,6 @@ const SignUp = () => {
         <div className="w-full md:w-1/2 p-3 sm:p-5 md:p-6 lg:p-8 flex flex-col justify-center items-center ">
           <div className="flex visible items-center text-2xl space-x-2 font-bold w-max mb-4 md:!hidden cursor-pointer" onClick={()=>handleClick("logo")}>
             <img src={logo} className="Logo" alt="logo" />
-            <h2>Furniro</h2>
           </div>
           <h2 className="text-2xl lg:text-3xl font-semibold mb-4 text-center">
             Get Started with Furniro
