@@ -21,7 +21,7 @@ const ShopPagination = () => {
                 <input type="number" className='showinput' />
             </div>
             <div className="sort-Right">
-                <h3>Short by</h3>
+                <h3>Sort by</h3>
                 <input type="text" className='sortinput'/>
             </div>
 
