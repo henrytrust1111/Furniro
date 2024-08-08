@@ -13,7 +13,7 @@ const ShopHero = () => {
     //     <a href='/' className="text-2xl">Home</a>
     //   </div>
     // </section>
-    <ReuseableHero page={"Shop"} />
+    <ReuseableHero page={"Shop"} page1={"Shop"} />
   );
 };
 

@@ -4,7 +4,7 @@ import logo from "/icons/logo.svg";
 import { PiCaretRightBold } from "react-icons/pi";
 import blogHero from "/images/blog.png";
 
-const ReuseableHero = ({page}) => {
+const ReuseableHero = ({page, page1}) => {
     const nav = useNavigate();
     const handleHome = () => {
       nav("/");
@@ -26,7 +26,7 @@ const ReuseableHero = ({page}) => {
           <PiCaretRightBold />
         </span>
         <span className="text-black font-[poppins] font-light text-sm md:text-base">
-          {page}
+          {page1}
         </span>
       </div>
     </div>

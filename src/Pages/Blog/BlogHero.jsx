@@ -5,7 +5,7 @@ const BlogHero = () => {
 
   return (
     <>
-    <ReuseableHero page={"Blog"} />
+    <ReuseableHero page={"Blog"} page1={"Blog"} />
     </>
   );
 };

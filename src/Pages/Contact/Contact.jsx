@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <>
       <ScrollToTop />
-      <ReuseableHero page={"Contact"} />
+      <ReuseableHero page={"Contact"} page1={"Contact"} />
       <div className="px-8 md:!px-24 lg:!px-48 my-12">
         <div className="max-w-7xl mx-auto text-center mb-12 flex flex-col items-center">
           <h2 className="text-3xl font-semibold text-black">

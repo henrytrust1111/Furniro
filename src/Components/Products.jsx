@@ -102,8 +102,13 @@ const Products = () => {
     setVisibleProducts((prevCount) => prevCount + 4);
   };
   const nav = useNavigate();
+
   const handlePreview = () => {
     nav("/single-product");
+  };
+
+  const handleCompare = () => {
+    nav("/comparison");
   };
   return (
     <section className="py-16 font-[poppins]">
@@ -151,7 +156,7 @@ const Products = () => {
                       <IoMdShare className="text-base" />{" "}
                       <span className="text-base">Share</span>
                     </div>
-                    <div className="flex items-center gap-1 hover:-text--clr-primary text-base">
+                    <div className="flex items-center gap-1 hover:-text--clr-primary text-base" onClick={handleCompare}>
                       <MdCompareArrows className="text-base" />{" "}
                       <span className="text-base">Compare</span>
                     </div>
