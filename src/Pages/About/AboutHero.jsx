@@ -6,7 +6,7 @@ const AboutHero = () => {
   return (
     <section className="relative pt-24">
     <div
-      className="hidden lg:block absolute inset-0 w-1/2 ml-auto bg-blueGray-100 z-0"
+      className="hidden lg:block absolute inset-0 w-1/2 ml-auto -bg--clr-primar-light-v2 z-0"
       style={{ zIndex: "-1" }}
     ></div>
     <div className="container">
@@ -31,17 +31,9 @@ const AboutHero = () => {
               </p>
             </div>
             <div className="text-center lg:text-left">
-              <Link to="/about" legacyBehavior>
+              <Link to="/shop" legacyBehavior>
                 <a className="tracking-wide hover-up-2 block sm:inline-block py-4 px-8 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none -bg--clr-primary hover:-bg--clr-primary rounded wow animate__animatedanimated animate__fadeIn">
-                  About Us
-                </a>
-              </Link>
-              <Link to="/services" legacyBehavior>
-                <a
-                  className="block hover-up-2 sm:inline-block py-4 px-8 text-xs text-blueGray-500 hover:text-blueGray-600 text-center font-semibold leading-none bg-white border border-blueGray-200 hover:border-blueGray-300 rounded wow animate__animatedanimated animate__fadeIn"
-                  data-wow-delay=".3s"
-                >
-                  Our Services
+                  Shop
                 </a>
               </Link>
             </div>
