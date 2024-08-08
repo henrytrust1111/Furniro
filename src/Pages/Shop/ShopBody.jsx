@@ -222,7 +222,7 @@ const ShopBody = () => {
       <div className="container mx-auto px-4 text-center">
         {/* <h2 className="text-2xl font-bold mb-8 text-center">Shop</h2> */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-11 lg:px-11 md:px-0 ">
-          {products.slice(0, visibleProducts).map((product) => (
+          {products.map((product) => (
             <div key={product.id} className="bg-[#F4F5F7] shadow-custom relative">
               <img src={product.image} alt={product.name} className="mb-4 w-full h-72 object-cover "/>
               <div className="px-3 mb-5 flex flex-col gap-2">
