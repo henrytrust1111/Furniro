@@ -128,6 +128,14 @@ const Contact = () => {
 
 export default Contact;
 
+
+
+
+
+
+
+
+
 // import React from "react";
 // import TextEffect from "../../Components/elements/TextEffect";
 // import { Link } from "react-router-dom";
