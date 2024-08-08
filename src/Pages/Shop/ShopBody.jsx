@@ -1,245 +1,259 @@
-// import React from 'react'
 
-// const ItemCard = () => {
-//   return (
-//     <div className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-//       <div className="relative aspect-w-1 aspect-h-1">
-//         <img src="/public/gcobms7g.png" alt="Product Name" className="object-cover w-full h-full" />
-//         <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-//           <button className="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-200 transition-colors duration-300">
-//             Add to Cart
-//           </button>
+
+//   import React from 'react'
+//   import './ShopBody.css' 
+
+//    const ShopBody = () => { 
+//    return (
+//      <div className='shopBody-Holder'>
+//        <div className="card-holder">
+//         <div class="card-item">
+//           <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
+//           <div class="textcard">
+//             <h2>Syltherine</h2>
+//             <h3>Stylish cafe chair</h3>
+//             <div class="rpdivz">
+//               <h2>Rp 2.500.000</h2>
+//               <h4>Rp 3.500.000</h4>
+//             </div>
+//           </div>
+//           <div class="overlay">
+//             <div className="discount-image">
+//               <div className="discount-holder"><h3>-30%</h3></div>
+//             </div>
+//             <button class="add-to-cart-btn">Add to Cart</button>
+//             <div className="sharecompare"></div>
+//           </div>
 //         </div>
-//       </div>
-//       <div className="p-4">
-//         <h3 className="text-lg font-semibold mb-1">Product Name</h3>
-//         <p className="text-sm text-gray-600 mb-2">Short description of the product</p>
-//         <div className="flex items-center">
-//           <span className="text-lg font-bold mr-2">$19.99</span>
-//           <span className="text-sm text-gray-500 line-through">$24.99</span>
+//         <div class="card-item">
+//           <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
+//           <div class="textcard">
+//             <h2>Syltherine</h2>
+//             <h3>Stylish cafe chair</h3>
+//             <div class="rpdivz">
+//               <h2>Rp 2.500.000</h2>
+//               <h4>Rp 3.500.000</h4>
+//             </div>
+//           </div>
+//           <div class="overlay">
+//             <button class="add-to-cart-btn">Add to Cart</button>
+//           </div>
 //         </div>
-//       </div>
-//     </div>
-//   )
-// }
-
-// const ShopBody = () => {
-//   return (
-//     // <div className="container mx-auto px-4 py-8">
-//     //   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-//     <div className="container mx-auto px-4 py-8">
-//       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
-//         <ItemCard />
-//         <ItemCard />
-//         <ItemCard />
-//         <ItemCard />
-//         <ItemCard />
-//         <ItemCard />
-//         <ItemCard />
-//         <ItemCard />
-//         <ItemCard />
-//         <ItemCard />
-//         <ItemCard />
-//         <ItemCard />
-//         <ItemCard />
-//         <ItemCard />
-//         {/* Add more ItemCard components as needed */}
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default ShopBody
-
-
-
-  import React from 'react'
-  import './ShopBody.css' 
-
-   const ShopBody = () => { 
-   return (
-     <div className='shopBody-Holder'>
-       <div className="card-holder">
-        <div class="card-item">
-          <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
-          <div class="textcard">
-            <h2>Syltherine</h2>
-            <h3>Stylish cafe chair</h3>
-            <div class="rpdivz">
-              <h2>Rp 2.500.000</h2>
-              <h4>Rp 3.500.000</h4>
-            </div>
-          </div>
-          <div class="overlay">
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
-          <div class="textcard">
-            <h2>Syltherine</h2>
-            <h3>Stylish cafe chair</h3>
-            <div class="rpdivz">
-              <h2>Rp 2.500.000</h2>
-              <h4>Rp 3.500.000</h4>
-            </div>
-          </div>
-          <div class="overlay">
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
-          <div class="textcard">
-            <h2>Syltherine</h2>
-            <h3>Stylish cafe chair</h3>
-            <div class="rpdivz">
-              <h2>Rp 2.500.000</h2>
-              <h4>Rp 3.500.000</h4>
-            </div>
-          </div>
-          <div class="overlay">
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
-          <div class="textcard">
-            <h2>Syltherine</h2>
-            <h3>Stylish cafe chair</h3>
-            <div class="rpdivz">
-              <h2>Rp 2.500.000</h2>
-              <h4>Rp 3.500.000</h4>
-            </div>
-          </div>
-          <div class="overlay">
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
-          <div class="textcard">
-            <h2>Syltherine</h2>
-            <h3>Stylish cafe chair</h3>
-            <div class="rpdivz">
-              <h2>Rp 2.500.000</h2>
-              <h4>Rp 3.500.000</h4>
-            </div>
-          </div>
-          <div class="overlay">
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
-          <div class="textcard">
-            <h2>Syltherine</h2>
-            <h3>Stylish cafe chair</h3>
-            <div class="rpdivz">
-              <h2>Rp 2.500.000</h2>
-              <h4>Rp 3.500.000</h4>
-            </div>
-          </div>
-          <div class="overlay">
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
-          <div class="textcard">
-            <h2>Syltherine</h2>
-            <h3>Stylish cafe chair</h3>
-            <div class="rpdivz">
-              <h2>Rp 2.500.000</h2>
-              <h4>Rp 3.500.000</h4>
-            </div>
-          </div>
-          <div class="overlay">
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
-          <div class="textcard">
-            <h2>Syltherine</h2>
-            <h3>Stylish cafe chair</h3>
-            <div class="rpdivz">
-              <h2>Rp 2.500.000</h2>
-              <h4>Rp 3.500.000</h4>
-            </div>
-          </div>
-          <div class="overlay">
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
-          <div class="textcard">
-            <h2>Syltherine</h2>
-            <h3>Stylish cafe chair</h3>
-            <div class="rpdivz">
-              <h2>Rp 2.500.000</h2>
-              <h4>Rp 3.500.000</h4>
-            </div>
-          </div>
-          <div class="overlay">
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
-          <div class="textcard">
-            <h2>Syltherine</h2>
-            <h3>Stylish cafe chair</h3>
-            <div class="rpdivz">
-              <h2>Rp 2.500.000</h2>
-              <h4>Rp 3.500.000</h4>
-            </div>
-          </div>
-          <div class="overlay">
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
-          <div class="textcard">
-            <h2>Syltherine</h2>
-            <h3>Stylish cafe chair</h3>
-            <div class="rpdivz">
-              <h2>Rp 2.500.000</h2>
-              <h4>Rp 3.500.000</h4>
-            </div>
-          </div>
-          <div class="overlay">
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
-          <div class="textcard">
-            <h2>Syltherine</h2>
-            <h3>Stylish cafe chair</h3>
-            <div class="rpdivz">
-              <h2>Rp 2.500.000</h2>
-              <h4>Rp 3.500.000</h4>
-            </div>
-          </div>
-          <div class="overlay">
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-       </div>
-       <div className="page-buttons">
-         <button className="num-button">1</button>
-         <button className="num-button">2</button>
-         <button className="num-button">3</button>
-         <button className="next-button">Next</button>
-       </div>
+//         <div class="card-item">
+//           <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
+//           <div class="textcard">
+//             <h2>Syltherine</h2>
+//             <h3>Stylish cafe chair</h3>
+//             <div class="rpdivz">
+//               <h2>Rp 2.500.000</h2>
+//               <h4>Rp 3.500.000</h4>
+//             </div>
+//           </div>
+//           <div class="overlay">
+//             <button class="add-to-cart-btn">Add to Cart</button>
+//           </div>
+//         </div>
+//         <div class="card-item">
+//           <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
+//           <div class="textcard">
+//             <h2>Syltherine</h2>
+//             <h3>Stylish cafe chair</h3>
+//             <div class="rpdivz">
+//               <h2>Rp 2.500.000</h2>
+//               <h4>Rp 3.500.000</h4>
+//             </div>
+//           </div>
+//           <div class="overlay">
+//             <button class="add-to-cart-btn">Add to Cart</button>
+//           </div>
+//         </div>
+//         <div class="card-item">
+//           <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
+//           <div class="textcard">
+//             <h2>Syltherine</h2>
+//             <h3>Stylish cafe chair</h3>
+//             <div class="rpdivz">
+//               <h2>Rp 2.500.000</h2>
+//               <h4>Rp 3.500.000</h4>
+//             </div>
+//           </div>
+//           <div class="overlay">
+//             <button class="add-to-cart-btn">Add to Cart</button>
+//           </div>
+//         </div>
+//         <div class="card-item">
+//           <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
+//           <div class="textcard">
+//             <h2>Syltherine</h2>
+//             <h3>Stylish cafe chair</h3>
+//             <div class="rpdivz">
+//               <h2>Rp 2.500.000</h2>
+//               <h4>Rp 3.500.000</h4>
+//             </div>
+//           </div>
+//           <div class="overlay">
+//             <button class="add-to-cart-btn">Add to Cart</button>
+//           </div>
+//         </div>
+//         <div class="card-item">
+//           <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
+//           <div class="textcard">
+//             <h2>Syltherine</h2>
+//             <h3>Stylish cafe chair</h3>
+//             <div class="rpdivz">
+//               <h2>Rp 2.500.000</h2>
+//               <h4>Rp 3.500.000</h4>
+//             </div>
+//           </div>
+//           <div class="overlay">
+//             <button class="add-to-cart-btn">Add to Cart</button>
+//           </div>
+//         </div>
+//         <div class="card-item">
+//           <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
+//           <div class="textcard">
+//             <h2>Syltherine</h2>
+//             <h3>Stylish cafe chair</h3>
+//             <div class="rpdivz">
+//               <h2>Rp 2.500.000</h2>
+//               <h4>Rp 3.500.000</h4>
+//             </div>
+//           </div>
+//           <div class="overlay">
+//             <button class="add-to-cart-btn">Add to Cart</button>
+//           </div>
+//         </div>
+//         <div class="card-item">
+//           <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
+//           <div class="textcard">
+//             <h2>Syltherine</h2>
+//             <h3>Stylish cafe chair</h3>
+//             <div class="rpdivz">
+//               <h2>Rp 2.500.000</h2>
+//               <h4>Rp 3.500.000</h4>
+//             </div>
+//           </div>
+//           <div class="overlay">
+//             <button class="add-to-cart-btn">Add to Cart</button>
+//           </div>
+//         </div>
+//         <div class="card-item">
+//           <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
+//           <div class="textcard">
+//             <h2>Syltherine</h2>
+//             <h3>Stylish cafe chair</h3>
+//             <div class="rpdivz">
+//               <h2>Rp 2.500.000</h2>
+//               <h4>Rp 3.500.000</h4>
+//             </div>
+//           </div>
+//           <div class="overlay">
+//             <button class="add-to-cart-btn">Add to Cart</button>
+//           </div>
+//         </div>
+//         <div class="card-item">
+//           <div class="imagecard"><img src="./public/syltherine.png" alt="" /></div>
+//           <div class="textcard">
+//             <h2>Syltherine</h2>
+//             <h3>Stylish cafe chair</h3>
+//             <div class="rpdivz">
+//               <h2>Rp 2.500.000</h2>
+//               <h4>Rp 3.500.000</h4>
+//             </div>
+//           </div>
+//           <div class="overlay">
+//             <button class="add-to-cart-btn">Add to Cart</button>
+//           </div>
+//         </div>
+    
+//        </div>
+//        <div className="page-buttons">
+//          <button className="num-button">1</button>
+//          <button className="num-button">2</button>
+//          <button className="num-button">3</button>
+//          <button className="next-button">Next</button>
+//        </div>
        
-     </div>
-   )
- } 
+//      </div>
+//    )
+//  } 
  
-export default ShopBody 
+// export default ShopBody 
  
+
+import React, { useState } from 'react';
+import syltherine from '/images/syltherine.png'
+import lolito from '/images/lolito.png'
+import leviosa from '/images/leviosa.png'
+import respira from '/images/respira.png'
+import grifo from '/images/grifo.png'
+import muggo from '/images/muggo.png'
+import pingky from '/images/pingky.png'
+import potty from '/images/potty.png'
+import { IoMdCart, IoMdShare } from 'react-icons/io';
+import { MdCompareArrows } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
+
+
+const products = [
+  { id: 1, new:'', name: 'Syltherine', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-30%', image: syltherine, des: "Stylish cafe chair" },
+  { id: 2, new:'New', name: 'Leviosa', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '', image: leviosa, des: "Stylish cafe chair" },
+  { id: 3, new:'', name: 'Lolito', price: 'Rp 7.000.000', deprecated: 'Rp 14.000.000', discount: '-50%', image: lolito, des: "Luxury big sofa" },
+  { id: 4, new:'New', name: 'respira', price: 'Rp 500.000', deprecated: '', discount: '', image: respira, des: "Outdoor bar table and stool" },
+  { id: 5, new:'', name: 'grifo', price: 'Rp 1.500.000', deprecated: '', discount: '', image: grifo, des: "Night lamp" },
+  { id: 6, new:'New', name: 'muggo', price: 'Rp 150.000', deprecated: '', discount: '', image: muggo, des: "small mug" },
+  { id: 7, new:'', name: 'pingky', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-50%', image: pingky, des: "Cute bed sets" },
+  { id: 8, new:'New', name: 'potty', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '', image: potty, des: "Stylish cafe chair" },
+  // Add more products as needed
+];
+
+const ShopBody = () => {
+  const [visibleProducts, setVisibleProducts] = useState(4);
+
+  const showMoreProducts = () => {
+    setVisibleProducts((prevCount) => prevCount + 4);
+  };
+  const nav = useNavigate()
+  const handlePreview = ()=> {
+    nav("/single-product")
+  }
+  return (
+    <section className="py-16 font-[poppins]">
+      <div className="container mx-auto px-4 text-center">
+        {/* <h2 className="text-2xl font-bold mb-8 text-center">Shop</h2> */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-11 lg:px-11 md:px-0 ">
+          {products.slice(0, visibleProducts).map((product) => (
+            <div key={product.id} className="bg-[#F4F5F7] shadow-custom relative">
+              <img src={product.image} alt={product.name} className="mb-4 w-full h-72 object-cover "/>
+              <div className="px-3 mb-5 flex flex-col gap-2">
+              <div className="w-full flex flex-col items-start ">
+              <h3 className="text-lg font-bold -text--clr-black-shade-v1 capitalize">{product.name}</h3>
+              <p className="-text--clr-light-gray text-sm font-medium text-left">{product.des}</p>
+              </div>
+              <div className="flex items-center space-x-2 justify-between">
+              {product.price && <span className="-text--clr-black-shade-v1 font-semibold">{product.price}</span>}
+              <s className="text-xs">{product.deprecated}</s>
+              </div>
+              </div>
+              <div className="-bg--clr-secondary absolute inset-0 opacity-0 hover:opacity-75  transition-all ease cursor-pointer grid place-items-center">
+             <div className="flex flex-col items-center space-y-2 justify-center max-w-full">
+             <button className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold" onClick={handlePreview}>Add to Cart</button>
+              <div className="flex text-white gap-3 font-semibold max-w-full flex-wrap justify-center">
+                <div className='flex items-center gap-1 hover:-text--clr-primary'><IoMdShare /> <span>Share</span></div>
+                <div className='flex items-center gap-1 hover:-text--clr-primary'><MdCompareArrows /> <span>Compare</span></div>
+                <div className='flex items-center gap-1 hover:-text--clr-primary'><IoMdCart /> <span>Cart</span></div>
+              </div>
+             </div>
+              </div>
+              {product.discount && <span className="text-white absolute bg-[#E97171] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4">{product.discount}</span>}
+              {product.new && <span className="text-white absolute bg-[#2EC1AC] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4">{product.new}</span>}
+            </div>
+          ))}
+        </div>
+        {/* <button onClick={showMoreProducts} className='bg-white -text--clr-primary px-4 py-2 z-40 hover:scale-110 font-semibold border -border--clr-primary mt-8 max-w-[300px] md:w-[300px]'>Show More</button> */}
+      </div>
+    </section>
+  );
+};
+
+export default ShopBody;
