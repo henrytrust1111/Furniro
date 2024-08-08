@@ -35,8 +35,8 @@ const About = () => {
               </div>
               <div className="sm:py-2 ml-2 sm:ml-6">
                 <span className="sm:text-2xl font-bold font-heading">+ </span>
-                <span className="sm:text-2xl font-bold font-heading count">
-                  <CounterUp count={150} time={3} />
+                <span className="text-2xl font-bold font-heading count">
+                  <CounterUp count={150} time={3}  />
                 </span>
                 <p className="text-xs sm:text-base text-blueGray-400">
                   Exclusive Designs

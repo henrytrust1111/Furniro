@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import logo from "/icons/logo.svg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,7 +22,7 @@ const Login = () => {
   return (
     <div className="h-screen w-screen flex items-center justify-center bg-[#efefef]">
       <div className="flex w-full h-full overflow-hidden md:flex-row ">
-        <div className="w-full md:w-1/2 lg:flex flex-col items-center justify-center p-8 md:block hidden -bg--clr-primar-light -text--clr-secondary">
+        <div className="w-full md:w-1/2 lg:flex flex-col items-center justify-center p-8 md:block hidden bg-[#14192D] text-white">
           <div className="mb-8">
             <div
               className="flex items-center text-2xl space-x-2 font-bold w-max ml-6 h-full cursor-pointer"
@@ -92,18 +92,18 @@ const Login = () => {
             </div>
             <div className="flex items-center justify-between w-full">
               <div className="text-sm ">
-                <a
-                  href="#"
+                <Link
+                  to="/forget-password"
                   className="font-medium text-[#EF6911] hover:text-[#EF6911]"
                 >
                   Forgot Password?
-                </a>
+                </Link>
               </div>
             </div>
             <div className="w-full">
               <button
                 type="submit"
-                className="w-full mt-1 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white !bg-[#14192D] hover:!bg-white hover:!text-black  transition-all duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2"
+                className="w-full mt-1 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:!shadow-custom1 !bg-[#14192D] hover:!bg-white hover:!text-black  transition-all duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2"
               >
                 Login
               </button>

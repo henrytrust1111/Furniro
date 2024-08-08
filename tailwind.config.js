@@ -9,6 +9,7 @@ export default {
     extend: {
       boxShadow: {
         custom: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+        custom1: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
       },
       colors: {
         "--clr-primary": "#B88E2F",
