@@ -13,7 +13,7 @@ const Contact = () => {
           <h2 className="text-3xl font-semibold text-black">
             Get In Touch With Us
           </h2>
-          <p className="text-[#9f9f9f] mt-4 text-center lg:w-[700px] text-base">
+          <p className="text-[#9f9f9f] mt-4 text-center lg:w-[700px] text-sm md:text-base">
             For More Information About Our Product & Services. Please Feel Free
             To Drop Us An Email. Our Staff Always Be There To Help You Out. Do
             Not Hesitate!
@@ -25,7 +25,7 @@ const Contact = () => {
               <FaMapMarkerAlt className="text-2xl text-gray-800" />
               <div>
                 <h3 className="text-lg font-semibold text-black">Address</h3>
-                <p className="text-gray-600">
+                <p className="text-black text-sm md:text-base">
                   236 5th SE Avenue, New York NY10000, United States
                 </p>
               </div>
@@ -34,7 +34,7 @@ const Contact = () => {
               <FaPhoneAlt className="text-2xl text-gray-800" />
               <div>
                 <h3 className="text-lg font-semibold text-black">Phone</h3>
-                <p className="text-gray-600">
+                <p className="text-black text-sm md:text-base">
                   Mobile: +(84) 546-6789
                   <br />
                   Hotline: +(84) 456-6789
@@ -47,7 +47,7 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold text-black">
                   Working Time
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-black text-sm md:text-base">
                   Monday-Friday: 9:00 - 22:00
                   <br />
                   Saturday-Sunday: 9:00 - 21:00
