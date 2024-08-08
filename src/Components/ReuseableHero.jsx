@@ -10,8 +10,8 @@ const ReuseableHero = ({page}) => {
       nav("/");
     };
   return (
-    <div className="relative w-screen mt-[53px] font-[poppins]">
-    <img src={blogHero} className="w-full " alt="" onClick={handleHome} />
+    <div className="relative w-screen max-[700px]:h-[40vh] mt-[53px] font-[poppins]">
+    <img src={blogHero} className="w-full max-[700px]:h-full" alt="" onClick={handleHome} />
     <div className="absolute w-full h-full top-0 flex flex-col items-center justify-center cursor-pointer md:gap-1 lg:gap-3">
       <img src={logo} alt="" className="w-8 md:!w-14" />
       <p className="font-medium text-2xl lg:text-5xl">{page}</p>
