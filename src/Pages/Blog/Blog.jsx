@@ -99,16 +99,16 @@ const Blog = () => {
               </div>
             ))}
             <div className="flex justify-center mt-8">
-              <button className="px-4 py-2 mx-1 text-gray-700 bg-gray-200 rounded hover:bg-gray-300">
+              <button className="px-4 py-2 mx-1 text-black -bg--clr-primary rounded hover:bg-gray-300">
                 1
               </button>
-              <button className="px-4 py-2 mx-1 text-gray-700 bg-gray-200 rounded hover:bg-gray-300">
+              <button className="px-4 py-2 mx-1 text-black -bg--clr-primar-light-v3 rounded hover:bg-gray-300">
                 2
               </button>
-              <button className="px-4 py-2 mx-1 text-gray-700 bg-gray-200 rounded hover:bg-gray-300">
+              <button className="px-4 py-2 mx-1 text-black -bg--clr-primar-light-v3 rounded hover:bg-gray-300">
                 3
               </button>
-              <button className="px-4 py-2 mx-1 text-gray-700 bg-gray-200 rounded hover:bg-gray-300">
+              <button className="px-4 py-2 mx-1 text-black -bg--clr-primar-light-v3 rounded hover:bg-gray-300">
                 Next
               </button>
             </div>
