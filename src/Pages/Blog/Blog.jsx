@@ -86,15 +86,15 @@ const Blog = () => {
                 />
                 <div className="p-6">
                   <div className="flex items-center text-gray-600 text-sm mb-4">
-                    <FaUser className="mr-2" /> Admin
-                    <FaCalendarAlt className="mx-4" /> {post.date}
-                    <FaTag className="mx-4" /> {post.category}
+                    <FaUser className="mr-2 text-lg" /> Admin
+                    <FaCalendarAlt className="mx-4 text-lg" /> {post.date}
+                    <FaTag className="mx-4 text-lg" /> {post.category}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
-                  <p className="text-gray-700 mb-4">{post.excerpt}</p>
-                  <a href="#" className="text-blue-500 hover:underline">
+                  <p className="-text--clr-light-gray-v2 mb-4">{post.excerpt}</p>
+                  <div className="text-base text-black font-normal underline underline-offset-8">
                     Read more
-                  </a>
+                  </div>
                 </div>
               </div>
             ))}
@@ -130,10 +130,10 @@ const Blog = () => {
                 {categories.map((category) => (
                   <li
                     key={category.name}
-                    className="flex justify-between text-gray-700"
+                    className="flex justify-between"
                   >
-                    <span>{category.name}</span>
-                    <span>{category.count}</span>
+                    <span className="-text--clr-light-gray-v2 text-base">{category.name}</span>
+                    <span className="-text--clr-light-gray-v2 text-base">{category.count}</span>
                   </li>
                 ))}
               </ul>
@@ -149,10 +149,10 @@ const Blog = () => {
                       className="w-16 h-16 object-cover rounded mr-4"
                     />
                     <div>
-                      <a href="#" className="text-blue-500 hover:underline">
+                      <a href="#" className="text-black text-sm hover:underline">
                         {post.title}
                       </a>
-                      <span className="block text-gray-600 text-sm">
+                      <span className="block -text--clr-light-gray-v2 text-xs">
                         {post.date}
                       </span>
                     </div>
