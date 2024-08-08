@@ -14,6 +14,7 @@ export default {
         "--clr-primary": "#B88E2F",
         "--clr-primar-light": "#FFF3E3",
         "--clr-primar-light-v1": "#f6dbb7",
+        "--clr-primar-light-v2": "#FAF3EA",
         "--clr-secondary": "#1e1611",
         "--clr-light-gray-v1": "#B0B0B0",
         "--clr-light-gray": "#898989",
