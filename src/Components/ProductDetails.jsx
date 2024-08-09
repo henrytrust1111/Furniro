@@ -21,24 +21,30 @@ const ProductDetails = ({onAddtocart}) => {
   return (
     <section className="w-full flex flex-col lg:flex-row">
       <div className="w-full lg:w-[50%] lg:pt-14 p-4 flex flex-col gap-4 justify-center">
-        <div className="w-full flex flex-col lg:flex-row gap-4 justify-center">
-          <div className={`lg:hidden flex w-full lg:w-[50%] lg:h-[400px] ${bgColor}`}>
+        <div className="w-full flex flex-col lg:flex-row gap-4 lg:px-16">
+          <div className={`lg:hidden flex w-full lg:h-[400px] ${bgColor}`}>
             <img
               src="/singleProduct.png"
-              className="object-cover w-full h-full"
+              className="object-cover h-full"
               alt="Asgard Sofa"
             />
           </div>
-          <div className="w-full lg:w-[15%] grid grid-cols-2 lg:grid-cols-1 gap-4">
-            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}>
+          <div className="grid grid-cols-2 px-12 lg:px-0 lg:grid-cols-1 gap-4">
+            <div className={`rounded-sm ${bgColor}`}>
                 <img src="Group 94.png" className="" alt="" />
             </div>
-            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
-            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
-            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
+            <div className={`rounded-sm ${bgColor}`}>
+                <img src="Group 94.png" className="" alt="" />
+            </div>
+            <div className={`ounded-sm ${bgColor}`}>
+                <img src="Group 94.png" className="" alt="" />
+            </div>
+            <div className={`ounded-sm ${bgColor}`}>
+                <img src="Group 94.png" className="" alt="" />
+            </div>
           </div>
 
-          <div className={`hidden lg:flex w-full lg:w-[50%] lg:h-[400px] rounded-sm ${bgColor}`}>
+          <div className={`hidden lg:flex lg:w-[50%] lg:h-[400px] rounded-sm ${bgColor}`}>
             <img
               src="/singleProduct.png"
               className="object-cover w-full h-full"

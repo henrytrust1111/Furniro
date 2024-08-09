@@ -27,7 +27,6 @@ const ProductDescription = () => {
             <p className="text-center text-xs lg:text-sm text-[#b7b7b7] leading-relaxed">
               Here is some additional information about the product.
             </p>
-            {/* Add more content as needed */}
           </>
         );
       case "reviews":
@@ -42,7 +41,6 @@ const ProductDescription = () => {
             <p className="text-center text-xs lg:text-sm text-[#b7b7b7] leading-relaxed">
               "Would buy again!" - Jane Smith
             </p>
-            {/* Add more reviews as needed */}
           </>
         );
       default:
