@@ -5,11 +5,13 @@ import "./ProductComparisonPage.css"
 import image1 from '../ProductComparisonPage/imagess/image1.jpg';
 import star from '../ProductComparisonPage/imagess/star.png';
 import Meubel from '../ProductComparisonPage/imagess/Meubel.png';
-// import blogHero from "/images/blog.png";
 import General from './Generalcomparisonpage';
 import Productcomparison from './Productcomparison';
 import Dimensioncomparison from './Dimensioncomparison';
 import Warrantycomparison from './Warrantycomparison';
+import { MdArrowForwardIos } from "react-icons/md";
+import { IoIosArrowDown } from "react-icons/io";
+import ReuseableHero from '../../Components/ReuseableHero';
 
 
 const ProductComparisonPage = () => {
@@ -18,6 +20,7 @@ const ProductComparisonPage = () => {
   <div className='ProductComparisonCon'>
   <ReuseableHero page={"Product Comparison"} page1={"Comparison"} />
     {/* <div className='ProComparisonHerocon'>
+      <img src={image4} alt="" />
       <div className='Procomparisonlogob'>
         <div className='procomparisonup'>
           <div className='procomparisonupBox'></div>
@@ -26,14 +29,14 @@ const ProductComparisonPage = () => {
               <img src={Meubel} alt="" />
             </div>
           </div>
-        </div>
-        <div className='procomparisondown'>
+        </div> */}
+        {/* <div className='procomparisondown'>
           <div className='Procomparisonletter'>
             <h2>Product Comparison</h2>
           </div>
           <div className='ProcomparisonlHome'>
             <h3>Home</h3>
-            <MdArrowForwardIos />
+            <MdArrowForwardIos className=''/>
             <span>Comparison</span>
           </div>
         </div>
@@ -125,7 +128,7 @@ const ProductComparisonPage = () => {
           <div className='AddproductBox2'>
             <div className='Chooseaproductbox'>
               <button>Choose a product
-              <IoIosArrowDown  style={{ color: "white" }}/>
+              <IoIosArrowDown  className='Addproductarrow'/>
               </button>
             </div>
           </div>

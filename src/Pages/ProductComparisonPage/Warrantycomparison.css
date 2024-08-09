@@ -132,6 +132,7 @@
     font-weight: 500;
     line-height: 1.6rem;
     cursor: pointer;
+    border-radius: 5px;
     background-color: rgba(184, 142, 47, 1);
 }
 
@@ -215,6 +216,129 @@
 
 .WarrantyPtagboxs p{
     font-size: 14px;
+    /* font-family: sans-serif; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    line-height: 1.9rem;
+    overflow-wrap: break-word;
+}
+
+.WarrantycomparisonBoxzwrapDown{
+    width: 100%;
+    height: 15%;
+    /* background-color: blue; */
+}
+
+.WarrantycomparisonBoxzDown{
+    width: 100%;
+    height: 90%;
+    /* background-color: aqua; */
+}
+
+.Warrntybtn{
+    width: 90%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-left: 2%; */
+    /* background-color: red; */
+}
+
+.Warrntybtn button{
+    width: 85%;
+    height: 90%;
+    color: white;
+    font-size: 13px;
+    font-family: sans-serif;
+    font-weight: 500;
+    line-height: 1.9rem;
+    cursor: pointer;
+    background-color: rgba(184, 142, 47, 1);
+}
+
+}
+
+@media screen and (Width <=820px) {
+    .WarantycomparisonCon{
+        width: 100%;
+        height: 1500px;
+        /* background-color: blueviolet; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .WarantycomparisonConWrapper{
+        width: 100%;
+        height: 100%;
+        /* background-color: darkgrey; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .WarrantycomparisonBoxzwrapUp1{
+        width: 95%;
+        height: 100%;
+        /* background-color: green; */
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        /* gap: 30px; */
+    }
+    .WarrantycomparisonBoxzwrapUp{
+        width: 85%;
+        height: 100%;
+        /* background-color: green; */
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        /* gap: 30px; */
+    }
+
+    .WarrantycomparisonBoxz{
+        width: 25%;
+        height: 100%;
+        /* background-color: brown; */
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    }
+
+    .WarrantycomparisonBoxz1{
+        width: 25%;
+        height: 100%;
+        /* background-color: brown; */
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    }
+
+    .WarrantycomparisonBoxzUp{
+        width: 100%;
+        height: 12%;
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+    }
+
+    
+.WarrantycomparisonBoxzUp h3{
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 2.7rem;
+    font-family: sans-serif;
+    padding-left: 5%;
+
+}
+
+.WarrantyPtagboxs{
+    width: 100%;
+    height: 19%;
+    /* background-color: red; */
+
+}
+
+.WarrantyPtagboxs p{
+    font-size: 15px;
     /* font-family: sans-serif; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
@@ -371,9 +495,9 @@
 
 .Warrntybtn button{
     width: 80%;
-    height: 90%;
+    height: 75%;
     color: white;
-    font-size: 13px;
+    font-size: 12px;
     font-family: sans-serif;
     font-weight: 500;
     line-height: 1.9rem;
