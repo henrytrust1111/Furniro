@@ -6,7 +6,7 @@
 
 .ProductComparisonCon{
     width: 100%;
-    height: 100vh;
+    height: max-content;
     /* height: max-content; */
     background-color: rgba(255, 255, 255, 1);
 }
@@ -86,14 +86,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* gap: 50px; */
 }
 
 .Procomparisonletter h2{
-    font-size: 25px;
-    font-weight: 600;
+    font-size: 35px;
+    font-weight: 500;
     line-height: 2rem;
     /* color: red; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    word-spacing: 25px;
+    
 }
 
 .ProcomparisonlHome{
@@ -103,22 +106,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.ProcomparisonlHome h3:hover{
+    color: white;
+
 }
 
 .ProcomparisonlHome h3{
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 550;
     line-height: 1.8rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .ProcomparisonlHome span{
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     line-height: 1.8rem;
     color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.ProcomparisonlHome span:hover{
+    color: white;
 
 }
 
@@ -148,6 +162,11 @@
     height: 100%;
     border-radius: 5px;
     /* background-color: darkgrey; */
+    transition: all 350ms ease;
+}
+
+.ProductpagesconmainBox:hover{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .ProductpagesconmainBoxup{
@@ -160,6 +179,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .ProductpagesconmainBoxdown{
@@ -177,7 +197,7 @@
 }
 
 .Productpageslettercon1 h3{
-    font-size: 23.5px;
+    font-size: 22.5px;
     font-weight: 500;
     line-height: 2.5rem;
     font-family:  sans-serif;
@@ -198,10 +218,11 @@
     /* background-color: red; */
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .ProductViewmore1 p{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 2.5rem;
     color: rgba(114, 114, 114, 1)  ;
@@ -220,7 +241,7 @@
 
 .Viewmorlinee{
     width: 30%;
-    height: 6%;
+    height: 5%;
     background-color: rgba(114, 114, 114, 1);
 }
 
@@ -233,8 +254,8 @@
 }
 
 .AsgaadsofaBoxwrapper{
-    width: 100%;
-    height: 75%;
+    width: 80%;
+    height: 60%;
     /* background-color: red; */
     display: flex;
     justify-content: space-between;
@@ -250,7 +271,7 @@
 }
 
 .AsgaadsofaLetters h3{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     font-family: sans-serif;
     line-height: 2.9rem;
@@ -258,10 +279,10 @@
     /* color: red; */
 }
 .AsgaadsofaLetters p{
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
     font-family: sans-serif;
-    line-height: 2.5rem; 
+    line-height: 2.7rem; 
     padding-left: 2%;
 
 }
@@ -282,7 +303,7 @@
     gap: 5px;
 }
 .AsgaadsofaStar1 p{
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
     font-family: sans-serif;
     line-height: 2.5rem; 
@@ -290,13 +311,13 @@
 }
 
 .AsgaadsofaStar1 img{
-    width: 75%;
-    height: 58%;
+    width: 73%;
+    height: 56%;
  
 }
 
 .AsgaadsofaStar2{
-    width: 1%;
+    width: 0.5%;
     height: 100%;
     background-color:rgba(114, 114, 114, 1);
 }
@@ -312,7 +333,7 @@
 
 
 .AsgaadsofaStar3 p,span{
-    font-size: 13;
+    font-size: 12px;
     font-weight: 400;
     font-family: sans-serif;
     line-height: 2rem;
@@ -326,12 +347,12 @@
     /* background-color: blue; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .Outdoorsofasetwrapper{
-    width: 100%;
-    height: 75%;
+    width: 80%;
+    height: 60%;
     /* background-color: blueviolet; */
     display: flex;
     align-items: center;
@@ -348,7 +369,7 @@
 }
 
 .OutdoorsofasetLetter h3{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     font-family: sans-serif;
     line-height: 2.9rem;
@@ -356,10 +377,10 @@
 }
 
 .OutdoorsofasetLetter p{
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
     font-family: sans-serif;
-    line-height: 2.5rem; 
+    line-height: 2.7rem; 
     padding-left: 2%;
 
 }
@@ -381,7 +402,7 @@
 }
 
 .OutdoorStarsboxz1 p{
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
     font-family: sans-serif;
     line-height: 2.5rem;
@@ -389,12 +410,12 @@
 }
 
 .OutdoorStarsboxz1 img{
-    width: 75%;
-    height: 58%;
+    width: 73%;
+    height: 56%;
 }
 
 .OutdoorStarsboxz2{
-    width: 0.8%;
+    width: 0.6%;
     height: 100%;
     background-color: rgba(114, 114, 114, 1);
 }
@@ -409,7 +430,7 @@
 }
 
 .OutdoorStarsboxz3 p{
-    font-size: 13;
+    font-size: 12px;
     font-weight: 400;
     font-family: sans-serif;
     line-height: 2rem;
@@ -417,7 +438,7 @@
 }
 
 .OutdoorStarsboxz3 span{
-    font-size: 13;
+    font-size: 12px;
     font-weight: 400;
     font-family: sans-serif;
     line-height: 2rem;
@@ -450,7 +471,7 @@
 }
 
 .AddproductBox1 h3{
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 35.36px;
     margin-top: 20px;
@@ -465,6 +486,11 @@
     /* background-color: gray; */
 }
 
+.Addproductarrow{
+    color: white;
+    font-size: 26px;
+}
+
 .Chooseaproductbox{
     width: 70%;
     height: 45%;
@@ -477,11 +503,14 @@
     height: 100%;
     color: white;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 15px;
     font-family: sans-serif;
     font-weight: 600;
     line-height: 2rem;
     background-color: rgba(184, 142, 47, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 @media screen and (Width <=765px) {
@@ -570,11 +599,13 @@
 }
 
 .Procomparisonletter h2{
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 2.5rem;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 2rem;
     /* color: red; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    word-spacing: 25px;
+    
 }
 
 .ProcomparisonlHome{
@@ -594,6 +625,14 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.Homeearrow{
+    font-size: 13px;
+}
+
+.Homeearrow:hover{
+    color: white;
+}
+
 .ProcomparisonlHome span{
     font-size: 16px;
     font-weight: 500;
@@ -605,7 +644,7 @@
 
 .Productpagescon{
     width: 100%;
-    height: 55vh;
+    height: 75vh;
     /* background-color: black; */
     display: flex;
     align-items: center;
@@ -656,7 +695,7 @@
 }
 
 .Productpageslettercon1 h3{
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 500;
     line-height: 2.1rem;
     font-family:  sans-serif;
@@ -678,7 +717,7 @@
 }
 
 .ProductViewmore1 p{
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     line-height: 2rem;
     color: rgba(114, 114, 114, 1)  ;
@@ -694,7 +733,7 @@
 }
 
 .Viewmorlinee{
-    width: 50%;
+    width: 35%;
     height: 5%;
     background-color: rgba(114, 114, 114, 1);
     
@@ -709,8 +748,8 @@
 }
 
 .AsgaadsofaBoxwrapper{
-    width: 100%;
-    height: 50%;
+    width: 95%;
+    height: 47%;
     /* background-color: aqua; */
     display: flex;
     justify-content: space-between;
@@ -726,13 +765,13 @@
 }
 
 .AsgaadsofaLetters h3{
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
     font-family: sans-serif;
-    line-height: 2.6rem;
+    line-height: 2.7rem;
 }
 .AsgaadsofaLetters p{
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     font-family: sans-serif;
     line-height: 2.5rem; 
@@ -747,7 +786,7 @@
 }
 
 .AsgaadsofaStar2{
-    width: 1%;
+    width: 0.5%;
     height: 70%;
     background-color:rgba(114, 114, 114, 1);
     /* opacity: 50%; */
@@ -783,8 +822,8 @@
 }
 
 .Outdoorsofasetwrapper{
-    width: 100%;
-    height: 50%;
+    width: 95%;
+    height: 47%;
     /* background-color: blueviolet; */
     display: flex;
     align-items: center;
@@ -801,14 +840,14 @@
 }
 
 .OutdoorsofasetLetter h3{
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
     font-family: sans-serif;
-    line-height:2.6rem;
+    line-height:2.7rem;
 }
 
 .OutdoorsofasetLetter p{
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     font-family: sans-serif;
     line-height: 2.5rem; 
@@ -904,7 +943,7 @@
 }
 
 .AddproductBox1 h3{
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     line-height: 2.6rem;
     margin-top: 20px;
@@ -918,9 +957,14 @@
     /* background-color: gray; */
 }
 
+.Addproductarrow{
+    color: white;
+    font-size: 20px;
+}
+
 .Chooseaproductbox{
-    width: 95%;
-    height: 30%;
+    width: 90%;
+    height: 25%;
     /* background-color: aqua; */
 }
 
@@ -930,6 +974,442 @@
     color: white;
     border-radius: 5px;
     font-size: 12px;
+    font-family: sans-serif;
+    font-weight: 600;
+    line-height: 2rem;
+    background-color: rgba(184, 142, 47, 1);
+}
+     
+}
+
+@media screen and (Width <=820px) {
+    
+.ProductComparisonCon{
+    width: 100%;
+    /* height: 100vh; */
+    height: max-content;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.ProComparisonHerocon{
+    width: 100%;
+    height: 250px;
+    /* background-color: gainsboro; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url(); */
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain; */
+}
+
+.Procomparisonlogob{
+    width: 50%;
+    height: 55%;
+    /* background-color: darkcyan; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.procomparisonup{
+    width: 100%;
+    height: 50%;
+    /* background-color: brown; */
+}
+
+.procomparisonupBox{
+    width: 100%;
+    height: 50%;
+    /* background-color: red; */
+}
+.procomparisonupBox1{
+    width: 100%;
+    height: 50%;
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ComparisonLogo{
+    width: 18%;
+    height: 90%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.ComparisonLogo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.procomparisondown{
+    width: 100%;
+    height: 50%;
+    /* background-color: gray; */
+}
+
+.Procomparisonletter{
+    width: 100%;
+    height: 50%;
+    /* background-color: blueviolet; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Procomparisonletter h2{
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 2rem;
+    /* color: red; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    word-spacing: 25px;
+    
+}
+
+.Productpagescon{
+    width: 100%;
+    height: 75vh;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+}
+
+.ProductpagesconmainBoxwrapp{
+    width: 95%;
+    height: 90%;
+    display: flex;
+    /* background-color: red; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ProductpagesconmainBox{
+    width: 24.5%;
+    height: 100%;
+    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;  */
+    /* background-color: darkgrey; */
+}
+
+.ProductpagesconmainBoxup{
+    width: 100%;
+    height: 65%;
+    /* background-color: darkmagenta; */
+}
+
+.ProductpagesconmainBoxup img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ProductpagesconmainBoxdown{
+    width: 100%;
+    height: 45%;
+    /* background-color: aqua; */
+    
+}
+
+.Productpageslettercon1{
+    width: 50%;
+    height: 70%;
+    /* background-color: gray; */
+    /* display: flex; */
+}
+
+.Productpageslettercon1 h3{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 2.9rem;
+    font-family:  sans-serif;
+}
+
+
+.Productpageslettercon2{
+    width: 100%;
+    height: 30%;
+    /* background-color: blue; */
+}
+
+.ProductViewmore1{
+    width: 100%;
+    height: 50%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+}
+
+.ProductViewmore1 p{
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 2rem;
+    color: rgba(114, 114, 114, 1)  ;
+    font-family: sans-serif;
+    padding-top: 20%;
+}
+
+.ProductViewmore2{
+    width: 100%;
+    height: 40%;
+    /* background-color: gray; */
+    display: flex;
+ 
+}
+
+.Viewmorlinee{
+    width: 35%;
+    height: 5%;
+    background-color: rgba(114, 114, 114, 1);
+    
+}
+
+.AsgaadsofaBox{
+    width: 100%;
+    height: 100%;
+    /* background-color: darkcyan; */
+    display: flex;
+    align-items: center;
+}
+
+.AsgaadsofaBoxwrapper{
+    width: 95%;
+    height: 40%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.AsgaadsofaLetters{
+    width: 100%;
+    height: 30%;
+    /* background-color: darkorchid; */
+    display: flex;
+    align-items: center;
+}
+
+.AsgaadsofaLetters h3{
+    font-size: 19px;
+    font-weight: 600;
+    font-family: sans-serif;
+    line-height: 2.7rem;
+}
+.AsgaadsofaLetters p{
+    font-size: 13px;
+    font-weight: 500;
+    font-family: sans-serif;
+    line-height: 2.5rem; 
+}
+
+
+.AsgaadsofaStar1 img{
+    width: 63%;
+    height: 35%;
+
+ 
+}
+
+.AsgaadsofaStar2{
+    width: 0.5%;
+    height: 70%;
+    background-color:rgba(114, 114, 114, 1);
+    /* opacity: 50%; */
+}
+.AsgaadsofaStar3{
+    width: 39%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.AsgaadsofaStar3 p,span{
+    font-size: 8.5px;
+    font-weight: 400;
+    font-family: sans-serif;
+    line-height: 1.8rem;
+    color:  rgba(114, 114, 114, 1)
+
+}
+
+
+.Outdoorsofaset{
+    width: 100%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Outdoorsofasetwrapper{
+    width: 95%;
+    height: 40%;
+    /* background-color: blueviolet; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.OutdoorsofasetLetter{
+    width:100%;
+    height: 30%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+}
+
+.OutdoorsofasetLetter h3{
+    font-size: 19px;
+    font-weight: 600;
+    font-family: sans-serif;
+    line-height:2.8rem;
+}
+
+.OutdoorsofasetLetter p{
+    font-size: 13px;
+    font-weight: 500;
+    font-family: sans-serif;
+    line-height: 2.5rem; 
+
+}
+
+.OutdoorStars{
+    width: 100%;
+    height: 100%;
+    /* background-color: blueviolet; */
+    display: flex;
+}
+
+.OutdoorStarsboxz1{
+    width: 60%;
+    height: 100%;
+    /* background-color: darkgoldenrod; */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.OutdoorStarsboxz1 p{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: sans-serif;
+    line-height: 2.5rem; 
+}
+
+.OutdoorStarsboxz1 img{
+    width: 63%;
+    height: 35%;
+}
+
+.OutdoorStarsboxz2{
+    width: 1%;
+    height: 70%;
+    background-color: rgba(114, 114, 114, 1);
+}
+.OutdoorStarsboxz3{
+    width: 39%;
+    height: 100%;
+    /* background-color: darkgoldenrod; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.OutdoorStarsboxz3 p{
+    font-size: 8.5px;
+    font-weight: 400;
+    font-family: sans-serif;
+    line-height: 1.8rem;
+    color:  rgba(114, 114, 114, 1);
+}
+
+.OutdoorStarsboxz3 span{
+    font-size: 10.5px;
+    font-weight: 400;
+    font-family: sans-serif;
+    line-height: 1.8rem;
+    color:  rgba(114, 114, 114, 1);
+
+}
+
+.AddAProductBoxs{
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AddAProductBoxwrapper{
+    width: 100%;
+    height: 80%;
+    /* background-color: darkgreen; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.AddproductBox1{
+    width: 99%;
+    height: 25%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    
+}
+
+.AddproductBox1 h3{
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 2.6rem;
+    margin-top: 20px;
+    font-family: sans-serif;
+ 
+}
+
+.AddproductBox2{
+    width: 100%;
+    height: 50%;
+    /* background-color: gray; */
+}
+
+.Addproductarrow{
+    color: white;
+    font-size: 20px;
+}
+
+.Chooseaproductbox{
+    width: 90%;
+    height: 25%;
+    /* background-color: aqua; */
+}
+
+.Chooseaproductbox button{
+    width: 100%;
+    height: 100%;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
     font-family: sans-serif;
     font-weight: 600;
     line-height: 2rem;
@@ -1026,11 +1506,12 @@
 }
 
 .Procomparisonletter h2{
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 500;
     line-height: 2.5rem;
     /* color: red; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    word-spacing: 15px;
 }
 
 .ProcomparisonlHome{
@@ -1044,14 +1525,22 @@
 }
 
 .ProcomparisonlHome h3{
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 550;
     line-height: 1.8rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.Homeearrow{
+    font-size: 12px;
+}
+
+.Homeearrow:hover{
+    color: white;
+}
+
 .ProcomparisonlHome span{
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.8rem;
     color: black;
@@ -1122,10 +1611,11 @@
 }
 
 .Productpageslettercon1 h3{
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     line-height: 2.5rem;
-    font-family:  sans-serif;
+    /* font-family:  sans-serif; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
@@ -1164,7 +1654,7 @@
 }
 
 .Viewmorlinee{
-    width: 23%;
+    width: 20%;
     height: 5%;
     background-color: rgba(114, 114, 114, 1);
     margin-left: 40px;
@@ -1203,7 +1693,7 @@
     line-height: 2.6rem;
 }
 .AsgaadsofaLetters p{
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 500;
     font-family: sans-serif;
     line-height: 2.5rem; 
@@ -1279,7 +1769,7 @@
 }
 
 .OutdoorsofasetLetter p{
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 500;
     font-family: sans-serif;
     line-height: 2.5rem; 
@@ -1382,6 +1872,11 @@
  
 }
 
+.Addproductarrow{
+    color: white;
+    font-size: 18px;
+}
+
 .AddproductBox2{
     width: 100%;
     height: 50%;
@@ -1390,7 +1885,7 @@
 
 .Chooseaproductbox{
     width: 70%;
-    height: 38%;
+    height: 30%;
     /* background-color: aqua; */
 }
 
