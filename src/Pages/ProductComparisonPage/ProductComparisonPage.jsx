@@ -5,20 +5,19 @@ import "./ProductComparisonPage.css"
 import image1 from '../ProductComparisonPage/imagess/image1.jpg';
 import star from '../ProductComparisonPage/imagess/star.png';
 import Meubel from '../ProductComparisonPage/imagess/Meubel.png';
+// import blogHero from "/images/blog.png";
 import General from './Generalcomparisonpage';
 import Productcomparison from './Productcomparison';
 import Dimensioncomparison from './Dimensioncomparison';
 import Warrantycomparison from './Warrantycomparison';
-import { MdArrowForwardIos } from "react-icons/md";
-import { IoIosArrowDown } from "react-icons/io";
 
 
 const ProductComparisonPage = () => {
   return (
   <>
   <div className='ProductComparisonCon'>
-    <div className='ProComparisonHerocon'>
-      {/* <img src={image4} alt="" /> */}
+  <ReuseableHero page={"Product Comparison"} page1={"Comparison"} />
+    {/* <div className='ProComparisonHerocon'>
       <div className='Procomparisonlogob'>
         <div className='procomparisonup'>
           <div className='procomparisonupBox'></div>
@@ -39,7 +38,7 @@ const ProductComparisonPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
     <div className='Productpagescon'>
       <div className='ProductpagesconmainBoxwrapp'>
       <div className='ProductpagesconmainBox'>
