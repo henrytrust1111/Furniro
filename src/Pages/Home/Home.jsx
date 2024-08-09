@@ -12,7 +12,7 @@ const Home = () => {
       <ScrollToTop />
       <Hero />
       <Categories />
-      <Products />
+      <Products Title={"Our Products"} />
       <Section />
       <GridImages />
     </>

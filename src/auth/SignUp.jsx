@@ -2,19 +2,15 @@ import React, { useState } from "react";
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import logo from "/icons/logo.svg";
 import { useNavigate } from "react-router-dom";
-import OTPModal from "./OTPModal";  // Import the OTPModal component
+import OTPModal from "./OTPModal"; 
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [showModal, setShowModal] = useState(false);  // State to control the OTP modal
+  const [showModal, setShowModal] = useState(false);  
   const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
-  };
-
-  const handleLogo = () => {
-    navigate("/");
   };
 
   const handleClick = (val) => {
@@ -27,12 +23,12 @@ const SignUp = () => {
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    setShowModal(true);  // Show the OTP modal on sign-up button click
+    setShowModal(true); 
   };
 
   const handleCloseModal = () => {
-    setShowModal(false);  // Close the OTP modal
-    navigate("/otp");  // Navigate to the OTP component
+    setShowModal(false);  
+    navigate("/otp");  
   };
 
   return (
@@ -145,7 +141,7 @@ const SignUp = () => {
               Already have an account yet?
               <span
                 href="/#/login"
-                className="font-medium text-[#EF6911] hover:underline cursor-pointer"
+                className="font-medium text-[#EF6911] hover:underline cursor-pointer text-base"
                 onClick={() => handleClick("login")}
               >
                 Login

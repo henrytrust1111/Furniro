@@ -12,6 +12,7 @@ import Login from "../auth/Login";
 import SignUp from "../auth/SignUp";
 import OTPComponent from "../auth/OTPComponent";
 import ForgetPassword from "../auth/ForgetPassword";
+import Checkout from "../Pages/Checkout/Checkout";
 
 
 const route = createHashRouter([
@@ -50,6 +51,10 @@ const route = createHashRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
       },
     ],
   },

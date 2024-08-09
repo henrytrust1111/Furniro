@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Breadcrumbs = () => {
   return (
-    <section className="w-full h-14 bg-[#F9F1E7] flex gap-4 items-center pl-4 lg:pl-24">
+    <section className="w-full h-14 bg-[#F9F1E7] flex gap-4 items-center pl-4 lg:pl-24 mt-[55px]">
       <div className="flex items-center">
-        <a href="/" className="text-gray-600 hover:text-gray-900 flex items-center justify-center text-sm">Home</a>
+        <Link to="/" className="text-gray-600 hover:text-gray-900 flex items-center justify-center text-sm">Home</Link>
         <i class='bx bx-chevron-right flex items-center mt-[1px]'></i>
       </div>
       <div className="flex items-center">
-        <a href="/" className="text-gray-600 hover:text-gray-900 flex items-center justify-center text-sm">Shop</a>
+        <Link to="/shop" className="text-gray-600 hover:text-gray-900 flex items-center justify-center text-sm">Shop</Link>
         <i class='bx bx-chevron-right flex items-center mt-[1px]'></i>
       </div>
       <div>

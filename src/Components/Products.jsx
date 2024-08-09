@@ -95,7 +95,7 @@ const products = [
   // Add more products as needed
 ];
 
-const Products = () => {
+const Products = ({Title}) => {
   const [visibleProducts, setVisibleProducts] = useState(4);
 
   const showMoreProducts = () => {
@@ -113,7 +113,7 @@ const Products = () => {
   return (
     <section className="py-16 font-[poppins]">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-2xl font-bold mb-8 text-center">Our Products</h2>
+        <h2 className="text-2xl font-bold mb-8 text-center">{Title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-11 lg:px-11 md:px-0 ">
           {products.slice(0, visibleProducts).map((product) => (
             <div
