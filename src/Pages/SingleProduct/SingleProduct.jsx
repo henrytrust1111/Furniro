@@ -7,6 +7,7 @@ import RelatedProducts from "../../Components/RelatedProducts";
 import productsData from "../../Components/productData";
 import Cart from "../../Components/Header/Cart";
 import "./SingleProduct.css";
+import Products from "../../Components/Products";
 
 const SingleProduct = () => {
 
@@ -25,7 +26,8 @@ const SingleProduct = () => {
       <Breadcrumbs />
       <ProductDetails onAddtocart={handleAddToCart} />
       <ProductDescription />
-      <RelatedProducts products={productsData}/>
+      {/* <RelatedProducts products={productsData}/> */}
+      <Products Title= "Relatable Product" />
       {isCartVisible && (
         <Cart onClose={handleCloseCart}/>
       )}
