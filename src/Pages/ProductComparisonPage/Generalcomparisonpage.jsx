@@ -10,36 +10,42 @@ const General =()=>{
                 <h3>General</h3>
             </div>
             <div className="GeneralCompariBoxdown">
+            <div className="GeneralCompariBoxdownwrap1">
                 <p>Sales Package</p>
                 <p>Model Number</p>
                 <p>Secondary Materials</p>
                 <p>Configuration</p>
                 <p>Uphasltery Material</p>
                 <p>Uphasltery Color</p>
+                </div>
             </div>
         </div>
         <div className="GeneralCompari">
             <div className="GeneralCompariBoxup1">
             </div>
             <div className="GeneralCompariBoxdown">
+                <div className="GeneralCompariBoxdownwrap">
                 <p>Sales Package</p>
                 <p>Model Number</p>
                 <p>Secondary Materials</p>
                 <p>Configuration</p>
                 <p>Uphasltery Material</p>
                 <p>Uphasltery Color</p>
+                </div>
             </div>
         </div>
         <div className="GeneralCompari">
             <div className="GeneralCompariBoxup1">
             </div>
             <div className="GeneralCompariBoxdown">
+            <div className="GeneralCompariBoxdownwrap">
                 <p>Sales Package</p>
                 <p>Model Number</p>
                 <p>Secondary Materials</p>
                 <p>Configuration</p>
                 <p>Uphasltery Material</p>
                 <p>Uphasltery Color</p>
+                </div>
             </div>
         </div>
         <div className="GeneralCompari1">

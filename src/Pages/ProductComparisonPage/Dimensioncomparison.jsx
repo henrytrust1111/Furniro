@@ -10,36 +10,42 @@ const Dimensioncomparison =()=>{
                 <h3>Dimension</h3>
             </div>
             <div className='DmensioncomparBoxzDown'>
+                <div className='DmensioncomparBoxzDownwrap1'>
                 <p>Sales Package</p>
                 <p>Model Number</p>
                 <p>Secondary Materials</p>
                 <p>Configuration</p>
                 <p>Uphasltery Material</p>
                 <p>Uphasltery Color</p>
+                </div>
             </div>
         </div>
         <div className='DmensioncomparBoxz'>
             <div className='DmensioncomparBoxzUp2'>
             </div>
             <div className='DmensioncomparBoxzDown'>
+            <div className='DmensioncomparBoxzDownwrap'>
                 <p>Sales Package</p>
                 <p>Model Number</p>
                 <p>Secondary Materials</p>
                 <p>Configuration</p>
                 <p>Uphasltery Material</p>
                 <p>Uphasltery Color</p>
+                </div>
             </div>
         </div>
         <div className='DmensioncomparBoxz'>
             <div className='DmensioncomparBoxzUp2'>
             </div>
             <div className='DmensioncomparBoxzDown'>
+            <div className='DmensioncomparBoxzDownwrap'>
                 <p>Sales Package</p>
                 <p>Model Number</p>
                 <p>Secondary Materials</p>
                 <p>Configuration</p>
                 <p>Uphasltery Material</p>
                 <p>Uphasltery Color</p>
+                </div>
             </div>
         </div>
         <div className='DmensioncomparBoxz2'>

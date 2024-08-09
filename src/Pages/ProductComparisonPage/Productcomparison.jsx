@@ -9,36 +9,42 @@ const Productcomparison =()=>{
                 <h3>Product</h3>
             </div>
             <div className='ProductComParBoxdown'>
+                <div className='ProductComParBoxdownwrap1'>
                 <p>Sales Package</p>
                 <p>Model Number</p>
                 <p>Secondary Materials</p>
                 <p>Configuration</p>
                 <p>Uphasltery Material</p>
                 <p>Uphasltery Color</p>
+                </div>
             </div>
         </div>
         <div className='ProductComParBox'>
             <div className='ProductComParBoxup1'>
             </div>
             <div className='ProductComParBoxdown'>
+            <div className='ProductComParBoxdownwrap'>
                 <p>Sales Package</p>
                 <p>Model Number</p>
                 <p>Secondary Materials</p>
                 <p>Configuration</p>
                 <p>Uphasltery Material</p>
                 <p>Uphasltery Color</p>
+                </div>
             </div>
         </div>
         <div className='ProductComParBox'>
             <div className='ProductComParBoxup1'>
             </div>
             <div className='ProductComParBoxdown'>
+            <div className='ProductComParBoxdownwrap'>
                 <p>Sales Package</p>
                 <p>Model Number</p>
                 <p>Secondary Materials</p>
                 <p>Configuration</p>
                 <p>Uphasltery Material</p>
                 <p>Uphasltery Color</p>
+                </div>
             </div>
         </div>
         <div className='ProductComParBox1'>
