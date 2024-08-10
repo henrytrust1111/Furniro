@@ -1,28 +1,25 @@
 import React, { useState } from "react";
 
-const ProductDetails = ({onAddtocart}) => {
+const ProductDetails = ({ onAddtocart }) => {
   const [bgColor, setBgColor] = useState("");
-  const [quantity,setquantity] = useState(0);
-  // const [decrease,setdecrease] = useState(0);
+  const [quantity, setquantity] = useState(0);
 
   const onColorChange = (color) => {
     setBgColor(color);
   };
 
-  const increment = ()=>{
-    setquantity (prevQuantity => prevQuantity + 1);
-  }
-  const decrement = ()=>{
-    setquantity (prevQuantity => prevQuantity > 0 ? prevQuantity - 1 : 0);
-  }
-
- 
+  const increment = () => {
+    setquantity((prevQuantity) => prevQuantity + 1);
+  };
+  const decrement = () => {
+    setquantity((prevQuantity) => (prevQuantity > 0 ? prevQuantity - 1 : 0));
+  };
 
   return (
-    <section className="w-full flex flex-col lg:flex-row">
-      <div className="w-full lg:w-[50%] lg:pt-14 p-4 flex flex-col gap-4 justify-center">
+    <section className="w-full flex flex-col lg:flex-row overflow-hidden">
+      <div className="w-full lg:w-1/2 lg:pt-14 p-4 flex flex-col gap-4 justify-center">
         <div className="w-full flex flex-col lg:flex-row gap-4 lg:px-16">
-          <div className={`lg:hidden flex w-full lg:h-[400px] ${bgColor}`}>
+          <div className={`lg:hidden flex w-full ${bgColor}`}>
             <img
               src="/singleProduct.png"
               className="object-cover h-full"
@@ -31,20 +28,22 @@ const ProductDetails = ({onAddtocart}) => {
           </div>
           <div className="grid grid-cols-2 px-12 lg:px-0 lg:grid-cols-1 gap-4">
             <div className={`rounded-sm ${bgColor}`}>
-                <img src="Group 94.png" className="" alt="" />
+              <img src="Group 94.png" className="" alt="" />
             </div>
             <div className={`rounded-sm ${bgColor}`}>
-                <img src="Group 94.png" className="" alt="" />
+              <img src="Group 94.png" className="" alt="" />
             </div>
-            <div className={`ounded-sm ${bgColor}`}>
-                <img src="Group 94.png" className="" alt="" />
+            <div className={`rounded-sm ${bgColor}`}>
+              <img src="Group 94.png" className="" alt="" />
             </div>
-            <div className={`ounded-sm ${bgColor}`}>
-                <img src="Group 94.png" className="" alt="" />
+            <div className={`rounded-sm ${bgColor}`}>
+              <img src="Group 94.png" className="" alt="" />
             </div>
           </div>
 
-          <div className={`hidden lg:flex lg:w-[50%] lg:h-[400px] rounded-sm ${bgColor}`}>
+          <div
+            className={`hidden lg:flex lg:w-full lg:h-[400px] rounded-sm ${bgColor}`}
+          >
             <img
               src="/singleProduct.png"
               className="object-cover w-full h-full"
@@ -54,7 +53,7 @@ const ProductDetails = ({onAddtocart}) => {
         </div>
       </div>
 
-      <div className="w-full lg:w-[50%] pt-14 flex flex-col gap-4 p-4">
+      <div className="w-full lg:w-1/2 pt-14 flex flex-col gap-4 p-4">
         <h4>Asgaard sofa</h4>
         <h5 className="text-xs text-[#b7b7b7]">Rs. 250,000.00</h5>
         <div className="flex gap-4">
@@ -71,7 +70,7 @@ const ProductDetails = ({onAddtocart}) => {
           <p className="text-xs text-[#b7b7b7]">5 Customer Review</p>
         </div>
         <div>
-          <p className="text-xs lg:text-sm w-full lg:w-[400px]">
+          <p className="text-xs lg:text-sm w-full">
             Setting the bar as one of the loudest speakers in its class, the
             Kilburn is a compact, stout-hearted hero with a well-balanced audio
             which boasts a clear midrange and extended highs for a sound.
@@ -108,11 +107,18 @@ const ProductDetails = ({onAddtocart}) => {
         </div>
         <div className="flex gap-4 mb-6">
           <div className="w-32 h-12 border-2 rounded-lg flex justify-between items-center p-2">
-            <p onClick={decrement} className="text-sm cursor-pointer">-</p>
+            <p onClick={decrement} className="text-sm cursor-pointer">
+              -
+            </p>
             <p className="text-sm">{quantity}</p>
-            <p onClick={increment} className="text-sm cursor-pointer">+</p>
+            <p onClick={increment} className="text-sm cursor-pointer">
+              +
+            </p>
           </div>
-          <div onClick={onAddtocart} className="w-32 lg:w-40 h-12 border-[0.8px] cursor-pointer border-[#242424] rounded-lg flex items-center justify-center p-2 shadow-sm text-[10px] lg:text-sm">
+          <div
+            onClick={onAddtocart}
+            className="w-32 lg:w-40 h-12 border-[0.8px] cursor-pointer border-[#242424] rounded-lg flex items-center justify-center p-2 shadow-sm text-[10px] lg:text-sm"
+          >
             Add to cart
           </div>
           <div className="w-32 lg:w-40 border-[0.8px] border-[#242424] rounded-lg flex gap-4 items-center justify-center p-2 shadow-sm">
@@ -121,7 +127,7 @@ const ProductDetails = ({onAddtocart}) => {
           </div>
         </div>
         {/* Product Info Section */}
-        <div className="w-[480px] h-[0.8px] border-b"></div>
+        <div className="w-full border-b"></div>
         <div className="product-info flex flex-col gap-3 mt-4">
           <div className="info-row flex gap-8">
             <div className="label text-[#b7b7b7] text-xs w-20">SKU</div>
