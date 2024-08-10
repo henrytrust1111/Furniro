@@ -10,6 +10,9 @@ import Contact from "../Pages/Contact/Contact";
 import ProductComparisonPage from "../Pages/ProductComparisonPage/ProductComparisonPage";
 import Login from "../auth/Login";
 import SignUp from "../auth/SignUp";
+import OTPComponent from "../auth/OTPComponent";
+import ForgetPassword from "../auth/ForgetPassword";
+import Checkout from "../Pages/Checkout/Checkout";
 
 
 const route = createHashRouter([
@@ -49,6 +52,10 @@ const route = createHashRouter([
         path: "/contact",
         element: <Contact />,
       },
+      {
+        path: "/checkout",
+        element: <Checkout />,
+      },
     ],
   },
 
@@ -60,6 +67,16 @@ const route = createHashRouter([
   {
     path: "/signup",
     element: <SignUp />,
+  },
+
+  {
+    path: "/otp",
+    element: <OTPComponent />,
+  },
+
+  {
+    path: "/forget-password",
+    element: <ForgetPassword />,
   },
   
 ]);

@@ -1,7 +1,7 @@
 import React from "react";
 const Cart = ({onClose})=>{
     return(
-        <div className="lg:w-[350px] h-[550px] bg-white shadow-lg absolute top-96 lg:top-0 rounded-lg lg:right-3 z-50 p-6 flex flex-col gap-6">
+        <div className=" lg:w-[350px] h-[550px] bg-white shadow-lg absolute top-[220px] rounded-lg right-3  p-6 flex flex-col gap-6 z-[999]">
             <div className="h-[75px] flex gap-6 flex-col ">
                 <div className="flex items-center justify-between">
                     <h1 className="text-sm">Shopping Cart</h1>
@@ -33,4 +33,5 @@ const Cart = ({onClose})=>{
         </div>
     )
 }
+
 export default Cart;
