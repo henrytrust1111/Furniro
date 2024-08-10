@@ -11,7 +11,7 @@ const Warrantycomparison =()=>{
             </div>
             <div className='WarrantycomparisonBoxzDown'>
                 <div className='WarrantycomparisonBoxzDownwrapper'>
-                    <div className='WarrantycomparisonBoxzwrapUp'>
+                    <div className='WarrantycomparisonBoxzwrapUp1'>
                         <div className='WarrantyPtagboxs'>
                         <p>Warranty Summary</p>
                         </div>
