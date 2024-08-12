@@ -4,8 +4,8 @@ const Cart = ({ onClose }) => {
   return (
     <>
       <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-[998]"></div>
-      <div className="fixed lg:w-[350px] h-[550px] bg-white shadow-lg top-[220px] rounded-lg lg:right-3 lg:p-6 flex flex-col gap-6 z-[999]">
-        <div className="h-[75px] flex gap-6 flex-col ">
+      <div className="fixed lg:w-[350px] w-full max-w-[350px] h-[550px] bg-white shadow-lg top-[180px] lg:top-[220px] rounded-lg lg:right-3 p-6 flex flex-col gap-6 z-[999]">
+        <div className="h-[75px] flex gap-6 flex-col">
           <div className="flex items-center justify-between">
             <h1 className="text-sm">Shopping Cart</h1>
             <i className="bx bxs-shopping-bag"></i>

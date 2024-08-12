@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 
 const ProductDetails = ({ onAddtocart }) => {
-  const [bgColor, setBgColor] = useState("");
   const [quantity, setquantity] = useState(0);
-
-  const onColorChange = (color) => {
-    setBgColor(color);
-  };
 
   const increment = () => {
     setquantity((prevQuantity) => prevQuantity + 1);
@@ -19,7 +14,7 @@ const ProductDetails = ({ onAddtocart }) => {
     <section className="w-full flex flex-col lg:flex-row overflow-hidden">
       <div className="w-full lg:w-1/2 lg:pt-14 p-4 flex flex-col gap-4 justify-center">
         <div className="w-full flex flex-col lg:flex-row gap-4 lg:px-16">
-          <div className={`lg:hidden flex w-full ${bgColor}`}>
+          <div className={`lg:hidden flex w-full`}>
             <img
               src="/singleProduct.png"
               className="object-cover h-full"
@@ -27,23 +22,21 @@ const ProductDetails = ({ onAddtocart }) => {
             />
           </div>
           <div className="grid grid-cols-2 px-12 lg:px-0 lg:grid-cols-1 gap-4">
-            <div className={`rounded-sm ${bgColor}`}>
+            <div className="rounded-sm">
               <img src="Group 94.png" className="" alt="" />
             </div>
-            <div className={`rounded-sm ${bgColor}`}>
+            <div className="rounded-sm">
               <img src="Group 94.png" className="" alt="" />
             </div>
-            <div className={`rounded-sm ${bgColor}`}>
+            <div className="rounded-sm">
               <img src="Group 94.png" className="" alt="" />
             </div>
-            <div className={`rounded-sm ${bgColor}`}>
+            <div className="rounded-sm">
               <img src="Group 94.png" className="" alt="" />
             </div>
           </div>
 
-          <div
-            className={`hidden lg:flex lg:w-full lg:h-[400px] rounded-sm ${bgColor}`}
-          >
+          <div className={`hidden lg:flex lg:w-full lg:h-[400px] rounded-sm`}>
             <img
               src="/singleProduct.png"
               className="object-cover w-full h-full"
@@ -88,21 +81,6 @@ const ProductDetails = ({ onAddtocart }) => {
             <div className="w-8 h-8 rounded-sm bg-[#F9F1E7] flex items-center justify-center text-xs">
               XS
             </div>
-          </div>
-          <span className="text-xs">Color:</span>
-          <div className="flex gap-4">
-            <div
-              className="w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center text-xs cursor-pointer"
-              onClick={() => onColorChange("bg-purple-500")}
-            ></div>
-            <div
-              className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-xs cursor-pointer"
-              onClick={() => onColorChange("bg-green-500")}
-            ></div>
-            <div
-              className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-xs cursor-pointer"
-              onClick={() => onColorChange("bg-blue-500")}
-            ></div>
           </div>
         </div>
         <div className="flex gap-4 mb-6">
