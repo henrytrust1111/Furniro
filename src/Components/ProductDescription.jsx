@@ -71,10 +71,16 @@ const ProductDescription = () => {
               Additional &nbsp; &nbsp;&nbsp; &nbsp; Info
             </div>
             <div
-              className={`p-4 text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "reviews" ? "text-[#000000]" : "text-[#242424]"}`}
+              className={`p-4 flex lg:hidden text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "reviews" ? "text-[#000000]" : "text-[#242424]"}`}
               onClick={() => setActiveTab("reviews")}
             >
               Reviews &nbsp; &nbsp; &nbsp; [5]
+            </div>
+            <div
+              className={`p-4 hidden lg:flex text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "reviews" ? "text-[#000000]" : "text-[#242424]"}`}
+              onClick={() => setActiveTab("reviews")}
+            >
+              Reviews[5]
             </div>
           </div>
           {renderContent()}

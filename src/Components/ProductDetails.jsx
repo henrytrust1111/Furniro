@@ -91,7 +91,7 @@ const ProductDetails = ({ onAddtocart }) => {
           <p className="text-xs text-[#b7b7b7]">5 Customer Review</p>
         </div>
         <div>
-          <p className="w-[500px] text-xs lg:text-sm">
+          <p className="w-full lg:w-[500px] text-xs lg:text-sm">
             Setting the bar as one of the loudest speakers in its class, the
             Kilburn is a compact, stout-hearted hero with a well-balanced audio
             which boasts a clear midrange and extended highs for a sound.
