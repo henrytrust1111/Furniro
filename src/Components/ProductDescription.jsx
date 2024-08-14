@@ -8,7 +8,8 @@ const ProductDescription = () => {
       case "description":
         return (
           <>
-            <p className="text-center text-xs lg:text-sm text-[#9F9F9F] leading-relaxed">
+          <div className="w-full flex items-center justify-center">
+            <span className="flex max-w-[700px] text-center text-xs lg:text-sm text-[#9F9F9F] leading-relaxed">
               Embodying the raw, wayward spirit of rock roll, the Kilburn portable active stereo speaker takes
               the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.
               Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar
@@ -16,23 +17,28 @@ const ProductDescription = () => {
               which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue
               knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap
               enables easy and stylish travel
-            </p>
+            </span>
+          </div>
           </>
         );
       case "additionalInfo":
         return (
           <>
+          <div className="w-full flex items-center justify-center">
             <p className="text-center text-xs lg:text-sm text-[#9F9F9F] leading-relaxed">
               Here is some additional information about the product.
             </p>
+          </div>
           </>
         );
       case "reviews":
         return (
           <>
+          <div className="w-full flex items-center justify-center">
             <p className="text-center text-xs lg:text-sm text-[#9F9F9F] leading-relaxed">
               Customer Reviews
             </p>
+          </div>
           </>
         );
       default:
@@ -43,32 +49,32 @@ const ProductDescription = () => {
   return (
     <section className="w-full mt-14">
       <div className="w-full">
-        <div className="w-full h-[0.8px] border-b"></div>
         <div className="flex flex-col gap-8 px-4 lg:px-24">
+          <div className="w-full h-[0.8px] border-b"></div>
           <div className="flex justify-center gap-4 lg:gap-14">
             <div
-              className={`p-4 text-xs lg:text-sm cursor-pointer hover:font-semibold ${activeTab === "description" ? "text-[#000000]" : "text-[#242424]"}`}
+              className={`p-4 text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "description" ? "text-[#000000]" : "text-[#242424]"}`}
               onClick={() => setActiveTab("description")}
             >
               Description
             </div>
             <div
-              className={`hidden lg:flex p-4 text-xs lg:text-sm cursor-pointer hover:font-semibold ${activeTab === "additionalInfo" ? "text-[#000000]" : "text-[#242424]"}`}
+              className={`hidden lg:flex p-4 text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "additionalInfo" ? "text-[#000000]" : "text-[#242424]"}`}
               onClick={() => setActiveTab("additionalInfo")}
             >
               Additional Information
             </div>
             <div
-              className={`flex lg:hidden p-4 text-xs lg:text-sm cursor-pointer ${activeTab === "additionalInfo" ? "text-[#000000]" : "text-[#242424]"}`}
+              className={`flex lg:hidden text-[12px] items-center lg:text-lg cursor-pointer font-semibold ${activeTab === "additionalInfo" ? "text-[#000000]" : "text-[#242424]"}`}
               onClick={() => setActiveTab("additionalInfo")}
             >
-              Additional <br /> <p>Info</p>
+              Additional &nbsp; &nbsp;&nbsp; &nbsp; Info
             </div>
             <div
-              className={`p-4 text-xs lg:text-sm cursor-pointer hover:font-semibold ${activeTab === "reviews" ? "text-[#000000]" : "text-[#242424]"}`}
+              className={`p-4 text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "reviews" ? "text-[#000000]" : "text-[#242424]"}`}
               onClick={() => setActiveTab("reviews")}
             >
-              Reviews [5]
+              Reviews &nbsp; &nbsp; &nbsp; [5]
             </div>
           </div>
           {renderContent()}
@@ -76,6 +82,7 @@ const ProductDescription = () => {
             <img src="/Group 109.png" alt="Product" className="hidden lg:flex"/>
             <img src="/Group 109.png" alt="Product" className="flex lg:hidden w-full" />
           </div>
+          <div className="w-full h-[0.8px] border-b"></div>
         </div>
       </div>
     </section>
