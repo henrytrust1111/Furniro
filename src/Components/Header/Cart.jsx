@@ -17,7 +17,7 @@ const Cart = ({onClose})=>{
                 <h1>vbnm,</h1>
             </div>
 
-            <div className="flex flex-col h-[75px] gap-6">
+            <div className="flex flex-col h-[75px] gap-6 ">
                 <div className="flex justify-between">
                     <p className="text-sm">Subtotal</p>
                     <p className="text-sm">Rs2500000</p>
