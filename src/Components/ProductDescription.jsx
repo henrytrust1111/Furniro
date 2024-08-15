@@ -8,41 +8,37 @@ const ProductDescription = () => {
       case "description":
         return (
           <>
-            <p className="text-center text-xs lg:text-sm text-[#b7b7b7] leading-relaxed">
+          <div className="w-full flex items-center justify-center">
+            <span className="flex max-w-[700px] text-center text-xs lg:text-sm text-[#9F9F9F] leading-relaxed">
               Embodying the raw, wayward spirit of rock roll, the Kilburn portable active stereo speaker takes
               the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.
-            </p>
-            <p className="text-center text-xs lg:text-sm text-[#b7b7b7] leading-relaxed">
               Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar
               as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio
               which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue
               knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap
-              enables easy and stylish travel.
-            </p>
+              enables easy and stylish travel
+            </span>
+          </div>
           </>
         );
       case "additionalInfo":
         return (
           <>
-            <p className="text-center text-xs lg:text-sm text-[#b7b7b7] leading-relaxed">
+          <div className="w-full flex items-center justify-center">
+            <p className="text-center text-xs lg:text-sm text-[#9F9F9F] leading-relaxed">
               Here is some additional information about the product.
             </p>
-            {/* Add more content as needed */}
+          </div>
           </>
         );
       case "reviews":
         return (
           <>
-            <p className="text-center text-xs lg:text-sm text-[#b7b7b7] leading-relaxed">
+          <div className="w-full flex items-center justify-center">
+            <p className="text-center text-xs lg:text-sm text-[#9F9F9F] leading-relaxed">
               Customer Reviews
             </p>
-            <p className="text-center text-xs lg:text-sm text-[#b7b7b7] leading-relaxed">
-              "This product is amazing!" - John Doe
-            </p>
-            <p className="text-center text-xs lg:text-sm text-[#b7b7b7] leading-relaxed">
-              "Would buy again!" - Jane Smith
-            </p>
-            {/* Add more reviews as needed */}
+          </div>
           </>
         );
       default:
@@ -53,32 +49,38 @@ const ProductDescription = () => {
   return (
     <section className="w-full mt-14">
       <div className="w-full">
-        <div className="w-full h-[0.8px] border-b"></div>
         <div className="flex flex-col gap-8 px-4 lg:px-24">
+          <div className="w-full h-[0.8px] border-b"></div>
           <div className="flex justify-center gap-4 lg:gap-14">
             <div
-              className={`p-4 text-xs lg:text-sm cursor-pointer ${activeTab === "description" ? "text-[#000000]" : "text-[#242424]"}`}
+              className={`p-4 text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "description" ? "text-[#000000]" : "text-[#242424]"}`}
               onClick={() => setActiveTab("description")}
             >
               Description
             </div>
             <div
-              className={`hidden lg:flex p-4 text-xs lg:text-sm cursor-pointer ${activeTab === "additionalInfo" ? "text-[#000000]" : "text-[#242424]"}`}
+              className={`hidden lg:flex p-4 text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "additionalInfo" ? "text-[#000000]" : "text-[#242424]"}`}
               onClick={() => setActiveTab("additionalInfo")}
             >
               Additional Information
             </div>
             <div
-              className={`flex lg:hidden p-4 text-xs lg:text-sm cursor-pointer ${activeTab === "additionalInfo" ? "text-[#000000]" : "text-[#242424]"}`}
+              className={`flex lg:hidden text-[12px] items-center lg:text-lg cursor-pointer font-semibold ${activeTab === "additionalInfo" ? "text-[#000000]" : "text-[#242424]"}`}
               onClick={() => setActiveTab("additionalInfo")}
             >
-              Additional Info
+              Additional &nbsp; &nbsp;&nbsp; &nbsp; Info
             </div>
             <div
-              className={`p-4 text-xs lg:text-sm cursor-pointer ${activeTab === "reviews" ? "text-[#000000]" : "text-[#242424]"}`}
+              className={`p-4 flex lg:hidden text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "reviews" ? "text-[#000000]" : "text-[#242424]"}`}
               onClick={() => setActiveTab("reviews")}
             >
-              Reviews [5]
+              Reviews &nbsp; &nbsp; &nbsp; [5]
+            </div>
+            <div
+              className={`p-4 hidden lg:flex text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "reviews" ? "text-[#000000]" : "text-[#242424]"}`}
+              onClick={() => setActiveTab("reviews")}
+            >
+              Reviews[5]
             </div>
           </div>
           {renderContent()}
@@ -86,6 +88,7 @@ const ProductDescription = () => {
             <img src="/Group 109.png" alt="Product" className="hidden lg:flex"/>
             <img src="/Group 109.png" alt="Product" className="flex lg:hidden w-full" />
           </div>
+          <div className="w-full h-[0.8px] border-b"></div>
         </div>
       </div>
     </section>

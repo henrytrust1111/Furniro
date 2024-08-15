@@ -1,46 +1,72 @@
 import React, { useState } from "react";
-
-const ProductDetails = ({onAddtocart}) => {
-  const [bgColor, setBgColor] = useState("");
-  const [quantity,setquantity] = useState(0);
-  // const [decrease,setdecrease] = useState(0);
+import { Link } from "react-router-dom";
+const ProductDetails = ({ onAddtocart }) => {
+  const [bgColor, setBgColor] = useState("bg-[#F9F1E7]");
+  const [quantity, setquantity] = useState(0);
+  const [image,setImage] = useState("/singleProduct.png");
+  const [selectedSize, setSelectedSize] = useState("L"); // Default size is "L"
 
   const onColorChange = (color) => {
     setBgColor(color);
   };
 
-  const increment = ()=>{
-    setquantity (prevQuantity => prevQuantity + 1);
+  const onImageChange = (newimage)=>{
+    setImage(newimage)
   }
-  const decrement = ()=>{
-    setquantity (prevQuantity => prevQuantity > 0 ? prevQuantity - 1 : 0);
-  }
+  
+  const onSizeChange = (size) => {
+    setSelectedSize(size);
+  }; 
 
- 
+  const increment = () => {
+    setquantity((prevQuantity) => prevQuantity + 1);
+  };
+  const decrement = () => {
+    setquantity((prevQuantity) => (prevQuantity > 0 ? prevQuantity - 1 : 0));
+  };
 
   return (
-    <section className="w-full flex flex-col lg:flex-row">
-      <div className="w-full lg:w-[50%] lg:pt-14 p-4 flex flex-col gap-4 justify-center">
-        <div className="w-full flex flex-col lg:flex-row gap-4 justify-center">
-          <div className={`lg:hidden flex w-full lg:w-[50%] lg:h-[400px] ${bgColor}`}>
+    <section className="w-full flex flex-col p-4 lg:flex-row overflow-hidden">
+      <div className="w-full lg:w-1/2 lg:pt-14 flex flex-col gap-4 justify-center">
+        <div className="w-full flex flex-col lg:flex-row gap-4 lg:px-16">
+          {/* main image */}
+          <div className={`lg:hidden flex w-full ${bgColor}`}>
             <img
-              src="/singleProduct.png"
-              className="object-cover w-full h-full"
+              src={image}
+              className="object-cover h-full"
               alt="Asgard Sofa"
             />
           </div>
-          <div className="w-full lg:w-[15%] grid grid-cols-2 lg:grid-cols-1 gap-4">
-            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}>
-                <img src="Group 94.png" className="" alt="" />
+
+          {/* smaller images*/}
+          <div className="grid grid-cols-2 px-12 lg:px-0 lg:grid-cols-1 gap-4">
+            <div className={`rounded-sm w-16 h-14 ${bgColor}`}>
+              <img src="/singleProduct.png" className="w-full h-full" alt=""
+              onClick={() => onImageChange("/singleProduct.png")}
+              />
             </div>
-            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
-            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
-            <div className={`w-full h-[80px] bg-gray-500 rounded-sm ${bgColor}`}></div>
+            <div className={`rounded-sm w-16 h-14 ${bgColor}`}>
+              <img src="/group1.png" className="w-full h-full" alt=""
+              onClick={() => onImageChange("/group1.png")}
+              />
+            </div>
+            <div className={`rounded-sm w-16 h-14 ${bgColor}`}>
+              <img src="/group2.png" className="w-full h-full" alt=""
+              onClick={() => onImageChange("/group2.png")}
+              />
+            </div>
+            <div className={`rounded-sm w-16 h-14 ${bgColor}`}>
+              <img src="/group3.png" className="w-full h-full" alt="" 
+              onClick={() => onImageChange("/group3.png")}
+              />
+            </div>
           </div>
 
-          <div className={`hidden lg:flex w-full lg:w-[50%] lg:h-[400px] rounded-sm ${bgColor}`}>
+          <div
+            className={`hidden lg:flex lg:w-full lg:h-[500px] rounded-sm ${bgColor}`}
+          >
             <img
-              src="/singleProduct.png"
+              src={image}
               className="object-cover w-full h-full"
               alt="Asgard Sofa"
             />
@@ -48,9 +74,9 @@ const ProductDetails = ({onAddtocart}) => {
         </div>
       </div>
 
-      <div className="w-full lg:w-[50%] pt-14 flex flex-col gap-4 p-4">
-        <h4>Asgaard sofa</h4>
-        <h5 className="text-xs text-[#b7b7b7]">Rs. 250,000.00</h5>
+      <div className="w-full lg:w-1/2 pt-14 flex flex-col gap-4">
+        <h4 className="text-[30px]">Asgaard sofa</h4>
+        <h5 className="text-lg text-[#b7b7b7] font-semibold">Rs. 250,000.00</h5>
         <div className="flex gap-4">
           <div className="flex text-yellow-200">
             <i className="bx bxs-star"></i>
@@ -65,7 +91,7 @@ const ProductDetails = ({onAddtocart}) => {
           <p className="text-xs text-[#b7b7b7]">5 Customer Review</p>
         </div>
         <div>
-          <p className="text-xs lg:text-sm w-full lg:w-[400px]">
+          <p className="w-full lg:w-[500px] text-xs lg:text-sm">
             Setting the bar as one of the loudest speakers in its class, the
             Kilburn is a compact, stout-hearted hero with a well-balanced audio
             which boasts a clear midrange and extended highs for a sound.
@@ -74,13 +100,22 @@ const ProductDetails = ({onAddtocart}) => {
         <div className="flex flex-col gap-4">
           <span className="text-xs">Size</span>
           <div className="flex gap-4">
-            <div className="w-8 h-8 rounded-sm bg-[#F9F1E7] flex items-center justify-center text-xs">
+            <div
+              className={`w-8 h-8 rounded-sm ${selectedSize === "L" ? "bg-[#242424] text-white" : "bg-[#F9F1E7]"} flex items-center justify-center text-xs cursor-pointer`}
+              onClick={() => onSizeChange("L")}
+            >
               L
             </div>
-            <div className="w-8 h-8 rounded-sm bg-[#F9F1E7] flex items-center justify-center text-xs">
+            <div
+              className={`w-8 h-8 rounded-sm ${selectedSize === "XL" ? "bg-[#242424] text-white" : "bg-[#F9F1E7]"} flex items-center justify-center text-xs cursor-pointer`}
+              onClick={() => onSizeChange("XL")}
+            >
               XL
             </div>
-            <div className="w-8 h-8 rounded-sm bg-[#F9F1E7] flex items-center justify-center text-xs">
+            <div
+              className={`w-8 h-8 rounded-sm ${selectedSize === "XS" ? "bg-[#242424] text-white" : "bg-[#F9F1E7]"} flex items-center justify-center text-xs cursor-pointer`}
+              onClick={() => onSizeChange("XS")}
+            >
               XS
             </div>
           </div>
@@ -98,24 +133,44 @@ const ProductDetails = ({onAddtocart}) => {
               className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-xs cursor-pointer"
               onClick={() => onColorChange("bg-blue-500")}
             ></div>
+            <div
+              className="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-xs cursor-pointer"
+              onClick={() => onColorChange("bg-orange-500")}
+            ></div>
+            <div
+              className="w-6 h-6 rounded-full bg-black flex items-center justify-center text-xs cursor-pointer"
+              onClick={() => onColorChange("bg-black")}
+            ></div>
+            <div
+              className="w-6 h-6 rounded-full bg-cyan-300 flex items-center justify-center text-xs cursor-pointer"
+              onClick={() => onColorChange("bg-cyan-300")}
+            ></div>
           </div>
         </div>
         <div className="flex gap-4 mb-6">
           <div className="w-32 h-12 border-2 rounded-lg flex justify-between items-center p-2">
-            <p onClick={decrement} className="text-sm cursor-pointer">-</p>
+            <p onClick={decrement} className="text-sm cursor-pointer">
+              -
+            </p>
             <p className="text-sm">{quantity}</p>
-            <p onClick={increment} className="text-sm cursor-pointer">+</p>
+            <p onClick={increment} className="text-sm cursor-pointer">
+              +
+            </p>
           </div>
-          <div onClick={onAddtocart} className="w-32 lg:w-40 h-12 border-[0.8px] cursor-pointer border-[#242424] rounded-lg flex items-center justify-center p-2 shadow-sm text-[10px] lg:text-sm">
+          <div
+            onClick={onAddtocart}
+            className="w-32 lg:w-40 h-12 border-[0.8px] cursor-pointer border-[#242424] rounded-lg flex items-center justify-center p-2 shadow-sm text-[10px] lg:text-sm"
+          >
             Add to cart
           </div>
-          <div className="w-32 lg:w-40 border-[0.8px] border-[#242424] rounded-lg flex gap-4 items-center justify-center p-2 shadow-sm">
-            <p className="text-sm cursor-pointer">+</p>
-            <p className="text-[10px] lg:text-sm">Compare</p>
+          <div className="w-32 lg:w-40 border-[0.8px] border-[#242424] flex items-center justify-center rounded-lg">
+            <Link to = "/comparison">
+              <p className="text-[10px] lg:text-sm">Compare</p>
+            </Link>
           </div>
         </div>
         {/* Product Info Section */}
-        <div className="w-[480px] h-[0.8px] border-b"></div>
+        <div className="w-full border-b"></div>
         <div className="product-info flex flex-col gap-3 mt-4">
           <div className="info-row flex gap-8">
             <div className="label text-[#b7b7b7] text-xs w-20">SKU</div>
@@ -133,7 +188,7 @@ const ProductDetails = ({onAddtocart}) => {
           </div>
           <div className="info-row flex gap-8">
             <div className="label text-[#b7b7b7] text-xs w-20">Share</div>
-            <div className="value text-[#b7b7b7] text-xs flex items-center gap-4">
+            <div className="value text-xs flex items-center gap-4">
               <div>
                 :&nbsp;<i className="bx bxl-facebook-circle"></i>
               </div>
@@ -144,7 +199,7 @@ const ProductDetails = ({onAddtocart}) => {
                 <i className="bx bxl-twitter"></i>
               </div>
             </div>
-          </div>
+          </div>  
         </div>
       </div>
     </section>
