@@ -38,6 +38,12 @@ const Contact = () => {
     try {
       const response = await axios.post("https://funiro-furnitures.onrender.com/contact-us", formData);
       toast.success(response.data.message || "Message sent successfully!");
+      setFormData({
+        yourName: "",
+        emailAddress: "",
+        subject: "",
+        message: "",
+      });
     } catch (error) {
       toast.error(error.response?.data?.message || "Something went wrong. Please try again.");
     } finally {
