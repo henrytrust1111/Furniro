@@ -28,7 +28,7 @@ const Review = ()=>{
   const handleKeyChange = (e)=>{
     if(e.key === 'Enter'){
         e.preventDefault();
-        console.log("key pressed")
+        // console.log("key pressed")
         handleSubmit();
     }
   }
