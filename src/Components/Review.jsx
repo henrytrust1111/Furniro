@@ -35,41 +35,35 @@ const Review = ()=>{
 
   const handleSubmit = async (e) => {
     if (e) e.preventDefault();
-    if (exp.trim()) {
-      try {
-        const productID = "66c0d72d9f0d5c7ff9d1dbbd";
-        const response = await fetch(`https://funiro-furnitures.onrender.com/product/${productID}/comment`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmFkMjUzMTk1YmE3NTMwNDgwMWY0ZDQiLCJmaXJzdE5hbWUiOiJhZGUiLCJsYXN0TmFtZSI6Im1pa2UiLCJlbWFpbCI6ImFkZWt1bmxlcmFqYWgxM0BnbWFpbC5jb20iLCJpYXQiOjE3MjQwNzA0MjgsImV4cCI6MTcyNDI0MzIyOH0.wZQueK8DVJsn8Jj9U_SlQvDhbNLTIPl0pgVF5fg2iEo`
-          },
-          body: JSON.stringify({ comment: exp })
-        });
-  
-        const textResponse = await response.text(); // Get raw text response first
-  
-        console.log("Raw response:", textResponse); // Log the raw response
-  
-        if (response.ok) {
-          const data = JSON.parse(textResponse); // Manually parse JSON if response is OK
-  
-          setReviews([...reviews, {
-            profile: "", // Update with actual user profile if available
-            date: new Date().toLocaleDateString("en-GB"),
-            experience: exp
-          }]);
-          setExp("");
-          console.log("Comment posted successfully:", data);
-        } else {
-          console.error("Failed to comment", textResponse); // Log the error message from the response
+    if(exp.trim()){
+        try{
+            // const productID = "66c0d72d9f0d5c7ff9d1dbbd";
+            const response = await fetch(`https://funiro-furnitures.onrender.com/product/66c0d72d9f0d5c7ff9d1dbbd/comment`,{
+                method:"POST",
+                headers: {
+                    "Content-Type" : "application/json",
+                    'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmFkMjUzMTk1YmE3NTMwNDgwMWY0ZDQiLCJmaXJzdE5hbWUiOiJhZGUiLCJsYXN0TmFtZSI6Im1pa2UiLCJlbWFpbCI6ImFkZWt1bmxlcmFqYWgxM0BnbWFpbC5jb20iLCJpYXQiOjE3MjQwNzA0MjgsImV4cCI6MTcyNDI0MzIyOH0.wZQueK8DVJsn8Jj9U_SlQvDhbNLTIPl0pgVF5fg2iEo`
+                },
+                body: JSON.stringify({comment:exp}),
+            })
+            const data = await response.json();
+            if(response.ok){
+                setReviews([...reviews, {
+                    profile: "", // Update with actual user profile if available
+                    date: new Date().toLocaleDateString("en-GB"),
+                    experience: exp
+                  }]);
+                setExp("");
+                console.log("response okay",data)
+            }else{
+                console.log("error")
+                console.error("Failed to comment", data.error)
+            }
+        }catch(error){
+            console.error("Error posting comment",error)
         }
-      } catch (error) {
-        console.error("Error posting comment:", error);
-      }
     }
   };
-  
     return(
         <div className="w-full flex flex-col gap-4 lg:gap-8 lg:px-20">
             {reviews.map((review,index)=>(
