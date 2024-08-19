@@ -37,7 +37,7 @@ const Review = ()=>{
     if (e) e.preventDefault();
     if(exp.trim()){
         try{
-            const productID = "66c0d72d9f0d5c7ff9d1dbbd";
+            // const productID = "66c0d72d9f0d5c7ff9d1dbbd";
             const response = await fetch(`https://funiro-furnitures.onrender.com/product/66c0d72d9f0d5c7ff9d1dbbd/comment`,{
                 method:"POST",
                 headers: {
