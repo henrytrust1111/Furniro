@@ -54,7 +54,7 @@ const Review = ()=>{
                     experience: exp
                   }]);
                 setExp("");
-                console.log("response okay")
+                console.log("response okay",data)
             }else{
                 console.log("error")
                 console.error("Failed to comment", data.error)
