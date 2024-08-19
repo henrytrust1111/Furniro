@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Breadcrumbs from "../../Components/Breadcrumbs";
 import ProductDetails from "../../Components/ProductDetails";
 import ProductDescription from "../../Components/ProductDescription";
@@ -8,9 +7,10 @@ import productsData from "../../Components/productData";
 import Cart from "../../Components/Header/Cart";
 import "./SingleProduct.css";
 import Products from "../../Components/Products";
+import ScrollToTop from "react-scroll-up";
+import Description from "../../Components/Description";
 
 const SingleProduct = () => {
-
   const [isCartVisible, setIsCartVisible] = useState(false);
 
   const handleAddToCart = () => {
@@ -23,13 +23,14 @@ const SingleProduct = () => {
 
   return (
     <div className="w-full h-auto">
+      <ScrollToTop />
       <Breadcrumbs />
       <ProductDetails onAddtocart={handleAddToCart} />
-      <ProductDescription />
+      <ProductDescription name = {Description[0].name} mainDetails = {Description[0].mainDetails} weight = {Description[0].weight}  />
       {/* <RelatedProducts products={productsData}/> */}
-      <Products Title= "Relatable Product" />
+      <Products Title="Relatable Product" />
       {isCartVisible && (
-        <Cart onClose={handleCloseCart}/>
+        <Cart onClose={handleCloseCart} />
       )}
     </div>
   );

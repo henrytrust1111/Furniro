@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Cart = ({ onClose }) => {
   return (
@@ -38,15 +39,17 @@ const Cart = ({ onClose }) => {
         </div>
 
         <div className="h-[75px] flex gap-4">
-          <div className="w-24 h-8 shadow-lg border-[0.8px] border-[#242424] rounded-xl flex items-center justify-center text-xs">
+          <div className="w-24 h-8 shadow-lg border-[0.8px] border-[#242424] rounded-xl flex items-center justify-center text-xs cursor-pointer">
             Cart
           </div>
-          <div className="w-24 h-8 shadow-lg border-[0.8px] border-[#242424] rounded-xl flex items-center justify-center text-xs">
+          <div className="w-24 h-8 shadow-lg border-[0.8px] border-[#242424] rounded-xl flex items-center justify-center text-xs cursor-pointer">
             Checkout
           </div>
-          <div className="w-24 h-8 shadow-lg border-[0.8px] border-[#242424] rounded-xl flex items-center justify-center text-xs">
-            Comparison
-          </div>
+          <Link to = "/comparison">
+            <div className="w-24 h-8 shadow-lg border-[0.8px] border-[#242424] rounded-xl flex items-center justify-center text-xs cursor-pointer">
+              Comparison
+            </div>
+          </Link>
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
-const ProductDescription = () => {
+import Review from "./Review";
+const ProductDescription = ({ name, mainDetails, weight }) => {
   const [activeTab, setActiveTab] = useState("description");
 
   const renderContent = () => {
@@ -8,37 +8,29 @@ const ProductDescription = () => {
       case "description":
         return (
           <>
-          <div className="w-full flex items-center justify-center">
-            <span className="flex max-w-[700px] text-center text-xs lg:text-sm text-[#9F9F9F] leading-relaxed">
-              Embodying the raw, wayward spirit of rock roll, the Kilburn portable active stereo speaker takes
-              the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.
-              Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar
-              as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio
-              which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue
-              knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap
-              enables easy and stylish travel
-            </span>
-          </div>
+            <div className="w-full lg:px-20 text-sm flex flex-col gap-4 text-[#9F9F9F]">
+              <div>Name: {name}</div>
+              <div>{mainDetails}</div>
+              <div>Weight: {weight}</div>
+            </div>
           </>
         );
       case "additionalInfo":
         return (
           <>
-          <div className="w-full flex items-center justify-center">
-            <p className="text-center text-xs lg:text-sm text-[#9F9F9F] leading-relaxed">
-              Here is some additional information about the product.
-            </p>
-          </div>
+            <div className="w-full lg:px-20  text-sm flex flex-col gap-4 text-[#9F9F9F]">
+              <p className=" text-xs lg:text-sm text-[#9F9F9F] leading-relaxed">
+                Here is some additional information about the product.
+              </p>
+            </div>
           </>
         );
       case "reviews":
         return (
           <>
-          <div className="w-full flex items-center justify-center">
-            <p className="text-center text-xs lg:text-sm text-[#9F9F9F] leading-relaxed">
-              Customer Reviews
-            </p>
-          </div>
+            <div>
+              <Review/>
+            </div>
           </>
         );
       default:
@@ -53,40 +45,68 @@ const ProductDescription = () => {
           <div className="w-full h-[0.8px] border-b"></div>
           <div className="flex justify-center gap-4 lg:gap-14">
             <div
-              className={`p-4 text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "description" ? "text-[#000000]" : "text-[#242424]"}`}
+              className={`p-4 lg:text-sm px-4 text-xs items-center cursor-pointer font-semibold ${
+                activeTab === "description"
+                  ? "border-[0.8px] -border--clr-primary -text--clr-primary rounded-lg font-semibold "
+                  : "-text--clr-primary"
+              }`}
               onClick={() => setActiveTab("description")}
             >
               Description
             </div>
             <div
-              className={`hidden lg:flex p-4 text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "additionalInfo" ? "text-[#000000]" : "text-[#242424]"}`}
+              className={`hidden lg:flex lg:text-sm px-4 text-xs items-center cursor-pointer font-semibold ${
+                activeTab === "additionalInfo"
+                  ? "border-[0.8px] -border--clr-primary -text--clr-primary rounded-lg"
+                  : "-text--clr-primary"
+              }`}
               onClick={() => setActiveTab("additionalInfo")}
             >
               Additional Information
             </div>
             <div
-              className={`flex lg:hidden text-[12px] items-center lg:text-lg cursor-pointer font-semibold ${activeTab === "additionalInfo" ? "text-[#000000]" : "text-[#242424]"}`}
+              className={`flex lg:hidden lg:text-sm px-4 text-xs items-center cursor-pointer font-semibold ${
+                activeTab === "additionalInfo"
+                  ? "border-[0.8px] -border--clr-primary -text--clr-primary rounded-lg"
+                  : "-text--clr-primary"
+              }`}
               onClick={() => setActiveTab("additionalInfo")}
             >
-              Additional &nbsp; &nbsp;&nbsp; &nbsp; Info
+              Details
             </div>
-            <div
-              className={`p-4 flex lg:hidden text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "reviews" ? "text-[#000000]" : "text-[#242424]"}`}
+            {/* <div
+              className={`p-4 flex lg:hidden tlg:text-sm px-4 text-xs items-center cursor-pointer font-semibold ${
+                activeTab === "reviews"
+                  ? "border-2 -border--clr-primary -text--clr-primary rounded-lg"
+                  : "-text--clr-primary"
+              }`}
               onClick={() => setActiveTab("reviews")}
             >
               Reviews &nbsp; &nbsp; &nbsp; [5]
-            </div>
+            </div> */}
             <div
-              className={`p-4 hidden lg:flex text-xs lg:text-lg cursor-pointer font-semibold ${activeTab === "reviews" ? "text-[#000000]" : "text-[#242424]"}`}
+              className={`flex lg:text-sm px-4 text-xs items-center cursor-pointer font-semibold ${
+                activeTab === "reviews"
+                  ? "border-[0.8px] -border--clr-primary -text--clr-primary rounded-lg"
+                  : "-text--clr-primary"
+              }`}
               onClick={() => setActiveTab("reviews")}
             >
-              Reviews[5]
+              Reviews
             </div>
           </div>
           {renderContent()}
           <div className="flex justify-center">
-            <img src="/Group 109.png" alt="Product" className="hidden lg:flex"/>
-            <img src="/Group 109.png" alt="Product" className="flex lg:hidden w-full" />
+            <img
+              src="/Group 109.png"
+              alt="Product"
+              className="hidden lg:flex"
+            />
+            <img
+              src="/Group 109.png"
+              alt="Product"
+              className="flex lg:hidden w-full"
+            />
           </div>
           <div className="w-full h-[0.8px] border-b"></div>
         </div>
