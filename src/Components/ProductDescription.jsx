@@ -72,7 +72,7 @@ const ProductDescription = ({ name, mainDetails, weight }) => {
               }`}
               onClick={() => setActiveTab("additionalInfo")}
             >
-              Details
+              
             </div>
             {/* <div
               className={`p-4 flex lg:hidden tlg:text-sm px-4 text-xs items-center cursor-pointer font-semibold ${
