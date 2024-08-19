@@ -3,13 +3,13 @@ import React, { useState } from "react"
 const initialReview = [
     {
         profile: "",
-        date:"24-01-2024",
+        date:"24/01/2024",
         experience: "My experience so far with the furniro sitting room chair ist hat it is reliable and viable.easy to fold and doesnt go downn five years.get yourself a good furniro sitting room chairtoday and you wont regret it"
         
     },
     {
         profile: "",
-        date:"21-01-2023",
+        date:"21/01/2023",
         experience: "My experience so far with the furniro sitting room chair ist hat it is reliable and viable.easy to fold and doesnt go downn five years.get yourself a good furniro sitting room chairtoday and you wont regret it"
         
     }
@@ -33,16 +33,34 @@ const Review = ()=>{
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     if (e) e.preventDefault();
     if(exp.trim()){
-        const newReview = {
-            profile:"",
-            date: new Date().toLocaleDateString("en-GB"),
-            experience:exp
+        try{
+            const productID = "66c0d72d9f0d5c7ff9d1dbbd";
+            const response = await fetch(`https://funiro-furnitures.onrender.com/product/${productID}/comment`,{
+                method:"POST",
+                headers: {
+                    "Content-Type" : "application/json",
+                    "Authorization" : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmFkMjUzMTk1YmE3NTMwNDgwMWY0ZDQiLCJmaXJzdE5hbWUiOiJhZGUiLCJsYXN0TmFtZSI6Im1pa2UiLCJlbWFpbCI6ImFkZWt1bmxlcmFqYWgxM0BnbWFpbC5jb20iLCJpYXQiOjE3MjQwNzA0MjgsImV4cCI6MTcyNDI0MzIyOH0.wZQueK8DVJsn8Jj9U_SlQvDhbNLTIPl0pgVF5fg2iEo`,
+                },
+                body: JSON.stringify({comment:exp})
+            })
+            const data = await response.json();
+            if(response.ok){
+                setReviews([...reviews, {
+                    profile: "", // Update with actual user profile if available
+                    date: new Date().toLocaleDateString("en-GB"),
+                    experience: exp
+                  }]);
+                setExp("");
+            }else{
+                console.log("error")
+                console.error("Failed to comment", data.error)
+            }
+        }catch(error){
+            console.error("Error posting comment",error)
         }
-        setReviews([...reviews, newReview])
-        setExp("");
     }
   };
     return(

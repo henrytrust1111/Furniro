@@ -46,18 +46,18 @@ const ProductDetails = ({ onAddtocart }) => {
               />
             </div>
             <div className={`rounded-sm w-16 h-14 ${bgColor}`}>
-              <img src="/group1.png" className="w-full h-full" alt=""
-              onClick={() => onImageChange("/group1.png")}
+              <img src="/chair1.png" className="w-full h-full" alt=""
+              onClick={() => onImageChange("/chair1.png")}
               />
             </div>
             <div className={`rounded-sm w-16 h-14 ${bgColor}`}>
-              <img src="/group2.png" className="w-full h-full" alt=""
-              onClick={() => onImageChange("/group2.png")}
+              <img src="/chair3.png" className="w-full h-full" alt=""
+              onClick={() => onImageChange("/chair3.png")}
               />
             </div>
             <div className={`rounded-sm w-16 h-14 ${bgColor}`}>
-              <img src="/group3.png" className="w-full h-full" alt="" 
-              onClick={() => onImageChange("/group3.png")}
+              <img src="/chair5.png" className="w-full h-full" alt="" 
+              onClick={() => onImageChange("/chair5.png")}
               />
             </div>
           </div>
