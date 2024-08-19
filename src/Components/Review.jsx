@@ -39,7 +39,7 @@ const handleSubmit = async (e) => {
   if (exp.trim()) {
     try {
       const productID = "66c0d72d9f0d5c7ff9d1dbbd";
-      const response = await axios.post (`https://funiro-furnitures.onrender.com/product/${productID}/comment`,
+      const response = await axios.post(`https://funiro-furnitures.onrender.com/product/${productID}/comment`,
         { comment: exp },
         {
           headers: {
