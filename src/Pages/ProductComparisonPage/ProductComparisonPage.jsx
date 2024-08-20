@@ -44,7 +44,7 @@ const ProductComparisonPage = () => {
     </div> */}
     <div className='Productpagescon'>
       <div className='ProductpagesconmainBoxwrapp'>
-      <div className='ProductpagesconmainBox'>
+      <div className='ProductpagesconmainBox1'>
         <div className='ProductpagesconmainBoxup'>
           <div className='Productpageslettercon1'>
             <h3>Go to Product page for more Products</h3>
@@ -60,7 +60,7 @@ const ProductComparisonPage = () => {
         </div>
         <div className='ProductpagesconmainBoxdown'></div>
       </div>
-      <div className='ProductpagesconmainBox'>
+      <div className='ProductpagesconmainBox2'>
         <div className='ProductpagesconmainBoxup'>
           <img src={image1} alt="" />
         </div>
@@ -89,7 +89,7 @@ const ProductComparisonPage = () => {
           </div>
         </div>
       </div>
-      <div className='ProductpagesconmainBox'>
+      <div className='ProductpagesconmainBox2'>
         <div className='ProductpagesconmainBoxup'>
         <img src={image1}alt="" />
         </div>
@@ -118,7 +118,7 @@ const ProductComparisonPage = () => {
           </div>
         </div>
       </div>
-      <div className='ProductpagesconmainBox'>
+      <div className='ProductpagesconmainBox1'>
         <div className='ProductpagesconmainBoxup'>
           <div className='AddAProductBoxs'>
             <div className='AddAProductBoxwrapper'>
