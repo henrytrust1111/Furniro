@@ -49,10 +49,8 @@ const ProductDetails = ({ onAddtocart }) => {
       const data = await response.json();
       console.log('Share URLs:', data);
   
-      // Extract the URL for the specified platform
       const url = data.data[platform];
       if (url) {
-        // Open the URL in a new tab
         window.open(url, '_blank');
       } else {
         console.error('URL not found for platform:', platform);
