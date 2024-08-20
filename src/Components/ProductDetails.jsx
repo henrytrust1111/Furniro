@@ -25,6 +25,35 @@ const ProductDetails = ({ onAddtocart }) => {
     setquantity((prevQuantity) => (prevQuantity > 0 ? prevQuantity - 1 : 0));
   };
 
+  const handleShare = async ()=>{
+    const productID = "66c0d72d9f0d5c7ff9d1dbbd"
+    try{
+      const response = await fetch(`https://funiro-furnitures.onrender.com/share/${productID}`,{
+          method:"GET",
+          headers:{
+            "Content-Type" :"application/json",
+            "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmFkMjUzMTk1YmE3NTMwNDgwMWY0ZDQiLCJmaXJzdE5hbWUiOiJhZGUiLCJsYXN0TmFtZSI6Im1pa2UiLCJlbWFpbCI6ImFkZWt1bmxlcmFqYWgxM0BnbWFpbC5jb20iLCJpYXQiOjE3MjQwNzA0MjgsImV4cCI6MTcyNDI0MzIyOH0.wZQueK8DVJsn8Jj9U_SlQvDhbNLTIPl0pgVF5fg2iEo`
+          }
+      })
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error('Product not found');
+        } else if (response.status === 500) {
+          throw new Error('Internal server error');
+        } else {
+          throw new Error('An error occurred');
+        }
+      }
+  
+      const data = await response.json();
+      console.log('Share URLs:', data);
+      return data;
+    } catch (error) {
+      console.error('Error fetching share URLs:', error.message);
+    }
+    
+  }
+
   return (
     <section className="w-full flex flex-col p-4 lg:flex-row overflow-hidden">
       <div className="w-full lg:w-1/2 lg:pt-14 flex flex-col gap-4 justify-center">
@@ -189,7 +218,7 @@ const ProductDetails = ({ onAddtocart }) => {
           <div className="info-row flex gap-8">
             <div className="label text-[#b7b7b7] text-xs w-20">Share</div>
             <div className="value text-xs flex items-center gap-4">
-              <div>
+              <div onClick={(() => handleShare('facebook'))}>
                 :&nbsp;<i className="bx bxl-facebook-circle"></i>
               </div>
               <div>
