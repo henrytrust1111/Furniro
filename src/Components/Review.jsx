@@ -82,7 +82,6 @@ const Review = () => {
           </div>
         </div>
       ))}
-
       <div className="mt-6 lg:mt-14">
         <label className="text-xs lg:text-sm">Enter Review:</label> <br />
         <input type="text"
