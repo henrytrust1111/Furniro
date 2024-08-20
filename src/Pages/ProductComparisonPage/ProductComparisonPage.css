@@ -1197,8 +1197,9 @@
 .Productpageslettercon1 h3{
     font-size: 16.2px;
     font-weight: 700;
-    line-height: 2.2rem;
+    line-height: 2rem;
     font-family:  sans-serif;
+    overflow-wrap: break-word;
 }
 
 
@@ -1223,6 +1224,7 @@
     color: rgba(114, 114, 114, 1)  ;
     font-family: sans-serif;
     padding-top: 50px;
+    overflow-wrap: break-word;
     
     
 }
@@ -1274,12 +1276,14 @@
     font-weight: 600;
     font-family: sans-serif;
     line-height: 2.7rem;
+    overflow-wrap: break-word;
 }
 .AsgaadsofaLetters p{
     font-size: 13px;
     font-weight: 500;
     font-family: sans-serif;
     line-height: 2.5rem; 
+    overflow-wrap: break-word;
 }
 
 
@@ -1312,7 +1316,8 @@
     font-weight: 400;
     font-family: sans-serif;
     line-height: 1.8rem;
-    color:  rgba(114, 114, 114, 1)
+    color:  rgba(114, 114, 114, 1);
+    overflow-wrap: break-word;
 
 }
 
@@ -1349,6 +1354,7 @@
     font-weight: 600;
     font-family: sans-serif;
     line-height:2.7rem;
+    overflow-wrap: break-word;
 }
 
 .OutdoorsofasetLetter p{
@@ -1356,6 +1362,7 @@
     font-weight: 500;
     font-family: sans-serif;
     line-height: 2.5rem; 
+    overflow-wrap: break-word;
 
 }
 
@@ -1408,6 +1415,7 @@
     font-family: sans-serif;
     line-height: 1.8rem;
     color:  rgba(114, 114, 114, 1);
+    overflow-wrap: break-word;
 }
 
 .OutdoorStarsboxz3 span{
@@ -1416,6 +1424,7 @@
     font-family: sans-serif;
     line-height: 1.8rem;
     color:  rgba(114, 114, 114, 1);
+    overflow-wrap: break-word;
 
 }
 
@@ -1455,6 +1464,7 @@
     font-family: sans-serif;
     padding-left: 10px;
     padding-bottom: 18px;
+    overflow-wrap: break-word;
  
 }
 
@@ -1480,7 +1490,7 @@
     height: 100%;
     color: white;
     border-radius: 5px;
-    font-size: 13px;
+    font-size: 12px;
     font-family: sans-serif;
     font-weight: 600;
     line-height: 2rem;

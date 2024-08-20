@@ -318,7 +318,7 @@
 
     .ProductcomparisonContainer{
         width: 100%;
-        height: 80vh;
+        height: 85vh;
         /* background-color: blue; */
         display: flex;
         align-items: center;
@@ -341,7 +341,7 @@
         display: flex;
         /* align-items: center; */
         flex-direction: column;
-        gap: 60px;
+        gap: 50px;
     }
     .ProductComParBoxdownwrap{
         width: 85%;
@@ -373,14 +373,14 @@
     
     .ProductComParBoxup{
         width: 100%;
-        height: 18%;
+        height: 15%;
         /* background-color: burlywood; */
         display: flex;
         align-items: center;
     }
     .ProductComParBoxup1{
         width: 100%;
-        height: 18%;
+        height: 15%;
         /* background-color: burlywood; */
         display: flex;
         align-items: center;
@@ -392,6 +392,7 @@
         line-height: 2.7rem;
         font-family: sans-serif;
         padding-left: 5%;
+        overflow-wrap: break-word;
     
     }
     
@@ -412,6 +413,7 @@
         font-weight: 500;
         line-height: 1.9rem;
         padding-left: 2%;
+        overflow-wrap: break-word;
         
     }
 }
