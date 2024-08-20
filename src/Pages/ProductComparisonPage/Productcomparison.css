@@ -6,7 +6,7 @@
 
 .ProductcomparisonContainer{
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     /* background-color: blue; */
     display: flex;
     align-items: center;
@@ -80,7 +80,7 @@
     display: flex;
     /* align-items: center; */
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
 }
 .ProductComParBoxdownwrap{
     width: 75%;
@@ -89,7 +89,7 @@
     display: flex;
     /* align-items: center; */
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
 }
 
 .ProductComParBoxdownwrap p{
@@ -115,7 +115,7 @@
 
     .ProductcomparisonContainer{
         width: 100%;
-        height: 70vh;
+        height: 75vh;
         /* background-color: blue; */
         display: flex;
         align-items: center;
@@ -138,7 +138,7 @@
         display: flex;
         /* align-items: center; */
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
     }
     .ProductComParBoxdownwrap{
         width: 85%;
@@ -147,11 +147,11 @@
         display: flex;
         /* align-items: center; */
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
     }
 
     .ProductComParBox{
-        width: 25%;
+        width: 35%;
         height: 100%;
         /* background-color: black; */
         border-radius: 5px;
@@ -163,6 +163,7 @@
         height: 100%;
         /* background-color: black; */
         border-radius: 5px;
+        display: none;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
     
     }
@@ -210,13 +211,12 @@
         padding-left: 2%;
         
     }
-
 }
 @media screen and (Width <=820px) {
 
     .ProductcomparisonContainer{
         width: 100%;
-        height: 50vh;
+        height: 75vh;
         /* background-color: blue; */
         display: flex;
         align-items: center;
@@ -239,7 +239,7 @@
         display: flex;
         /* align-items: center; */
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
     }
     .ProductComParBoxdownwrap{
         width: 85%;
@@ -248,11 +248,11 @@
         display: flex;
         /* align-items: center; */
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
     }
 
     .ProductComParBox{
-        width: 25%;
+        width: 35%;
         height: 100%;
         /* background-color: black; */
         border-radius: 5px;
@@ -264,6 +264,7 @@
         height: 100%;
         /* background-color: black; */
         border-radius: 5px;
+        display: none;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
     
     }
@@ -284,7 +285,7 @@
     }
     
     .ProductComParBoxup h3{
-        font-size: 21px;
+        font-size: 20px;
         font-weight: 600;
         line-height: 2.7rem;
         font-family: sans-serif;
@@ -303,7 +304,7 @@
     }
     
     .ProductComParBoxdown p{
-        font-size: 15px;
+        font-size: 14px;
         /* font-family: sans-serif; */
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: 500;
@@ -311,14 +312,13 @@
         padding-left: 2%;
         
     }
-
 }
 
 @media screen and (Width <=480px) {
 
     .ProductcomparisonContainer{
         width: 100%;
-        height: 1250px;
+        height: 80vh;
         /* background-color: blue; */
         display: flex;
         align-items: center;
@@ -332,33 +332,41 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-direction: column;
     }
 
-        .ProductComParBoxdownwrap1{
-        width: 90%;
+    .ProductComParBoxdownwrap1{
+        width: 95%;
         height: 100%;
         /* background-color: red; */
         display: flex;
         /* align-items: center; */
         flex-direction: column;
-        gap: 30px;
+        gap: 62px;
     }
     .ProductComParBoxdownwrap{
-        width: 90%;
+        width: 85%;
         height: 100%;
         /* background-color: red; */
         display: flex;
         /* align-items: center; */
         flex-direction: column;
-        gap: 30px;
+        gap: 50px;
     }
 
     .ProductComParBox{
-        width: 100%;
+        width: 35%;
         height: 100%;
         /* background-color: black; */
         border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    
+    }
+    .ProductComParBox1{
+        width: 25%;
+        height: 100%;
+        /* background-color: black; */
+        border-radius: 5px;
+        display: none;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
     
     }
@@ -367,6 +375,93 @@
         width: 100%;
         height: 18%;
         /* background-color: burlywood; */
+        display: flex;
+        align-items: center;
+    }
+    .ProductComParBoxup1{
+        width: 100%;
+        height: 18%;
+        /* background-color: burlywood; */
+        display: flex;
+        align-items: center;
+    }
+    
+    .ProductComParBoxup h3{
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 2.7rem;
+        font-family: sans-serif;
+        padding-left: 5%;
+    
+    }
+    
+    .ProductComParBoxdown{
+        width: 100%;
+        height: 82%;
+        /* background-color: blueviolet; */
+        display: flex;
+        /* align-items: center; */
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .ProductComParBoxdown p{
+        font-size: 13px;
+        /* font-family: sans-serif; */
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 500;
+        line-height: 1.9rem;
+        padding-left: 2%;
+        
+    }
+}
+
+/* 
+@media screen and (Width <=480px) {
+
+    .ProductcomparisonContainer{
+        width: 100%;
+        height: 1250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ProductcomparisonConWrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+        .ProductComParBoxdownwrap1{
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .ProductComParBoxdownwrap{
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .ProductComParBox{
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    
+    }
+    
+    .ProductComParBoxup{
+        width: 100%;
+        height: 18%;
         display: flex;
         align-items: center;
     }
@@ -383,16 +478,13 @@
     .ProductComParBoxdown{
         width: 100%;
         height: 82%;
-        /* background-color: blueviolet; */
         display: flex;
-        /* align-items: center; */
         flex-direction: column;
         gap: 20px;
     }
     
     .ProductComParBoxdown p{
         font-size: 14px;
-        /* font-family: sans-serif; */
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: 500;
         line-height: 1.9rem;
@@ -408,4 +500,4 @@
         display: none;
     }
 
-}
+} */

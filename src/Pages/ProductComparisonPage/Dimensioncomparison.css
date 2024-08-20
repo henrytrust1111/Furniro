@@ -6,7 +6,7 @@
 
 .DmensioncomparisonCon{
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     /* background-color: blueviolet; */
     display: flex;
     align-items: center;
@@ -76,14 +76,14 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
 }
 .DmensioncomparBoxzDownwrap{
     width: 75%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
 }
 
 .DmensioncomparBoxzDownwrap p{
@@ -107,7 +107,7 @@
 @media screen and (Width <=765px) {
     .DmensioncomparisonCon{
         width: 100%;
-        height: 70vh;
+        height: 75vh;
         /* background-color: blueviolet; */
         display: flex;
         align-items: center;
@@ -128,18 +128,18 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
     }
     .DmensioncomparBoxzDownwrap{
         width: 85%;
         height: 100%;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
     }
 
     .DmensioncomparBoxz{
-        width: 25%;
+        width: 35%;
         height: 100%;
         /* background-color: blue; */
         border-radius: 5px;
@@ -151,6 +151,7 @@
         height: 100%;
         /* background-color: blue; */
         border-radius: 5px;
+        display: none;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
     }
     
@@ -196,12 +197,12 @@
         line-height: 1.9rem;
         padding-left: 2%;
     }
-
 }
+
 @media screen and (Width <=820px) {
     .DmensioncomparisonCon{
         width: 100%;
-        height: 50vh;
+        height: 75vh;
         /* background-color: blueviolet; */
         display: flex;
         align-items: center;
@@ -222,18 +223,18 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
     }
     .DmensioncomparBoxzDownwrap{
         width: 85%;
         height: 100%;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
     }
 
     .DmensioncomparBoxz{
-        width: 25%;
+        width: 35%;
         height: 100%;
         /* background-color: blue; */
         border-radius: 5px;
@@ -245,6 +246,7 @@
         height: 100%;
         /* background-color: blue; */
         border-radius: 5px;
+        display: none;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
     }
     
@@ -290,13 +292,12 @@
         line-height: 1.9rem;
         padding-left: 2%;
     }
-
 }
 
 @media screen and (Width <=480px) {
     .DmensioncomparisonCon{
         width: 100%;
-        height: 1250px;
+        height: 80vh;
         /* background-color: blueviolet; */
         display: flex;
         align-items: center;
@@ -307,6 +308,99 @@
         width: 100%;
         height: 100%;
         /* background-color: darkcyan; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .DmensioncomparBoxzDownwrap1{
+        width: 95%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 62px;
+    }
+    .DmensioncomparBoxzDownwrap{
+        width: 85%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .DmensioncomparBoxz{
+        width: 35%;
+        height: 100%;
+        /* background-color: blue; */
+        border-radius: 5px;
+        box-shadow: rgba(197, 118, 118, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    }
+
+    .DmensioncomparBoxz2{
+        width: 25%;
+        height: 100%;
+        /* background-color: blue; */
+        border-radius: 5px;
+        display: none;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    }
+    
+    .DmensioncomparBoxzUp{
+        width: 100%;
+        height: 18%;
+        /* background-color: burlywood; */
+        display: flex;
+        align-items: center;
+    }
+    .DmensioncomparBoxzUp2{
+        width: 100%;
+        height: 18%;
+        /* background-color: burlywood; */
+        display: flex;
+        align-items: center;
+    }
+    
+    .DmensioncomparBoxzUp h3{
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 2.7rem;
+        font-family: sans-serif;
+        padding-left: 5%;
+        
+    }
+    
+    .DmensioncomparBoxzDown{
+        width: 100%;
+        height: 82%;
+        /* background-color: darkorange; */
+        display: flex;
+        /* align-items: center; */
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .DmensioncomparBoxzDown p{
+        font-size: 13px;
+        /* font-family: sans-serif; */
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 500;
+        line-height: 1.9rem;
+        padding-left: 2%;
+    }
+}
+
+/* @media screen and (Width <=480px) {
+    .DmensioncomparisonCon{
+        width: 100%;
+        height: 1250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .DmensioncomparisonConwraqpper{
+        width: 100%;
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -331,7 +425,6 @@
     .DmensioncomparBoxz{
         width: 100%;
         height: 100%;
-        /* background-color: blue; */
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
     }
@@ -339,7 +432,6 @@
     .DmensioncomparBoxz2{
         width: 25%;
         height: 100%;
-        /* background-color: blue; */
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
     }
@@ -347,14 +439,12 @@
     .DmensioncomparBoxzUp{
         width: 100%;
         height: 18%;
-        /* background-color: burlywood; */
         display: flex;
         align-items: center;
     }
     .DmensioncomparBoxzUp1{
         width: 100%;
         height: 18%;
-        /* background-color: burlywood; */
         display: flex;
         align-items: center;
     }
@@ -371,16 +461,13 @@
     .DmensioncomparBoxzDown{
         width: 100%;
         height: 82%;
-        /* background-color: darkorange; */
         display: flex;
-        /* align-items: center; */
         flex-direction: column;
         gap: 20px;
     }
     
     .DmensioncomparBoxzDown p{
         font-size: 15px;
-        /* font-family: sans-serif; */
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: 500;
         line-height: 1.9rem;
@@ -395,4 +482,4 @@
         display: none;
     }
 
-}
+} */
