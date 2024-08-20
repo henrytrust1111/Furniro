@@ -388,7 +388,7 @@
 @media screen and (Width <=480px) {
     .WarantycomparisonCon{
         width: 100%;
-        height: 1650px;
+        height: 1590px;
         /* background-color: blueviolet; */
         display: flex;
         align-items: center;
@@ -423,7 +423,7 @@
     }
 
     .WarrantycomparisonBoxz{
-        width: 36%;
+        width: 34%;
         height: 100%;
         /* background-color: brown; */
         border-radius: 5px;
@@ -441,7 +441,7 @@
 
     .WarrantycomparisonBoxzUp{
         width: 100%;
-        height: 12%;
+        height: 6%;
         /* background-color: red; */
         display: flex;
         align-items: center;
@@ -454,6 +454,7 @@
     line-height: 2.7rem;
     font-family: sans-serif;
     padding-left: 5%;
+    overflow-wrap: break-word;
 
 }
 
@@ -475,13 +476,13 @@
 
 .WarrantycomparisonBoxzwrapDown{
     width: 100%;
-    height: 15%;
+    height: 13%;
     /* background-color: blue; */
 }
 
 .WarrantycomparisonBoxzDown{
     width: 100%;
-    height: 90%;
+    height: 94%;
     /* background-color: aqua; */
 }
 
@@ -499,7 +500,7 @@
     width: 85%;
     height: 90%;
     color: white;
-    font-size: 12px;
+    font-size: 11px;
     font-family: sans-serif;
     font-weight: 500;
     line-height: 1.9rem;

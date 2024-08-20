@@ -305,7 +305,7 @@
     
 .Genralcomparisonpage{
     width: 100%;
-    height: 80vh;
+    height: 85vh;
     /* background-color: blueviolet; */
     display: flex;
     align-items: center;
@@ -328,7 +328,7 @@
     /* background-color: red; */
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 50px;
 }
 .GeneralCompariBoxdownwrap{
     width: 85%;
@@ -358,14 +358,14 @@
 
 .GeneralCompariBoxup{
     width: 100%;
-    height: 18%;
+    height: 15%;
     /* background-color: burlywood; */
     display: flex;
     align-items: center;
 }
 .GeneralCompariBoxup1{
     width: 100%;
-    height: 18%;
+    height: 15%;
     /* background-color: burlywood; */
     display: flex;
     align-items: center;
@@ -395,6 +395,8 @@
     font-weight: 500;
     line-height: 1.9rem;
     padding-left: 2%;
+    overflow-wrap: break-word;
+    
 }
 
 }
