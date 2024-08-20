@@ -388,7 +388,7 @@
 @media screen and (Width <=480px) {
     .WarantycomparisonCon{
         width: 100%;
-        height: 1750px;
+        height: 1650px;
         /* background-color: blueviolet; */
         display: flex;
         align-items: center;
@@ -423,7 +423,7 @@
     }
 
     .WarrantycomparisonBoxz{
-        width: 35%;
+        width: 36%;
         height: 100%;
         /* background-color: brown; */
         border-radius: 5px;

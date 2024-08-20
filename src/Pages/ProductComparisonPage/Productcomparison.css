@@ -341,7 +341,7 @@
         display: flex;
         /* align-items: center; */
         flex-direction: column;
-        gap: 62px;
+        gap: 60px;
     }
     .ProductComParBoxdownwrap{
         width: 85%;
