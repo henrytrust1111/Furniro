@@ -328,7 +328,7 @@
     /* background-color: red; */
     display: flex;
     flex-direction: column;
-    gap: 62px;
+    gap: 60px;
 }
 .GeneralCompariBoxdownwrap{
     width: 85%;
