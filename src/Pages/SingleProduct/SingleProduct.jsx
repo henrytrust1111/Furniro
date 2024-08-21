@@ -22,17 +22,21 @@ const SingleProduct = () => {
   };
 
   return (
-    <div className="w-full h-auto">
+    <>
       <ScrollToTop />
-      <Breadcrumbs />
-      <ProductDetails onAddtocart={handleAddToCart} />
-      <ProductDescription name = {Description[0].name} mainDetails = {Description[0].mainDetails} weight = {Description[0].weight}  />
-      {/* <RelatedProducts products={productsData}/> */}
-      <Products Title="Relatable Product" />
-      {isCartVisible && (
-        <Cart onClose={handleCloseCart} />
-      )}
-    </div>
+      <div className="w-full h-auto">
+        <Breadcrumbs />
+        <ProductDetails onAddtocart={handleAddToCart} />
+        <ProductDescription
+          name={Description[0].name}
+          mainDetails={Description[0].mainDetails}
+          weight={Description[0].weight}
+        />
+        {/* <RelatedProducts products={productsData}/> */}
+        <Products Title="Relatable Product" />
+        {isCartVisible && <Cart onClose={handleCloseCart} />}
+      </div>
+    </>
   );
 };
 
