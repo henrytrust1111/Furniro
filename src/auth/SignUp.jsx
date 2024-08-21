@@ -77,6 +77,7 @@ const SignUp = () => {
 
       // Save necessary data to localStorage
       localStorage.setItem("user", JSON.stringify(data));
+      localStorage.setItem("email", JSON.stringify(data.email));
       localStorage.setItem("token", token);
 
       toast.success(message);

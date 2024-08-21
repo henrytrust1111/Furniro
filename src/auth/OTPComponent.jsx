@@ -10,6 +10,7 @@ import { FaLock } from "react-icons/fa";
 const OTPComponent = () => {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [loading, setLoading] = useState(false);
+  const [resendLoading, setResendLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleOtpChange = (index, value) => {
@@ -39,7 +40,7 @@ const OTPComponent = () => {
 
     try {
       const response = await axios.post("https://funiro-furnitures.onrender.com/verify-otp", {
-        email: localStorage.getItem("email"), // Assuming email is stored in localStorage
+        email: localStorage.getItem("email"), 
         otp: enteredOtp,
       });
 
@@ -57,6 +58,29 @@ const OTPComponent = () => {
       }
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleResendOtp = async () => {
+    setResendLoading(true);
+
+    try {
+      const response = await axios.post("https://funiro-furnitures.onrender.com/resend-otp", {
+        email: localStorage.getItem("email"), 
+      });
+
+      if (response.status === 200) {
+        toast.success("OTP resent successfully!");
+      }
+    } catch (error) {
+      if (error.response) {
+        const errorMessage = error.response.data.error;
+        toast.error(errorMessage || "Something went wrong!");
+      } else {
+        toast.error("Network error. Please try again.");
+      }
+    } finally {
+      setResendLoading(false);
     }
   };
 
@@ -94,9 +118,7 @@ const OTPComponent = () => {
                     id={`otp-input-${index}`}
                     type="text"
                     value={digit}
-                    onChange={(e) =>
-                      handleOtpChange(index, e.target.value)
-                    }
+                    onChange={(e) => handleOtpChange(index, e.target.value)}
                     maxLength="1"
                     className="w-full h-full text-center outline-none border focus:ring-2 focus:ring-[#EF6911] focus:border-[#EF6911] block sm:text-lg border-gray-300 rounded-md"
                   />
@@ -121,8 +143,18 @@ const OTPComponent = () => {
             </div>
             <div className="text-center text-sm">
               Didn't receive the code?{" "}
-              <span className="font-medium text-[#EF6911] hover:underline cursor-pointer">
-                Resend OTP
+              <span
+                className="font-medium text-[#EF6911] hover:underline cursor-pointer"
+                onClick={handleResendOtp}
+              >
+                {resendLoading ? (
+                  <>
+                    <BiLoaderCircle className="mr-2 animate-spin" size={16} />
+                    Resending...
+                  </>
+                ) : (
+                  "Resend OTP"
+                )}
               </span>
             </div>
           </form>
@@ -171,13 +203,24 @@ export default OTPComponent;
 
 
 
+
+
+
+
+
+
 // import React, { useState } from "react";
+// import axios from "axios";
+// import { toast, ToastContainer } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+// import { BiLoaderCircle } from "react-icons/bi";
+// import { useNavigate } from "react-router-dom";
 // import logo from "/icons/logo.svg";
 // import { FaLock } from "react-icons/fa";
-// import { useNavigate } from "react-router-dom";
 
 // const OTPComponent = () => {
-//   const [otp, setOtp] = useState(["", "", "", "", "",""]);
+//   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+//   const [loading, setLoading] = useState(false);
 //   const navigate = useNavigate();
 
 //   const handleOtpChange = (index, value) => {
@@ -187,18 +230,45 @@ export default OTPComponent;
 //       setOtp(newOtp);
 
 //       // Move to the next input if the value is entered
-//       if (value && index < 3) {
+//       if (value && index < otp.length - 1) {
 //         document.getElementById(`otp-input-${index + 1}`).focus();
 //       }
 //     }
 //   };
 
-//   const handleOtpSubmit = (e) => {
+//   const handleOtpSubmit = async (e) => {
 //     e.preventDefault();
-//     // Process OTP
-//     console.log("Entered OTP:", otp.join(""));
-//     // Redirect to another page if OTP is verified
-//     navigate("/dashboard");
+//     const enteredOtp = otp.join("");
+
+//     // Basic validation
+//     if (enteredOtp.length !== otp.length) {
+//       toast.error("Please enter the complete OTP.");
+//       return;
+//     }
+
+//     setLoading(true);
+
+//     try {
+//       const response = await axios.post("https://funiro-furnitures.onrender.com/verify-otp", {
+//         email: localStorage.getItem("email"), // Assuming email is stored in localStorage
+//         otp: enteredOtp,
+//       });
+
+//       if (response.status === 200) {
+//         toast.success("OTP verified successfully!");
+//         localStorage.setItem("isVerified", true); // Save verification status to localStorage
+//         navigate("/");
+//       }
+//     } catch (error) {
+//       if (error.response) {
+//         const errorMessage = error.response.data.error;
+//         toast.error(errorMessage || "Something went wrong!");
+//       } else {
+//         toast.error("Network error. Please try again.");
+//       }
+//     } finally {
+//       setLoading(false);
+//     }
 //   };
 
 //   const handleLogo = () => {
@@ -219,7 +289,7 @@ export default OTPComponent;
 //             Verify Your Identity
 //           </h2>
 //           <p className="text-gray-600 mb-8 text-center">
-//             Enter the 4-digit code sent to your email.
+//             Enter the 6-digit code sent to your email.
 //           </p>
 //           <form
 //             className="space-y-1 w-full px-1 sm:!px-6 md:!px-10 lg:!px-20 flex flex-col justify-center items-center"
@@ -247,9 +317,17 @@ export default OTPComponent;
 //             <div className="w-full">
 //               <button
 //                 type="submit"
-//                 className="w-full mt-1 flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white !bg-[#14192D] hover:!bg-white hover:!text-black transition-all duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF6911]"
+//                 className="w-full mt-1 flex justify-center items-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white !bg-[#14192D] hover:!bg-white hover:!text-black transition-all duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF6911]"
+//                 disabled={loading}
 //               >
-//                 Verify OTP
+//                 {loading ? (
+//                   <>
+//                     <BiLoaderCircle className="mr-2 animate-spin" size={22} />
+//                     Verifying...
+//                   </>
+//                 ) : (
+//                   "Verify OTP"
+//                 )}
 //               </button>
 //             </div>
 //             <div className="text-center text-sm">
@@ -284,6 +362,7 @@ export default OTPComponent;
 //           </p>
 //         </div>
 //       </div>
+//       <ToastContainer />
 //     </div>
 //   );
 // };
