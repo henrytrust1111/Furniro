@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import Breadcrumbs from "../../Components/Breadcrumbs";
 import ProductDetails from "../../Components/ProductDetails";
 import ProductDescription from "../../Components/ProductDescription";
-import RelatedProducts from "../../Components/RelatedProducts";
-import productsData from "../../Components/productData";
+// import RelatedProducts from "../../Components/RelatedProducts";
+// import productsData from "../../Components/productData";
 import Cart from "../../Components/Header/Cart";
 import "./SingleProduct.css";
 import Products from "../../Components/Products";
-import ScrollToTop from "react-scroll-up";
 import Description from "../../Components/Description";
+import ScrollToTop from "../../Containers/ScrollToTop";
 
 const SingleProduct = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
