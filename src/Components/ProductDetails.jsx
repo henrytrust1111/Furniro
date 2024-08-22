@@ -147,7 +147,7 @@ const ProductDetails = ({ onAddtocart }) => {
       </div>
 
       <div className="w-full lg:w-1/2 pt-14 flex flex-col gap-4">
-        <h4 className="text-[30px]">Asgaard sofa</h4>
+        {/* <h4 className="text-[30px]">Asgaard sofa</h4> */}
         <h5 className="text-lg text-[#b7b7b7] font-semibold">Rs. 250,000.00</h5>
         <div className="flex gap-2">
             {[1, 2, 3, 4, 5].map((star) => (
