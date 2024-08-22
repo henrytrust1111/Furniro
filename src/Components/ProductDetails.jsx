@@ -5,6 +5,7 @@ const ProductDetails = ({ onAddtocart }) => {
   const [quantity, setquantity] = useState(0);
   const [image,setImage] = useState("/singleProduct.png");
   const [selectedSize, setSelectedSize] = useState("L"); // Default size is "L"
+  const [selectedRating,setSelectedRating] = useState(0)
 
   const onColorChange = (color) => {
     setBgColor(color);
@@ -26,7 +27,7 @@ const ProductDetails = ({ onAddtocart }) => {
   };
 
   const handleShare = async (platform) => {
-    const productID = "66c0d72d9f0d5c7ff9d1dbbd";
+    const productID = "66c5eb7ee9acad10fd78fa65";
     try {
       const response = await fetch(`https://funiro-furnitures.onrender.com/share/${productID}`, {
         method: "GET",
@@ -59,6 +60,40 @@ const ProductDetails = ({ onAddtocart }) => {
     } catch (error) {
       console.error('Error fetching share URLs:', error.message);
     }
+  }
+  const handleRating = async (rating)=>{
+    setSelectedRating(parseInt(rating));
+    const productID = "66c5eb7ee9acad10fd78fa65";
+    try {
+      const response = await fetch(`https://funiro-furnitures.onrender.com/product/${productID}/rate`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmM3MzhmYTc4NmNlMmIwYzRkNjc1YjQiLCJmaXJzdE5hbWUiOiJyYWphaCIsImxhc3ROYW1lIjoibWlrZSIsImVtYWlsIjoiYWRla3VubGVtaWNoYWVsMTMxOUBnbWFpbC5jb20iLCJpYXQiOjE3MjQzMzIzMzYsImV4cCI6MTcyNDUwNTEzNn0.tZZTv9xrYIi1JdNMBCANl5HcH-oVPv5ToimNfKoilOk`
+        },
+        body: JSON.stringify({
+        rating: selectedRating
+        })
+      });
+
+      if (!response.ok) {
+        if (response.status === 400) {
+          throw new Error('Rating must be between 1 and 5');
+        } else if (response.status === 404) {
+          throw new Error('Product not found');
+        } else if (response.status === 500) {
+          throw new Error('Internal server error');
+        } else {
+          throw new Error('An error occurred');
+        }
+      }
+      const data = await response.json();
+      console.log('Rating submitted successfully:', data);
+
+      alert('Rating submitted successfully');
+      }catch(error){
+        console.log('submitting error', error)
+      }
   }
   
   
@@ -112,21 +147,17 @@ const ProductDetails = ({ onAddtocart }) => {
       </div>
 
       <div className="w-full lg:w-1/2 pt-14 flex flex-col gap-4">
-        <h4 className="text-[30px]">Asgaard sofa</h4>
+        {/* <h4 className="text-[30px]">Asgaard sofa</h4> */}
         <h5 className="text-lg text-[#b7b7b7] font-semibold">Rs. 250,000.00</h5>
-        <div className="flex gap-4">
-          <div className="flex text-yellow-200">
-            <i className="bx bxs-star"></i>
-            <i className="bx bxs-star"></i>
-            <i className="bx bxs-star"></i>
-            <i className="bx bxs-star"></i>
-            <i className="bx bxs-star"></i>
+        <div className="flex gap-2">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <i
+                key={star}
+                className={`bx ${selectedRating >= star ? 'bxs-star text-yellow-500' : 'bx-star text-gray-300'}`}
+                onClick={() => handleRating(star)} // Set the selected rating
+              ></i>
+            ))}
           </div>
-          <div>
-            <div className="w-[1px] h-[18px] bg-[#141414]"></div>
-          </div>
-          <p className="text-xs text-[#b7b7b7]">5 Customer Review</p>
-        </div>
         <div>
           <p className="w-full lg:w-[500px] text-xs lg:text-sm">
             Setting the bar as one of the loudest speakers in its class, the

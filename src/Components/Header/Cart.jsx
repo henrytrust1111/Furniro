@@ -17,22 +17,30 @@ const Cart = ({ onClose }) => {
           <div className="w-full border-b"></div>
         </div>
 
-        <div className="h-[300px]">
-          <div className="h-[100px] flex items-center justify-between gap-8">
-            <div>
+        <div className="w-full h-[300px]">
+          <div className="flex items-center justify-between gap-8">
+            <div className="w-32">
               <img src="/Group 94.png" alt="" />
             </div>
             <div className="w-full flex flex-col gap-2">
-              <p className="text-xs">Asgard sofa</p>
-              <p className="text-xs">1  x  Rs250000</p>
+              <p className="text-sm">Asgard sofa</p>
+              <div className="text-xs flex items-center gap-2">
+                <p className="-text--clr-primary">1</p>
+                <p className="-text--clr-primary">x</p>
+                <p className="-text--clr-primary">Rs250000</p>
+              </div>
             </div>
             <div className=""><i class='bx bx-x text-lg'></i></div>
           </div>
-          </div>
+        </div>
 
         <div className="flex flex-col h-[75px] gap-6">
           <div className="flex justify-between">
-            <p className="text-xs font-semibold">Subtotal</p>
+            <p className="text-xs font-semibold">Total</p>
+            <p className="text-xs">Rs2500000</p>
+          </div>
+          <div className="flex justify-between">
+            <p className="text-xs font-semibold">subTotal</p>
             <p className="text-xs">Rs2500000</p>
           </div>
           <div className="w-full border-b"></div>
