@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import logo from "/icons/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { BiLoaderCircle } from "react-icons/bi";
 import axios from "axios";
 
@@ -39,17 +40,20 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "https://funiro-furnitures.onrender.com/log-in",
+        "https://funiro-furnitures.onrender.com/login",
         { email, password }
       );
 
       const { message, data } = response.data;
 
-      // Save token to localStorage
+      // Save necessary data to localStorage  
       localStorage.setItem("token", data);
+      localStorage.setItem("user", JSON.stringify(data));
 
-      toast.success(message);
-      navigate("/dashboard"); // Replace with your actual dashboard route
+      setTimeout(() => {
+        toast.success(message);
+      }, 2000);
+      navigate("/");
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.error || "An error occurred!");
@@ -170,6 +174,7 @@ const Login = () => {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

@@ -12,6 +12,7 @@ const OTPComponent = () => {
   const [loading, setLoading] = useState(false);
   const [resendLoading, setResendLoading] = useState(false);
   const navigate = useNavigate();
+  
 
   const handleOtpChange = (index, value) => {
     if (/^\d*$/.test(value)) {
@@ -25,6 +26,7 @@ const OTPComponent = () => {
       }
     }
   };
+
 
   const handleOtpSubmit = async (e) => {
     e.preventDefault();
@@ -41,6 +43,7 @@ const OTPComponent = () => {
     try {
       const response = await axios.post("https://funiro-furnitures.onrender.com/verify-otp", {
         email: localStorage.getItem("email"), 
+        // email: "henrytrust1111@gmail.com", 
         otp: enteredOtp,
       });
 

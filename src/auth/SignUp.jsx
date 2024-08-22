@@ -84,7 +84,7 @@ const SignUp = () => {
       setPopupMessage(message); // Set the message from the backend
       setShowPopupModal(true); // Show the popup modal
     } catch (error) {
-      if (error.response) {
+        if (error.response) {
         toast.error(error.response.data.error || "An error occurred!");
       } else {
         toast.error("Network error. Please try again.");
