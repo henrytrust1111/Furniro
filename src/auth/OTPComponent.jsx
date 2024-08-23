@@ -39,15 +39,17 @@ const OTPComponent = () => {
     setLoading(true);
 
     try {
-      const userId = localStorage.getItem("userId"); // Assuming you store the user's ID in localStorage
-      const response = await axios.post(`https://funiro-furnitures.onrender.com/verify-otp/${userId}`, {
+      const id = localStorage.getItem("userId"); // Assuming you store the user's ID in localStorage
+      console.log(id);
+      
+      const response = await axios.post(`https://funiro-furnitures.onrender.com/verify-otp/${id}`, {
         otp: enteredOtp,
       });
 
       if (response.status === 200) {
-        toast.success("OTP verified successfully!");
+        toast.success(response.message);
         localStorage.setItem("isVerified", true); // Save verification status to localStorage
-        navigate("/dashboard");
+        navigate("/login");
       }
     } catch (error) {
       if (error.response) {
