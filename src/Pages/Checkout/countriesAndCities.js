@@ -1,0 +1,35 @@
+export const countriesAndCities = {
+    Afghanistan: ["Kabul", "Kandahar", "Herat", "Mazar-i-Sharif", "Jalalabad"],
+    Albania: ["Tirana", "Durrës", "Vlorë", "Shkodër", "Fier"],
+    Algeria: ["Algiers", "Oran", "Constantine", "Annaba", "Blida"],
+    Angola: ["Luanda", "Huambo", "Lobito", "Benguela", "Kuito"],
+    Argentina: ["Buenos Aires", "Córdoba", "Rosario", "Mendoza", "La Plata"],
+    Australia: ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide"],
+    Austria: ["Vienna", "Graz", "Linz", "Salzburg", "Innsbruck"],
+    Belgium: ["Brussels", "Antwerp", "Ghent", "Charleroi", "Liège"],
+    Brazil: ["São Paulo", "Rio de Janeiro", "Brasília", "Salvador", "Fortaleza"],
+    Canada: ["Toronto", "Vancouver", "Montreal", "Calgary", "Ottawa"],
+    China: ["Beijing", "Shanghai", "Shenzhen", "Guangzhou", "Chengdu"],
+    Egypt: ["Cairo", "Alexandria", "Giza", "Shubra El-Kheima", "Port Said"],
+    France: ["Paris", "Lyon", "Marseille", "Nice", "Toulouse"],
+    Germany: ["Berlin", "Munich", "Frankfurt", "Hamburg", "Cologne"],
+    India: ["Delhi", "Mumbai", "Bangalore", "Chennai", "Hyderabad"],
+    Italy: ["Rome", "Milan", "Naples", "Turin", "Palermo"],
+    Japan: ["Tokyo", "Osaka", "Nagoya", "Kyoto", "Fukuoka"],
+    Kenya: ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret"],
+    Mexico: ["Mexico City", "Guadalajara", "Monterrey", "Puebla", "Tijuana"],
+    Netherlands: ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Eindhoven"],
+    Nigeria: ["Lagos", "Abuja", "Kano", "Ibadan", "Port Harcourt"],
+    Russia: ["Moscow", "Saint Petersburg", "Novosibirsk", "Yekaterinburg", "Kazan"],
+    "Saudi Arabia": ["Riyadh", "Jeddah", "Mecca", "Medina", "Dammam"],
+    "South Africa": ["Johannesburg", "Cape Town", "Durban", "Pretoria", "Port Elizabeth"],
+    Spain: ["Madrid", "Barcelona", "Valencia", "Seville", "Zaragoza"],
+    "Sri Lanka": ["Colombo", "Kandy", "Galle", "Jaffna", "Negombo"],
+    "United Kingdom": ["London", "Manchester", "Birmingham", "Leeds", "Glasgow"],
+    "United States": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix"],
+    Zimbabwe: ["Harare", "Bulawayo", "Chitungwiza", "Mutare", "Gweru"],
+    // Add more countries and cities as needed
+  };
+  
+  export const countries = Object.keys(countriesAndCities);
+  
