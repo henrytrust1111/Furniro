@@ -44,11 +44,12 @@ const Login = () => {
         { email, password }
       );
 
-      const { message, data } = response.data;
+      const { message, data, token } = response.data;
 
       // Save necessary data to localStorage  
-      localStorage.setItem("token", data);
+      localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(data));
+      localStorage.setItem("userId", data._id)
 
       setTimeout(() => {
         toast.success(message);
