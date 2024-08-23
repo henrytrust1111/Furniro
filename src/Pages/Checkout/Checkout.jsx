@@ -152,16 +152,16 @@ const Checkout = () => {
             <h2 className="text-2xl font-bold">Product</h2>
             <div className="border p-4 rounded-lg space-y-4">
               <div className="flex justify-between">
-                <span>Asgaard sofa × 1</span>
-                <span>Rs. 250,000.00</span>
+                <span className="font-[poppins]">Asgaard sofa × 1</span>
+                <span className="font-[poppins]">Rs. 250,000.00</span>
               </div>
               <div className="flex justify-between">
-                <span>Subtotal</span>
-                <span>Rs. 250,000.00</span>
+                <span className="font-[poppins]">Subtotal</span>
+                <span className="font-[poppins]">Rs. 250,000.00</span>
               </div>
               <div className="flex justify-between font-bold text-xl">
-                <span>Total</span>
-                <span className="text-orange-600">Rs. 250,000.00</span>
+                <span className="font-[poppins]">Total</span>
+                <span className="-text--clr-primary text-base font-semibold font-[poppins]">Rs. 250,000.00</span>
               </div>
               
               {/* Payment Methods */}
@@ -200,7 +200,7 @@ const Checkout = () => {
               {/* Place Order Button */}
               <button
                 onClick={handlePlaceOrder}
-                className="w-full bg-orange-600 text-white p-3 rounded-lg text-xl transition duration-300 ease-in-out transform hover:bg-orange-500 hover:scale-105 flex justify-center items-center"
+                className="w-full text-black p-3 border -border--clr-black-shade-v1  rounded-lg text-xl transition duration-300 ease-in-out transform hover:scale-105 flex justify-center items-center"
                 disabled={isLoading}
               >
                 {isLoading ? (
