@@ -1,7 +1,9 @@
 import React from "react";
 const MainCart = ()=>{
     return(
-        <div></div>
+        <div>
+            <div>cvbnm,.</div>
+        </div>
     )
 }
 

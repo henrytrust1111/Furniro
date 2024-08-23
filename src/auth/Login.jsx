@@ -47,7 +47,7 @@ const Login = () => {
       const { message, data } = response.data;
 
       // Save necessary data to localStorage  
-      localStorage.setItem("token", data);
+      localStorage.setItem("authToken", JSON.stringify(data.token)); // Use JSON.stringify if the token is an object
       localStorage.setItem("user", JSON.stringify(data));
 
       setTimeout(() => {
