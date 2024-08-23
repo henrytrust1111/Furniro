@@ -70,8 +70,9 @@ const Checkout = () => {
       <ScrollToTop />
       <ReuseableHero page={"Checkout"} page1={"Checkout"} />
       <ToastContainer />
-      <div className="max-w-7xl mx-auto p-4">
-        <div className="grid lg:grid-cols-2 gap-8">
+      {/* <div className="max-w-7xl mx-auto p-4"> */}
+      <div className="px-8 md:!px-24 lg:!px-48 my-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-14">
           {/* Billing Details Form */}
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Billing details</h2>
@@ -178,7 +179,7 @@ const Checkout = () => {
                     Direct Bank Transfer
                   </label>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="-text--clr-light-gray-v2 text-xs">
                   Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
                 </p>
 
