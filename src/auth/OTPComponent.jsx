@@ -144,7 +144,7 @@ const OTPComponent = () => {
             <div className="text-center text-sm">
               Didn't receive the code?{" "}
               <span
-                className="font-medium text-[#EF6911] hover:underline cursor-pointer text-sm font-medium"
+                className="font-semibold text-[#EF6911] hover:underline cursor-pointer text-sm"
                 onClick={handleResendOtp}
               >
                 {resendLoading ? (
