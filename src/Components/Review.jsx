@@ -39,7 +39,7 @@ const Review = () => {
       setLoading(true); 
       try {
         const productID = "66c5eb7ee9acad10fd78fa65";
-        const token = localStorage.getItem('authToken')
+        const token = localStorage.getItem('token')
         console.log('Retrieved Token:', token);
 
         if (!token) {
@@ -61,13 +61,10 @@ const Review = () => {
         const data = await response.json();
 
         if (response.ok) {
-          // Adjusted: Use fullName instead of name
           if (data.comment && data.comment.fullName) {
             const initials = `${data.comment.fullName.split(" ")[0][0]}${
               data.comment.fullName.split(" ")[1][0]
             }`.toUpperCase();
-
-            // Update the reviews state with the new comment
             setReviews([
               ...reviews,
               {
@@ -78,7 +75,7 @@ const Review = () => {
               },
             ]);
 
-            setExp(""); // Clear the input field after submission
+            setExp(""); 
             console.log("Comment posted:", data);
           } else {
             console.error("Failed to get user's full name for initials:", data);
