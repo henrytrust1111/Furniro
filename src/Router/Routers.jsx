@@ -13,6 +13,7 @@ import SignUp from "../auth/SignUp";
 import OTPComponent from "../auth/OTPComponent";
 import ForgetPassword from "../auth/ForgetPassword";
 import Checkout from "../Pages/Checkout/Checkout";
+import ResetPassword from "../auth/ResetPassword";
 
 
 const route = createHashRouter([
@@ -77,6 +78,10 @@ const route = createHashRouter([
   {
     path: "/forget-password",
     element: <ForgetPassword />,
+  },
+  {
+    path: "/reset-password",
+    element: <ResetPassword />,
   },
   
 ]);
