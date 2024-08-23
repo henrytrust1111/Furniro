@@ -5,7 +5,7 @@ const ProductDetails = ({ onAddtocart }) => {
   const [quantity, setquantity] = useState(0);
   const [image,setImage] = useState("/singleProduct.png");
   const [selectedSize, setSelectedSize] = useState("L"); // Default size is "L"
-  const [selectedRating,setSelectedRating] = useState(0)
+  const [selectedRating,setSelectedRating] = useState(5)
 
   const onColorChange = (color) => {
     setBgColor(color);
@@ -28,12 +28,18 @@ const ProductDetails = ({ onAddtocart }) => {
 
   const handleShare = async (platform) => {
     const productID = "66c5eb7ee9acad10fd78fa65";
+        const token = localStorage.getItem('authToken')
+        console.log('Retrieved Token:', token);
+
+        if (!token) {
+          throw new Error('No token found. Please log in.');
+        }
     try {
       const response = await fetch(`https://funiro-furnitures.onrender.com/share/${productID}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer your_token_here`
+          "Authorization": `Bearer ${token}`
         }
       });
   
@@ -61,40 +67,57 @@ const ProductDetails = ({ onAddtocart }) => {
       console.error('Error fetching share URLs:', error.message);
     }
   }
-  const handleRating = async (rating)=>{
-    setSelectedRating(parseInt(rating));
+  const handleRating = async (rating) => {
+    const parsedRating = parseInt(rating, 10);
+    setSelectedRating(parsedRating); // Update the state
+
+    // Ensure the value is up-to-date before making the API call
+    await new Promise(resolve => setTimeout(resolve, 0));
+
     const productID = "66c5eb7ee9acad10fd78fa65";
+    const token = localStorage.getItem('authToken');
+    console.log('Retrieved Token:', token);
+    console.log('Parsed Rating:', parsedRating);
+
+    if (!token) {
+        throw new Error('No token found. Please log in.');
+    }
+
     try {
-      const response = await fetch(`https://funiro-furnitures.onrender.com/product/${productID}/rate`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmM3MzhmYTc4NmNlMmIwYzRkNjc1YjQiLCJmaXJzdE5hbWUiOiJyYWphaCIsImxhc3ROYW1lIjoibWlrZSIsImVtYWlsIjoiYWRla3VubGVtaWNoYWVsMTMxOUBnbWFpbC5jb20iLCJpYXQiOjE3MjQzMzIzMzYsImV4cCI6MTcyNDUwNTEzNn0.tZZTv9xrYIi1JdNMBCANl5HcH-oVPv5ToimNfKoilOk`
-        },
-        body: JSON.stringify({
-        rating: selectedRating
-        })
-      });
+        const response = await fetch(`https://funiro-furnitures.onrender.com/product/${productID}/rate`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                rating: parsedRating
+            })
+        });
 
-      if (!response.ok) {
-        if (response.status === 400) {
-          throw new Error('Rating must be between 1 and 5');
-        } else if (response.status === 404) {
-          throw new Error('Product not found');
-        } else if (response.status === 500) {
-          throw new Error('Internal server error');
-        } else {
-          throw new Error('An error occurred');
+        if (!response.ok) {
+            if (response.status === 400) {
+                throw new Error('Rating must be between 1 and 5');
+            } else if (response.status === 404) {
+                throw new Error('Product not found');
+            } else if (response.status === 500) {
+                throw new Error('Internal server error');
+            } else {
+                throw new Error('An error occurred');
+            }
         }
-      }
-      const data = await response.json();
-      console.log('Rating submitted successfully:', data);
 
-      alert('Rating submitted successfully');
-      }catch(error){
-        console.log('submitting error', error)
-      }
-  }
+        const data = await response.json();
+        console.log('Rating submitted successfully:', data);
+
+        alert('Rating submitted successfully');
+    } catch (error) {
+        console.log('Submitting error:', error.message);
+        alert(error.message); // Show alert with the error message
+    }
+};
+
+
   
   
   return (

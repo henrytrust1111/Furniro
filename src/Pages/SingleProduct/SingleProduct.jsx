@@ -10,40 +10,9 @@ import ScrollToTop from "../../Containers/ScrollToTop";
 
 const SingleProduct = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
-  const [size,setSize] = useState()
 
-  const handleAddToCart = async(quantity) => {
-    const productID = "66c5eb7ee9acad10fd78fa65"
+  const handleAddToCart = () => {
     setIsCartVisible(true);
-    try{
-      const response = await fetch (`https://funiro-furnitures.onrender.com/add-to-cart/:userId/${productID}`,{
-        method:"POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer your_token_here`,  
-        },
-        body: JSON.stringify({
-          quantity:quantity
-        })
-      })
-
-
-    if (!response.ok) {
-      // Handle response errors
-      if (response.status === 404) {
-        throw new Error('Product or user not found');
-      } else if (response.status === 500) {
-        throw new Error('Internal server error');
-      } else {
-        throw new Error('An error occurred');
-      }
-    }
-
-    const data = await response.json();
-    console.log('Product added to cart:', data);
-    }catch(response){
-      console.error('Error adding product to cart:', error.message);
-    }
   };
 
   const handleCloseCart = () => {
