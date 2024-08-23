@@ -36,16 +36,23 @@ const Review = () => {
   const handleSubmit = async (e) => {
     if (e) e.preventDefault();
     if (exp.trim()) {
-      setLoading(true); // Start loading
+      setLoading(true); 
       try {
         const productID = "66c5eb7ee9acad10fd78fa65";
+        const token = localStorage.getItem('authToken')
+        console.log('Retrieved Token:', token);
+
+        if (!token) {
+          throw new Error('No token found. Please log in.');
+        }
         const response = await fetch(
           `https://funiro-furnitures.onrender.com/product/${productID}/comment`,
           {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmFkMjUzMTk1YmE3NTMwNDgwMWY0ZDQiLCJmaXJzdE5hbWUiOiJhZGUiLCJsYXN0TmFtZSI6Im1pa2UiLCJlbWFpbCI6ImFkZWt1bmxlcmFqYWgxM0BnbWFpbC5jb20iLCJpYXQiOjE3MjQzMTc5NDcsImV4cCI6MTcyNDQ5MDc0N30.2hXHvysaUM7TuZzPvN2iT_KvqO6hYpOo550KDC38EYI`,
+              Authorization: `Bearer ${token}`,
+            //   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmM4ODVhNThhYzNlNzMxM2M3NDQ1NDEiLCJmaXJzdE5hbWUiOiJlbG8iLCJsYXN0TmFtZSI6Im9sb2tvciIsImVtYWlsIjoib2xva29yZWxvNTJAZ21haWwuY29tIiwiaWF0IjoxNzI0NDIyNDMyLCJleHAiOjE3MjQ1OTUyMzJ9.a9s_8YIuAMUv_g0m501xEQkY-OA81JiGyYs-z-BSEmI
             },
             body: JSON.stringify({ comment: exp }),
           }
