@@ -20,13 +20,10 @@ const Checkout = () => {
   };
 
   const validateForm = () => {
-    // Add your form validation logic here
-    // For example:
     if (!selectedCountry) {
       toast.error("Please select a country.");
       return false;
     }
-    // Add more validation checks as needed
     return true;
   };
 
@@ -39,11 +36,11 @@ const Checkout = () => {
     window.Korapay.initialize({
       key: "pk_test_eR5xsWZRG1XfPVe8JvDJyHQWR1nieyBU2DaE5dBm",
       reference: `ref-${Math.floor(Math.random() * 1000000)}`,
-      amount: 22000, 
+      amount: 22000,
       currency: "NGN",
       customer: {
         name: "John Doe",
-        email: "john@doe.com"
+        email: "john@doe.com",
       },
       notification_url: "https://example.com/webhook",
       onClose: () => {
@@ -61,7 +58,7 @@ const Checkout = () => {
         toast.error("Payment failed. Please try again.");
         console.error(error);
         // Handle the error response
-      }
+      },
     });
   };
 
@@ -77,25 +74,25 @@ const Checkout = () => {
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Billing details</h2>
             <div className="grid md:grid-cols-2 gap-4">
-              <input 
-                type="text" 
-                placeholder="First Name" 
-                className="border p-3 w-full rounded" 
+              <input
+                type="text"
+                placeholder="First Name"
+                className="border p-3 w-full rounded"
               />
-              <input 
-                type="text" 
-                placeholder="Last Name" 
-                className="border p-3 w-full rounded" 
+              <input
+                type="text"
+                placeholder="Last Name"
+                className="border p-3 w-full rounded"
               />
             </div>
-            <input 
-              type="text" 
-              placeholder="Company Name (Optional)" 
-              className="border p-3 w-full rounded" 
+            <input
+              type="text"
+              placeholder="Company Name (Optional)"
+              className="border p-3 w-full rounded"
             />
-            <select 
-              className="border p-3 w-full rounded" 
-              value={selectedCountry} 
+            <select
+              className="border p-3 w-full rounded"
+              value={selectedCountry}
               onChange={handleCountryChange}
             >
               <option value="" disabled>
@@ -107,13 +104,13 @@ const Checkout = () => {
                 </option>
               ))}
             </select>
-            <input 
-              type="text" 
-              placeholder="Street address" 
-              className="border p-3 w-full rounded" 
+            <input
+              type="text"
+              placeholder="Street address"
+              className="border p-3 w-full rounded"
             />
-            <select 
-              className="border p-3 w-full rounded" 
+            <select
+              className="border p-3 w-full rounded"
               defaultValue=""
               disabled={!selectedCountry}
             >
@@ -126,27 +123,27 @@ const Checkout = () => {
                 </option>
               ))}
             </select>
-            <input 
-              type="text" 
-              placeholder="ZIP code" 
-              className="border p-3 w-full rounded" 
+            <input
+              type="text"
+              placeholder="ZIP code"
+              className="border p-3 w-full rounded"
             />
-            <input 
-              type="text" 
-              placeholder="Phone" 
-              className="border p-3 w-full rounded" 
+            <input
+              type="text"
+              placeholder="Phone"
+              className="border p-3 w-full rounded"
             />
-            <input 
-              type="email" 
-              placeholder="Email address" 
-              className="border p-3 w-full rounded" 
+            <input
+              type="email"
+              placeholder="Email address"
+              className="border p-3 w-full rounded"
             />
-            <textarea 
-              placeholder="Additional information" 
-              className="border p-3 w-full rounded h-32" 
+            <textarea
+              placeholder="Additional information"
+              className="border p-3 w-full rounded h-32"
             ></textarea>
           </div>
-          
+
           {/* Order Summary */}
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Product</h2>
@@ -161,18 +158,20 @@ const Checkout = () => {
               </div>
               <div className="flex justify-between font-bold text-xl">
                 <span className="font-[poppins]">Total</span>
-                <span className="-text--clr-primary text-base font-semibold font-[poppins]">Rs. 250,000.00</span>
+                <span className="-text--clr-primary text-base font-semibold font-[poppins]">
+                  Rs. 250,000.00
+                </span>
               </div>
-              
+
               {/* Payment Methods */}
               <div className="space-y-2">
                 <div className="flex items-center">
-                  <input 
-                    type="radio" 
-                    id="bank-transfer" 
-                    name="payment-method" 
+                  <input
+                    type="radio"
+                    id="bank-transfer"
+                    name="payment-method"
                     className="mr-2"
-                    defaultChecked 
+                    defaultChecked
                   />
                   <label htmlFor="bank-transfer" className="flex items-center">
                     <MdOutlineCreditCard className="mr-2 text-xl" />
@@ -180,22 +179,33 @@ const Checkout = () => {
                   </label>
                 </div>
                 <p className="-text--clr-light-gray-v2 text-xs">
-                  Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+                  Make your payment directly into our bank account. Please use
+                  your Order ID as the payment reference. Your order will not be
+                  shipped until the funds have cleared in our account.
                 </p>
 
                 <div className="flex items-center">
-                  <input 
-                    type="radio" 
-                    id="cash-on-delivery" 
-                    name="payment-method" 
+                  <input
+                    type="radio"
+                    id="cash-on-delivery"
+                    name="payment-method"
                     className="mr-2"
                   />
-                  <label htmlFor="cash-on-delivery" className="flex items-center">
+                  <label
+                    htmlFor="cash-on-delivery"
+                    className="flex items-center"
+                  >
                     <BsCashStack className="mr-2 text-xl" />
                     Cash On Delivery
                   </label>
                 </div>
               </div>
+              <main className="leading-tight text-xs -text--clr-light-gray-v2">
+                Your personal data will be used to support your experience
+                throughout this website, to manage access to your account, and
+                for other purposes described in our{" "}
+                <span className="font-bold leading-tight text-black">privacy policy</span>.
+              </main>
 
               {/* Place Order Button */}
               <button
@@ -219,36 +229,6 @@ const Checkout = () => {
 
 export default Checkout;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React, { useState } from "react";
 // import ScrollToTop from "../../Containers/ScrollToTop";
 // import ReuseableHero from "../../Components/ReuseableHero";
@@ -270,32 +250,32 @@ export default Checkout;
 //     <>
 //       <ScrollToTop />
 //       <ReuseableHero page={"Checkout"} page1={"Checkout"} />
-      
+
 //       <div className="max-w-7xl mx-auto p-4">
 //         <div className="grid lg:grid-cols-2 gap-8">
 //           {/* Billing Details Form */}
 //           <div className="space-y-4">
 //             <h2 className="text-2xl font-bold">Billing details</h2>
 //             <div className="grid md:grid-cols-2 gap-4">
-//               <input 
-//                 type="text" 
-//                 placeholder="First Name" 
-//                 className="border p-3 w-full rounded" 
+//               <input
+//                 type="text"
+//                 placeholder="First Name"
+//                 className="border p-3 w-full rounded"
 //               />
-//               <input 
-//                 type="text" 
-//                 placeholder="Last Name" 
-//                 className="border p-3 w-full rounded" 
+//               <input
+//                 type="text"
+//                 placeholder="Last Name"
+//                 className="border p-3 w-full rounded"
 //               />
 //             </div>
-//             <input 
-//               type="text" 
-//               placeholder="Company Name (Optional)" 
-//               className="border p-3 w-full rounded" 
+//             <input
+//               type="text"
+//               placeholder="Company Name (Optional)"
+//               className="border p-3 w-full rounded"
 //             />
-//             <select 
-//               className="border p-3 w-full rounded" 
-//               value={selectedCountry} 
+//             <select
+//               className="border p-3 w-full rounded"
+//               value={selectedCountry}
 //               onChange={handleCountryChange}
 //             >
 //               <option value="" disabled>
@@ -307,13 +287,13 @@ export default Checkout;
 //                 </option>
 //               ))}
 //             </select>
-//             <input 
-//               type="text" 
-//               placeholder="Street address" 
-//               className="border p-3 w-full rounded" 
+//             <input
+//               type="text"
+//               placeholder="Street address"
+//               className="border p-3 w-full rounded"
 //             />
-//             <select 
-//               className="border p-3 w-full rounded" 
+//             <select
+//               className="border p-3 w-full rounded"
 //               defaultValue=""
 //               disabled={!selectedCountry}
 //             >
@@ -326,27 +306,27 @@ export default Checkout;
 //                 </option>
 //               ))}
 //             </select>
-//             <input 
-//               type="text" 
-//               placeholder="ZIP code" 
-//               className="border p-3 w-full rounded" 
+//             <input
+//               type="text"
+//               placeholder="ZIP code"
+//               className="border p-3 w-full rounded"
 //             />
-//             <input 
-//               type="text" 
-//               placeholder="Phone" 
-//               className="border p-3 w-full rounded" 
+//             <input
+//               type="text"
+//               placeholder="Phone"
+//               className="border p-3 w-full rounded"
 //             />
-//             <input 
-//               type="email" 
-//               placeholder="Email address" 
-//               className="border p-3 w-full rounded" 
+//             <input
+//               type="email"
+//               placeholder="Email address"
+//               className="border p-3 w-full rounded"
 //             />
-//             <textarea 
-//               placeholder="Additional information" 
-//               className="border p-3 w-full rounded h-32" 
+//             <textarea
+//               placeholder="Additional information"
+//               className="border p-3 w-full rounded h-32"
 //             ></textarea>
 //           </div>
-          
+
 //           {/* Order Summary */}
 //           <div className="space-y-4">
 //             <h2 className="text-2xl font-bold">Product</h2>
@@ -363,16 +343,16 @@ export default Checkout;
 //                 <span>Total</span>
 //                 <span className="text-orange-600">Rs. 250,000.00</span>
 //               </div>
-              
+
 //               {/* Payment Methods */}
 //               <div className="space-y-2">
 //                 <div className="flex items-center">
-//                   <input 
-//                     type="radio" 
-//                     id="bank-transfer" 
-//                     name="payment-method" 
+//                   <input
+//                     type="radio"
+//                     id="bank-transfer"
+//                     name="payment-method"
 //                     className="mr-2"
-//                     defaultChecked 
+//                     defaultChecked
 //                   />
 //                   <label htmlFor="bank-transfer" className="flex items-center">
 //                     <MdOutlineCreditCard className="mr-2 text-xl" />
@@ -384,10 +364,10 @@ export default Checkout;
 //                 </p>
 
 //                 <div className="flex items-center">
-//                   <input 
-//                     type="radio" 
-//                     id="cash-on-delivery" 
-//                     name="payment-method" 
+//                   <input
+//                     type="radio"
+//                     id="cash-on-delivery"
+//                     name="payment-method"
 //                     className="mr-2"
 //                   />
 //                   <label htmlFor="cash-on-delivery" className="flex items-center">
