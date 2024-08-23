@@ -12,9 +12,6 @@ const Shop = () => {
      <ShopPagination/>
      <ShopBody/>
      <ShopPage/>
- 
-
-
     </>
   )
 }

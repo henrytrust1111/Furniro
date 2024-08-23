@@ -114,6 +114,7 @@ const Login = () => {
                   id="email"
                   className="h-9 outline-none border focus:ring-2 focus:ring-[#EF6911] focus:border-[#EF6911] block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                   placeholder="Email"
+                  autoComplete="email"
                 />
               </div>
             </div>
@@ -127,6 +128,7 @@ const Login = () => {
                   id="password"
                   className="h-9  outline-none border focus:ring-2 focus:ring-[#EF6911] focus:border-[#EF6911] block w-full pl-10 pr-10 sm:text-sm border-gray-300 rounded-md"
                   placeholder="Enter your password"
+                  autoComplete="password"
                 />
                 <div
                   className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"

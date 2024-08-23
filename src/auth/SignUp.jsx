@@ -152,6 +152,7 @@ const SignUp = () => {
                   id="email"
                   className="h-9 outline-none border focus:ring-2 focus:ring-[#EF6911] focus:border-[#EF6911] block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                   placeholder="Email"
+                  autoComplete="email"
                 />
               </div>
             </div>
@@ -161,7 +162,7 @@ const SignUp = () => {
                   <FaPhone className="text-gray-400" />
                 </div>
                 <input
-                  type="text"
+                  type="number"
                   id="phoneNumber"
                   className="h-9 outline-none border focus:ring-2 focus:ring-[#EF6911] focus:border-[#EF6911] block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                   placeholder="Phone Number"
@@ -178,6 +179,7 @@ const SignUp = () => {
                   id="password"
                   className="h-9 outline-none border focus:ring-2 focus:ring-[#EF6911] focus:border-[#EF6911] block w-full pl-10 pr-10 sm:text-sm border-gray-300 rounded-md"
                   placeholder="Enter your password"
+                  autoComplete="new-password"
                 />
                 <div
                   className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
@@ -201,6 +203,7 @@ const SignUp = () => {
                   id="confirmPassword"
                   className="h-9 outline-none border focus:ring-2 focus:ring-[#EF6911] focus:border-[#EF6911] block w-full pl-10 pr-10 sm:text-sm border-gray-300 rounded-md"
                   placeholder="Confirm your password"
+                  autoComplete="new-password"
                 />
                 <div
                   className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
