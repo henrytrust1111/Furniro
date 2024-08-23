@@ -3,11 +3,15 @@ import ScrollToTop from "../../Containers/ScrollToTop";
 import ReuseableHero from "../../Components/ReuseableHero";
 import { BsCashStack } from "react-icons/bs";
 import { MdOutlineCreditCard } from "react-icons/md";
+import { BiLoaderCircle } from "react-icons/bi";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { countriesAndCities, countries } from "./countriesAndCities";
 
 const Checkout = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [cities, setCities] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleCountryChange = (e) => {
     const selectedCountry = e.target.value;
@@ -15,11 +19,57 @@ const Checkout = () => {
     setCities(countriesAndCities[selectedCountry] || []);
   };
 
+  const validateForm = () => {
+    // Add your form validation logic here
+    // For example:
+    if (!selectedCountry) {
+      toast.error("Please select a country.");
+      return false;
+    }
+    // Add more validation checks as needed
+    return true;
+  };
+
+  const handlePlaceOrder = () => {
+    if (!validateForm()) return;
+
+    setIsLoading(true);
+
+    // Initialize Korapay payment
+    window.Korapay.initialize({
+      key: "pk_test_eR5xsWZRG1XfPVe8JvDJyHQWR1nieyBU2DaE5dBm",
+      reference: `ref-${Math.floor(Math.random() * 1000000)}`,
+      amount: 22000, 
+      currency: "NGN",
+      customer: {
+        name: "John Doe",
+        email: "john@doe.com"
+      },
+      notification_url: "https://example.com/webhook",
+      onClose: () => {
+        setIsLoading(false);
+        toast.error("Payment process was canceled.");
+      },
+      onSuccess: (response) => {
+        setIsLoading(false);
+        toast.success("Payment successful!");
+        console.log(response);
+        // Handle the success response
+      },
+      onError: (error) => {
+        setIsLoading(false);
+        toast.error("Payment failed. Please try again.");
+        console.error(error);
+        // Handle the error response
+      }
+    });
+  };
+
   return (
     <>
       <ScrollToTop />
       <ReuseableHero page={"Checkout"} page1={"Checkout"} />
-      
+      <ToastContainer />
       <div className="max-w-7xl mx-auto p-4">
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Billing Details Form */}
@@ -147,8 +197,16 @@ const Checkout = () => {
               </div>
 
               {/* Place Order Button */}
-              <button className="w-full bg-orange-600 text-white p-3 rounded-lg text-xl transition duration-300 ease-in-out transform hover:bg-orange-500 hover:scale-105">
-                Place order
+              <button
+                onClick={handlePlaceOrder}
+                className="w-full bg-orange-600 text-white p-3 rounded-lg text-xl transition duration-300 ease-in-out transform hover:bg-orange-500 hover:scale-105 flex justify-center items-center"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <BiLoaderCircle className="mr-2 animate-spin" size={22} />
+                ) : (
+                  "Place order"
+                )}
               </button>
             </div>
           </div>
@@ -186,13 +244,27 @@ export default Checkout;
 
 
 
-// import React from "react";
+
+
+
+
+// import React, { useState } from "react";
 // import ScrollToTop from "../../Containers/ScrollToTop";
 // import ReuseableHero from "../../Components/ReuseableHero";
 // import { BsCashStack } from "react-icons/bs";
 // import { MdOutlineCreditCard } from "react-icons/md";
+// import { countriesAndCities, countries } from "./countriesAndCities";
 
 // const Checkout = () => {
+//   const [selectedCountry, setSelectedCountry] = useState("");
+//   const [cities, setCities] = useState([]);
+
+//   const handleCountryChange = (e) => {
+//     const selectedCountry = e.target.value;
+//     setSelectedCountry(selectedCountry);
+//     setCities(countriesAndCities[selectedCountry] || []);
+//   };
+
 //   return (
 //     <>
 //       <ScrollToTop />
@@ -222,27 +294,36 @@ export default Checkout;
 //             />
 //             <select 
 //               className="border p-3 w-full rounded" 
-//               defaultValue="Sri Lanka"
+//               value={selectedCountry} 
+//               onChange={handleCountryChange}
 //             >
-//               <option value="Sri Lanka">Sri Lanka</option>
-//               {/* Add more options as needed */}
+//               <option value="" disabled>
+//                 Country / Region
+//               </option>
+//               {countries.map((country, index) => (
+//                 <option key={index} value={country}>
+//                   {country}
+//                 </option>
+//               ))}
 //             </select>
 //             <input 
 //               type="text" 
 //               placeholder="Street address" 
 //               className="border p-3 w-full rounded" 
 //             />
-//             <input 
-//               type="text" 
-//               placeholder="Town / City" 
-//               className="border p-3 w-full rounded" 
-//             />
 //             <select 
-//               className="border p-3 w-full rounded"
-//               defaultValue="Western Province"
+//               className="border p-3 w-full rounded" 
+//               defaultValue=""
+//               disabled={!selectedCountry}
 //             >
-//               <option value="Western Province">Western Province</option>
-//               {/* Add more options as needed */}
+//               <option value="" disabled>
+//                 Town / City
+//               </option>
+//               {cities.map((city, index) => (
+//                 <option key={index} value={city}>
+//                   {city}
+//                 </option>
+//               ))}
 //             </select>
 //             <input 
 //               type="text" 
@@ -279,7 +360,7 @@ export default Checkout;
 //               </div>
 //               <div className="flex justify-between font-bold text-xl">
 //                 <span>Total</span>
-//                 <span className="text-orange-500">Rs. 250,000.00</span>
+//                 <span className="text-orange-600">Rs. 250,000.00</span>
 //               </div>
               
 //               {/* Payment Methods */}
@@ -297,7 +378,7 @@ export default Checkout;
 //                     Direct Bank Transfer
 //                   </label>
 //                 </div>
-//                 <p className="text-gray-500">
+//                 <p className="text-gray-600 text-sm">
 //                   Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
 //                 </p>
 
@@ -316,7 +397,7 @@ export default Checkout;
 //               </div>
 
 //               {/* Place Order Button */}
-//               <button className="w-full bg-orange-500 text-white p-3 rounded-lg text-xl">
+//               <button className="w-full bg-orange-600 text-white p-3 rounded-lg text-xl transition duration-300 ease-in-out transform hover:bg-orange-500 hover:scale-105">
 //                 Place order
 //               </button>
 //             </div>
