@@ -13,7 +13,6 @@ const OTPComponent = () => {
   const [resendLoading, setResendLoading] = useState(false);
   const navigate = useNavigate();
   
-
   const handleOtpChange = (index, value) => {
     if (/^\d*$/.test(value)) {
       const newOtp = [...otp];
@@ -26,7 +25,6 @@ const OTPComponent = () => {
       }
     }
   };
-
 
   const handleOtpSubmit = async (e) => {
     e.preventDefault();
@@ -41,9 +39,8 @@ const OTPComponent = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("https://funiro-furnitures.onrender.com/verify-otp", {
-        email: localStorage.getItem("email"), 
-        // email: "henrytrust1111@gmail.com", 
+      const userId = localStorage.getItem("userId"); // Assuming you store the user's ID in localStorage
+      const response = await axios.post(`https://funiro-furnitures.onrender.com/verify-otp/${userId}`, {
         otp: enteredOtp,
       });
 
@@ -147,7 +144,7 @@ const OTPComponent = () => {
             <div className="text-center text-sm">
               Didn't receive the code?{" "}
               <span
-                className="font-medium text-[#EF6911] hover:underline cursor-pointer"
+                className="font-medium text-[#EF6911] hover:underline cursor-pointer text-sm font-medium"
                 onClick={handleResendOtp}
               >
                 {resendLoading ? (
@@ -192,6 +189,7 @@ const OTPComponent = () => {
 };
 
 export default OTPComponent;
+
 
 
 
