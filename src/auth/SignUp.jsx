@@ -85,7 +85,7 @@ const SignUp = () => {
       setPopupMessage(message); // Set the message from the backend
       setShowPopupModal(true); // Show the popup modal
     } catch (error) {
-        if (error.response) {
+      if (error.response) {
         toast.error(error.response.data.error || "An error occurred!");
       } else {
         toast.error("Network error. Please try again.");
@@ -254,14 +254,13 @@ const SignUp = () => {
           <h1 className="text-4xl font-bold mb-2 text-center">
             Welcome to Furniro
           </h1>
-          <p className="mb-4 text-2xl">
-            Effortless Attendance, Enhanced Integrity
+          <p className="mb-4 text-lg">
+            Your journey to a beautifully furnished home begins here.
           </p>
-          <p className="text-sm text-center">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Repudiandae eum ipsum ipsa nesciunt blanditiis odit, aspernatur
-            nobis, nostrum illum dolorem dolore? Hic reiciendis ipsa eligendi
-            error, maxime numquam ratione repudiandae!
+          <p className="text-sm text-center italic">
+            Discover a world of stylish furniture and home accessories that fit
+            your space and taste. Enjoy seamless shopping with secure checkout
+            and fast delivery.
           </p>
         </div>
       </div>
@@ -275,14 +274,6 @@ const SignUp = () => {
 };
 
 export default SignUp;
-
-
-
-
-
-
-
-
 
 // import React, { useState } from "react";
 // import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";

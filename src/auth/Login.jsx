@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import logo from "/icons/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,6 +11,13 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/");
+    }
+  }, [navigate]);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -51,10 +58,11 @@ const Login = () => {
       localStorage.setItem("user", JSON.stringify(data));
       localStorage.setItem("userId", data._id)
 
+      toast.success(message);
+      
       setTimeout(() => {
-        toast.success(message);
-      }, 2000);
       navigate("/");
+      }, 3000);
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.error || "An error occurred!");
@@ -82,13 +90,7 @@ const Login = () => {
           <h1 className="text-4xl font-bold mb-2 text-center">
             Welcome to Furniro
           </h1>
-          <p className="mb-4 text-2xl">Effortless Attendance, Enhanced Integrity</p>
-          <p className="text-sm text-center">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae
-            eum ipsum ipsa nesciunt blanditiis odit, aspernatur nobis, nostrum
-            illum dolorem dolore? Hic reiciendis ipsa eligendi error, maxime
-            numquam ratione repudiandae!
-          </p>
+          <p className="mb-4 text-2xl">Log in to continue shopping.</p>
         </div>
         <div className="w-full md:w-1/2 p-3 sm:p-5 md:p-6 lg:p-8 flex flex-col justify-center items-center ">
           <div
