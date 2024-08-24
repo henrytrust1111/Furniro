@@ -191,7 +191,7 @@ const Checkout = () => {
         `https://funiro-furnitures.onrender.com/checkout/${userId}`,
         { cart }
       );
-      toast.success(response.data.message);
+      // toast.success(response.data.message);
       setCart([]);
     } catch (error) {
       toast.error(error.response?.data?.message || "Checkout failed.");
@@ -240,11 +240,11 @@ const Checkout = () => {
     window.Korapay.initialize({
       key: "pk_test_eR5xsWZRG1XfPVe8JvDJyHQWR1nieyBU2DaE5dBm",
       reference: `ref-${Math.floor(Math.random() * 1000000)}`,
-      amount: 22000,
+      amount: cart?.reduce((sum, item) => sum + item.price * item.quantity, 0) * 100,
       currency: "NGN",
       customer: {
-        name: "John Doe",
-        email: "john@doe.com",
+        name: `${billingDetails.firstName} ${billingDetails.lastName}`,
+        email: billingDetails.email,
       },
       notification_url: "https://example.com/webhook",
       onClose: () => {
@@ -458,7 +458,7 @@ const Checkout = () => {
 
               <button
                 onClick={handlePlaceOrder}
-                className="w-full bg-primary text-white py-3 rounded-md font-semibold text-lg"
+                className="w-full bg-primary text-black border -border--clr-black-shade-v1 py-3 rounded-md font-semibold text-lg"
                 disabled={isLoading}
               >
                 {isLoading ? (
@@ -476,6 +476,69 @@ const Checkout = () => {
 };
 
 export default Checkout;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // import React, { useState, useEffect } from "react";
 // import ScrollToTop from "../../Containers/ScrollToTop";
