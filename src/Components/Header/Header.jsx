@@ -35,6 +35,7 @@ export default function Header() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     localStorage.removeItem("userId");
+    // window.location.reload();
   };
 
   const handleMouseDown = (e) => {
@@ -83,7 +84,7 @@ export default function Header() {
     };
 
    
-  }, [token]);
+  }, [token,handleLogout]);
 
   const handleMediaQueryChange = (mediaQuery) => {
     if (mediaQuery.matches) {
@@ -168,7 +169,7 @@ export default function Header() {
             onMouseLeave={handleMouseLeave}
           >
             {token ? (
-              <div className="text-2xl">{name}</div>
+              <div className="text-2xl cursor-pointer hover:-text--clr-primary">{name}</div>
             ) : (
               <FaUser className="-text--clr-primary cursor-pointer" size={24} />
             )}
@@ -202,7 +203,7 @@ export default function Header() {
         >
           {/* <FaUser className="-text--clr-primary cursor-pointer" size={24} /> */}
           {token ? (
-            <div className="text-2xl">{name}</div>
+            <div className="text-2xl hover:-text--clr-primary">{name}</div>
           ) : (
             <FaUser className="-text--clr-primary cursor-pointer" size={24} />
           )}
