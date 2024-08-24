@@ -36,7 +36,7 @@ const Checkout = () => {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        setIsLoading(true);
+        // setIsLoading(true);
         const response = await axios.get(
           "https://funiro-furnitures.onrender.com/countries"
         );
@@ -55,7 +55,7 @@ const Checkout = () => {
     if (!selectedCountry) return;
     const fetchStates = async () => {
       try {
-        setIsLoading(true);
+        // setIsLoading(true);
         const response = await axios.get(
           `https://funiro-furnitures.onrender.com/countries/${selectedCountry}/states`
         );
@@ -63,7 +63,7 @@ const Checkout = () => {
         setCities([]);
         setIsLoading(false);
       } catch (error) {
-        setIsLoading(false);
+        // setIsLoading(false);
         toast.error("Failed to load states.");
       }
     };
@@ -75,7 +75,7 @@ const Checkout = () => {
     if (!selectedCountry || !selectedState) return;
     const fetchCities = async () => {
       try {
-        setIsLoading(true);
+        // setIsLoading(true);
         const response = await axios.get(
           `https://funiro-furnitures.onrender.com/countries/${selectedCountry}/states/${selectedState}/cities`
         );
@@ -93,7 +93,7 @@ const Checkout = () => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        setIsLoading(true);
+        // setIsLoading(true);
         const response = await axios.get(
           `https://funiro-furnitures.onrender.com/view-cart/${userId}`,
           {
@@ -107,7 +107,7 @@ const Checkout = () => {
 
         setIsLoading(false);
       } catch (error) {
-        setIsLoading(false);
+        // setIsLoading(false);
         toast.error("Failed to load cart.");
       }
     };
@@ -191,7 +191,7 @@ const Checkout = () => {
         `https://funiro-furnitures.onrender.com/checkout/${userId}`,
         { cart }
       );
-      // toast.success(response.data.message);
+      toast.success(response.data.message);
       setCart([]);
     } catch (error) {
       toast.error(error.response?.data?.message || "Checkout failed.");
@@ -240,7 +240,7 @@ const Checkout = () => {
     window.Korapay.initialize({
       key: "pk_test_eR5xsWZRG1XfPVe8JvDJyHQWR1nieyBU2DaE5dBm",
       reference: `ref-${Math.floor(Math.random() * 1000000)}`,
-      amount: cart?.reduce((sum, item) => sum + item.price * item.quantity, 0) * 100,
+      amount: cart?.reduce((sum, item) => sum + item.price * item.quantity, 0) * 100, 
       currency: "NGN",
       customer: {
         name: `${billingDetails.firstName} ${billingDetails.lastName}`,
