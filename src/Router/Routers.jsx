@@ -80,7 +80,7 @@ const route = createHashRouter([
     element: <ForgetPassword />,
   },
   {
-    path: "/reset-password",
+    path: "/reset-password/:id",
     element: <ResetPassword />,
   },
   

@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import { FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import logo from "/icons/logo.svg";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { ImSpinner2 } from "react-icons/im";
+
 
 const ResetPassword = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const { id } = useParams();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -19,14 +26,55 @@ const ResetPassword = () => {
     }
   };
 
-  const handleResetPassword = (e) => {
+  // const handleResetPassword = (e) => {
+  //   e.preventDefault();
+  //   // Handle the password reset logic here
+  //   if (newPassword === confirmPassword) {
+  //     console.log("Passwords match. Resetting password...");
+  //     // Add password reset logic
+  //   } else {
+  //     console.log("Passwords do not match.");
+  //   }
+  // };
+
+  const handleResetPassword = async (e) => {
     e.preventDefault();
-    // Handle the password reset logic here
-    if (newPassword === confirmPassword) {
-      console.log("Passwords match. Resetting password...");
-      // Add password reset logic
-    } else {
-      console.log("Passwords do not match.");
+
+    // Basic form validation
+    if (!newPassword || !confirmPassword) {
+      toast.error("Please fill in all fields.");
+      return;
+    }
+
+    if (newPassword.length < 8) {
+      toast.error("Password must be at least 8 characters long.");
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      toast.error("Passwords do not match.");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await axios.post(`https://funiro-furnitures.onrender.com/reset/${id}`, {
+        password: newPassword,
+        confirmPassword: confirmPassword,
+      });
+
+      if (response.status === 200) {
+        toast.success(response.data.message);
+        navigate("/login"); // Redirect to login page after success
+      }
+    } catch (error) {
+      if (error.response && error.response.data) {
+        toast.error(error.response.data.error);
+      } else {
+        toast.error("An error occurred. Please try again later.");
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
