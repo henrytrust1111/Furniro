@@ -1,10 +1,9 @@
-import React from "react";
-const MainCart = ()=>{
-    return(
-        <div>
-            <div>cvbnm,.</div>
-        </div>
-    )
+import React from 'react'
+
+const MainCart = () => {
+  return (
+    <div>MainCart</div>
+  )
 }
 
-export default MainCart();
+export default MainCart
