@@ -4,6 +4,7 @@ import AllPages from "../Containers/AllPages";
 import Shop from "../Pages/Shop/Shop";
 import SingleProduct from "../Pages/SingleProduct/SingleProduct";
 import Blog from "../Pages/Blog/Blog";
+import SingleBlogPost from "../Pages/Blog/SingleBlogPost"
 import Cart from "../Pages/Cart/Cart";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
@@ -40,6 +41,10 @@ const route = createHashRouter([
       {
         path: "/blog",
         element: <Blog />,
+      },
+      {
+        path: "/single-blog",
+        element: <SingleBlogPost />,
       },
       {
         path: "/cart",

@@ -36,11 +36,15 @@ const Checkout = () => {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
+        setStates([]);
+        setCities([]);
         // setIsLoading(true);
         const response = await axios.get(
           "https://funiro-furnitures.onrender.com/countries"
         );
         setCountries(response.data);
+        setStates([]);
+        setCities([]);
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
@@ -64,7 +68,7 @@ const Checkout = () => {
         setIsLoading(false);
       } catch (error) {
         // setIsLoading(false);
-        toast.error("Failed to load states.");
+        // toast.error("Failed to load states.");
       }
     };
     fetchStates();
@@ -107,8 +111,10 @@ const Checkout = () => {
 
         setIsLoading(false);
       } catch (error) {
+        console.log(error.response);
         // setIsLoading(false);
-        toast.error("Failed to load cart.");
+        // toast.error("Failed to load cart.");
+        // toast.error(error.response);
       }
     };
     fetchCart();

@@ -150,7 +150,7 @@ export default function Header() {
           </a>
           <a
             href="/#/blog"
-            className={pathname === "/blog" ? "active" : ""}
+            className={pathname === "/blog" || "/single-blog" ? "active" : ""}
             onClick={toggleNav}
           >
             <FaBlog className="icon" /> Blog
