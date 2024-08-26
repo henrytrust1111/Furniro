@@ -29,8 +29,8 @@ const SingleBlogPost = () => {
               <FaCalendarAlt className="mx-4 text-lg" /> {post.date}
               <FaTag className="mx-4 text-lg" /> {post.category}
             </div>
-            <h1 className="text-3xl font-semibold mb-6">{post.title}</h1>
-            <p className="text-lg text-gray-700 leading-relaxed mb-8">
+            <h1 className="text-lg md:text-2xl lg:text-3xl font-semibold mb-6">{post.title}</h1>
+            <p className="text-base -text--clr-light-gray-v1 leading-relaxed mb-8">
               {post.excerpt}
             </p>
           </div>

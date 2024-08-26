@@ -38,6 +38,7 @@ const Checkout = () => {
       try {
         setStates([]);
         setCities([]);
+        setCountries([]);
         // setIsLoading(true);
         const response = await axios.get(
           "https://funiro-furnitures.onrender.com/countries"
@@ -153,7 +154,11 @@ const Checkout = () => {
       toast.error("Company name cannot exceed 50 characters.");
       return false;
     }
-    if (!billingDetails.streetAddress || billingDetails.streetAddress.length < 5 || billingDetails.streetAddress.length > 100) {
+    if (!billingDetails.streetAddress) {
+      toast.error("Please input your address");
+      return false;
+    }
+    if (!!billingDetails.streetAddress || billingDetails.streetAddress.length < 5 || billingDetails.streetAddress.length > 100) {
       toast.error("Street address must be between 5 and 100 characters.");
       return false;
     }

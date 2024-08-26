@@ -4,7 +4,6 @@ import ScrollToTop from "../../Containers/ScrollToTop";
 import { FaUser, FaCalendarAlt, FaTag, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-
 const posts = [
   {
     id: 1,
@@ -116,7 +115,6 @@ export const recentPosts = [
   },
 ];
 
-
 const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
@@ -131,7 +129,6 @@ const Blog = () => {
   const handlePostClick = (post) => {
     navigate(`/single-blog/${post.id}`, { state: { post } });
   };
-
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   const handleNext = () => {
@@ -152,30 +149,29 @@ const Blog = () => {
       <div className="container mx-auto md:!px-10 lg:!px-28 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-3/4 flex flex-col gap-8">
-          {currentPosts.map((post) => (
-        <div key={post.id} className="bg-white overflow-hidden">
-          <img
-            src={post.image}
-            alt={post.title}
-            className="w-full object-cover rounded-lg"
-          />
-          <div className="p-6">
-            <div className="flex items-center text-gray-600 text-sm mb-4">
-              <FaUser className="mr-2 text-lg" /> Admin
-              <FaCalendarAlt className="mx-4 text-lg" /> {post.date}
-              <FaTag className="mx-4 text-lg" /> {post.category}
-            </div>
-            <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
-            <p className="text-gray-500 mb-4">{post.excerpt}</p>
-            <div
-              onClick={() => handlePostClick(post)}
-              className="text-base text-black font-normal underline underline-offset-8 cursor-pointer"
-            >
-              Read more
-            </div>
-          </div>
-        </div>
-      ))}
+            {currentPosts.map((post) => (
+              <div key={post.id} className="bg-white overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full object-cover rounded-lg"
+                />
+                <div className="p-6">
+                  <div className="flex items-center text-gray-600 text-sm mb-4">
+                    <FaUser className="mr-2 text-lg" /> Admin
+                    <FaCalendarAlt className="mx-4 text-lg" /> {post.date}
+                    <FaTag className="mx-4 text-lg" /> {post.category}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
+                  <p className="text-gray-500 mb-4">{post.excerpt}</p>
+                  <div onClick={() => handlePostClick(post)}>
+                    <span className="text-base text-black hover:-text--clr-primary font-normal underline underline-offset-8 cursor-pointer">
+                      Read more
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
             {/* {currentPosts.map((post) => (
               <div key={post.id} className="bg-white overflow-hidden">
                 <img
@@ -212,7 +208,9 @@ const Blog = () => {
                   key={index}
                   onClick={() => paginate(index + 1)}
                   className={`px-4 py-2 mx-1 text-black -bg--clr-primar-light-v3 rounded hover:-bg--clr-primar-light-v1 ${
-                    currentPage === index + 1 ? "!-bg--clr-primary text-white" : ""
+                    currentPage === index + 1
+                      ? "!-bg--clr-primary text-white"
+                      : ""
                   }`}
                 >
                   {index + 1}
@@ -264,7 +262,10 @@ const Blog = () => {
                       className="w-16 h-16 object-cover rounded mr-4"
                     />
                     <div>
-                      <a href="#" className="text-black text-sm hover:underline">
+                      <a
+                        href="#"
+                        className="text-black text-sm hover:underline"
+                      >
                         {post.title}
                       </a>
                       <span className="block -text--clr-light-gray-v2 text-xs">
@@ -283,4 +284,3 @@ const Blog = () => {
 };
 
 export default Blog;
-
