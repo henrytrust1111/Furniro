@@ -23,7 +23,14 @@ const Review = () => {
   //   const [feedback,setfeeback] = useState("")
 
   const handleInputChange = (e) => {
-    setExp(e.target.value);
+    let value = e.target.value;
+
+  // Automatically add a newline when the text reaches a certain length
+  if (value.length >= 20 && value.length % 20 === 0) {
+    value += "\n";
+  }
+
+  setExp(value);
   };
 
   const handleKeyChange = (e) => {
@@ -36,14 +43,14 @@ const Review = () => {
   const handleSubmit = async (e) => {
     if (e) e.preventDefault();
     if (exp.trim()) {
-      setLoading(true); 
+      setLoading(true);
       try {
         const productID = "66c5eb7ee9acad10fd78fa65";
-        const token = localStorage.getItem('token')
-        console.log('Retrieved Token:', token);
+        const token = localStorage.getItem("token");
+        console.log("Retrieved Token:", token);
 
         if (!token) {
-          throw new Error('No token found. Please log in.');
+          throw new Error("No token found. Please log in.");
         }
         const response = await fetch(
           `https://funiro-furnitures.onrender.com/product/${productID}/comment`,
@@ -52,7 +59,7 @@ const Review = () => {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${token}`,
-            //   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmM4ODVhNThhYzNlNzMxM2M3NDQ1NDEiLCJmaXJzdE5hbWUiOiJlbG8iLCJsYXN0TmFtZSI6Im9sb2tvciIsImVtYWlsIjoib2xva29yZWxvNTJAZ21haWwuY29tIiwiaWF0IjoxNzI0NDIyNDMyLCJleHAiOjE3MjQ1OTUyMzJ9.a9s_8YIuAMUv_g0m501xEQkY-OA81JiGyYs-z-BSEmI
+              //   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmM4ODVhNThhYzNlNzMxM2M3NDQ1NDEiLCJmaXJzdE5hbWUiOiJlbG8iLCJsYXN0TmFtZSI6Im9sb2tvciIsImVtYWlsIjoib2xva29yZWxvNTJAZ21haWwuY29tIiwiaWF0IjoxNzI0NDIyNDMyLCJleHAiOjE3MjQ1OTUyMzJ9.a9s_8YIuAMUv_g0m501xEQkY-OA81JiGyYs-z-BSEmI
             },
             body: JSON.stringify({ comment: exp }),
           }
@@ -75,7 +82,7 @@ const Review = () => {
               },
             ]);
 
-            setExp(""); 
+            setExp("");
             console.log("Comment posted:", data);
           } else {
             console.error("Failed to get user's full name for initials:", data);
@@ -93,23 +100,23 @@ const Review = () => {
 
   return (
     <div className="w-full flex flex-col gap-4 lg:gap-8 lg:px-20">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      {reviews.map((review, index) => (
-        <div key={index} className="w-full text-sm gap-4 text-[#9F9F9F]">
-        <div>
-          <div className="w-14 h-14 flex mb-3 items-center justify-center text-lg -bg--clr-primary text-white rounded-full">
-            {review.name}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {reviews.map((review, index) => (
+          <div key={index} className="w-full text-sm gap-4 text-[#9F9F9F]">
+            <div>
+              <div className="w-14 h-14 flex mb-3 items-center justify-center text-lg -bg--clr-primary text-white rounded-full">
+                {review.name}
+              </div>
+            </div>
+            <div className="max-w-[500px] flex flex-col gap-3">
+              <p className="text-xs lg:text-sm">{review.date}</p>
+              <p className="text-xs lg:text-sm">{review.experience}</p>
+              <div className="flex lg:hidden w-full h-[0.8px] border-b"></div>
+            </div>
           </div>
-        </div>
-        <div className="max-w-[500px] flex flex-col gap-3">
-          <p className="text-xs lg:text-sm">{review.date}</p>
-          <p className="text-xs lg:text-sm">{review.experience}</p>
-          <div className="flex lg:hidden w-full h-[0.8px] border-b"></div>
-        </div>
+        ))}
       </div>
-    ))}
-    </div>
-      <div className="mt-6 lg:mt-14">
+      <div className="mt-6 lg:mt-14 relative">
         <label className="text-xs lg:text-sm">Enter Review:</label> <br />
         <input
           type="text"
@@ -121,11 +128,17 @@ const Review = () => {
           }`}
           disabled={loading} // Disable input while loading
         />
-        {loading && (
-          <div className="absolute inset-0 flex items-center justify-center">
+        <button
+          onClick={handleSubmit}
+          disabled={loading}
+          className="absolute text-[24px] lg:text-[28px] -text--clr-primary right-4 lg:right-10 mt-10"
+        >
+          {loading ? (
             <div className="spinner-border animate-spin inline-block w-4 h-4 border-2 rounded-full border-t-2 border-gray-500"></div>
-          </div>
-        )}
+          ) : (
+            <i className="bx bxs-send"></i>
+          )}
+        </button>
       </div>
     </div>
   );

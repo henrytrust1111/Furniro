@@ -8,7 +8,7 @@ const Cart = () => {
     <>
       <ScrollToTop />
       <ReuseableHero page={"Cart"} page1={"Cart"} />
-      <MainCart />
+      <MainCart/>
     </>
   );
 };
