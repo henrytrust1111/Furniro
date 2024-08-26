@@ -43,7 +43,7 @@ const route = createHashRouter([
         element: <Blog />,
       },
       {
-        path: "/single-blog",
+        path: "/single-blog/:id",
         element: <SingleBlogPost />,
       },
       {

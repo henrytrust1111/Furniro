@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BlogHero from "./BlogHero";
 import ScrollToTop from "../../Containers/ScrollToTop";
 import { FaUser, FaCalendarAlt, FaTag, FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 
 const posts = [
@@ -87,7 +88,7 @@ const categories = [
   { name: "Wood", count: 6 },
 ];
 
-const recentPosts = [
+export const recentPosts = [
   {
     title: "Going all-in with millennial design",
     date: "03 Aug 2022",
@@ -125,6 +126,13 @@ const Blog = () => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
+  const navigate = useNavigate();
+
+  const handlePostClick = (post) => {
+    navigate(`/single-blog/${post.id}`, { state: { post } });
+  };
+
+
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   const handleNext = () => {
     if (currentPage < totalPages) {
@@ -144,7 +152,31 @@ const Blog = () => {
       <div className="container mx-auto md:!px-10 lg:!px-28 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-3/4 flex flex-col gap-8">
-            {currentPosts.map((post) => (
+          {currentPosts.map((post) => (
+        <div key={post.id} className="bg-white overflow-hidden">
+          <img
+            src={post.image}
+            alt={post.title}
+            className="w-full object-cover rounded-lg"
+          />
+          <div className="p-6">
+            <div className="flex items-center text-gray-600 text-sm mb-4">
+              <FaUser className="mr-2 text-lg" /> Admin
+              <FaCalendarAlt className="mx-4 text-lg" /> {post.date}
+              <FaTag className="mx-4 text-lg" /> {post.category}
+            </div>
+            <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
+            <p className="text-gray-500 mb-4">{post.excerpt}</p>
+            <div
+              onClick={() => handlePostClick(post)}
+              className="text-base text-black font-normal underline underline-offset-8 cursor-pointer"
+            >
+              Read more
+            </div>
+          </div>
+        </div>
+      ))}
+            {/* {currentPosts.map((post) => (
               <div key={post.id} className="bg-white overflow-hidden">
                 <img
                   src={post.image}
@@ -166,7 +198,7 @@ const Blog = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            ))} */}
             <div className="flex justify-center mt-8">
               <button
                 onClick={handlePrev}
