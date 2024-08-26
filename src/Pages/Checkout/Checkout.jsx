@@ -137,12 +137,12 @@ const Checkout = () => {
   // };
 
   const validateForm = () => {
-    if (!billingDetails.firstName || billingDetails.firstName.length < 2 || billingDetails.firstName.length > 30) {
-      toast.error("First name must be between 2 and 30 characters.");
+    if (!billingDetails.firstName) {
+      toast.error("Please include your firstName");
       return false;
     }
-    if (!billingDetails.lastName || billingDetails.lastName.length < 2 || billingDetails.lastName.length > 30) {
-      toast.error("Last name must be between 2 and 30 characters.");
+    if (!billingDetails.lastName) {
+      toast.error("Please include your lastName");
       return false;
     }
     if (!billingDetails.email || !/\S+@\S+\.\S+/.test(billingDetails.email)) {
@@ -170,15 +170,15 @@ const Checkout = () => {
       return false;
     }
     if (!billingDetails.country || billingDetails.country.length < 2 || billingDetails.country.length > 50) {
-      toast.error("Country must be between 2 and 50 characters.");
+      toast.error("Please select a Country");
       return false;
     }
     if (!billingDetails.state || billingDetails.state.length < 2 || billingDetails.state.length > 50) {
-      toast.error("State must be between 2 and 50 characters.");
+      toast.error("Please select a State");
       return false;
     }
     if (!billingDetails.city || billingDetails.city.length < 2 || billingDetails.city.length > 50) {
-      toast.error("City must be between 2 and 50 characters.");
+      toast.error("Please select a city");
       return false;
     }
     if (!cart.length) {
