@@ -2,7 +2,7 @@ import React from 'react';
 import ReuseableHero from '../../Components/ReuseableHero';
 import ScrollToTop from '../../Containers/ScrollToTop';
 import { FaUser, FaCalendarAlt, FaTag } from 'react-icons/fa';
-import { recentPosts } from './Blog'; // Assuming recentPosts is exported from Blog
+import { recentPosts } from './Blog'; 
 import { useLocation } from 'react-router-dom';
 
 const SingleBlogPost = () => {
