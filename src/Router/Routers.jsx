@@ -31,7 +31,7 @@ const route = createHashRouter([
         element: <Shop />,
       },
       {
-        path: "/single-product",
+        path: "/single-product/:productID",
         element: <SingleProduct />,
       },
       {
