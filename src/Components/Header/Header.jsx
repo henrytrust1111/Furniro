@@ -17,15 +17,26 @@ import { IoClose } from "react-icons/io5";
 import "./header.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import DropDownModal from "./DropDownModal";
+import { MdLogout } from "react-icons/md";
 
 export default function Header() {
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [name, setName] = useState("");
   const { pathname } = useLocation();
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("userId");
+    // window.location.reload();
+  };
 
   const handleMouseDown = (e) => {
     const dropdown = dropdownRef.current;
@@ -48,7 +59,7 @@ export default function Header() {
 
   const handleMouseEnter = () => {
     clearTimeout(timeoutRef.current);
-    setNavVisibility(false)
+    setNavVisibility(false);
     setShowDropdown(true);
   };
 
@@ -59,6 +70,11 @@ export default function Header() {
   };
 
   useEffect(() => {
+    if (token) {
+      const { firstName, lastName } = JSON.parse(localStorage.getItem("user"));
+      const name1 = `${firstName.charAt(0).toUpperCase()}${lastName.charAt(0).toUpperCase()}`;
+      setName(name1)
+    }
     const mediaQuery = window.matchMedia("(max-width: 700px)");
     mediaQuery.addListener(handleMediaQueryChange);
     handleMediaQueryChange(mediaQuery);
@@ -66,7 +82,9 @@ export default function Header() {
     return () => {
       mediaQuery.removeListener(handleMediaQueryChange);
     };
-  }, []);
+
+   
+  }, [token,handleLogout]);
 
   const handleMediaQueryChange = (mediaQuery) => {
     if (mediaQuery.matches) {
@@ -132,7 +150,7 @@ export default function Header() {
           </a>
           <a
             href="/#/blog"
-            className={pathname === "/blog" ? "active" : ""}
+            className={pathname === "/blog" || "/single-blog" ? "active" : ""}
             onClick={toggleNav}
           >
             <FaBlog className="icon" /> Blog
@@ -150,13 +168,30 @@ export default function Header() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <FaUser className="-text--clr-primary cursor-pointer" size={24} />
-            {showDropdown && (
-              <DropDownModal
-                dropdownRef={dropdownRef}
-                handleMouseDown={handleMouseDown}
-              />
+            {token ? (
+              <div className="text-2xl cursor-pointer hover:-text--clr-primary">{name}</div>
+            ) : (
+              <FaUser className="-text--clr-primary cursor-pointer" size={24} />
             )}
+            {showDropdown &&
+              (token ? (
+                <div
+                  ref={dropdownRef}
+                  className="absolute right-0 mt-2 w-max -bg--clr-primary border rounded-lg shadow-lg p-3 z-[99] cursor-pointer"
+                  onClick={handleLogout}
+                >
+                  <div className="text-white flex gap-2 items-center text-sm">
+                    {" "}
+                    <MdLogout />
+                    Logout
+                  </div>
+                </div>
+              ) : (
+                <DropDownModal
+                  dropdownRef={dropdownRef}
+                  handleMouseDown={handleMouseDown}
+                />
+              ))}
           </div>
         </nav>
       </CSSTransition>
@@ -166,13 +201,31 @@ export default function Header() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <FaUser className="-text--clr-primary cursor-pointer" size={24} />
-          {showDropdown && (
-            <DropDownModal
-              dropdownRef={dropdownRef}
-              handleMouseDown={handleMouseDown}
-            />
+          {/* <FaUser className="-text--clr-primary cursor-pointer" size={24} /> */}
+          {token ? (
+            <div className="text-2xl hover:-text--clr-primary">{name}</div>
+          ) : (
+            <FaUser className="-text--clr-primary cursor-pointer" size={24} />
           )}
+          {showDropdown &&
+            (token ? (
+              <div
+                ref={dropdownRef}
+                className="absolute right-0 mt-2 w-max -bg--clr-primary border rounded-lg shadow-lg p-3 z-[99] cursor-pointer"
+                onClick={handleLogout}
+              >
+                <div className="text-white flex gap-2 items-center text-sm">
+                  {" "}
+                  <MdLogout />
+                  Logout
+                </div>
+              </div>
+            ) : (
+              <DropDownModal
+                dropdownRef={dropdownRef}
+                handleMouseDown={handleMouseDown}
+              />
+            ))}
         </div>
       </div>
       <button onClick={toggleNav} className="Burger">
