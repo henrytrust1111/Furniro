@@ -8,7 +8,7 @@
 }
 
 .filter{
-    width: 40%;
+    width: 50%;
     height: 100%;
     /* background-color: yellow; */
     display: flex;
@@ -17,7 +17,7 @@
 }
 
 .filter-Left{
-    width: 37%;
+    width: 43%;
     height: 50%;
     /* background-color: aqua; */
     display: flex;
@@ -60,7 +60,7 @@
 }
 
 .showinput{
-    width: 27%;
+    width: 30%;
     height: 70%;
 }
 
@@ -79,7 +79,22 @@
     height: 70%;
 }
 
-
+.filter-dropdown, .sort-dropdown {
+    padding: 3px;
+    margin: 0 0px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+  
+  .sort-Right .sort-dropdown {
+    width: 55%;
+    height: 70%;
+  }
+  .gridFilter{
+    display: flex;
+}
+  
 @media only screen and (min-width: 320px) and (max-width: 580px){
     .Pagnation{
         /* background-color: yellow; */
@@ -103,7 +118,6 @@
 
     .filter-Left > h3{
         display: none;
-     
     }
 
     .filter-Right{
@@ -149,6 +163,29 @@
     .sort-Right > h3{
         font-size: 14px;
     }
+    .gridFilter{
+        display: none;
+    }
+
+    .filter-dropdown, .sort-dropdown {
+        padding: 3px;
+        margin: 0 0px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: white;
+        font-size: 12px;
+    }
+      
+.sort-dropdown {
+        width: 55%;
+        height: 72%;
+        font-size: 12px;
+      }
+.showinput{
+        width: 55%;
+        height: 72%;
+        font-size: 12px;
+      }
 }
 
 
