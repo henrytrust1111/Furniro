@@ -184,6 +184,18 @@ button:hover{
     background-color: yellow;
   }
 
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .shimmer {
+    animation: shimmer 2s infinite;
+  }
 
   @media only screen and (min-width: 320px) and (max-width: 580px){
 

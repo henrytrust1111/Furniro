@@ -11,7 +11,7 @@ const Shop = () => {
     <>
     <ScrollToTop />
      <ShopHero/>
-     <ShopPagination/>
+     {/* <ShopPagination/> */}
      <ShopBody/>
      {/* <ShopPage/> */}
     </>
