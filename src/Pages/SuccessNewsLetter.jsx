@@ -37,9 +37,9 @@ const ShowOrderModal = ({ toggle, show }) => {
 
   return (
     <Modal >
-      <div className="flex relative flex-col items-center justify-center py-16 px-4 md:px-9 lg:px-20">
+      <div className="flex relative flex-col items-center justify-center py-4 md:py-9 lg:py-16 px-4 md:px-9 lg:px-20">
         <svg
-          className="cursor-pointer w-5 h-5 absolute top-5 right-5"
+          className="cursor-pointer w-5 h-5 absolute top-5 right-5 "
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
@@ -60,10 +60,10 @@ const ShowOrderModal = ({ toggle, show }) => {
         </div>
 
         <div className="flex flex-col text-center justify-center items-center gap-4">
-          <h1 className="text-xl md:text-2xl lg:text-3xl lg:leading-10 text-black font-medium">
+          <h1 className="text-2xl lg:text-3xl lg:leading-10 text-black font-medium">
             Successfully Subscribed to Our Newsletter!
           </h1>
-          <h3 className="text-[16px] leading-tight text-black font-normal">
+          <h3 className="text-[16px] leading-tight -text--clr-black-shade-v1 font-normal">
             Thank you for subscribing. You will receive updates and news directly to your email whenever there are new announcements.
           </h3>
           <p className="text-[12px] font-medium text-[#9CA3AF]">
