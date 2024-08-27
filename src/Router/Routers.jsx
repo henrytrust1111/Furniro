@@ -15,6 +15,7 @@ import OTPComponent from "../auth/OTPComponent";
 import ForgetPassword from "../auth/ForgetPassword";
 import Checkout from "../Pages/Checkout/Checkout";
 import ResetPassword from "../auth/ResetPassword";
+import ShowOrderModal from "../Pages/SuccessNewsLetter";
 
 
 const route = createHashRouter([
@@ -68,6 +69,10 @@ const route = createHashRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/newsLetter-success",
+    element: <ShowOrderModal />,
   },
 
   {
