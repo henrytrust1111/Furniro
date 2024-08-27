@@ -6,7 +6,7 @@ const Modal = ({children }) => {
 
   return (
     <div
-      className="fixed top-0 left-0 z-50 bg-black/50 w-[100vw] h-[100vh] overflow-auto flex items-start py-[100px] justify-center"
+      className=" bg-black/50 w-[100vw] h-[100vh] overflow-auto flex items-center py-[100px] justify-center p-4 lg:p-0"
       id="wrapper"
     >
       <div
@@ -37,7 +37,7 @@ const ShowOrderModal = ({ toggle, show }) => {
 
   return (
     <Modal >
-      <div className="flex relative flex-col items-center justify-center py-16 px-20">
+      <div className="flex relative flex-col items-center justify-center py-16 px-4 md:px-9 lg:px-20">
         <svg
           className="cursor-pointer w-5 h-5 absolute top-5 right-5"
           xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ const ShowOrderModal = ({ toggle, show }) => {
         </div>
 
         <div className="flex flex-col text-center justify-center items-center gap-4">
-          <h1 className="text-[32px] leading-10 text-black font-medium">
+          <h1 className="text-xl md:text-2xl lg:text-3xl lg:leading-10 text-black font-medium">
             Successfully Subscribed to Our Newsletter!
           </h1>
           <h3 className="text-[16px] leading-tight text-black font-normal">
