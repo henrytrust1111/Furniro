@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const SuccessNewsLetter = () => {
     useEffect(() => {
-        toast.success("NewsLetter Subscription Successfull");
+        toast.success("Newsletter subscription confirmed.... 😁");
     }, [])
   return (
     <div>
