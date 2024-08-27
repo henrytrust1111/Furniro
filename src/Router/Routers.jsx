@@ -63,16 +63,16 @@ const route = createHashRouter([
         path: "/checkout",
         element: <Checkout />,
       },
+      {
+        path: "/newsLetter-success",
+        element: <ShowOrderModal />,
+      },
     ],
   },
 
   {
     path: "/login",
     element: <Login />,
-  },
-  {
-    path: "/newsLetter-success",
-    element: <ShowOrderModal />,
   },
 
   {
