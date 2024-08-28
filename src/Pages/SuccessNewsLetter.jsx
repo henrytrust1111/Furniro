@@ -2,11 +2,16 @@ import React, { useEffect, useLayoutEffect } from "react";
 import Home from "./Home/Home";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const SuccessNewsLetter = () => {
-    useEffect(() => {
-        toast.success("Newsletter subscription confirmed.... 😁");
-    }, [])
+  const navigate = useNavigate();
+  useEffect(() => {
+    toast.success("Newsletter subscription confirmed.... 😁");
+    setTimeout(() => {
+      navigate("/");
+    }, 3000);
+  }, []);
   return (
     <div>
       <Home />
