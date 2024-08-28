@@ -156,7 +156,7 @@ const ProductDetails = ({ onAddtocart }) => {
           {product[0]?.images.map((img, index) => (
             <div
               key={index}
-              className={`rounded-sm w-16 h-14 ${bgColor}`}
+              className={`flex lg:hidden rounded-sm bg-green-500 ${bgColor}`}
               onClick={() => onImageChange(img.url)}
             >
               <img
@@ -184,22 +184,27 @@ const ProductDetails = ({ onAddtocart }) => {
             ))}
           </div>
 
-          <div
-            className={`hidden lg:flex lg:w-full lg:h-[500px] rounded-sm ${bgColor}`}
-          >
-            <img
-              src={image}
-              className="object-cover w-full h-full"
-              alt={product.itemName}
-            />
-          </div>
+          {/* className={`hidden lg:flex lg:w-full lg:h-[500px] rounded-sm ${bgColor}`} */}
+          {product[0]?.images.map((img, index) => (
+            <div
+              key={index}
+              className={`hidden lg:flex lg:w-full lg:h-[500px] rounded-sm ${bgColor}`}
+              onClick={() => onImageChange(img.url)}
+            >
+              <img
+                src={img.url}
+                className="w-full h-full bg-no-repeat bg-cover"
+                alt={product[0].itemName}
+              />
+            </div>
+          ))}
         </div>
       </div>
 
       <div className="w-full lg:w-1/2 pt-14 flex flex-col gap-4">
-        <h4 className="text-[30px]">{product.itemName}</h4>
+        <h4 className="text-[30px]">{product[0].itemName}</h4>
         <h5 className="text-lg text-[#b7b7b7] font-semibold">
-          Rs.{product.price}
+          Rs.{product[0].price}
         </h5>
         <div className="flex gap-2">
           {[1, 2, 3, 4, 5].map((star) => (
@@ -216,7 +221,7 @@ const ProductDetails = ({ onAddtocart }) => {
         </div>
         <div>
           <p className="w-full lg:w-[500px] text-xs lg:text-sm">
-            {product.description}
+            {product[0].description}
           </p>
         </div>
         {/* Size selection and other product details */}
