@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BlogHero from "./BlogHero";
 import ScrollToTop from "../../Containers/ScrollToTop";
 import { FaUser, FaCalendarAlt, FaTag, FaSearch } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom";
 
 const posts = [
   {
@@ -87,7 +87,7 @@ const categories = [
   { name: "Wood", count: 6 },
 ];
 
-const recentPosts = [
+export const recentPosts = [
   {
     title: "Going all-in with millennial design",
     date: "03 Aug 2022",
@@ -115,7 +115,6 @@ const recentPosts = [
   },
 ];
 
-
 const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
@@ -124,6 +123,12 @@ const Blog = () => {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const navigate = useNavigate();
+
+  const handlePostClick = (post) => {
+    navigate(`/single-blog/${post.id}`, { state: { post } });
+  };
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   const handleNext = () => {
@@ -158,6 +163,29 @@ const Blog = () => {
                     <FaTag className="mx-4 text-lg" /> {post.category}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
+                  <p className="text-gray-500 mb-4">{post.excerpt}</p>
+                  <div onClick={() => handlePostClick(post)}>
+                    <span className="text-base text-black hover:-text--clr-primary font-normal underline underline-offset-8 cursor-pointer">
+                      Read more
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+            {/* {currentPosts.map((post) => (
+              <div key={post.id} className="bg-white overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full object-cover rounded-lg"
+                />
+                <div className="p-6">
+                  <div className="flex items-center text-gray-600 text-sm mb-4">
+                    <FaUser className="mr-2 text-lg" /> Admin
+                    <FaCalendarAlt className="mx-4 text-lg" /> {post.date}
+                    <FaTag className="mx-4 text-lg" /> {post.category}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
                   <p className="-text--clr-light-gray-v2 mb-4">
                     {post.excerpt}
                   </p>
@@ -166,7 +194,7 @@ const Blog = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            ))} */}
             <div className="flex justify-center mt-8">
               <button
                 onClick={handlePrev}
@@ -180,7 +208,9 @@ const Blog = () => {
                   key={index}
                   onClick={() => paginate(index + 1)}
                   className={`px-4 py-2 mx-1 text-black -bg--clr-primar-light-v3 rounded hover:-bg--clr-primar-light-v1 ${
-                    currentPage === index + 1 ? "!-bg--clr-primary text-white" : ""
+                    currentPage === index + 1
+                      ? "!-bg--clr-primary text-white"
+                      : ""
                   }`}
                 >
                   {index + 1}
@@ -232,7 +262,10 @@ const Blog = () => {
                       className="w-16 h-16 object-cover rounded mr-4"
                     />
                     <div>
-                      <a href="#" className="text-black text-sm hover:underline">
+                      <a
+                        href="#"
+                        className="text-black text-sm hover:underline"
+                      >
                         {post.title}
                       </a>
                       <span className="block -text--clr-light-gray-v2 text-xs">
@@ -251,4 +284,3 @@ const Blog = () => {
 };
 
 export default Blog;
-

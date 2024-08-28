@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 const ProductDetails = ({ onAddtocart }) => {
   const { id } = useParams();
   const [bgColor, setBgColor] = useState("bg-[#F9F1E7]");
@@ -9,7 +7,8 @@ const ProductDetails = ({ onAddtocart }) => {
   const [image,setImage] = useState("/singleProduct.png");
   const [selectedSize, setSelectedSize] = useState("L"); // Default size is "L"
   const [selectedRating,setSelectedRating] = useState(5)
-  const [product, setProduct] = useState(null);
+  const { productID } = useParams();
+  console.log(productID);
 
   const onColorChange = (color) => {
     setBgColor(color);
@@ -18,10 +17,10 @@ const ProductDetails = ({ onAddtocart }) => {
   const onImageChange = (newimage)=>{
     setImage(newimage)
   }
-  
+
   const onSizeChange = (size) => {
     setSelectedSize(size);
-  }; 
+  };
 
   const increment = () => {
     setquantity((prevQuantity) => prevQuantity + 1);
@@ -31,8 +30,7 @@ const ProductDetails = ({ onAddtocart }) => {
   };
 
   const handleShare = async (platform) => {
-    // const productID = "66c5eb7ee9acad10fd78fa65";
-        const token = localStorage.getItem('token')
+        const token = localStorage.getItem('authToken')
         console.log('Retrieved Token:', token);
 
         if (!token) {
@@ -46,7 +44,7 @@ const ProductDetails = ({ onAddtocart }) => {
           "Authorization": `Bearer ${token}`
         }
       });
-  
+
       if (!response.ok) {
         if (response.status === 404) {
           throw new Error('Product not found');
@@ -56,17 +54,17 @@ const ProductDetails = ({ onAddtocart }) => {
           throw new Error('An error occurred');
         }
       }
-  
+
       const data = await response.json();
       console.log('Share URLs:', data);
-  
+
       const url = data.data[platform];
       if (url) {
         window.open(url, '_blank');
       } else {
         console.error('URL not found for platform:', platform);
       }
-  
+
     } catch (error) {
       console.error('Error fetching share URLs:', error.message);
     }
@@ -77,9 +75,7 @@ const ProductDetails = ({ onAddtocart }) => {
 
     // Ensure the value is up-to-date before making the API call
     await new Promise(resolve => setTimeout(resolve, 0));
-
-    const productID = "66c5eb7ee9acad10fd78fa65";
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('authToken');
     console.log('Retrieved Token:', token);
     console.log('Parsed Rating:', parsedRating);
 
@@ -121,9 +117,6 @@ const ProductDetails = ({ onAddtocart }) => {
     }
 };
 
-
-  
-  
   return (
     <section className="w-full flex flex-col p-4 lg:flex-row overflow-hidden">
       <div className="w-full lg:w-1/2 lg:pt-14 flex flex-col gap-4 justify-center">
@@ -155,7 +148,7 @@ const ProductDetails = ({ onAddtocart }) => {
               />
             </div>
             <div className={`rounded-sm w-16 h-14 ${bgColor}`}>
-              <img src="/chair5.png" className="w-full h-full" alt="" 
+              <img src="/chair5.png" className="w-full h-full" alt=""
               onClick={() => onImageChange("/chair5.png")}
               />
             </div>
@@ -294,7 +287,7 @@ const ProductDetails = ({ onAddtocart }) => {
                 <i className="bx bxl-twitter"></i>
               </div>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
     </section>
@@ -302,3 +295,4 @@ const ProductDetails = ({ onAddtocart }) => {
 };
 
 export default ProductDetails;
+

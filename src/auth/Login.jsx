@@ -161,7 +161,9 @@ const Login = () => {
                 className="w-full mt-1 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:!shadow-custom1 !bg-[#14192D] hover:!bg-white hover:!text-black transition-all duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2"
               >
                 {loading ? (
-                  <BiLoaderCircle className="mr-2 animate-spin" size={22} />
+                  <div className="flex itce justify-center">
+                  <img src={logo} className="mr-2 animate-spin w-5"  /> <span className="-text--clr-primary font-semibold text-base">Loading...</span>
+                  </div>
                 ) : (
                   "Login"
                 )}

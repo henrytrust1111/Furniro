@@ -15,6 +15,7 @@ import OTPComponent from "../auth/OTPComponent";
 import ForgetPassword from "../auth/ForgetPassword";
 import Checkout from "../Pages/Checkout/Checkout";
 import ResetPassword from "../auth/ResetPassword";
+import ShowOrderModal from "../Pages/SuccessNewsLetter";
 
 
 const route = createHashRouter([
@@ -31,7 +32,7 @@ const route = createHashRouter([
         element: <Shop />,
       },
       {
-        path: "/single-product",
+        path: "/single-product/:productID",
         element: <SingleProduct />,
       },
       {
@@ -43,7 +44,7 @@ const route = createHashRouter([
         element: <Blog />,
       },
       {
-        path: "/single-blog",
+        path: "/single-blog/:id",
         element: <SingleBlogPost />,
       },
       {
@@ -61,6 +62,10 @@ const route = createHashRouter([
       {
         path: "/checkout",
         element: <Checkout />,
+      },
+      {
+        path: "/newsLetter-success",
+        element: <ShowOrderModal />,
       },
     ],
   },
