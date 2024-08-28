@@ -66,7 +66,6 @@ const Products = ({ Title }) => {
     return (
       <section className="py-16 font-[poppins]">
         <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
-          {/* <CgSpinnerAlt className="mr-2 animate-spin" size={50} /> */}
           <img src={logo} alt="" className="mr-2 animate-spin " />
           <p className="text-lg font-semibold">Loading...</p>
         </div>
