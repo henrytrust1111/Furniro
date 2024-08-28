@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 const ProductDetails = ({ onAddtocart }) => {
+  const { id } = useParams();
   const [bgColor, setBgColor] = useState("bg-[#F9F1E7]");
   const [quantity, setquantity] = useState(0);
   const [image,setImage] = useState("/singleProduct.png");
   const [selectedSize, setSelectedSize] = useState("L"); // Default size is "L"
   const [selectedRating,setSelectedRating] = useState(5)
+  const [product, setProduct] = useState(null);
 
   const onColorChange = (color) => {
     setBgColor(color);
@@ -27,15 +31,15 @@ const ProductDetails = ({ onAddtocart }) => {
   };
 
   const handleShare = async (platform) => {
-    const productID = "66c5eb7ee9acad10fd78fa65";
-        const token = localStorage.getItem('authToken')
+    // const productID = "66c5eb7ee9acad10fd78fa65";
+        const token = localStorage.getItem('token')
         console.log('Retrieved Token:', token);
 
         if (!token) {
           throw new Error('No token found. Please log in.');
         }
     try {
-      const response = await fetch(`https://funiro-furnitures.onrender.com/share/${productID}`, {
+      const response = await fetch(`https://funiro-furnitures.onrender.com/share/${id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +79,7 @@ const ProductDetails = ({ onAddtocart }) => {
     await new Promise(resolve => setTimeout(resolve, 0));
 
     const productID = "66c5eb7ee9acad10fd78fa65";
-    const token = localStorage.getItem('authToken');
+    const token = localStorage.getItem('token');
     console.log('Retrieved Token:', token);
     console.log('Parsed Rating:', parsedRating);
 
@@ -84,7 +88,7 @@ const ProductDetails = ({ onAddtocart }) => {
     }
 
     try {
-        const response = await fetch(`https://funiro-furnitures.onrender.com/product/${productID}/rate`, {
+        const response = await fetch(`https://funiro-furnitures.onrender.com/product/$${id}/rate`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
