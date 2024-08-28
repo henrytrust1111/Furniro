@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import logo from "/icons/logo.svg";
 
 const ProductDetails = ({ onAddtocart }) => {
   const [bgColor, setBgColor] = useState("bg-[#F9F1E7]");
@@ -25,7 +26,7 @@ const ProductDetails = ({ onAddtocart }) => {
   //       const data = await response.json();
   //       setProduct(data);
   //       console.log(product);
-  //       setImage(data.data.images[0]?.url || null); 
+  //       setImage(data.data.images[0]?.url || null);
   //     } catch (error) {
   //       console.error("Error fetching product details:", error.message);
   //     }
@@ -39,12 +40,12 @@ const ProductDetails = ({ onAddtocart }) => {
       const response = await axios.get(
         `https://funiro-furnitures.onrender.com/get-one-product/${productID}`
       );
-    
-        setProduct(response.data);
-        console.log(response.data[0].images);
+
+      setProduct(response.data);
+      console.log(response.data[0].images);
     } catch (err) {
       toast.error(err);
-    } 
+    }
   };
 
   useEffect(() => {
@@ -145,7 +146,14 @@ const ProductDetails = ({ onAddtocart }) => {
   };
 
   if (!product) {
-    return <div>Loading...</div>;
+    return (
+      <section className="py-16 font-[poppins]">
+        <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
+          <img src={logo} alt="" className="mr-2 animate-spin " />
+          <p className="text-lg font-semibold">Loading...</p>
+        </div>
+      </section>
+    );
   }
 
   return (
