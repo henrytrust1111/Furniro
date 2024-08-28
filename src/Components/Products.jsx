@@ -7,6 +7,7 @@ import { CgSpinnerAlt } from "react-icons/cg";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { BiRefresh } from "react-icons/bi";
 
 const Products = ({ Title }) => {
   const [visibleProducts, setVisibleProducts] = useState(4);
@@ -14,32 +15,35 @@ const Products = ({ Title }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [noProducts, setNoProducts] = useState(false);
+  const [showAll, setShowAll] = useState(false);
   const nav = useNavigate();
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get(
-          "https://funiro-furnitures.onrender.com/get-products  "
-        );
-        if (response.data.length === 0) {
-          setNoProducts(true);
-        } else {
-          setProducts(response.data.data);
-          console.log(response.data.data);
-          console.log(response.data.data);
-          setNoProducts(false);
-        }
-      } catch (err) {
-        setError("Network Error");
-        toast.error("Network Error");
-      } finally {
-        setLoading(false);
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get(
+        "https://funiro-furnitures.onrender.com/get-products  "
+      );
+      if (response.data.length === 0) {
+        setNoProducts(true);
+      } else {
+        setProducts(response.data.data);
+        console.log(response.data.data);
+        console.log(response.data.data);
+        setNoProducts(false);
       }
-    };
+    } catch (err) {
+      setError("Network Error");
+      toast.error("Network Error");
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchProducts();
   }, []);
+
+
 
   const showMoreProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 4);
@@ -51,6 +55,10 @@ const Products = ({ Title }) => {
 
   const handleCompare = () => {
     nav("/comparison");
+  };
+
+  const handleRefresh = () => {
+    fetchProducts();
   };
 
   if (loading) {
@@ -69,6 +77,13 @@ const Products = ({ Title }) => {
       <section className="py-16 font-[poppins]">
         <div className="container mx-auto px-4 text-center">
           <p className="text-lg font-semibold text-red-500">Network Error</p>
+          <button
+            onClick={handleRefresh}
+            className="mt-4 bg-white text--clr-primary px-4 py-2 border border--clr-primary flex items-center gap-2 hover:scale-110 font-semibold"
+          >
+            <BiRefresh size={20} />
+            Refresh
+          </button>
         </div>
       </section>
     );
@@ -104,7 +119,7 @@ const Products = ({ Title }) => {
                     {product.itemName}
                   </h3>
                   <p className="-text--clr-light-gray text-sm font-medium text-left">
-                  {product.description}
+                    {product.description}
                   </p>
                 </div>
                 <div className="flex items-center space-x-2 justify-between">
@@ -120,7 +135,7 @@ const Products = ({ Title }) => {
                 <div className="flex flex-col items-center space-y-2 justify-center max-w-full">
                   <button
                     className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold"
-                    onClick={()=>handlePreview(product._id)}
+                    onClick={() => handlePreview(product._id)}
                   >
                     Preview
                   </button>
@@ -160,7 +175,7 @@ const Products = ({ Title }) => {
           onClick={showMoreProducts}
           className="bg-white -text--clr-primary px-4 py-2 z-40 hover:scale-110 font-semibold border -border--clr-primary mt-8 max-w-[300px] md:w-[300px]"
         >
-          Show More
+           {showAll ? "Show Less" : "Show More"}
         </button>
       </div>
     </section>
