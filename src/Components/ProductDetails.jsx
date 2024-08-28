@@ -1,5 +1,8 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductDetails = ({ onAddtocart }) => {
   const [bgColor, setBgColor] = useState("bg-[#F9F1E7]");
@@ -30,6 +33,23 @@ const ProductDetails = ({ onAddtocart }) => {
 
   //   fetchProduct();
   // }, [productID]);
+
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get(
+        `https://funiro-furnitures.onrender.com/get-one-product/${productID}`
+      );
+    
+        setProduct(response.data);
+        console.log(response.data[0].images);
+    } catch (err) {
+      toast.error(err);
+    } 
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   const onColorChange = (color) => {
     setBgColor(color);
@@ -133,7 +153,7 @@ const ProductDetails = ({ onAddtocart }) => {
       <div className="w-full lg:w-1/2 lg:pt-14 flex flex-col gap-4 justify-center">
         <div className="w-full flex flex-col lg:flex-row gap-4 lg:px-16">
           {/* Main image */}
-          {product.images.map((img, index) => (
+          {product[0]?.images.map((img, index) => (
             <div
               key={index}
               className={`rounded-sm w-16 h-14 ${bgColor}`}
@@ -149,7 +169,7 @@ const ProductDetails = ({ onAddtocart }) => {
 
           {/* Smaller images */}
           <div className="grid grid-cols-2 px-12 lg:px-0 lg:grid-cols-1 gap-4">
-            {product.images.map((img, index) => (
+            {product[0]?.images.map((img, index) => (
               <div
                 key={index}
                 className={`rounded-sm w-16 h-14 ${bgColor}`}
@@ -216,7 +236,7 @@ const ProductDetails = ({ onAddtocart }) => {
           </div>
           <span className="text-xs">Color:</span>
           <div className="flex gap-4">
-            {product.colors.map((color, index) => (
+            {product[0]?.colors.map((color, index) => (
               <div
                 key={index}
                 className={`w-6 h-6 rounded-full ${color} flex items-center justify-center text-xs cursor-pointer`}
