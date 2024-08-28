@@ -3,6 +3,7 @@ import { IoMdCart, IoMdShare } from "react-icons/io";
 import { MdCompareArrows } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 // import { BiLoaderCircle } from "react-icons/bi";
+import logo from "/icons/logo.svg";
 import { CgSpinnerAlt } from "react-icons/cg";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -21,7 +22,7 @@ const Products = ({ Title }) => {
   const fetchProducts = async () => {
     try {
       const response = await axios.get(
-        "https://funiro-furnitures.onrender.com/get-products  "
+        "https://funiro-furnitures.onrender.com/get-products"
       );
       if (response.data.length === 0) {
         setNoProducts(true);
@@ -64,8 +65,9 @@ const Products = ({ Title }) => {
   if (loading) {
     return (
       <section className="py-16 font-[poppins]">
-        <div className="container mx-auto px-4 text-center">
-          <CgSpinnerAlt className="mr-2 animate-spin" size={50} />
+        <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
+          {/* <CgSpinnerAlt className="mr-2 animate-spin" size={50} /> */}
+          <img src={logo} alt="" className="mr-2 animate-spin " />
           <p className="text-lg font-semibold">Loading...</p>
         </div>
       </section>
@@ -75,11 +77,11 @@ const Products = ({ Title }) => {
   if (error) {
     return (
       <section className="py-16 font-[poppins]">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center grid place-items-center">
           <p className="text-lg font-semibold text-red-500">Network Error</p>
           <button
             onClick={handleRefresh}
-            className="mt-4 bg-white text--clr-primary px-4 py-2 border border--clr-primary flex items-center gap-2 hover:scale-110 font-semibold"
+            className="mt-4 -bg--clr-primar-light-v1 text--clr-primary px-4 py-2 border border--clr-primary flex items-center gap-2 hover:scale-110 font-semibold"
           >
             <BiRefresh size={20} />
             Refresh
