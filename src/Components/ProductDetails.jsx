@@ -1,157 +1,167 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+
 const ProductDetails = ({ onAddtocart }) => {
-  const { id } = useParams();
   const [bgColor, setBgColor] = useState("bg-[#F9F1E7]");
-  const [quantity, setquantity] = useState(0);
-  const [image,setImage] = useState("/singleProduct.png");
+  const [quantity, setQuantity] = useState(0);
+  const [image, setImage] = useState(null);
   const [selectedSize, setSelectedSize] = useState("L"); // Default size is "L"
-  const [selectedRating,setSelectedRating] = useState(5)
+  const [selectedRating, setSelectedRating] = useState(5);
+  const [product, setProduct] = useState();
   const { productID } = useParams();
-  console.log(productID);
+
+  // useEffect(() => {
+  //   const fetchProduct = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         `https://funiro-furnitures.onrender.com/get-one-product/${productID}`
+  //       );
+  //       if (!response.ok) {
+  //         throw new Error("Failed to fetch product details");
+  //       }
+  //       const data = await response.json();
+  //       setProduct(data);
+  //       console.log(product);
+  //       setImage(data.data.images[0]?.url || null); 
+  //     } catch (error) {
+  //       console.error("Error fetching product details:", error.message);
+  //     }
+  //   };
+
+  //   fetchProduct();
+  // }, [productID]);
 
   const onColorChange = (color) => {
     setBgColor(color);
   };
 
-  const onImageChange = (newimage)=>{
-    setImage(newimage)
-  }
+  const onImageChange = (newImage) => {
+    setImage(newImage);
+  };
 
   const onSizeChange = (size) => {
     setSelectedSize(size);
   };
 
   const increment = () => {
-    setquantity((prevQuantity) => prevQuantity + 1);
+    setQuantity((prevQuantity) => prevQuantity + 1);
   };
+
   const decrement = () => {
-    setquantity((prevQuantity) => (prevQuantity > 0 ? prevQuantity - 1 : 0));
+    setQuantity((prevQuantity) => (prevQuantity > 0 ? prevQuantity - 1 : 0));
   };
 
   const handleShare = async (platform) => {
-        const token = localStorage.getItem('authToken')
-        console.log('Retrieved Token:', token);
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("No token found. Please log in.");
+      return;
+    }
 
-        if (!token) {
-          throw new Error('No token found. Please log in.');
-        }
     try {
-      const response = await fetch(`https://funiro-furnitures.onrender.com/share/${id}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`
+      const response = await fetch(
+        `https://funiro-furnitures.onrender.com/share/${productID}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
         }
-      });
+      );
 
       if (!response.ok) {
-        if (response.status === 404) {
-          throw new Error('Product not found');
-        } else if (response.status === 500) {
-          throw new Error('Internal server error');
-        } else {
-          throw new Error('An error occurred');
-        }
+        throw new Error("Error fetching share URLs");
       }
 
       const data = await response.json();
-      console.log('Share URLs:', data);
-
       const url = data.data[platform];
       if (url) {
-        window.open(url, '_blank');
+        window.open(url, "_blank");
       } else {
-        console.error('URL not found for platform:', platform);
+        console.error("URL not found for platform:", platform);
       }
-
     } catch (error) {
-      console.error('Error fetching share URLs:', error.message);
+      console.error("Error fetching share URLs:", error.message);
     }
-  }
+  };
+
   const handleRating = async (rating) => {
     const parsedRating = parseInt(rating, 10);
-    setSelectedRating(parsedRating); // Update the state
+    setSelectedRating(parsedRating);
 
-    // Ensure the value is up-to-date before making the API call
-    await new Promise(resolve => setTimeout(resolve, 0));
-    const token = localStorage.getItem('authToken');
-    console.log('Retrieved Token:', token);
-    console.log('Parsed Rating:', parsedRating);
-
+    const token = localStorage.getItem("token");
     if (!token) {
-        throw new Error('No token found. Please log in.');
+      alert("No token found. Please log in.");
+      return;
     }
 
     try {
-        const response = await fetch(`https://funiro-furnitures.onrender.com/product/$${id}/rate`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-            },
-            body: JSON.stringify({
-                rating: parsedRating
-            })
-        });
-
-        if (!response.ok) {
-            if (response.status === 400) {
-                throw new Error('Rating must be between 1 and 5');
-            } else if (response.status === 404) {
-                throw new Error('Product not found');
-            } else if (response.status === 500) {
-                throw new Error('Internal server error');
-            } else {
-                throw new Error('An error occurred');
-            }
+      const response = await fetch(
+        `https://funiro-furnitures.onrender.com/product/${productID}/rate`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            rating: parsedRating,
+          }),
         }
+      );
 
-        const data = await response.json();
-        console.log('Rating submitted successfully:', data);
+      if (!response.ok) {
+        throw new Error("Error submitting rating");
+      }
 
-        alert('Rating submitted successfully');
+      const data = await response.json();
+      console.log("Rating submitted successfully:", data);
+      alert("Rating submitted successfully");
     } catch (error) {
-        console.log('Submitting error:', error.message);
-        alert(error.message); // Show alert with the error message
+      console.log("Submitting error:", error.message);
+      alert(error.message);
     }
-};
+  };
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <section className="w-full flex flex-col p-4 lg:flex-row overflow-hidden">
       <div className="w-full lg:w-1/2 lg:pt-14 flex flex-col gap-4 justify-center">
         <div className="w-full flex flex-col lg:flex-row gap-4 lg:px-16">
-          {/* main image */}
-          <div className={`lg:hidden flex w-full ${bgColor}`}>
-            <img
-              src={image}
-              className="object-cover h-full"
-              alt="Asgard Sofa"
-            />
-          </div>
+          {/* Main image */}
+          {product.images.map((img, index) => (
+            <div
+              key={index}
+              className={`rounded-sm w-16 h-14 ${bgColor}`}
+              onClick={() => onImageChange(img.url)}
+            >
+              <img
+                src={img.url}
+                className="w-full h-full"
+                alt={product.itemName}
+              />
+            </div>
+          ))}
 
-          {/* smaller images*/}
+          {/* Smaller images */}
           <div className="grid grid-cols-2 px-12 lg:px-0 lg:grid-cols-1 gap-4">
-            <div className={`rounded-sm w-16 h-14 ${bgColor}`}>
-              <img src="/singleProduct.png" className="w-full h-full" alt=""
-              onClick={() => onImageChange("/singleProduct.png")}
-              />
-            </div>
-            <div className={`rounded-sm w-16 h-14 ${bgColor}`}>
-              <img src="/chair1.png" className="w-full h-full" alt=""
-              onClick={() => onImageChange("/chair1.png")}
-              />
-            </div>
-            <div className={`rounded-sm w-16 h-14 ${bgColor}`}>
-              <img src="/chair3.png" className="w-full h-full" alt=""
-              onClick={() => onImageChange("/chair3.png")}
-              />
-            </div>
-            <div className={`rounded-sm w-16 h-14 ${bgColor}`}>
-              <img src="/chair5.png" className="w-full h-full" alt=""
-              onClick={() => onImageChange("/chair5.png")}
-              />
-            </div>
+            {product.images.map((img, index) => (
+              <div
+                key={index}
+                className={`rounded-sm w-16 h-14 ${bgColor}`}
+                onClick={() => onImageChange(img.url)}
+              >
+                <img
+                  src={img.url}
+                  className="w-full h-full"
+                  alt={product.itemName}
+                />
+              </div>
+            ))}
           </div>
 
           <div
@@ -160,79 +170,59 @@ const ProductDetails = ({ onAddtocart }) => {
             <img
               src={image}
               className="object-cover w-full h-full"
-              alt="Asgard Sofa"
+              alt={product.itemName}
             />
           </div>
         </div>
       </div>
 
       <div className="w-full lg:w-1/2 pt-14 flex flex-col gap-4">
-        {/* <h4 className="text-[30px]">Asgaard sofa</h4> */}
-        <h5 className="text-lg text-[#b7b7b7] font-semibold">Rs. 250,000.00</h5>
+        <h4 className="text-[30px]">{product.itemName}</h4>
+        <h5 className="text-lg text-[#b7b7b7] font-semibold">
+          Rs.{product.price}
+        </h5>
         <div className="flex gap-2">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <i
-                key={star}
-                className={`bx ${selectedRating >= star ? 'bxs-star text-yellow-500' : 'bx-star text-gray-300'}`}
-                onClick={() => handleRating(star)} // Set the selected rating
-              ></i>
-            ))}
-          </div>
+          {[1, 2, 3, 4, 5].map((star) => (
+            <i
+              key={star}
+              className={`bx ${
+                selectedRating >= star
+                  ? "bxs-star text-yellow-500"
+                  : "bx-star text-gray-300"
+              }`}
+              onClick={() => handleRating(star)}
+            ></i>
+          ))}
+        </div>
         <div>
           <p className="w-full lg:w-[500px] text-xs lg:text-sm">
-            Setting the bar as one of the loudest speakers in its class, the
-            Kilburn is a compact, stout-hearted hero with a well-balanced audio
-            which boasts a clear midrange and extended highs for a sound.
+            {product.description}
           </p>
         </div>
+        {/* Size selection and other product details */}
         <div className="flex flex-col gap-4">
           <span className="text-xs">Size</span>
           <div className="flex gap-4">
             <div
-              className={`w-8 h-8 rounded-sm ${selectedSize === "L" ? "bg-[#242424] text-white" : "bg-[#F9F1E7]"} flex items-center justify-center text-xs cursor-pointer`}
+              className={`w-8 h-8 rounded-sm ${
+                selectedSize === "L"
+                  ? "bg-[#242424] text-white"
+                  : "bg-[#F9F1E7]"
+              } flex items-center justify-center text-xs cursor-pointer`}
               onClick={() => onSizeChange("L")}
             >
               L
             </div>
-            <div
-              className={`w-8 h-8 rounded-sm ${selectedSize === "XL" ? "bg-[#242424] text-white" : "bg-[#F9F1E7]"} flex items-center justify-center text-xs cursor-pointer`}
-              onClick={() => onSizeChange("XL")}
-            >
-              XL
-            </div>
-            <div
-              className={`w-8 h-8 rounded-sm ${selectedSize === "XS" ? "bg-[#242424] text-white" : "bg-[#F9F1E7]"} flex items-center justify-center text-xs cursor-pointer`}
-              onClick={() => onSizeChange("XS")}
-            >
-              XS
-            </div>
           </div>
           <span className="text-xs">Color:</span>
           <div className="flex gap-4">
-            <div
-              className="w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center text-xs cursor-pointer"
-              onClick={() => onColorChange("bg-purple-500")}
-            ></div>
-            <div
-              className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-xs cursor-pointer"
-              onClick={() => onColorChange("bg-green-500")}
-            ></div>
-            <div
-              className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-xs cursor-pointer"
-              onClick={() => onColorChange("bg-blue-500")}
-            ></div>
-            <div
-              className="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-xs cursor-pointer"
-              onClick={() => onColorChange("bg-orange-500")}
-            ></div>
-            <div
-              className="w-6 h-6 rounded-full bg-black flex items-center justify-center text-xs cursor-pointer"
-              onClick={() => onColorChange("bg-black")}
-            ></div>
-            <div
-              className="w-6 h-6 rounded-full bg-cyan-300 flex items-center justify-center text-xs cursor-pointer"
-              onClick={() => onColorChange("bg-cyan-300")}
-            ></div>
+            {product.colors.map((color, index) => (
+              <div
+                key={index}
+                className={`w-6 h-6 rounded-full ${color} flex items-center justify-center text-xs cursor-pointer`}
+                onClick={() => onColorChange(color)}
+              ></div>
+            ))}
           </div>
         </div>
         <div className="flex gap-4 mb-6">
@@ -252,7 +242,7 @@ const ProductDetails = ({ onAddtocart }) => {
             Add to cart
           </div>
           <div className="w-32 lg:w-40 border-[0.8px] border-[#242424] flex items-center justify-center rounded-lg">
-            <Link to = "/comparison">
+            <Link to="/comparison">
               <p className="text-[10px] lg:text-sm">Compare</p>
             </Link>
           </div>
@@ -261,32 +251,48 @@ const ProductDetails = ({ onAddtocart }) => {
         <div className="w-full border-b"></div>
         <div className="product-info flex flex-col gap-3 mt-4">
           <div className="info-row flex gap-8">
-            <div className="label text-[#b7b7b7] text-xs w-20">SKU</div>
-            <div className="value text-[#b7b7b7] text-xs">:&nbsp;ss001</div>
+            <div className="label text-[#b7b7b7] text-xs w-20">
+              Product Name
+            </div>
+            <div className="value text-[#b7b7b7] text-xs">
+              :&nbsp;{product.itemName}
+            </div>
           </div>
           <div className="info-row flex gap-8">
-            <div className="label text-[#b7b7b7] text-xs w-20">Category</div>
-            <div className="value text-[#b7b7b7] text-xs">:&nbsp;sofas</div>
+            <div className="label text-[#b7b7b7] text-xs w-20">Categories</div>
+            <div className="value text-[#b7b7b7] text-xs">
+              :&nbsp;{product.category}
+            </div>
           </div>
-          <div className="info-row flex gap-8">
+          {/* <div className="info-row flex gap-8">
             <div className="label text-[#b7b7b7] text-xs w-20">Tags</div>
             <div className="value text-[#b7b7b7] text-xs">
-              :&nbsp;Sofa, Chair, Home, Shop
+              :&nbsp;{product?.tags.join(", ")}
+            </div>
+          </div> */}
+          <div className="info-row flex gap-8">
+            <div className="label text-[#b7b7b7] text-xs w-20">Material</div>
+            <div className="value text-[#b7b7b7] text-xs">
+              :&nbsp;{product.material}
             </div>
           </div>
-          <div className="info-row flex gap-8">
-            <div className="label text-[#b7b7b7] text-xs w-20">Share</div>
-            <div className="value text-xs flex items-center gap-4">
-              <div onClick={() => handleShare('facebook')} className="cursor-pointer">
-                :&nbsp;<i className="bx bxl-facebook-circle"></i>
-              </div>
-              <div onClick={() => handleShare('linkedin')} className="cursor-pointer">
-                <i className="bx bxl-linkedin-square"></i>
-              </div>
-              <div onClick={() => handleShare('twitter')} className="cursor-pointer">
-                <i className="bx bxl-twitter"></i>
-              </div>
-            </div>
+        </div>
+        {/* Social Share Icons */}
+        <div className="w-full flex items-center gap-2">
+          <span className="text-xs">Share:</span>
+          <div className="flex gap-2">
+            <i
+              className="bx bxl-facebook-square text-xl text-[#b7b7b7] cursor-pointer"
+              onClick={() => handleShare("facebook")}
+            ></i>
+            <i
+              className="bx bxl-twitter text-xl text-[#b7b7b7] cursor-pointer"
+              onClick={() => handleShare("twitter")}
+            ></i>
+            <i
+              className="bx bxl-instagram-alt text-xl text-[#b7b7b7] cursor-pointer"
+              onClick={() => handleShare("instagram")}
+            ></i>
           </div>
         </div>
       </div>
@@ -295,4 +301,3 @@ const ProductDetails = ({ onAddtocart }) => {
 };
 
 export default ProductDetails;
-
