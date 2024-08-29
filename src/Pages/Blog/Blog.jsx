@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BlogHero from "./BlogHero";
 import ScrollToTop from "../../Containers/ScrollToTop";
 import { FaUser, FaCalendarAlt, FaTag, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import logo from "/icons/logo.svg";
+import axios from "axios";
 
 const posts = [
   {
@@ -126,6 +130,43 @@ const Blog = () => {
 
   const navigate = useNavigate();
 
+  const [post, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [noPosts, setNoPosts] = useState(false);
+
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get(
+        "https://funiro-furnitures.onrender.com/get-all-post"
+      );
+      toast.success(response.data.message);
+      if (response.data.posts.length === 0) {
+        setNoProducts(true);
+      } else {
+        setPosts(response.data.posts);
+        console.log(response.data.posts);
+        setNoPosts(false);
+      }
+    } catch (err) {
+      setError("Network Error");
+      toast.error("Network Error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+
+  const handleRefresh = () => {
+    fetchProducts();
+  };
+
+ 
+
   const handlePostClick = (post) => {
     navigate(`/single-blog/${post.id}`, { state: { post } });
   };
@@ -141,6 +182,45 @@ const Blog = () => {
       setCurrentPage(currentPage - 1);
     }
   };
+
+
+  // if (loading) {
+  //   return (
+  //     <section className="py-16 font-[poppins]">
+  //       <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
+  //         <img src={logo} alt="" className="mr-2 animate-spin " />
+  //         <p className="text-lg font-semibold">Loading...</p>
+  //       </div>
+  //     </section>
+  //   );
+  // }
+
+  // if (error) {
+  //   return (
+  //     <section className="py-16 font-[poppins]">
+  //       <div className="container mx-auto px-4 text-center grid place-items-center">
+  //         <p className="text-lg font-semibold text-red-500">Network Error</p>
+  //         <button
+  //           onClick={handleRefresh}
+  //           className="mt-4 -bg--clr-primar-light-v1 text--clr-primary px-4 py-2 border border--clr-primary flex items-center gap-2 hover:scale-110 font-semibold"
+  //         >
+  //           <BiRefresh size={20} />
+  //           Refresh
+  //         </button>
+  //       </div>
+  //     </section>
+  //   );
+  // }
+
+  // if (noProducts) {
+  //   return (
+  //     <section className="py-16 font-[poppins]">
+  //       <div className="container mx-auto px-4 text-center">
+  //         <p className="text-lg font-semibold">No Products Available</p>
+  //       </div>
+  //     </section>
+  //   );
+  // }
 
   return (
     <>

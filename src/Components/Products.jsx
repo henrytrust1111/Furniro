@@ -4,7 +4,7 @@ import { MdCompareArrows } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 // import { BiLoaderCircle } from "react-icons/bi";
 import logo from "/icons/logo.svg";
-import { CgSpinnerAlt } from "react-icons/cg";
+// import { CgSpinnerAlt } from "react-icons/cg";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
