@@ -14,7 +14,7 @@ const posts = [
     title: "Going all-in with millennial design",
     date: "14 Oct 2022",
     category: "Wood",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum commodo lorem eget tincidunt. Curabitur imperdiet commodo risus sed commodo.Nullam auctor pellentesque pretium. Mauris blandit est sit amet odio tempus, sit amet viverra ipsum finibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec bibendum congue ipsum quis ullamcorper. Ut risus lacus, faucibus sit amet cursus vitae, tristique id sapien.Vestibulum leo justo, mollis euismod nunc eget, feugiat vulputate enim.Suspendisse consectetur ac odio rhoncus commodo. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Curabitur egestas rhoncus ante, a lobortis velit ultrices id. Integer blandit tincidunt luctus. Nam efficitur a sapien et placerat. Ut faucibus quis nulla dignissim mollis.",
     image: "/images/blog/millennialDesign.png",
   },
   {
@@ -22,7 +22,7 @@ const posts = [
     title: "Exploring new ways of decorating",
     date: "14 Oct 2022",
     category: "Handmade",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     image: "/images/blog/exploring.png",
   },
   {
@@ -30,7 +30,7 @@ const posts = [
     title: "Handmade pieces that took time to make",
     date: "14 Oct 2022",
     category: "Wood",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     image: "/images/blog/handmade.png",
   },
   {
@@ -38,7 +38,7 @@ const posts = [
     title: "Going all-in with millennial design",
     date: "14 Oct 2022",
     category: "Wood",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     image: "/images/blog/millennialDesign.png",
   },
   {
@@ -46,7 +46,7 @@ const posts = [
     title: "Exploring new ways of decorating",
     date: "14 Oct 2022",
     category: "Handmade",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     image: "/images/blog/exploring.png",
   },
   {
@@ -54,7 +54,7 @@ const posts = [
     title: "Exploring new ways of decorating",
     date: "14 Oct 2022",
     category: "Handmade",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     image: "/images/blog/exploring.png",
   },
   {
@@ -62,7 +62,7 @@ const posts = [
     title: "Going all-in with millennial design",
     date: "14 Oct 2022",
     category: "Wood",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     image: "/images/blog/millennialDesign.png",
   },
   {
@@ -70,7 +70,7 @@ const posts = [
     title: "Exploring new ways of decorating",
     date: "14 Oct 2022",
     category: "Handmade",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     image: "/images/blog/exploring.png",
   },
   {
@@ -78,7 +78,7 @@ const posts = [
     title: "Going all-in with millennial design",
     date: "14 Oct 2022",
     category: "Wood",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     image: "/images/blog/millennialDesign.png",
   },
 ];
@@ -120,20 +120,20 @@ export const recentPosts = [
 ];
 
 const Blog = () => {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [noPosts, setNoPosts] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
   const totalPages = Math.ceil(posts.length / postsPerPage);
 
+  const navigate = useNavigate();
+
+
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
-  const navigate = useNavigate();
-
-  const [post, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [noPosts, setNoPosts] = useState(false);
 
   const fetchProducts = async () => {
     try {
@@ -160,12 +160,9 @@ const Blog = () => {
     fetchProducts();
   }, []);
 
-
   const handleRefresh = () => {
     fetchProducts();
   };
-
- 
 
   const handlePostClick = (post) => {
     navigate(`/single-blog/${post.id}`, { state: { post } });
@@ -182,7 +179,6 @@ const Blog = () => {
       setCurrentPage(currentPage - 1);
     }
   };
-
 
   // if (loading) {
   //   return (
@@ -232,18 +228,19 @@ const Blog = () => {
             {currentPosts.map((post) => (
               <div key={post.id} className="bg-white overflow-hidden">
                 <img
-                  src={post.image}
+                  src={post.image.url}
                   alt={post.title}
                   className="w-full object-cover rounded-lg"
                 />
                 <div className="p-6">
                   <div className="flex items-center text-gray-600 text-sm mb-4">
                     <FaUser className="mr-2 text-lg" /> Admin
-                    <FaCalendarAlt className="mx-4 text-lg" /> {post.date}
+                    {/* <FaCalendarAlt className="mx-4 text-lg" /> {post.date} */}
+                    <FaCalendarAlt className="mx-4 text-lg" /> 03 Aug 2022
                     <FaTag className="mx-4 text-lg" /> {post.category}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
-                  <p className="text-gray-500 mb-4">{post.excerpt}</p>
+                  <p className="text-gray-500 mb-4 line-clamp-2 ">{post.content}</p>
                   <div onClick={() => handlePostClick(post)}>
                     <span className="text-base text-black hover:-text--clr-primary font-normal underline underline-offset-8 cursor-pointer">
                       Read more
@@ -267,7 +264,7 @@ const Blog = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
                   <p className="-text--clr-light-gray-v2 mb-4">
-                    {post.excerpt}
+                    {post.content}
                   </p>
                   <div className="text-base text-black font-normal underline underline-offset-8">
                     Read more
@@ -275,35 +272,37 @@ const Blog = () => {
                 </div>
               </div>
             ))} */}
-            <div className="flex justify-center mt-8">
-              <button
-                onClick={handlePrev}
-                disabled={currentPage === 1}
-                className="px-4 py-2 mx-1 text-black -bg--clr-primar-light rounded hover:-bg--clr-primary hover:text-white disabled:opacity-50"
-              >
-                Prev
-              </button>
-              {Array.from({ length: totalPages }).map((_, index) => (
+            {posts.length < 4 ? null : (
+              <div className="flex justify-center mt-8">
                 <button
-                  key={index}
-                  onClick={() => paginate(index + 1)}
-                  className={`px-4 py-2 mx-1 text-black -bg--clr-primar-light-v3 rounded hover:-bg--clr-primar-light-v1 ${
-                    currentPage === index + 1
-                      ? "!-bg--clr-primary text-white"
-                      : ""
-                  }`}
+                  onClick={handlePrev}
+                  disabled={currentPage === 1}
+                  className="px-4 py-2 mx-1 text-black -bg--clr-primar-light rounded hover:-bg--clr-primary hover:text-white disabled:opacity-50"
                 >
-                  {index + 1}
+                  Prev
                 </button>
-              ))}
-              <button
-                onClick={handleNext}
-                disabled={currentPage === totalPages}
-                className="px-4 py-2 mx-1 text-black -bg--clr-primar-light rounded hover:-bg--clr-primary hover:text-white disabled:opacity-50"
-              >
-                Next
-              </button>
-            </div>
+                {Array.from({ length: totalPages }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => paginate(index + 1)}
+                    className={`px-4 py-2 mx-1 text-black -bg--clr-primar-light-v3 rounded hover:-bg--clr-primar-light-v1 ${
+                      currentPage === index + 1
+                        ? "!-bg--clr-primary text-white"
+                        : ""
+                    }`}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+                <button
+                  onClick={handleNext}
+                  disabled={currentPage === totalPages}
+                  className="px-4 py-2 mx-1 text-black -bg--clr-primar-light rounded hover:-bg--clr-primary hover:text-white disabled:opacity-50"
+                >
+                  Next
+                </button>
+              </div>
+            )}
           </div>
           <aside className="lg:w-1/4">
             <div className="mb-8">

@@ -103,7 +103,7 @@ const Products = ({ Title }) => {
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl font-bold mb-8 text-center">{Title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-11 lg:px-11 md:px-0 ">
-          {products.slice(0, visibleProducts).map((product) => (
+          {products?.slice(0, visibleProducts).map((product) => (
             <div
               key={product.id}
               className="bg-[#F4F5F7] shadow-custom relative"
@@ -128,7 +128,7 @@ const Products = ({ Title }) => {
                       ₦ {product.price}
                     </span>
                   )}
-                  <s className="text-xs">-{product.discountPercentage}%</s>
+                  <s className="text-xs">-{product?.discountPercentage}%</s>
                 </div>
               </div>
               <div className="-bg--clr-secondary absolute inset-0 opacity-0 hover:opacity-75  transition-all ease cursor-pointer grid place-items-center">
@@ -158,14 +158,14 @@ const Products = ({ Title }) => {
                   </div>
                 </div>
               </div>
-              {product.discountPercentage > 0 && (
+              {product?.discountPercentage > 0 && (
                 <span className="text-white absolute bg-[#E97171] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4 text-base">
                   -{product.discountPercentage}%
                 </span>
               )}
               {product.new && (
                 <span className="text-white absolute bg-[#2EC1AC] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4 text-base">
-                  {product.new}
+                  {product?.new}
                 </span>
               )}
             </div>

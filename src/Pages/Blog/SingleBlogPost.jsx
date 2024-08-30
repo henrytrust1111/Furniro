@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReuseableHero from '../../Components/ReuseableHero';
 import ScrollToTop from '../../Containers/ScrollToTop';
 import { FaUser, FaCalendarAlt, FaTag } from 'react-icons/fa';
 import { recentPosts } from './Blog'; 
 import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 const SingleBlogPost = () => {
   const location = useLocation();
   const { post } = location.state;
   console.log(post);
+
+
   
   
   return (
@@ -20,7 +23,7 @@ const SingleBlogPost = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-3">
             <img
-              src={post.image}
+              src={post.image.url}
               alt={post.title}
               className="w-full object-cover rounded-lg mb-6"
             />
@@ -31,7 +34,7 @@ const SingleBlogPost = () => {
             </div>
             <h1 className="text-lg md:text-2xl lg:text-3xl font-semibold mb-6">{post.title}</h1>
             <p className="text-base -text--clr-light-gray-v1 leading-relaxed mb-8">
-              {post.excerpt}
+              {post.content}
             </p>
           </div>
 
