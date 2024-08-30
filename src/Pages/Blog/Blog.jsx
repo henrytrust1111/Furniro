@@ -142,7 +142,7 @@ const Blog = () => {
       );
       toast.success(response.data.message);
       if (response.data.posts.length === 0) {
-        setNoProducts(true);
+        setNoPosts(true);
       } else {
         setPosts(response.data.posts);
         console.log(response.data.posts);

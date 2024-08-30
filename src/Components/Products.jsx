@@ -28,8 +28,7 @@ const Products = ({ Title }) => {
         setNoProducts(true);
       } else {
         setProducts(response.data.data);
-        console.log(response.data.data);
-        console.log(response.data.data);
+        localStorage.setItem("products", JSON.stringify(response.data.data));
         setNoProducts(false);
       }
     } catch (err) {

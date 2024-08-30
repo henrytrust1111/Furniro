@@ -97,7 +97,7 @@ const Footer = () => {
           <div className="h-[1px] w-[90%] bg-[#D9D9D9]"></div>
         </div>
         <div className="container mx-auto px-6 lg:!text-start text-center text-black">
-          <p>&copy; 2023 Funiro. All rights reserved.</p>
+          <p>&copy; 2024 Funiro. All rights reserved.</p>
         </div>
       </footer>
     </>

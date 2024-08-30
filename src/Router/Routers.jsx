@@ -16,6 +16,7 @@ import ForgetPassword from "../auth/ForgetPassword";
 import Checkout from "../Pages/Checkout/Checkout";
 import ResetPassword from "../auth/ResetPassword";
 import ShowOrderModal from "../Pages/SuccessNewsLetter";
+import PrivacyAndPolicies from "../Pages/PrivacyAndPolicies/PrivacyAndPolicies";
 
 
 const route = createHashRouter([
@@ -66,6 +67,10 @@ const route = createHashRouter([
       {
         path: "/newsLetter-success",
         element: <ShowOrderModal />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyAndPolicies />,
       },
     ],
   },

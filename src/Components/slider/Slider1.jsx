@@ -11,18 +11,21 @@ import muggo from   "/images/products/muggo.png";
 import pingky from  "/images/products/pingky.png";
 import potty from   "/images/products/potty.png";
 
-const products = [
-    { id: 1, new:'', name: 'Syltherine', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-30%', image: syltherine, des: "Stylish cafe chair" },
-    { id: 2, new:'New', name: 'Leviosa', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '', image: leviosa, des: "Stylish cafe chair" },
-    { id: 3, new:'', name: 'Lolito', price: 'Rp 7.000.000', deprecated: 'Rp 14.000.000', discount: '-50%', image: lolito, des: "Luxury big sofa" },
-    { id: 4, new:'New', name: 'respira', price: 'Rp 500.000', deprecated: '', discount: '', image: respira, des: "Outdoor bar table and stool" },
-    { id: 5, new:'', name: 'grifo', price: 'Rp 1.500.000', deprecated: '', discount: '', image: grifo, des: "Night lamp" },
-    { id: 6, new:'New', name: 'muggo', price: 'Rp 150.000', deprecated: '', discount: '', image: muggo, des: "small mug" },
-    { id: 7, new:'', name: 'pingky', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-50%', image: pingky, des: "Cute bed sets" },
-    { id: 8, new:'New', name: 'potty', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '', image: potty, des: "Stylish cafe chair" },
-    // Add more products as needed
-  ];
+// const products = [
+//     { id: 1, new:'', name: 'Syltherine', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-30%', image: syltherine, des: "Stylish cafe chair" },
+//     { id: 2, new:'New', name: 'Leviosa', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '', image: leviosa, des: "Stylish cafe chair" },
+//     { id: 3, new:'', name: 'Lolito', price: 'Rp 7.000.000', deprecated: 'Rp 14.000.000', discount: '-50%', image: lolito, des: "Luxury big sofa" },
+//     { id: 4, new:'New', name: 'respira', price: 'Rp 500.000', deprecated: '', discount: '', image: respira, des: "Outdoor bar table and stool" },
+//     { id: 5, new:'', name: 'grifo', price: 'Rp 1.500.000', deprecated: '', discount: '', image: grifo, des: "Night lamp" },
+//     { id: 6, new:'New', name: 'muggo', price: 'Rp 150.000', deprecated: '', discount: '', image: muggo, des: "small mug" },
+//     { id: 7, new:'', name: 'pingky', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-50%', image: pingky, des: "Cute bed sets" },
+//     { id: 8, new:'New', name: 'potty', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '', image: potty, des: "Stylish cafe chair" },
+//     // Add more products as needed
+//   ];
 const Slider1 = () => {
+    const product = JSON.parse(localStorage.getItem("products"));
+    console.log(product);
+    
     return (
         <>
             <Swiper
@@ -40,24 +43,24 @@ const Slider1 = () => {
                     nextEl: ".custom_next"
                 }}
             >
-                  {products.map((product) => (
+                  {product.map((product) => (
       
-      <SwiperSlide key={product.id}>
+      <SwiperSlide key={product?._id}>
       <div className="px-3 pb-5">
           <div className="card-slider group">
-              <img className="rounded-xl" src={product.image} alt="Monst" />
+              <img className="rounded-xl h-64 w-full" src={product?.images[0].url} alt="Monst" />
               {/* <img className="rounded-xl" src="/images/room.png" alt="Monst" /> */}
               <div className="flex justify-between items-end">
                   <div>
                       <h1 className="mt-5 text-xl font-semibold group-hover:-text--clr-primary">
                           <Link href="/services" legacyBehavior>
-                              <a>{product.des}</a>
+                              <a className="text-xs leading-[0.5px]">{product?.description}</a>
                           </Link>
                       </h1>
-                      <p className="mt-2 text-xs text-gray-500">{product.price}</p>
+                      <p className="mt-2 text-xs text-gray-500"> ₦{product?.price}</p>
                   </div>
                   <div>
-                      <Link to="/single-product" legacyBehavior>
+                      <Link to={`/single-product/${product?._id}`} legacyBehavior>
                           <a className="tracking-wide hover-up-2 mr-2 inline-block px-4 py-3 text-xs -text--clr-primary font-semibold leading-none border  hover:-border--clr-primary hover:text-white hover:-bg--clr-primary rounded">View Details</a>
                       </Link>
                   </div>
@@ -86,3 +89,4 @@ const Slider1 = () => {
 };
 
 export default Slider1;
+
