@@ -8,13 +8,13 @@ import "react-toastify/dist/ReactToastify.css";
 import logo from "/icons/logo.svg";
 import axios from "axios";
 
-const categories = [
-  { name: "Crafts", count: 2 },
-  { name: "Design", count: 8 },
-  { name: "Handmade", count: 7 },
-  { name: "Interior", count: 1 },
-  { name: "Wood", count: 6 },
-];
+// const categories = [
+//   { name: "Crafts", count: 2 },
+//   { name: "Design", count: 8 },
+//   { name: "Handmade", count: 7 },
+//   { name: "Interior", count: 1 },
+//   { name: "Wood", count: 6 },
+// ];
 
 export const recentPosts = [
   {
@@ -55,12 +55,12 @@ const Blog = () => {
   const [categories, setCategories] = useState([]);
 
   const postsPerPage = 3;
-  const totalPages = Math.ceil(posts.length / postsPerPage);
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
   const navigate = useNavigate();
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
 
   const fetchProducts = async () => {
     try {
