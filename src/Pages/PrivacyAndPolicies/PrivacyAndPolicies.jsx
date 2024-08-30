@@ -8,7 +8,7 @@ const PrivacyAndPolicies = () => {
     <>
     <ScrollToTop />
     <ReuseableHero page={"Privacy & Policy"} page1={"Privacy & Policy"} />
-      <div className="container mx-auto px-4 py-8 mt-[53px]">
+      <div className="container mx-auto mt-[53px] px-4 md:px-10 lg:!px-28 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="col-span-1">
             <h1 className="text-3xl font-bold text-gray-800 mb-4">
