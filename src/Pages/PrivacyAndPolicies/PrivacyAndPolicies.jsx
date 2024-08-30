@@ -1,10 +1,12 @@
 import React from "react";
 import muggo from "/images/products/muggo.png";
 import ReuseableHero from "../../Components/ReuseableHero";
+import ScrollToTop from "../../Containers/ScrollToTop";
 
 const PrivacyAndPolicies = () => {
   return (
     <>
+    <ScrollToTop />
     <ReuseableHero page={"Privacy & Policy"} page1={"Privacy & Policy"} />
       <div className="container mx-auto px-4 py-8 mt-[53px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
