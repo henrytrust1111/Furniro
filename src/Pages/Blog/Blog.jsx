@@ -14,7 +14,8 @@ const posts = [
     title: "Going all-in with millennial design",
     date: "14 Oct 2022",
     category: "Wood",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum commodo lorem eget tincidunt. Curabitur imperdiet commodo risus sed commodo.Nullam auctor pellentesque pretium. Mauris blandit est sit amet odio tempus, sit amet viverra ipsum finibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec bibendum congue ipsum quis ullamcorper. Ut risus lacus, faucibus sit amet cursus vitae, tristique id sapien.Vestibulum leo justo, mollis euismod nunc eget, feugiat vulputate enim.Suspendisse consectetur ac odio rhoncus commodo. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Curabitur egestas rhoncus ante, a lobortis velit ultrices id. Integer blandit tincidunt luctus. Nam efficitur a sapien et placerat. Ut faucibus quis nulla dignissim mollis.",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum commodo lorem eget tincidunt. Curabitur imperdiet commodo risus sed commodo.Nullam auctor pellentesque pretium. Mauris blandit est sit amet odio tempus, sit amet viverra ipsum finibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec bibendum congue ipsum quis ullamcorper. Ut risus lacus, faucibus sit amet cursus vitae, tristique id sapien.Vestibulum leo justo, mollis euismod nunc eget, feugiat vulputate enim.Suspendisse consectetur ac odio rhoncus commodo. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Curabitur egestas rhoncus ante, a lobortis velit ultrices id. Integer blandit tincidunt luctus. Nam efficitur a sapien et placerat. Ut faucibus quis nulla dignissim mollis.",
     image: "/images/blog/millennialDesign.png",
   },
   {
@@ -130,7 +131,6 @@ const Blog = () => {
 
   const navigate = useNavigate();
 
-
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
@@ -165,7 +165,7 @@ const Blog = () => {
   };
 
   const handlePostClick = (post) => {
-    navigate(`/single-blog/${post.id}`, { state: { post } });
+    navigate(`/single-blog/${post._id}`, { state: { post } });
   };
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -178,6 +178,12 @@ const Blog = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
+  };
+  const formattedDate = (dateString) => {
+    const date = new Date(dateString);
+
+    const options = { day: "2-digit", month: "short", year: "numeric" };
+    return date.toLocaleDateString("en-GB", options);
   };
 
   // if (loading) {
@@ -226,7 +232,7 @@ const Blog = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-3/4 flex flex-col gap-8">
             {currentPosts.map((post) => (
-              <div key={post.id} className="bg-white overflow-hidden">
+              <div key={post._id} className="bg-white overflow-hidden">
                 <img
                   src={post.image.url}
                   alt={post.title}
@@ -236,11 +242,13 @@ const Blog = () => {
                   <div className="flex items-center text-gray-600 text-sm mb-4">
                     <FaUser className="mr-2 text-lg" /> Admin
                     {/* <FaCalendarAlt className="mx-4 text-lg" /> {post.date} */}
-                    <FaCalendarAlt className="mx-4 text-lg" /> 03 Aug 2022
+                    <FaCalendarAlt className="mx-4 text-lg" /> {formattedDate(post.createdAt)}
                     <FaTag className="mx-4 text-lg" /> {post.category}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
-                  <p className="text-gray-500 mb-4 line-clamp-2 ">{post.content}</p>
+                  <p className="text-gray-500 mb-4 line-clamp-2 ">
+                    {post.content}
+                  </p>
                   <div onClick={() => handlePostClick(post)}>
                     <span className="text-base text-black hover:-text--clr-primary font-normal underline underline-offset-8 cursor-pointer">
                       Read more
