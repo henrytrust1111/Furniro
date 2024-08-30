@@ -186,43 +186,43 @@ const Blog = () => {
     return date.toLocaleDateString("en-GB", options);
   };
 
-  // if (loading) {
-  //   return (
-  //     <section className="py-16 font-[poppins]">
-  //       <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
-  //         <img src={logo} alt="" className="mr-2 animate-spin " />
-  //         <p className="text-lg font-semibold">Loading...</p>
-  //       </div>
-  //     </section>
-  //   );
-  // }
+  if (loading) {
+    return (
+      <section className="py-16 font-[poppins]">
+        <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
+          <img src={logo} alt="" className="mr-2 animate-spin " />
+          <p className="text-lg font-semibold">Loading...</p>
+        </div>
+      </section>
+    );
+  }
 
-  // if (error) {
-  //   return (
-  //     <section className="py-16 font-[poppins]">
-  //       <div className="container mx-auto px-4 text-center grid place-items-center">
-  //         <p className="text-lg font-semibold text-red-500">Network Error</p>
-  //         <button
-  //           onClick={handleRefresh}
-  //           className="mt-4 -bg--clr-primar-light-v1 text--clr-primary px-4 py-2 border border--clr-primary flex items-center gap-2 hover:scale-110 font-semibold"
-  //         >
-  //           <BiRefresh size={20} />
-  //           Refresh
-  //         </button>
-  //       </div>
-  //     </section>
-  //   );
-  // }
+  if (error) {
+    return (
+      <section className="py-16 font-[poppins]">
+        <div className="container mx-auto px-4 text-center grid place-items-center">
+          <p className="text-lg font-semibold text-red-500">Network Error</p>
+          <button
+            onClick={handleRefresh}
+            className="mt-4 -bg--clr-primar-light-v1 text--clr-primary px-4 py-2 border border--clr-primary flex items-center gap-2 hover:scale-110 font-semibold"
+          >
+            <BiRefresh size={20} />
+            Refresh
+          </button>
+        </div>
+      </section>
+    );
+  }
 
-  // if (noProducts) {
-  //   return (
-  //     <section className="py-16 font-[poppins]">
-  //       <div className="container mx-auto px-4 text-center">
-  //         <p className="text-lg font-semibold">No Products Available</p>
-  //       </div>
-  //     </section>
-  //   );
-  // }
+  if (noPosts) {
+    return (
+      <section className="py-16 font-[poppins]">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-lg font-semibold">No Products Available</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <>
