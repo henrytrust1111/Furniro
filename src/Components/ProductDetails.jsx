@@ -160,52 +160,56 @@ const ProductDetails = ({ onAddtocart }) => {
     <section className="w-full flex flex-col p-4 lg:flex-row overflow-hidden">
       <div className="w-full lg:w-1/2 lg:pt-14 flex flex-col gap-4 justify-center">
         <div className="w-full flex flex-col lg:flex-row gap-4 lg:px-16">
-          {/* Main image */}
-          {product[0]?.images.map((img, index) => (
+          {/* smaller image for larger screen */}
+          <div className="hidden lg:!grid grid-cols-2 px-12 lg:px-0 lg:grid-cols-1 gap-4">
             <div
-              key={index}
-              className={`flex lg:hidden rounded-sm bg-green-500 ${bgColor}`}
-              onClick={() => onImageChange(img.url)}
+              className={`rounded-sm w-16 h-14 ${bgColor}`}
+              onClick={() => onImageChange(product[0]?.images[0]?.url)}
             >
               <img
-                src={img.url}
+                src={product[0]?.images[0]?.url}
                 className="w-full h-full"
-                alt={product.itemName}
+                alt={product[0]?.itemName}
               />
             </div>
-          ))}
-
-          {/* Smaller images */}
-          <div className="grid grid-cols-2 px-12 lg:px-0 lg:grid-cols-1 gap-4">
-            {product[0]?.images.map((img, index) => (
-              <div
-                key={index}
-                className={`rounded-sm w-16 h-14 ${bgColor}`}
-                onClick={() => onImageChange(img.url)}
-              >
-                <img
-                  src={img.url}
-                  className="w-full h-full"
-                  alt={product.itemName}
-                />
-              </div>
-            ))}
           </div>
 
-          {/* className={`hidden lg:flex lg:w-full lg:h-[500px] rounded-sm ${bgColor}`} */}
-          {product[0]?.images.map((img, index) => (
+          {/* Main image  for small screen*/}
+          <div
+            className={`flex lg:hidden rounded-sm bg-green-500 ${bgColor}`}
+            onClick={() => onImageChange(product[0]?.images[0]?.url)}
+          >
+            <img
+              src={product[0]?.images[0]?.url}
+              className="w-full h-full"
+              alt={product[0]?.itemName}
+            />
+          </div>
+          {/* smaller images for small screen */}
+          <div className="lg:hidden grid grid-cols-2 px-12 lg:px-0 lg:grid-cols-1 gap-4">
             <div
-              key={index}
-              className={`hidden lg:flex lg:w-full lg:h-[500px] rounded-sm ${bgColor}`}
-              onClick={() => onImageChange(img.url)}
+              className={`rounded-sm w-16 h-14 ${bgColor}`}
+              onClick={() => onImageChange(product[0]?.images[0]?.url)}
             >
               <img
-                src={img.url}
-                className="w-full h-full bg-no-repeat bg-cover"
-                alt={product[0].itemName}
+                src={product[0]?.images[0]?.url}
+                className="w-full h-full"
+                alt={product[0]?.itemName}
               />
             </div>
-          ))}
+          </div>
+
+          {/* Main image for large screen */}
+          <div
+            className={`hidden lg:flex lg:w-full lg:h-[500px] rounded-sm ${bgColor}`}
+            onClick={() => onImageChange(product[0]?.images[0]?.url)}
+          >
+            <img
+              src={product[0]?.images[0]?.url}
+              className="w-full h-full bg-no-repeat bg-cover"
+              alt={product[0]?.itemName}
+            />
+          </div>
         </div>
       </div>
 
@@ -252,7 +256,7 @@ const ProductDetails = ({ onAddtocart }) => {
             {product[0]?.colors.map((color, index) => (
               <div
                 key={index}
-                className={`w-6 h-6 rounded-full ${color} flex items-center justify-center text-xs cursor-pointer`}
+                className={`w-6 h-6 rounded-full ${color} bg-gray-500 flex items-center justify-center text-xs cursor-pointer`}
                 onClick={() => onColorChange(color)}
               ></div>
             ))}
@@ -282,50 +286,46 @@ const ProductDetails = ({ onAddtocart }) => {
         </div>
         {/* Product Info Section */}
         <div className="w-full border-b"></div>
-        <div className="product-info flex flex-col gap-3 mt-4">
-          <div className="info-row flex gap-8">
-            <div className="label text-[#b7b7b7] text-xs w-20">
+        <div className="product-info flex flex-col justify-center gap-3 mt-4">
+          <div className="info-row flex gap-2">
+            <div className="label text-[#b7b7b7] text-xs">
               Product Name
             </div>
             <div className="value text-[#b7b7b7] text-xs">
-              :&nbsp;{product.itemName}
+              :&nbsp;{product[0].itemName}
             </div>
           </div>
-          <div className="info-row flex gap-8">
-            <div className="label text-[#b7b7b7] text-xs w-20">Categories</div>
-            <div className="value text-[#b7b7b7] text-xs">
-              :&nbsp;{product.category}
+          <div className="info-row flex gap-4">
+            <div className="label text-[#b7b7b7] text-xs">
+              Categories Info
             </div>
-          </div>
-          {/* <div className="info-row flex gap-8">
-            <div className="label text-[#b7b7b7] text-xs w-20">Tags</div>
             <div className="value text-[#b7b7b7] text-xs">
-              :&nbsp;{product?.tags.join(", ")}
-            </div>
-          </div> */}
-          <div className="info-row flex gap-8">
-            <div className="label text-[#b7b7b7] text-xs w-20">Material</div>
-            <div className="value text-[#b7b7b7] text-xs">
-              :&nbsp;{product.material}
+              :&nbsp;{product[0].category.categoryInfo}
             </div>
           </div>
         </div>
         {/* Social Share Icons */}
-        <div className="w-full flex items-center gap-2">
-          <span className="text-xs">Share:</span>
-          <div className="flex gap-2">
-            <i
-              className="bx bxl-facebook-square text-xl text-[#b7b7b7] cursor-pointer"
+        <div className="info-row flex gap-2">
+          <div className="label text-[#b7b7b7] text-xs w-20">Share</div>
+          <div className="value text-xs flex gap-4">
+            <div
               onClick={() => handleShare("facebook")}
-            ></i>
-            <i
-              className="bx bxl-twitter text-xl text-[#b7b7b7] cursor-pointer"
+              className="cursor-pointer"
+            >
+              :&nbsp;<i className="bx bxl-facebook-circle"></i>
+            </div>
+            <div
+              onClick={() => handleShare("linkedin")}
+              className="cursor-pointer"
+            >
+              <i className="bx bxl-linkedin-square"></i>
+            </div>
+            <div
               onClick={() => handleShare("twitter")}
-            ></i>
-            <i
-              className="bx bxl-instagram-alt text-xl text-[#b7b7b7] cursor-pointer"
-              onClick={() => handleShare("instagram")}
-            ></i>
+              className="cursor-pointer"
+            >
+              <i className="bx bxl-twitter"></i>
+            </div>
           </div>
         </div>
       </div>

@@ -1,7 +1,29 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import Review from "./Review";
+import { Link, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+
 const ProductDescription = ({ name, mainDetails, weight }) => {
   const [activeTab, setActiveTab] = useState("description");
+  const [product, setProduct] = useState();
+  const { productID } = useParams();
+
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get(
+        `https://funiro-furnitures.onrender.com/get-one-product/${productID}`
+      );
+
+      setProduct(response.data);
+      console.log(response.data[0].images);
+    } catch (err) {
+      toast.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   const renderContent = () => {
     switch (activeTab) {
