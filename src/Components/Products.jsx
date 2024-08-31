@@ -123,13 +123,13 @@ const Products = ({ Title }) => {
                 <div className="flex items-center space-x-2 justify-between">
                   {product.price && (
                     <span className="-text--clr-black-shade-v1 font-semibold text-base">
-                      ₦ {product.price}
+                      ₦  {product?.discountedGeneralPrice}
                     </span>
                   )}
                   <p className="text-xs">
                     ₦ {" "}
                     <span className="line-through">
-                      {product?.discountedGeneralPrice}
+                    {product.price}
                     </span>
                   </p>
                 </div>
