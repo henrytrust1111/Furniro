@@ -29,10 +29,10 @@ const Return = () => {
       {!agreedToTerms ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg p-8 mx-4 md:mx-0 max-w-lg w-full text-center">
-            <h2 className="text-2xl font-semibold mb-4">
+            <h2 className="text-lg md:text-2xl font-semibold mb-4">
               Terms and Conditions
             </h2>
-            <p className="mb-6 text-left">
+            <p className="mb-6 text-center lg:text-left text-sm lg:text-base">
               By agreeing to these terms, you acknowledge that you have read and
               understood the return policy of Furniro. Returns must be made
               within 30 days of purchase, in original condition, with proof of
@@ -131,7 +131,7 @@ const Return = () => {
             <div className="md:col-span-2 text-center">
               <button
                 type="submit"
-                className="-bg--clr-primary text-white px-6 py-2 rounded-md hover:-bg--clr-primar-light-v1"
+                className="-bg--clr-primary text-white px-6 py-2 rounded-md hover:border-2 hover:!-border--clr-primary hover:!text-black hover:bg-transparent"
               >
                 Submit Return Request
               </button>
