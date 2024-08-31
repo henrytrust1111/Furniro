@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ReuseableHero from "../../Components/ReuseableHero";
 
 const TrackProduct = () => {
   const [orderNumber, setOrderNumber] = useState("");
@@ -26,6 +27,8 @@ const TrackProduct = () => {
   };
 
   return (
+    <>
+    <ReuseableHero page={"Track Product"} page1={"Track"} />
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold text-center mb-8">
         Track Your Order
@@ -110,6 +113,7 @@ const TrackProduct = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
