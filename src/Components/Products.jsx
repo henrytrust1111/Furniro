@@ -59,6 +59,10 @@ const Products = ({ Title }) => {
     fetchProducts();
   };
 
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat('en-US').format(number);
+  };
+
   if (loading) {
     return (
       <section className="py-16 font-[poppins]">
@@ -123,13 +127,13 @@ const Products = ({ Title }) => {
                 <div className="flex items-center space-x-2 justify-between">
                   {product.price && (
                     <span className="-text--clr-black-shade-v1 font-semibold text-base">
-                      ₦  {product?.discountedGeneralPrice}
+                      ₦  {formatNumber(product?.discountedGeneralPrice)}
                     </span>
                   )}
                   <p className="text-xs">
                     ₦ {" "}
                     <span className="line-through">
-                    {product.price}
+                    {formatNumber(product.price)}
                     </span>
                   </p>
                 </div>
