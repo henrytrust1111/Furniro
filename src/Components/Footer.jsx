@@ -73,6 +73,11 @@ const Footer = () => {
                 </a>
               </li>
               <li className="mb-2">
+                <a href="/#/track" className="text-gray-600 hover:!-text--clr-primary">
+                  Track
+                </a>
+              </li>
+              <li className="mb-2">
                 <a href="/#/privacy-policy" className="text-gray-600 hover:!-text--clr-primary">
                   Privacy Policies
                 </a>

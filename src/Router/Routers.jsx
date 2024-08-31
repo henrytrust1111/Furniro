@@ -18,6 +18,7 @@ import ResetPassword from "../auth/ResetPassword";
 import ShowOrderModal from "../Pages/SuccessNewsLetter";
 import PrivacyAndPolicies from "../Pages/PrivacyAndPolicies/PrivacyAndPolicies";
 import Return from "../Pages/Return/Return";
+import TrackProduct from "../Pages/TrackProduct/TrackProduct";
 
 
 const route = createHashRouter([
@@ -76,6 +77,10 @@ const route = createHashRouter([
       {
         path: "/return",
         element: <Return />,
+      },
+      {
+        path: "/track",
+        element: <TrackProduct />,
       },
     ],
   },
