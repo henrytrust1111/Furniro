@@ -43,8 +43,6 @@ const Products = ({ Title }) => {
     fetchProducts();
   }, []);
 
-
-
   const showMoreProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 4);
   };
@@ -128,7 +126,12 @@ const Products = ({ Title }) => {
                       ₦ {product.price}
                     </span>
                   )}
-                  <s className="text-xs">-{product?.discountPercentage}%</s>
+                  <p className="text-xs">
+                    ₦ {" "}
+                    <span className="line-through">
+                      {product?.discountedGeneralPrice}
+                    </span>
+                  </p>
                 </div>
               </div>
               <div className="-bg--clr-secondary absolute inset-0 opacity-0 hover:opacity-75  transition-all ease cursor-pointer grid place-items-center">
@@ -175,7 +178,7 @@ const Products = ({ Title }) => {
           onClick={showMoreProducts}
           className="bg-white -text--clr-primary px-4 py-2 z-40 hover:scale-110 font-semibold border -border--clr-primary mt-8 max-w-[300px] md:w-[300px]"
         >
-           {showAll ? "Show Less" : "Show More"}
+          {showAll ? "Show Less" : "Show More"}
         </button>
       </div>
     </section>
