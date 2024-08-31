@@ -68,7 +68,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-gray-600 hover:!-text--clr-primary">
+                <a href="/#/return" className="text-gray-600 hover:!-text--clr-primary">
                   Returns
                 </a>
               </li>

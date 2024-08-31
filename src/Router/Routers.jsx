@@ -17,6 +17,7 @@ import Checkout from "../Pages/Checkout/Checkout";
 import ResetPassword from "../auth/ResetPassword";
 import ShowOrderModal from "../Pages/SuccessNewsLetter";
 import PrivacyAndPolicies from "../Pages/PrivacyAndPolicies/PrivacyAndPolicies";
+import Return from "../Pages/Return/Return";
 
 
 const route = createHashRouter([
@@ -71,6 +72,10 @@ const route = createHashRouter([
       {
         path: "/privacy-policy",
         element: <PrivacyAndPolicies />,
+      },
+      {
+        path: "/return",
+        element: <Return />,
       },
     ],
   },
