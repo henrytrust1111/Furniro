@@ -39,7 +39,7 @@ const route = createHashRouter([
         element: <SingleProduct />,
       },
       {
-        path: "/comparison",
+        path: "/comparison/:productID",
         element: <ProductComparisonPage />,
       },
       {

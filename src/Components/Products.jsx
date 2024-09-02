@@ -51,8 +51,8 @@ const Products = ({ Title }) => {
     nav(`/single-product/${id}`);
   };
 
-  const handleCompare = () => {
-    nav("/comparison");
+  const handleCompare = (id) => {
+    nav(`/comparison/${id}`);
   };
 
   const handleRefresh = () => {
@@ -153,7 +153,7 @@ const Products = ({ Title }) => {
                     </div>
                     <div
                       className="flex items-center gap-1 hover:-text--clr-primary text-base"
-                      onClick={handleCompare}
+                      onClick={()=> handleCompare(product._id)}
                     >
                       <MdCompareArrows className="text-base" />{" "}
                       <span className="text-base">Compare</span>
