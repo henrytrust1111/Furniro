@@ -4,7 +4,7 @@ import { MdCompareArrows } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 // import { BiLoaderCircle } from "react-icons/bi";
 import logo from "/icons/logo.svg";
-import { CgSpinnerAlt } from "react-icons/cg";
+// import { CgSpinnerAlt } from "react-icons/cg";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
@@ -28,8 +28,7 @@ const Products = ({ Title }) => {
         setNoProducts(true);
       } else {
         setProducts(response.data.data);
-        console.log(response.data.data);
-        console.log(response.data.data);
+        localStorage.setItem("products", JSON.stringify(response.data.data));
         setNoProducts(false);
       }
     } catch (err) {
@@ -44,8 +43,6 @@ const Products = ({ Title }) => {
     fetchProducts();
   }, []);
 
-
-
   const showMoreProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 4);
   };
@@ -54,12 +51,16 @@ const Products = ({ Title }) => {
     nav(`/single-product/${id}`);
   };
 
-  const handleCompare = () => {
-    nav("/comparison");
+  const handleCompare = (id) => {
+    nav(`/comparison/${id}`);
   };
 
   const handleRefresh = () => {
     fetchProducts();
+  };
+
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat('en-US').format(number);
   };
 
   if (loading) {
@@ -104,7 +105,7 @@ const Products = ({ Title }) => {
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl font-bold mb-8 text-center">{Title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-11 lg:px-11 md:px-0 ">
-          {products.slice(0, visibleProducts).map((product) => (
+          {products?.slice(0, visibleProducts).map((product) => (
             <div
               key={product.id}
               className="bg-[#F4F5F7] shadow-custom relative"
@@ -126,10 +127,15 @@ const Products = ({ Title }) => {
                 <div className="flex items-center space-x-2 justify-between">
                   {product.price && (
                     <span className="-text--clr-black-shade-v1 font-semibold text-base">
-                      ₦ {product.price}
+                      ₦  {formatNumber(product?.discountedGeneralPrice)}
                     </span>
                   )}
-                  <s className="text-xs">-{product.discountPercentage}%</s>
+                  <p className="text-xs">
+                    ₦ {" "}
+                    <span className="line-through">
+                    {formatNumber(product.price)}
+                    </span>
+                  </p>
                 </div>
               </div>
               <div className="-bg--clr-secondary absolute inset-0 opacity-0 hover:opacity-75  transition-all ease cursor-pointer grid place-items-center">
@@ -147,7 +153,7 @@ const Products = ({ Title }) => {
                     </div>
                     <div
                       className="flex items-center gap-1 hover:-text--clr-primary text-base"
-                      onClick={handleCompare}
+                      onClick={()=> handleCompare(product._id)}
                     >
                       <MdCompareArrows className="text-base" />{" "}
                       <span className="text-base">Compare</span>
@@ -159,14 +165,14 @@ const Products = ({ Title }) => {
                   </div>
                 </div>
               </div>
-              {product.discountPercentage > 0 && (
+              {product?.discountPercentage > 0 && (
                 <span className="text-white absolute bg-[#E97171] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4 text-base">
                   -{product.discountPercentage}%
                 </span>
               )}
               {product.new && (
                 <span className="text-white absolute bg-[#2EC1AC] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4 text-base">
-                  {product.new}
+                  {product?.new}
                 </span>
               )}
             </div>
@@ -176,7 +182,7 @@ const Products = ({ Title }) => {
           onClick={showMoreProducts}
           className="bg-white -text--clr-primary px-4 py-2 z-40 hover:scale-110 font-semibold border -border--clr-primary mt-8 max-w-[300px] md:w-[300px]"
         >
-           {showAll ? "Show Less" : "Show More"}
+          {showAll ? "Show Less" : "Show More"}
         </button>
       </div>
     </section>

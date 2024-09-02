@@ -68,12 +68,17 @@ const Footer = () => {
                 </a>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-gray-600 hover:!-text--clr-primary">
+                <a href="/#/return" className="text-gray-600 hover:!-text--clr-primary">
                   Returns
                 </a>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-gray-600 hover:!-text--clr-primary">
+                <a href="/#/track" className="text-gray-600 hover:!-text--clr-primary">
+                  Track
+                </a>
+              </li>
+              <li className="mb-2">
+                <a href="/#/privacy-policy" className="text-gray-600 hover:!-text--clr-primary">
                   Privacy Policies
                 </a>
               </li>
@@ -97,7 +102,7 @@ const Footer = () => {
           <div className="h-[1px] w-[90%] bg-[#D9D9D9]"></div>
         </div>
         <div className="container mx-auto px-6 lg:!text-start text-center text-black">
-          <p>&copy; 2023 Funiro. All rights reserved.</p>
+          <p>&copy; 2024 Funiro. All rights reserved.</p>
         </div>
       </footer>
     </>

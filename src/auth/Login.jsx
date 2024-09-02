@@ -49,7 +49,7 @@ const Login = () => {
       const response = await axios.post(
         "https://funiro-furnitures.onrender.com/login",
         { email, password }
-      );
+      );  
 
       const { message, data } = response.data;
 

@@ -72,7 +72,7 @@ export default function Header() {
   useEffect(() => {
     if (token) {
       const { firstName, lastName } = JSON.parse(localStorage.getItem("user"));
-      const name1 = `${firstName.charAt(0).toUpperCase()}${lastName.charAt(0).toUpperCase()}`;
+      const name1 = `${firstName?.charAt(0).toUpperCase()}${lastName?.charAt(0).toUpperCase()}`;
       setName(name1)
     }
     const mediaQuery = window.matchMedia("(max-width: 700px)");
