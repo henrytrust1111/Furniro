@@ -12,36 +12,28 @@ import Warrantycomparison from './Warrantycomparison';
 import { MdArrowForwardIos } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import ReuseableHero from '../../Components/ReuseableHero';
+import axios from 'axios';
+import { Link, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import logo from "/icons/logo.svg";
 
 
 const ProductComparisonPage = () => {
+
+
+  const [product, setProduct] = useState();
+  const { productID } = useParams();
+
+
+
+
+
+
   return (
   <>
   <div className='ProductComparisonCon'>
   <ReuseableHero page={"Product Comparison"} page1={"Comparison"} />
-    {/* <div className='ProComparisonHerocon'>
-      <img src={image4} alt="" />
-      <div className='Procomparisonlogob'>
-        <div className='procomparisonup'>
-          <div className='procomparisonupBox'></div>
-          <div className='procomparisonupBox1'>
-            <div className='ComparisonLogo'>
-              <img src={Meubel} alt="" />
-            </div>
-          </div>
-        </div> */}
-        {/* <div className='procomparisondown'>
-          <div className='Procomparisonletter'>
-            <h2>Product Comparison</h2>
-          </div>
-          <div className='ProcomparisonlHome'>
-            <h3>Home</h3>
-            <MdArrowForwardIos className=''/>
-            <span>Comparison</span>
-          </div>
-        </div>
-      </div>
-    </div> */}
     <div className='Productpagescon'>
       <div className='ProductpagesconmainBoxwrapp'>
       <div className='ProductpagesconmainBox1'>
