@@ -13,6 +13,22 @@ const ProductDetails = ({ onAddtocart }) => {
   const [selectedRating, setSelectedRating] = useState(5);
   const [product, setProduct] = useState();
   const { productID } = useParams();
+  const colorClasses = {
+    red: "bg-red-500",
+    blue: "bg-blue-500",
+    green: "bg-green-500",
+    // Add more colors as needed
+  };
+
+  // <div className="flex gap-4">
+  //   {product[0]?.colors.map((color, index) => (
+  //     <div
+  //       key={index}
+  //       className={`w-6 h-6 rounded-full ${colorClasses[color]} flex items-center justify-center text-xs cursor-pointer`}
+  //       onClick={() => onColorChange(color)}
+  //     ></div>
+  //   ))}
+  // </div>;
 
   // useEffect(() => {
   //   const fetchProduct = async () => {
@@ -256,7 +272,7 @@ const ProductDetails = ({ onAddtocart }) => {
             {product[0]?.colors.map((color, index) => (
               <div
                 key={index}
-                className={`w-6 h-6 rounded-full ${color} bg-gray-500 flex items-center justify-center text-xs cursor-pointer`}
+                className={`w-6 h-6 rounded-full ${colorClasses[color]} flex items-center justify-center text-xs cursor-pointer`}
                 onClick={() => onColorChange(color)}
               ></div>
             ))}
@@ -288,17 +304,13 @@ const ProductDetails = ({ onAddtocart }) => {
         <div className="w-full border-b"></div>
         <div className="product-info flex flex-col justify-center gap-3 mt-4">
           <div className="info-row flex gap-2">
-            <div className="label text-[#b7b7b7] text-xs">
-              Product Name
-            </div>
+            <div className="label text-[#b7b7b7] text-xs">Product Name</div>
             <div className="value text-[#b7b7b7] text-xs">
               :&nbsp;{product[0].itemName}
             </div>
           </div>
           <div className="info-row flex gap-4">
-            <div className="label text-[#b7b7b7] text-xs">
-              Categories Info
-            </div>
+            <div className="label text-[#b7b7b7] text-xs">Categories Info</div>
             <div className="value text-[#b7b7b7] text-xs">
               :&nbsp;{product[0].category.categoryInfo}
             </div>

@@ -3,9 +3,9 @@ import Review from "./Review";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const ProductDescription = ({ name, mainDetails, weight }) => {
+const ProductDescription = () => {
   const [activeTab, setActiveTab] = useState("description");
-  const [product, setProduct] = useState();
+  const [product, setProduct] = useState([]);
   const { productID } = useParams();
 
   const fetchProducts = async () => {
@@ -31,9 +31,9 @@ const ProductDescription = ({ name, mainDetails, weight }) => {
         return (
           <>
             <div className="w-full lg:px-20 text-sm flex flex-col gap-4 text-[#9F9F9F]">
-              <div>Name: {name}</div>
-              <div>{mainDetails}</div>
-              <div>Weight: {weight}</div>
+              <div>Name: {product[0]?.itemName} </div>
+              <div></div>
+              <div></div>
             </div>
           </>
         );
@@ -42,7 +42,7 @@ const ProductDescription = ({ name, mainDetails, weight }) => {
           <>
             <div className="w-full lg:px-20  text-sm flex flex-col gap-4 text-[#9F9F9F]">
               <p className=" text-xs lg:text-sm text-[#9F9F9F] leading-relaxed">
-                Here is some additional information about the product.
+              {product[0]?.itemName}
               </p>
             </div>
           </>
@@ -96,16 +96,7 @@ const ProductDescription = ({ name, mainDetails, weight }) => {
             >
               details
             </div>
-            {/* <div
-              className={`p-4 flex lg:hidden tlg:text-sm px-4 text-xs items-center cursor-pointer font-semibold ${
-                activeTab === "reviews"
-                  ? "border-2 -border--clr-primary -text--clr-primary rounded-lg"
-                  : "-text--clr-primary"
-              }`}
-              onClick={() => setActiveTab("reviews")}
-            >
-              Reviews &nbsp; &nbsp; &nbsp; [5]
-            </div> */}
+            
             <div
               className={`flex lg:text-sm px-4 text-xs items-center cursor-pointer font-semibold ${
                 activeTab === "reviews"
