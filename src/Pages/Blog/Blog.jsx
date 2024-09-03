@@ -52,6 +52,8 @@ const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredPosts, setFilteredPosts] = useState([]);
+  const [recentPost, setRecentPost] = useState();
+  const [noRecentPost, setNoRecentPost] = useState(false);
   const [categories, setCategories] = useState([]);
 
   const postsPerPage = 3;
@@ -85,8 +87,32 @@ const Blog = () => {
     }
   };
 
+  const fetchRecentPost = async () => {
+    try {
+      const response = await axios.get(
+        "https://funiro-furnitures.onrender.com/recentPost?limit=5"
+      );
+      console.log(response.data)
+      // toast.success(response.data.message);
+      const postsData = response.data.data;
+      if (response.data.data.length === 0) {
+        setNoRecentPost(true);
+      } else {
+        setRecentPost(postsData);        
+        setNoRecentPost(false);
+      }
+    } catch (err) {
+      // setError("Network Error");
+      // toast.error("Network Error");
+      toast.error(err.response);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     fetchProducts();
+    fetchRecentPost();
   }, []);
 
   const generateCategories = (posts) => {
@@ -201,7 +227,7 @@ const Blog = () => {
                     <FaUser className="mr-2 text-lg" /> Admin
                     {/* <FaCalendarAlt className="mx-4 text-lg" /> {post.date} */}
                     <FaCalendarAlt className="mx-4 text-lg" />{" "}
-                    {formattedDate(post.createdAt)}
+                    
                     <FaTag className="mx-4 text-lg" /> {post.category}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
@@ -217,7 +243,7 @@ const Blog = () => {
               </div>
             ))}
             {filteredPosts.length < 4 ? null : (
-              <div className="flex justify-center mt-8">
+              <div className="flex justify-center mt-8 flex-wrap gap-1">
                 <button
                   onClick={handlePrev}
                   disabled={currentPage === 1}
@@ -241,7 +267,7 @@ const Blog = () => {
                 <button
                   onClick={handleNext}
                   disabled={currentPage === totalPages}
-                  className="px-4 py-2 mx-1 text-black -bg--clr-primar-light rounded hover:-bg--clr-primary hover:text-white disabled:opacity-50"
+                  className="px-4 py-2 mx-1  text-black -bg--clr-primar-light rounded hover:-bg--clr-primary hover:text-white disabled:opacity-50 "
                 >
                   Next
                 </button>
@@ -283,22 +309,22 @@ const Blog = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4">Recent Posts</h3>
               <ul className="space-y-4">
-                {recentPosts.map((post, index) => (
-                  <li key={index} className="flex items-start">
+                {recentPost?.map((post, index) => (
+                  <li key={index} className="flex items-start" onClick={() => handlePostClick(post)}>
                     <img
-                      src={post.image}
+                      src={post.image.url}
                       alt={post.title}
                       className="w-16 h-16 object-cover rounded mr-4"
                     />
                     <div>
-                      <a
+                      <span
                         href="#"
-                        className="text-black text-sm hover:underline"
+                        className="text-black text-sm hover:underline font-[Poppins] cursor-pointer"
                       >
                         {post.title}
-                      </a>
+                      </span>
                       <span className="block -text--clr-light-gray-v2 text-xs">
-                        {post.date}
+                        {formattedDate(post.date)}
                       </span>
                     </div>
                   </li>

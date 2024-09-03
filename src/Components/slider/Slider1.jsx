@@ -2,14 +2,14 @@ import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 SwiperCore.use([Navigation]);
-import syltherine from "/images/products/syltherine.png";
-import lolito from "/images/products/lolito.png";
-import leviosa from "/images/products/leviosa.png";
-import respira from "/images/products/respira.png";
-import grifo from "/images/products/grifo.png";
-import muggo from "/images/products/muggo.png";
-import pingky from "/images/products/pingky.png";
-import potty from "/images/products/potty.png";
+// import syltherine from "/images/products/syltherine.png";
+// import lolito from "/images/products/lolito.png";
+// import leviosa from "/images/products/leviosa.png";
+// import respira from "/images/products/respira.png";
+// import grifo from "/images/products/grifo.png";
+// import muggo from "/images/products/muggo.png";
+// import pingky from "/images/products/pingky.png";
+// import potty from "/images/products/potty.png";
 
 // const products = [
 //     { id: 1, new:'', name: 'Syltherine', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-30%', image: syltherine, des: "Stylish cafe chair" },
@@ -24,7 +24,10 @@ import potty from "/images/products/potty.png";
 //   ];
 const Slider1 = () => {
   const product = JSON.parse(localStorage.getItem("products"));
-  console.log(product);
+
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat('en-US').format(number);
+  };
 
   return (
     <>
@@ -64,7 +67,8 @@ const Slider1 = () => {
                     </h1>
                     <p className="mt-2 text-xs text-gray-500">
                       {" "}
-                      ₦{product?.price}
+                      {/* ₦{product?.price} */}
+                      ₦{formatNumber(product?.discountedGeneralPrice)}
                     </p>
                   </div>
                   <div>

@@ -5,6 +5,7 @@ import { FaUser, FaCalendarAlt, FaTag } from 'react-icons/fa';
 import { recentPosts } from './Blog'; 
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+import RecentPost from './RecentPost';
 
 const SingleBlogPost = () => {
   const location = useLocation();
@@ -42,7 +43,7 @@ const SingleBlogPost = () => {
               {post.content}
             </p>
           </div>
-
+{/* 
           <aside className="lg:col-span-1">
             <h3 className="text-xl font-semibold mb-4">Recent Posts</h3>
             <ul className="space-y-4">
@@ -64,7 +65,8 @@ const SingleBlogPost = () => {
                 </li>
               ))}
             </ul>
-          </aside>
+          </aside> */}
+          <RecentPost />
         </div>
       </div>
     </>
