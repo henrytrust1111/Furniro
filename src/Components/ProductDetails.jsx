@@ -88,6 +88,15 @@ const ProductDetails = ({ onAddtocart }) => {
     setQuantity((prevQuantity) => (prevQuantity > 0 ? prevQuantity - 1 : 0));
   };
 
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+
+    // Ensure the value is within the allowed range and is a valid number
+    if (value === "" || (Number(value) >= 0 && Number(value) <= 10)) {
+      setQuantity(value);
+    }
+  };
+
   const handleShare = async (platform) => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -283,7 +292,14 @@ const ProductDetails = ({ onAddtocart }) => {
             <p onClick={decrement} className="text-sm cursor-pointer">
               -
             </p>
-            <p className="text-sm">{quantity}</p>
+            <input
+              type="number"
+              value={quantity}
+              onChange={handleInputChange}
+              className="text-sm w-12 text-center border-none outline-none"
+              min="0"
+              max="10"
+            />
             <p onClick={increment} className="text-sm cursor-pointer">
               +
             </p>
