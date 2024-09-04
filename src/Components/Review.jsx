@@ -1,4 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const initialReview = [
   {
@@ -14,23 +19,37 @@ const initialReview = [
       "My experience so far with the furniro sitting room chair is that it is reliable and viable. Easy to fold and doesn't go down in five years. Get yourself a good furniro sitting room chair today, and you won't regret it.",
   },
 ];
-// const [loading,setLoading] =useState()
 
 const Review = () => {
   const [exp, setExp] = useState("");
   const [reviews, setReviews] = useState(initialReview);
   const [loading, setLoading] = useState(false);
-  //   const [feedback,setfeeback] = useState("")
+  const { productID } = useParams();
+  const navigate = useNavigate();  // <-- Moved to the top level
+
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get(
+        `https://funiro-furnitures.onrender.com/get-one-product/${productID}`
+      );
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, [productID]);
 
   const handleInputChange = (e) => {
     let value = e.target.value;
 
-  // Automatically add a newline when the text reaches a certain length
-  if (value.length >= 20 && value.length % 20 === 0) {
-    value += "\n";
-  }
+    // Automatically add a newline when the text reaches a certain length
+    if (value.length >= 20 && value.length % 20 === 0) {
+      value += "\n";
+    }
 
-  setExp(value);
+    setExp(value);
   };
 
   const handleKeyChange = (e) => {
@@ -42,10 +61,10 @@ const Review = () => {
 
   const handleSubmit = async (e) => {
     if (e) e.preventDefault();
+
     if (exp.trim()) {
       setLoading(true);
       try {
-        const productID = "66c5eb7ee9acad10fd78fa65";
         const token = localStorage.getItem("token");
         console.log("Retrieved Token:", token);
 
@@ -59,7 +78,6 @@ const Review = () => {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${token}`,
-              //   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmM4ODVhNThhYzNlNzMxM2M3NDQ1NDEiLCJmaXJzdE5hbWUiOiJlbG8iLCJsYXN0TmFtZSI6Im9sb2tvciIsImVtYWlsIjoib2xva29yZWxvNTJAZ21haWwuY29tIiwiaWF0IjoxNzI0NDIyNDMyLCJleHAiOjE3MjQ1OTUyMzJ9.a9s_8YIuAMUv_g0m501xEQkY-OA81JiGyYs-z-BSEmI
             },
             body: JSON.stringify({ comment: exp }),
           }
@@ -91,9 +109,12 @@ const Review = () => {
           console.error("Failed to comment:", data.error);
         }
       } catch (error) {
-        console.error("Error posting comment:", error);
+        console.error("Error:", error.message);
+        if (error.message === "No token found. Please log in.") {
+          navigate('/login'); // Redirect to login page
+        }
       } finally {
-        setLoading(false); // End loading
+        setLoading(false);
       }
     }
   };

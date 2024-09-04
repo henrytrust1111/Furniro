@@ -10,6 +10,8 @@ import ScrollToTop from "../../Containers/ScrollToTop";
 
 const SingleProduct = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
+  const [quantity, setQuantity] = useState(0);
+
 
   const handleAddToCart = () => {
     setIsCartVisible(true);
@@ -24,7 +26,11 @@ const SingleProduct = () => {
       <ScrollToTop />
       <div className="w-full h-auto">
         <Breadcrumbs />
-        <ProductDetails onAddtocart={handleAddToCart} />  
+        <ProductDetails 
+        onAddtocart={handleAddToCart}
+        quantity={quantity} 
+        setQuantity={setQuantity}
+         />  
         <ProductDescription
           name={Description[0].name}
           mainDetails={Description[0].mainDetails}
@@ -32,7 +38,11 @@ const SingleProduct = () => {
         />
         {/* <RelatedProducts products={productsData}/> */}
         <Products Title="Relatable Product" />
-        {isCartVisible && <Cart onClose={handleCloseCart} />}
+        {isCartVisible && <Cart 
+        onClose={handleCloseCart}
+        quantity={quantity}
+        setQuantity={setQuantity}
+          />}
       </div>
     </>
   );
