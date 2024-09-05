@@ -4,14 +4,16 @@ import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import logo from "/icons/logo.svg";
+import { useNavigate } from 'react-router-dom';
 
-const ProductDetails = ({ onAddtocart }) => {
+const ProductDetails = ({ onAddtocart,quantity,setQuantity }) => {
   const [bgColor, setBgColor] = useState("bg-[#F9F1E7]");
-  const [quantity, setQuantity] = useState(0);
   const [image, setImage] = useState(null);
   const [selectedSize, setSelectedSize] = useState("L"); // Default size is "L"
-  const [selectedRating, setSelectedRating] = useState(5);
+  const [selectedRating, setSelectedRating] = useState(null);
   const [product, setProduct] = useState();
+  const navigate = useNavigate();
+
   const { productID } = useParams();
   const colorClasses = {
     red: "bg-red-500",
@@ -139,6 +141,7 @@ const ProductDetails = ({ onAddtocart }) => {
     const token = localStorage.getItem("token");
     if (!token) {
       alert("No token found. Please log in.");
+      navigate('/login'); // Redirect to login page
       return;
     }
 
