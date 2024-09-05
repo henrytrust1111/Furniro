@@ -58,4 +58,14 @@
   .animate-fadeInOut {
 	animation: fadeInOut 5s linear;
   }
+
+  .hide-scrollbar::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
+  }
+  
+  .hide-scrollbar {
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+  }
+  
   

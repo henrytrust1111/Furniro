@@ -137,7 +137,7 @@ const Return = () => {
         <div className="container mx-auto md:!px-10 lg:!px-28 py-8">
           <h1 className="text-3xl font-bold text-center mb-6">Return Form</h1>
           <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6">
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto hide-scrollbar">
               <table className="min-w-full bg-white border border-gray-300">
                 <thead>
                   <tr>

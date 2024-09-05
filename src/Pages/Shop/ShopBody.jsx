@@ -137,7 +137,7 @@ const ShopBody = () => {
     <div className='Pagnation'>
       <div className="filter">
         <div className="filter-Left">
-          <img src="./public/filter.png" alt="" />
+          <img src="/filter.png" alt="" />
           <h3>Filter by</h3>
           <select className="filter-dropdown" onChange={handleFilterChange} value={filterBy}>
             <option value="all">All</option>
@@ -145,8 +145,8 @@ const ShopBody = () => {
             <option value="discount">Discount</option>
           </select>
           <div className='gridFilter'>
-          <img src="./public/grid.png" alt="" />
-          <img src="./public/viewlist.png" alt="" />
+          <img src="/grid.png" alt="" />
+          <img src="/viewlist.png" alt="" />
           </div>
         </div>
         <div className="filter-Right">
