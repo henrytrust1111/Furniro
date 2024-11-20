@@ -18,28 +18,32 @@ const ProductComparisonPage = () => {
     <>
       <ReuseableHero page={"Product Comparison"} page1={"Comparison"} />
       <div className="container mx-auto">
-      <div className="flex-col items-center w-full hidden sm:!flex">
-            <div className="space-y-4">
+        <div className="flex-col items-center w-full hidden sm:!flex lg:!hidden">
+          <div className="space-y-4">
             <h3 className="lg:text-lg font-medium font-[poppins] lg:w-40 text-left mt-2">
               Go to Product page for more Products
             </h3>
             <div className="relative space-x-2 ">
-              <p className="text-[#727272] text-left cursor-pointer">View More</p>
+              <p className="text-[#727272] text-left cursor-pointer">
+                View More
+              </p>
               <div className="absolute h-px w-24 bg-[#727272] -left-2 bottom-0"></div>
             </div>
-            </div>
           </div>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5 lg:px-12 space-x-6 space-y-6 lg:space-y-0">
           {/* First Section */}
           <div className="flex flex-col items-center w-full sm:!hidden lg:!flex ">
             <div className="space-y-4">
-            <h3 className="lg:text-lg font-medium font-[poppins] lg:w-40 text-left mt-2">
-              Go to Product page for more Products
-            </h3>
-            <div className="relative space-x-2 ">
-              <p className="text-[#727272] text-left cursor-pointer">View More</p>
-              <div className="absolute h-px w-24 bg-[#727272] -left-2 bottom-0"></div>
-            </div>
+              <h3 className="lg:text-lg font-medium font-[poppins] lg:w-40 text-left mt-2">
+                Go to Product page for more Products
+              </h3>
+              <div className="relative space-x-2 ">
+                <p className="text-[#727272] text-left cursor-pointer">
+                  View More
+                </p>
+                <div className="absolute h-px w-24 bg-[#727272] -left-2 bottom-0"></div>
+              </div>
             </div>
           </div>
           <div className="">
