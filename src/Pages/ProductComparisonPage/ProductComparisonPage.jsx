@@ -18,9 +18,9 @@ const ProductComparisonPage = () => {
     <>
       <ReuseableHero page={"Product Comparison"} page1={"Comparison"} />
       <div className="container mx-auto">
-        <div className="flex-col items-center w-full hidden sm:!flex lg:!hidden">
-          <div className="space-y-4">
-            <h3 className="lg:text-lg font-medium font-[poppins] lg:w-40 text-left mt-2">
+        <div className="flex-col w-full hidden sm:!flex lg:!hidden mt-4">
+          <div className="space-y-0 flex  gap-4">
+            <h3 className="lg:text-lg font-medium font-[poppins] lg:w-40 text-left">
               Go to Product page for more Products
             </h3>
             <div className="relative space-x-2 ">
