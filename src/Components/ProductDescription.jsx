@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Review from "./Review";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -42,7 +42,7 @@ const ProductDescription = () => {
           <>
             <div className="w-full lg:px-20  text-sm flex flex-col gap-4 text-[#9F9F9F]">
               <p className=" text-xs lg:text-sm text-[#9F9F9F] leading-relaxed">
-              {product[0]?.itemName}
+                {product[0]?.itemName}
               </p>
             </div>
           </>
@@ -51,7 +51,7 @@ const ProductDescription = () => {
         return (
           <>
             <div>
-              <Review/>
+              <Review />
             </div>
           </>
         );
@@ -96,7 +96,7 @@ const ProductDescription = () => {
             >
               details
             </div>
-            
+
             <div
               className={`flex lg:text-sm px-4 text-xs items-center cursor-pointer font-semibold ${
                 activeTab === "reviews"

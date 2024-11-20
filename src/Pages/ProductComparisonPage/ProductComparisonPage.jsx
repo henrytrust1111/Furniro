@@ -1,146 +1,110 @@
-import React from 'react'
-import "./ProductComparisonPage.css"
-// import { MdArrowForwardIos } from "react-icons/md";
-// import { IoStar } from "react-icons/io5";
-import image1 from '../ProductComparisonPage/imagess/image1.jpg';
-import star from '../ProductComparisonPage/imagess/star.png';
-import Meubel from '../ProductComparisonPage/imagess/Meubel.png';
-import General from './Generalcomparisonpage';
-import Productcomparison from './Productcomparison';
-import Dimensioncomparison from './Dimensioncomparison';
-import Warrantycomparison from './Warrantycomparison';
-import { MdArrowForwardIos } from "react-icons/md";
+import React, { useState } from "react";
+import image1 from "../ProductComparisonPage/imagess/image1.jpg";
+import { IoStar } from "react-icons/io5";
+import General from "./Generalcomparisonpage";
+import Productcomparison from "./Productcomparison";
+import Dimensioncomparison from "./Dimensioncomparison";
+import Warrantycomparison from "./Warrantycomparison";
 import { IoIosArrowDown } from "react-icons/io";
-import ReuseableHero from '../../Components/ReuseableHero';
-import axios from 'axios';
-import { Link, useParams } from "react-router-dom";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import logo from "/icons/logo.svg";
-
+import ReuseableHero from "../../Components/ReuseableHero";
+import { useParams } from "react-router-dom";
 
 const ProductComparisonPage = () => {
-
-
+  const [rating, setRating] = useState([1, 2, 3, 4, 5]);
   const [product, setProduct] = useState();
   const { productID } = useParams();
 
-
-
-
-
-
   return (
-  <>
-  <div className='ProductComparisonCon'>
-  <ReuseableHero page={"Product Comparison"} page1={"Comparison"} />
-    <div className='Productpagescon'>
-      <div className='ProductpagesconmainBoxwrapp'>
-      <div className='ProductpagesconmainBox1'>
-        <div className='ProductpagesconmainBoxup'>
-          <div className='Productpageslettercon1'>
-            <h3>Go to Product page for more Products</h3>
-          </div>
-          <div className='Productpageslettercon2'>
-            <div className='ProductViewmore1'>
-              <p>View More</p>
+    <>
+      <ReuseableHero page={"Product Comparison"} page1={"Comparison"} />
+      <div className="container mx-auto">
+      <div className="flex-col items-center w-full hidden sm:!flex">
+            <div className="space-y-4">
+            <h3 className="lg:text-lg font-medium font-[poppins] lg:w-40 text-left mt-2">
+              Go to Product page for more Products
+            </h3>
+            <div className="relative space-x-2 ">
+              <p className="text-[#727272] text-left cursor-pointer">View More</p>
+              <div className="absolute h-px w-24 bg-[#727272] -left-2 bottom-0"></div>
             </div>
-            <div className='ProductViewmore2'>
-              <div className='Viewmorlinee'></div>
             </div>
           </div>
-        </div>
-        <div className='ProductpagesconmainBoxdown'></div>
-      </div>
-      <div className='ProductpagesconmainBox2'>
-        <div className='ProductpagesconmainBoxup'>
-          <img src={image1} alt="" />
-        </div>
-        <div className='ProductpagesconmainBoxdown'>
-          <div className='AsgaadsofaBox'>
-            <div className='AsgaadsofaBoxwrapper'>
-              <div className='AsgaadsofaLetters'>
-                <h3>Asgaard Sofa</h3>
-              </div>
-              <div className='AsgaadsofaLetters'>
-                <p>Rs.250.000.00</p>
-              </div>
-              <div className='AsgaadsofaLetters'>
-                <div className='AsgaadsofaStarbox'>
-                  <div className='AsgaadsofaStar1'>
-                    <p>4.7</p>
-                    <img src={star} alt="" />
-                  </div>
-                  <div className='AsgaadsofaStar2'></div>
-                  <div className='AsgaadsofaStar3'>
-                    <p>250</p> <span>Reviews</span>
-                  </div>
-                </div>
-              </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5 lg:px-12 space-x-6 space-y-6 lg:space-y-0">
+          {/* First Section */}
+          <div className="flex flex-col items-center w-full sm:!hidden lg:!flex ">
+            <div className="space-y-4">
+            <h3 className="lg:text-lg font-medium font-[poppins] lg:w-40 text-left mt-2">
+              Go to Product page for more Products
+            </h3>
+            <div className="relative space-x-2 ">
+              <p className="text-[#727272] text-left cursor-pointer">View More</p>
+              <div className="absolute h-px w-24 bg-[#727272] -left-2 bottom-0"></div>
+            </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className='ProductpagesconmainBox2'>
-        <div className='ProductpagesconmainBoxup'>
-        <img src={image1}alt="" />
-        </div>
-        <div className='ProductpagesconmainBoxdown'>
-          <div className='Outdoorsofaset'>
-            <div className='Outdoorsofasetwrapper'>
-              <div className='OutdoorsofasetLetter'>
-                <h3>Outdoor Sofa Set</h3>
-              </div>
-              <div className='OutdoorsofasetLetter'>
-                <p>Rs.224.000.00</p>
-              </div>
-              <div className='OutdoorsofasetLetter'>
-                <div className='OutdoorStars'>
-                  <div className='OutdoorStarsboxz1'>
-                    <p>4.2</p>
-                    <img src={star} alt="" />
-                  </div>
-                  <div className='OutdoorStarsboxz2'></div>
-                  <div className='OutdoorStarsboxz3'>
-                    <p>200</p> <span>Reviews</span>
-                  </div>
-                </div>
+          <div className="">
+            <img src={image1} alt="" className="w-full rounded" />
+            <div className="mt-5 space-y-1 text-left">
+              <h3 className="text-lg font-semibold">Asgaard Sofa</h3>
+              <p className="text-gray-500 font-medium text-sm">Rs.250.000.00</p>
+              <div className="flex items-center space-x-1">
+                <p className="text-sm font-semibold">4.7</p>
+                {rating?.map((_e, i) => {
+                  return (
+                    <div className="" key={i}>
+                      <IoStar className="text-yellow-500 w-3 h-3" />
+                    </div>
+                  );
+                })}
+
+                {/* veritical rule */}
+                <div className="h-6 w-px -bg--clr-light-gray-v2"></div>
+
+                {/* Replaced star image with IoStar */}
+                <p className="-text--clr-light-gray-v2 text-sm">250 Reviews</p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className='ProductpagesconmainBox1'>
-        <div className='ProductpagesconmainBoxup'>
-          <div className='AddAProductBoxs'>
-            <div className='AddAProductBoxwrapper'>
-            <div className='AddproductBox1'>
-            <h3>Add A Product</h3>
+
+          <div className="">
+            <img src={image1} alt="" className="w-full rounded" />
+            <div className="mt-5 space-y-1 text-left">
+              <h3 className="text-lg font-semibold">Asgaard Sofa</h3>
+              <p className="text-gray-500 font-medium text-sm">Rs.250.000.00</p>
+              <div className="flex items-center space-x-1">
+                <p className="text-sm font-semibold">4.7</p>
+                {rating?.map((_e, i) => {
+                  return (
+                    <div className="" key={i}>
+                      <IoStar className="text-yellow-500 w-3 h-3" />
+                    </div>
+                  );
+                })}
+
+                {/* veritical rule */}
+                <div className="h-6 w-px -bg--clr-light-gray-v2"></div>
+
+                {/* Replaced star image with IoStar */}
+                <p className="-text--clr-light-gray-v2 text-sm">250 Reviews</p>
+              </div>
+            </div>
           </div>
-          <div className='AddproductBox2'>
-            <div className='Chooseaproductbox'>
-              <button>Choose a product
-              <IoIosArrowDown  className='Addproductarrow'/>
+          <div className="text-left">
+            <div className="space-y-1 mt-4">
+              <h3 className="text-lg font-semibold">Add A Product</h3>
+              <button className="px-5 py-1 -bg--clr-primary text-white rounded-md hover:-bg--clr-primar-light-v1">
+                Choose a product <IoIosArrowDown className="inline ml-2" />
               </button>
             </div>
           </div>
-            </div>
-          </div>
         </div>
-        <div className='ProductpagesconmainBoxdown'></div>
       </div>
-      </div>
-    </div>
-  </div>
-  <General/>
-  <Productcomparison/>
-  <Dimensioncomparison/>
-  <Warrantycomparison/>
-  
-  
-  
-  </>    
-  )
-}
+      {/* <General />
+      <Productcomparison />
+      <Dimensioncomparison />
+      <Warrantycomparison /> */}
+    </>
+  );
+};
 
-export default ProductComparisonPage
+export default ProductComparisonPage;

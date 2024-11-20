@@ -1,1848 +1,379 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+.ProductComparisonCon {
+  width: 100%;
+  height: max-content;
+  /* height: max-content; */
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.Productpagescon {
+  width: 100%;
+  height: 70vh;
+  /* background-color: black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: column; */
+}
+
+.ProductpagesconmainBoxwrapp {
+  width: 80%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  /* background-color: red; */
+  /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px; */
+  justify-content: space-between;
+}
+
+.ProductpagesconmainBox1 {
+  width: 23%;
+  height: 100%;
+  border-radius: 5px;
+  /* background-color: darkgrey; */
+  transition: all 350ms ease;
+}
+.ProductpagesconmainBox2 {
+  width: 23%;
+  height: 100%;
+  border-radius: 5px;
+  /* background-color: darkgrey; */
+  cursor: pointer;
+}
+
+.ProductpagesconmainBoxup {
+  width: 100%;
+  height: 60%;
+  /* background-color: darkmagenta; */
+  transition: all 3ms ease-out;
+}
+.ProductpagesconmainBoxup img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ProductpagesconmainBoxup:hover {
+  cursor: pointer;
+}
+
+.ProductpagesconmainBoxdown {
+  width: 100%;
+  height: 40%;
+  /* background-color: aqua; */
+}
+
+.Productpageslettercon1 {
+  width: 50%;
+  height: 70%;
+  /* background-color: rgb(255, 190, 190); */
+  /* display: flex; */
+}
+
+.Productpageslettercon1 h3 {
+  font-size: 20px;
+  font-weight: 550;
+  /* line-height: 2.9rem; */
+  font-family: sans-serif;
+  padding-left: 2%;
+}
+
+.Productpageslettercon2 {
+  width: 100%;
+  height: 30%;
+  /* background-color: blue; */
+}
+
+.ProductViewmore1 {
+  width: 100%;
+  height: 60%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ProductViewmore1 p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5rem;
+  color: rgba(114, 114, 114, 1);
+  font-family: sans-serif;
+  padding-left: 2%;
+  padding-top: 10%;
+}
+
+.ProductViewmore2 {
+  width: 100%;
+  height: 40%;
+  /* background-color: gray; */
+  display: flex;
+  padding-left: 2%;
+}
+
+.Viewmorlinee {
+  width: 30%;
+  height: 6%;
+  background-color: rgba(114, 114, 114, 1);
+}
+
+.AsgaadsofaBox {
+  width: 100%;
+  height: 100%;
+  /* background-color: darkcyan; */
+  display: flex;
+  align-items: center;
+}
+
+.AsgaadsofaBoxwrapper {
+  width: 80%;
+  height: 60%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.AsgaadsofaLetters {
+  width: 100%;
+  height: 30%;
+  /* background-color: darkorchid; */
+  display: flex;
+  align-items: center;
+}
+
+.AsgaadsofaLetters h3 {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: sans-serif;
+  line-height: 2.9rem;
+  padding-left: 2%;
+  /* color: red; */
+}
+.AsgaadsofaLetters p {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: sans-serif;
+  line-height: 2.7rem;
+  padding-left: 2%;
+}
+
+.AsgaadsofaStarbox {
+  width: 100%;
+  height: 100%;
+  /* background-color: darkgoldenrod; */
+  display: flex;
+}
+
+.AsgaadsofaStar1 {
+  width: 60%;
+  height: 100%;
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.AsgaadsofaStar1 p {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: sans-serif;
+  line-height: 2.5rem;
+}
+
+.AsgaadsofaStar1 img {
+  width: 73%;
+  height: 50%;
+}
+
+.AsgaadsofaStar2 {
+  width: 0.5%;
+  height: 100%;
+  background-color: rgba(114, 114, 114, 1);
+}
+.AsgaadsofaStar3 {
+  width: 39%;
+  height: 100%;
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.AsgaadsofaStar3 p,
+span {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: sans-serif;
+  line-height: 2rem;
+  color: rgba(114, 114, 114, 1);
+}
+
+.Outdoorsofaset {
+  width: 100%;
+  height: 100%;
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.Outdoorsofasetwrapper {
+  width: 80%;
+  height: 60%;
+  /* background-color: blueviolet; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.OutdoorsofasetLetter {
+  width: 100%;
+  height: 30%;
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+}
+
+.OutdoorsofasetLetter h3 {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: sans-serif;
+  line-height: 2.9rem;
+  padding-left: 2%;
+}
+
+.OutdoorsofasetLetter p {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: sans-serif;
+  line-height: 2.7rem;
+  padding-left: 2%;
+}
+
+.OutdoorStars {
+  width: 100%;
+  height: 100%;
+  /* background-color: blueviolet; */
+  display: flex;
+}
+
+.OutdoorStarsboxz1 {
+  width: 60%;
+  height: 100%;
+  /* background-color: darkgoldenrod; */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.OutdoorStarsboxz1 p {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: sans-serif;
+  line-height: 2.5rem;
+  padding-left: 2%;
+}
+
+.OutdoorStarsboxz1 img {
+  width: 73%;
+  height: 50%;
+}
+
+.OutdoorStarsboxz2 {
+  width: 0.6%;
+  height: 100%;
+  background-color: rgba(114, 114, 114, 1);
+}
+.OutdoorStarsboxz3 {
+  width: 39%;
+  height: 100%;
+  /* background-color: darkgoldenrod; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.OutdoorStarsboxz3 p {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: sans-serif;
+  line-height: 2rem;
+  color: rgba(114, 114, 114, 1);
+}
+
+.OutdoorStarsboxz3 span {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: sans-serif;
+  line-height: 2rem;
+  color: rgba(114, 114, 114, 1);
+}
+
+.AddAProductBoxs {
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AddAProductBoxwrapper {
+  width: 100%;
+  height: 65%;
+  /* background-color: darkgreen; */
+}
+
+.AddproductBox1 {
+  width: 100%;
+  height: 50%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+}
+
+.AddproductBox1 h3 {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 35.36px;
+  margin-top: 20px;
+  font-family: sans-serif;
+  padding-left: 2%;
+}
+
+.AddproductBox2 {
+  width: 100%;
+  height: 50%;
+  /* background-color: gray; */
+}
+
+.Addproductarrow {
+  color: white;
+  font-size: 26px;
+}
+
+.Chooseaproductbox {
+  width: 70%;
+  height: 40%;
+  padding-left: 2%;
+  /* background-color: aqua; */
+}
+
+.Chooseaproductbox button {
+  width: 100%;
+  height: 100%;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 600;
+  line-height: 2rem;
+  background-color: rgba(184, 142, 47, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-
-.ProductComparisonCon{
-    width: 100%;
-    height: max-content;
-    /* height: max-content; */
-    background-color: rgba(255, 255, 255, 1);
-}
-
-.Productpagescon{
-    width: 100%;
-    height: 70vh;
-    /* background-color: black; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* flex-direction: column; */
-}
-
-.ProductpagesconmainBoxwrapp{
-    width: 80%;
-    height: 90%;
-    display: flex;
-    align-items: center;
-    /* background-color: red; */
-    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px; */
-    justify-content: space-between;
-
-}
-
-.ProductpagesconmainBox1{
-    width: 23%;
-    height: 100%;
-    border-radius: 5px;
-    /* background-color: darkgrey; */
-    transition: all 350ms ease;
-}
-.ProductpagesconmainBox2{
-    width: 23%;
-    height: 100%;
-    border-radius: 5px;
-    /* background-color: darkgrey; */
-    cursor: pointer;
-}
-
-.ProductpagesconmainBoxup{
-    width: 100%;
-    height: 60%;
-    /* background-color: darkmagenta; */
-    transition: all 3ms ease-out;
-}
-.ProductpagesconmainBoxup img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-    cursor: pointer;
-   
-}
-
-.ProductpagesconmainBoxup:hover{
-    cursor: pointer;
-
-}
-
-
-.ProductpagesconmainBoxdown{
-    width: 100%;
-    height: 40%;
-    /* background-color: aqua; */
-    
-}
-
-.Productpageslettercon1{
-    width: 50%;
-    height: 70%;
-    /* background-color: rgb(255, 190, 190); */
-    /* display: flex; */
-}
-
-.Productpageslettercon1 h3{
-    font-size: 20px;
-    font-weight: 550;
-    line-height: 2.9rem;
-    font-family:  sans-serif;
-    padding-left: 2%;
-
-}
-
-
-.Productpageslettercon2{
-    width: 100%;
-    height: 30%;
-    /* background-color: blue; */
-}
-
-.ProductViewmore1{
-    width: 100%;
-    height: 60%;
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.ProductViewmore1 p{
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 2.5rem;
-    color: rgba(114, 114, 114, 1)  ;
-    font-family: sans-serif;
-    padding-left: 2%;
-    padding-top: 10%;
-}
-
-.ProductViewmore2{
-    width: 100%;
-    height: 40%;
-    /* background-color: gray; */
-    display: flex;
-    padding-left: 2%;
-    
-   
- 
-}
-
-.Viewmorlinee{
-    width: 30%;
-    height: 6%;
-    background-color: rgba(114, 114, 114, 1);
-    
-}
-
-.AsgaadsofaBox{
-    width: 100%;
-    height: 100%;
-    /* background-color: darkcyan; */
-    display: flex;
-    align-items: center;
-}
-
-.AsgaadsofaBoxwrapper{
-    width: 80%;
-    height: 60%;
-    /* background-color: red; */
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.AsgaadsofaLetters{
-    width: 100%;
-    height: 30%;
-    /* background-color: darkorchid; */
-    display: flex;
-    align-items: center;
-}
-
-.AsgaadsofaLetters h3{
-    font-size: 18px;
-    font-weight: 600;
-    font-family: sans-serif;
-    line-height: 2.9rem;
-    padding-left: 2%;
-    /* color: red; */
-}
-.AsgaadsofaLetters p{
-    font-size: 15px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.7rem; 
-    padding-left: 2%;
-
-}
-
-.AsgaadsofaStarbox{
-    width: 100%;
-    height: 100%;
-    /* background-color: darkgoldenrod; */
-    display: flex;
-}
-
-.AsgaadsofaStar1{
-    width: 60%;
-    height: 100%;
-    /* background-color: blue; */
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-.AsgaadsofaStar1 p{
-    font-size: 15px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem; 
-
-}
-
-.AsgaadsofaStar1 img{
-    width: 73%;
-    height: 50%;
- 
-}
-
-.AsgaadsofaStar2{
-    width: 0.5%;
-    height: 100%;
-    background-color:rgba(114, 114, 114, 1);
-}
-.AsgaadsofaStar3{
-    width: 39%;
-    height: 100%;
-    /* background-color: blue; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-
-.AsgaadsofaStar3 p,span{
-    font-size: 12px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 2rem;
-    color:  rgba(114, 114, 114, 1)
-
-}
-
-.Outdoorsofaset{
-    width: 100%;
-    height: 100%;
-    /* background-color: blue; */
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-}
-
-.Outdoorsofasetwrapper{
-    width: 80%;
-    height: 60%;
-    /* background-color: blueviolet; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.OutdoorsofasetLetter{
-    width:100%;
-    height: 30%;
-    /* background-color: aqua; */
-    display: flex;
-    align-items: center;
-}
-
-.OutdoorsofasetLetter h3{
-    font-size: 18px;
-    font-weight: 600;
-    font-family: sans-serif;
-    line-height: 2.9rem;
-    padding-left: 2%;
-}
-
-.OutdoorsofasetLetter p{
-    font-size: 15px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.7rem; 
-    padding-left: 2%;
-
-}
-
-.OutdoorStars{
-    width: 100%;
-    height: 100%;
-    /* background-color: blueviolet; */
-    display: flex;
-}
-
-.OutdoorStarsboxz1{
-    width: 60%;
-    height: 100%;
-    /* background-color: darkgoldenrod; */
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.OutdoorStarsboxz1 p{
-    font-size: 15px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem;
-    padding-left: 2%; 
-}
-
-.OutdoorStarsboxz1 img{
-    width: 73%;
-    height: 50%;
-}
-
-.OutdoorStarsboxz2{
-    width: 0.6%;
-    height: 100%;
-    background-color: rgba(114, 114, 114, 1);
-}
-.OutdoorStarsboxz3{
-    width: 39%;
-    height: 100%;
-    /* background-color: darkgoldenrod; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.OutdoorStarsboxz3 p{
-    font-size: 12px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 2rem;
-    color:  rgba(114, 114, 114, 1);;
-}
-
-.OutdoorStarsboxz3 span{
-    font-size: 12px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 2rem;
-    color:  rgba(114, 114, 114, 1);;
-
-}
-
-.AddAProductBoxs{
-    width: 100%;
-    height: 100%;
-    /* background-color: yellow; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.AddAProductBoxwrapper{
-    width: 100%;
-    height: 65%;
-    /* background-color: darkgreen; */
-}
-
-.AddproductBox1{
-    width: 100%;
-    height: 50%;
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-    
-}
-
-.AddproductBox1 h3{
-    font-size: 19px;
-    font-weight: 600;
-    line-height: 35.36px;
-    margin-top: 20px;
-    font-family: sans-serif;
-    padding-left: 2%;
- 
-}
-
-.AddproductBox2{
-    width: 100%;
-    height: 50%;
-    /* background-color: gray; */
-}
-
-.Addproductarrow{
-    color: white;
-    font-size: 26px;
-}
-
-.Chooseaproductbox{
-    width: 70%;
-    height: 40%;
-    padding-left: 2%;
-    /* background-color: aqua; */
-}
-
-.Chooseaproductbox button{
-    width: 100%;
-    height: 100%;
-    color: white;
-    border-radius: 5px;
-    font-size: 15px;
-    font-family: sans-serif;
-    font-weight: 600;
-    line-height: 2rem;
-    background-color: rgba(184, 142, 47, 1);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-
-
-@media screen and (Width <=765px){
-
-.ProductComparisonCon{
-        width: 100%;
-        height: max-content;
-}
-
-.Productpagescon{
-    width: 100%;
-    height: 100vh;
-    /* background-color: black; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* flex-direction: column; */
-}
-
-.ProductpagesconmainBoxwrapp{
-    width: 85%;
-    height: 90%;
-    display: flex;
-    /* background-color: red; */
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.ProductpagesconmainBox1{
-    width: 45%;
-    height: 47%;
-    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;  */
-    /* background-color: darkgrey; */
-}
-
-.ProductpagesconmainBox2{
-    width: 45%;
-    height: 47%;
-    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;  */
-    /* background-color: darkgrey; */
-}
-
-.ProductpagesconmainBoxup{
-    width: 100%;
-    height: 55%;
-    /* background-color: darkmagenta; */
-}
-
-.ProductpagesconmainBoxup img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.ProductpagesconmainBoxdown{
-    width: 100%;
-    height: 45%;
-    /* background-color: aqua; */
-    
-}
-
-.Productpageslettercon1{
-    width: 50%;
-    height: 50%;
-    /* background-color: gray; */
-    /* display: flex; */
-}
-
-.Productpageslettercon1 h3{
-    font-size: 16.7px;
-    font-weight: 700;
-    line-height: 2.2rem;
-    font-family:  sans-serif;
-}
-
-
-.Productpageslettercon2{
-    width: 100%;
-    height: 30%;
-    /* background-color: blue; */
-}
-
-.ProductViewmore1{
-    width: 100%;
-    height: 60%;
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-}
-
-.ProductViewmore1 p{
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 2rem;
-    color: rgba(114, 114, 114, 1)  ;
-    font-family: sans-serif;
-    padding-top: 35px;
-    
-}
-
-.ProductViewmore2{
-    width: 100%;
-    height: 40%;
-    /* background-color: gray; */
-    display: flex;
-    padding-top: 10px;
- 
-}
-
-.Viewmorlinee{
-    width: 25%;
-    height: 7%;
-    background-color: rgba(114, 114, 114, 1);
-    
-    
-}
-
-.AsgaadsofaBox{
-    width: 100%;
-    height: 100%;
-    /* background-color: darkcyan; */
-    display: flex;
-    align-items: center;
-}
-
-.AsgaadsofaBoxwrapper{
-    width: 95%;
-    height: 55%;
-    /* background-color: aqua; */
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.AsgaadsofaLetters{
-    width: 100%;
-    height: 30%;
-    /* background-color: darkorchid; */
-    display: flex;
-    align-items: center;
-}
-
-.AsgaadsofaLetters h3{
-    font-size: 17px;
-    font-weight: 600;
-    font-family: sans-serif;
-    line-height: 2.7rem;
-}
-.AsgaadsofaLetters p{
-    font-size: 13px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem; 
-}
-
-
-.AsgaadsofaStar1 img{
-    width: 63%;
-    height: 48%;
-
- 
-}
-
-.AsgaadsofaStar2{
-    width: 0.5%;
-    height: 70%;
-    background-color:rgba(114, 114, 114, 1);
-    /* opacity: 50%; */
-}
-.AsgaadsofaStar3{
-    width: 39%;
-    height: 100%;
-    /* background-color: blue; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-
-.AsgaadsofaStar3 p,span{
-    font-size: 8.5px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 1.8rem;
-    color:  rgba(114, 114, 114, 1)
-
-}
-
-
-.Outdoorsofaset{
-    width: 100%;
-    height: 100%;
-    /* background-color: blue; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.Outdoorsofasetwrapper{
-    width: 95%;
-    height: 55%;
-    /* background-color: blueviolet; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.OutdoorsofasetLetter{
-    width:100%;
-    height: 30%;
-    /* background-color: aqua; */
-    display: flex;
-    align-items: center;
-}
-
-.OutdoorsofasetLetter h3{
-    font-size: 17px;
-    font-weight: 600;
-    font-family: sans-serif;
-    line-height:2.7rem;
-}
-
-.OutdoorsofasetLetter p{
-    font-size: 13px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem; 
-
-}
-
-.OutdoorStars{
-    width: 100%;
-    height: 100%;
-    /* background-color: blueviolet; */
-    display: flex;
-}
-
-.OutdoorStarsboxz1{
-    width: 60%;
-    height: 100%;
-    /* background-color: darkgoldenrod; */
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.OutdoorStarsboxz1 p{
-    font-size: 14px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem; 
-}
-
-.OutdoorStarsboxz1 img{
-    width: 63%;
-    height: 48%;
-}
-
-.OutdoorStarsboxz2{
-    width: 0.5%;
-    height: 70%;
-    background-color: rgba(114, 114, 114, 1);
-}
-.OutdoorStarsboxz3{
-    width: 39%;
-    height: 100%;
-    /* background-color: darkgoldenrod; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-.OutdoorStarsboxz3 p{
-    font-size: 8.5px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 1.8rem;
-    color:  rgba(114, 114, 114, 1);
-}
-
-.OutdoorStarsboxz3 span{
-    font-size: 10.5px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 1.8rem;
-    color:  rgba(114, 114, 114, 1);
-
-}
-
-.AddAProductBoxs{
-    width: 100%;
-    height: 100%;
-    /* background-color: yellow; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.AddAProductBoxwrapper{
-    width: 100%;
-    height: 100%;
-    /* background-color: darkgreen; */
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    /* justify-content: center; */
-}
-
-.AddproductBox1{
-    width: 99%;
-    height: 25%;
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-    
-}
-
-.AddproductBox1 h3{
-    font-size: 15.8px;
-    font-weight: 600;
-    line-height: 2.6rem;
-    margin-top: 15px;
-    font-family: sans-serif;
-    padding-left: 10px;
-    padding-bottom: 15px;
- 
-}
-
-.AddproductBox2{
-    width: 100%;
-    height: 50%;
-    /* background-color: gray; */
-}
-
-.Addproductarrow{
-    color: white;
-    font-size: 21px;
-}
-
-.Chooseaproductbox{
-    width: 90%;
-    height: 38%;
-    /* background-color: aqua; */
-}
-
-.Chooseaproductbox button{
-    width: 100%;
-    height: 100%;
-    color: white;
-    border-radius: 5px;
-    font-size: 14px;
-    font-family: sans-serif;
-    font-weight: 600;
-    line-height: 2rem;
-    background-color: rgba(184, 142, 47, 1);
-}
-     
-}
-
-@media screen and (Width <=820px){
-
-.ProductComparisonCon{
-        width: 100%;
-        height: max-content;
-}
-
-.Productpagescon{
-    width: 100%;
-    height: 100vh;
-    /* background-color: black; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* flex-direction: column; */
-}
-
-.ProductpagesconmainBoxwrapp{
-    width: 85%;
-    height: 90%;
-    display: flex;
-    /* background-color: red; */
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.ProductpagesconmainBox1{
-    width: 45%;
-    height: 47%;
-    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;  */
-    /* background-color: darkgrey; */
-}
-
-.ProductpagesconmainBox2{
-    width: 45%;
-    height: 47%;
-    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;  */
-    /* background-color: darkgrey; */
-}
-
-.ProductpagesconmainBoxup{
-    width: 100%;
-    height: 55%;
-    /* background-color: darkmagenta; */
-}
-
-.ProductpagesconmainBoxup img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.ProductpagesconmainBoxdown{
-    width: 100%;
-    height: 45%;
-    /* background-color: aqua; */
-    
-}
-
-.Productpageslettercon1{
-    width: 50%;
-    height: 50%;
-    /* background-color: gray; */
-    /* display: flex; */
-}
-
-.Productpageslettercon1 h3{
-    font-size: 16.7px;
-    font-weight: 700;
-    line-height: 2.2rem;
-    font-family:  sans-serif;
-}
-
-
-.Productpageslettercon2{
-    width: 100%;
-    height: 30%;
-    /* background-color: blue; */
-}
-
-.ProductViewmore1{
-    width: 100%;
-    height: 60%;
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-}
-
-.ProductViewmore1 p{
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 2rem;
-    color: rgba(114, 114, 114, 1)  ;
-    font-family: sans-serif;
-    padding-top: 35px;
-    
-}
-
-.ProductViewmore2{
-    width: 100%;
-    height: 40%;
-    /* background-color: gray; */
-    display: flex;
-    padding-top: 10px;
- 
-}
-
-.Viewmorlinee{
-    width: 25%;
-    height: 7%;
-    background-color: rgba(114, 114, 114, 1);
-    
-    
-}
-
-.AsgaadsofaBox{
-    width: 100%;
-    height: 100%;
-    /* background-color: darkcyan; */
-    display: flex;
-    align-items: center;
-}
-
-.AsgaadsofaBoxwrapper{
-    width: 95%;
-    height: 55%;
-    /* background-color: aqua; */
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.AsgaadsofaLetters{
-    width: 100%;
-    height: 30%;
-    /* background-color: darkorchid; */
-    display: flex;
-    align-items: center;
-}
-
-.AsgaadsofaLetters h3{
-    font-size: 17px;
-    font-weight: 600;
-    font-family: sans-serif;
-    line-height: 2.7rem;
-}
-.AsgaadsofaLetters p{
-    font-size: 13px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem; 
-}
-
-
-.AsgaadsofaStar1 img{
-    width: 63%;
-    height: 48%;
-
- 
-}
-
-.AsgaadsofaStar2{
-    width: 0.5%;
-    height: 70%;
-    background-color:rgba(114, 114, 114, 1);
-    /* opacity: 50%; */
-}
-.AsgaadsofaStar3{
-    width: 39%;
-    height: 100%;
-    /* background-color: blue; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-
-.AsgaadsofaStar3 p,span{
-    font-size: 8.5px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 1.8rem;
-    color:  rgba(114, 114, 114, 1)
-
-}
-
-
-.Outdoorsofaset{
-    width: 100%;
-    height: 100%;
-    /* background-color: blue; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.Outdoorsofasetwrapper{
-    width: 95%;
-    height: 55%;
-    /* background-color: blueviolet; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.OutdoorsofasetLetter{
-    width:100%;
-    height: 30%;
-    /* background-color: aqua; */
-    display: flex;
-    align-items: center;
-}
-
-.OutdoorsofasetLetter h3{
-    font-size: 17px;
-    font-weight: 600;
-    font-family: sans-serif;
-    line-height:2.7rem;
-}
-
-.OutdoorsofasetLetter p{
-    font-size: 13px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem; 
-
-}
-
-.OutdoorStars{
-    width: 100%;
-    height: 100%;
-    /* background-color: blueviolet; */
-    display: flex;
-}
-
-.OutdoorStarsboxz1{
-    width: 60%;
-    height: 100%;
-    /* background-color: darkgoldenrod; */
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.OutdoorStarsboxz1 p{
-    font-size: 14px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem; 
-}
-
-.OutdoorStarsboxz1 img{
-    width: 63%;
-    height: 48%;
-}
-
-.OutdoorStarsboxz2{
-    width: 0.5%;
-    height: 70%;
-    background-color: rgba(114, 114, 114, 1);
-}
-.OutdoorStarsboxz3{
-    width: 39%;
-    height: 100%;
-    /* background-color: darkgoldenrod; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-.OutdoorStarsboxz3 p{
-    font-size: 8.5px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 1.8rem;
-    color:  rgba(114, 114, 114, 1);
-}
-
-.OutdoorStarsboxz3 span{
-    font-size: 10.5px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 1.8rem;
-    color:  rgba(114, 114, 114, 1);
-
-}
-
-.AddAProductBoxs{
-    width: 100%;
-    height: 100%;
-    /* background-color: yellow; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.AddAProductBoxwrapper{
-    width: 100%;
-    height: 100%;
-    /* background-color: darkgreen; */
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    /* justify-content: center; */
-}
-
-.AddproductBox1{
-    width: 99%;
-    height: 25%;
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-    
-}
-
-.AddproductBox1 h3{
-    font-size: 15.8px;
-    font-weight: 600;
-    line-height: 2.6rem;
-    margin-top: 15px;
-    font-family: sans-serif;
-    padding-left: 10px;
-    padding-bottom: 15px;
- 
-}
-
-.AddproductBox2{
-    width: 100%;
-    height: 50%;
-    /* background-color: gray; */
-}
-
-.Addproductarrow{
-    color: white;
-    font-size: 21px;
-}
-
-.Chooseaproductbox{
-    width: 90%;
-    height: 38%;
-    /* background-color: aqua; */
-}
-
-.Chooseaproductbox button{
-    width: 100%;
-    height: 100%;
-    color: white;
-    border-radius: 5px;
-    font-size: 14px;
-    font-family: sans-serif;
-    font-weight: 600;
-    line-height: 2rem;
-    background-color: rgba(184, 142, 47, 1);
-}
-     
-}
-
-@media screen and (Width <=480px){
-
-.ProductComparisonCon{
-        width: 100%;
-        height: max-content;
-}
-
-.Productpagescon{
-    width: 100%;
-    height: 100vh;
-    /* background-color: black; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* flex-direction: column; */
-}
-
-.ProductpagesconmainBoxwrapp{
-    width: 95%;
-    height: 95%;
-    display: flex;
-    /* background-color: red; */
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.ProductpagesconmainBox1{
-    width: 47%;
-    height: 47%;
-    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;  */
-    /* background-color: darkgrey; */
-}
-
-.ProductpagesconmainBox2{
-    width: 47%;
-    height: 47%;
-    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;  */
-    /* background-color: darkgrey; */
-}
-
-.ProductpagesconmainBoxup{
-    width: 100%;
-    height: 55%;
-    /* background-color: darkmagenta; */
-}
-
-.ProductpagesconmainBoxup img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.ProductpagesconmainBoxdown{
-    width: 100%;
-    height: 45%;
-    /* background-color: aqua; */
-    
-}
-
-.Productpageslettercon1{
-    width: 50%;
-    height: 80%;
-    /* background-color: gray; */
-    /* display: flex; */
-}
-
-.Productpageslettercon1 h3{
-    font-size: 16.2px;
-    font-weight: 700;
-    line-height: 2rem;
-    font-family:  sans-serif;
-    overflow-wrap: break-word;
-}
-
-
-.Productpageslettercon2{
-    width: 100%;
-    height: 30%;
-    /* background-color: blue; */
-}
-
-.ProductViewmore1{
-    width: 100%;
-    height: 80%;
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-}
-
-.ProductViewmore1 p{
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 2rem;
-    color: rgba(114, 114, 114, 1)  ;
-    font-family: sans-serif;
-    padding-top: 50px;
-    overflow-wrap: break-word;
-    
-    
-}
-
-.ProductViewmore2{
-    width: 100%;
-    height: 40%;
-    /* background-color: gray; */
-    display: flex;
-    padding-top: 10px;
- 
-}
-
-.Viewmorlinee{
-    width: 35%;
-    height: 7%;
-    background-color: rgba(114, 114, 114, 1);
-    
-    
-}
-
-.AsgaadsofaBox{
-    width: 100%;
-    height: 100%;
-    /* background-color: darkcyan; */
-    display: flex;
-    align-items: center;
-}
-
-.AsgaadsofaBoxwrapper{
-    width: 95%;
-    height: 55%;
-    /* background-color: aqua; */
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.AsgaadsofaLetters{
-    width: 100%;
-    height: 30%;
-    /* background-color: darkorchid; */
-    display: flex;
-    align-items: center;
-}
-
-.AsgaadsofaLetters h3{
-    font-size: 17px;
-    font-weight: 600;
-    font-family: sans-serif;
-    line-height: 2.7rem;
-    overflow-wrap: break-word;
-}
-.AsgaadsofaLetters p{
-    font-size: 13px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem; 
-    overflow-wrap: break-word;
-}
-
-
-.AsgaadsofaStar1 img{
-    width: 70%;
-    height: 49%;
-
- 
-}
-
-.AsgaadsofaStar2{
-    width: 0.5%;
-    height: 70%;
-    background-color:rgba(114, 114, 114, 1);
-    /* opacity: 50%; */
-}
-.AsgaadsofaStar3{
-    width: 39%;
-    height: 100%;
-    /* background-color: blue; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-
-.AsgaadsofaStar3 p,span{
-    font-size: 8.5px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 1.8rem;
-    color:  rgba(114, 114, 114, 1);
-    overflow-wrap: break-word;
-
-}
-
-
-.Outdoorsofaset{
-    width: 100%;
-    height: 100%;
-    /* background-color: blue; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.Outdoorsofasetwrapper{
-    width: 95%;
-    height: 55%;
-    /* background-color: blueviolet; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.OutdoorsofasetLetter{
-    width:100%;
-    height: 30%;
-    /* background-color: aqua; */
-    display: flex;
-    align-items: center;
-}
-
-.OutdoorsofasetLetter h3{
-    font-size: 17px;
-    font-weight: 600;
-    font-family: sans-serif;
-    line-height:2.7rem;
-    overflow-wrap: break-word;
-}
-
-.OutdoorsofasetLetter p{
-    font-size: 13px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem; 
-    overflow-wrap: break-word;
-
-}
-
-.OutdoorStars{
-    width: 100%;
-    height: 100%;
-    /* background-color: blueviolet; */
-    display: flex;
-}
-
-.OutdoorStarsboxz1{
-    width: 60%;
-    height: 100%;
-    /* background-color: darkgoldenrod; */
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.OutdoorStarsboxz1 p{
-    font-size: 14px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem; 
-}
-
-.OutdoorStarsboxz1 img{
-    width: 70%;
-    height: 49%;
-}
-
-.OutdoorStarsboxz2{
-    width: 0.5%;
-    height: 70%;
-    background-color: rgba(114, 114, 114, 1);
-}
-.OutdoorStarsboxz3{
-    width: 39%;
-    height: 100%;
-    /* background-color: darkgoldenrod; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-.OutdoorStarsboxz3 p{
-    font-size: 8.5px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 1.8rem;
-    color:  rgba(114, 114, 114, 1);
-    overflow-wrap: break-word;
-}
-
-.OutdoorStarsboxz3 span{
-    font-size: 10.5px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 1.8rem;
-    color:  rgba(114, 114, 114, 1);
-    overflow-wrap: break-word;
-
-}
-
-.AddAProductBoxs{
-    width: 100%;
-    height: 100%;
-    /* background-color: yellow; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.AddAProductBoxwrapper{
-    width: 100%;
-    height: 100%;
-    /* background-color: darkgreen; */
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    /* justify-content: center; */
-}
-
-.AddproductBox1{
-    width: 99%;
-    height: 25%;
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-    
-}
-
-.AddproductBox1 h3{
-    font-size: 15.8px;
-    font-weight: 600;
-    line-height: 2.6rem;
-    margin-top: 15px;
-    font-family: sans-serif;
-    padding-left: 10px;
-    padding-bottom: 18px;
-    overflow-wrap: break-word;
- 
-}
-
-.AddproductBox2{
-    width: 100%;
-    height: 50%;
-    /* background-color: gray; */
-}
-
-.Addproductarrow{
-    color: white;
-    font-size: 21px;
-}
-
-.Chooseaproductbox{
-    width: 90%;
-    height: 35%;
-    /* background-color: aqua; */
-}
-
-.Chooseaproductbox button{
-    width: 100%;
-    height: 100%;
-    color: white;
-    border-radius: 5px;
-    font-size: 12px;
-    font-family: sans-serif;
-    font-weight: 600;
-    line-height: 2rem;
-    background-color: rgba(184, 142, 47, 1);
-}
-     
-}
-
-
-
-/* 
-@media screen and (Width <=480px) {
-    
-.ProductComparisonCon{
-    width: 100%;
-    height: max-content;
-    background-color: rgba(255, 255, 255, 1);
-}
-
-.Productpagescon{
-    width: 100%;
-    height: 1300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.ProductpagesconmainBoxwrapp{
-    width: 90%;
-    height: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: 10px;
-  
-    
-}
-
-.ProductpagesconmainBox{
-    width: 70%;
-    height: 25%;
-    cursor: pointer;
-}
-
-.ProductpagesconmainBoxup{
-    width: 100%;
-    height: 65%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.ProductpagesconmainBoxup img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.ProductpagesconmainBoxdown{
-    width: 100%;
-    height: 45%;
-
-    
-}
-
-.Productpageslettercon1{
-    width: 70%;
-    height: 35%;
- 
-
-}
-
-.Productpageslettercon1 h3{
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 2.5rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-
-.Productpageslettercon2{
-    width: 100%;
-
-}
-
-.ProductViewmore1{
-    width: 100%;
-    height: 60%;
-    display: flex;
-    align-items: center;
-    
-}
-
-.ProductViewmore1 p{
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 2.5rem;
-    color: rgba(114, 114, 114, 1)  ;
-    font-family: sans-serif;
-    margin-top: 5%;
-    margin-left: 40px;
-
-}
-
-.ProductViewmore2{
-    width: 100%;
-    height: 40%;
-    display: flex;
- 
-}
-
-.Viewmorlinee{
-    width: 20%;
-    height: 5%;
-    background-color: rgba(114, 114, 114, 1);
-    margin-left: 40px;
-    
-}
-
-.AsgaadsofaBox{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.AsgaadsofaBoxwrapper{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.AsgaadsofaLetters{
-    width: 100%;
-    height: 30%;
-    display: flex;
-    align-items: center;
-}
-
-.AsgaadsofaLetters h3{
-    font-size: 16px;
-    font-weight: 600;
-    font-family: sans-serif;
-    line-height: 2.6rem;
-}
-.AsgaadsofaLetters p{
-    font-size: 11px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem; 
-}
-
-
-.AsgaadsofaStar1 img{
-    width: 63%;
-    height: 68%;
-
- 
-}
-
-.AsgaadsofaStar2{
-    width: 0.8%;
-    height: 70%;
-    background-color:rgba(114, 114, 114, 1);
-
-}
-.AsgaadsofaStar3{
-    width: 39%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-
-.AsgaadsofaStar3 p,span{
-    font-size: 8.5px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 1.8rem;
-    color:  rgba(114, 114, 114, 1)
-
-}
-
-
-.Outdoorsofaset{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.Outdoorsofasetwrapper{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.OutdoorsofasetLetter{
-    width:100%;
-    height: 30%;
-    display: flex;
-    align-items: center;
-}
-
-.OutdoorsofasetLetter h3{
-    font-size: 16px;
-    font-weight: 600;
-    font-family: sans-serif;
-    line-height:2.6rem;
-}
-
-.OutdoorsofasetLetter p{
-    font-size: 11px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem; 
-
-}
-
-.OutdoorStars{
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-
-.OutdoorStarsboxz1{
-    width: 60%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.OutdoorStarsboxz1 p{
-    font-size: 13px;
-    font-weight: 500;
-    font-family: sans-serif;
-    line-height: 2.5rem; 
-}
-
-.OutdoorStarsboxz1 img{
-    width: 63%;
-    height: 68%;
-}
-
-.OutdoorStarsboxz2{
-    width: 0.8%;
-    height: 70%;
-    background-color: rgba(114, 114, 114, 1);
-}
-.OutdoorStarsboxz3{
-    width: 39%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-.OutdoorStarsboxz3 p{
-    font-size: 8.5px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 1.8rem;
-    color:  rgba(114, 114, 114, 1);
-}
-
-.OutdoorStarsboxz3 span{
-    font-size: 10.5px;
-    font-weight: 400;
-    font-family: sans-serif;
-    line-height: 1.8rem;
-    color:  rgba(114, 114, 114, 1);
-
-}
-
-.AddAProductBoxs{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.AddAProductBoxwrapper{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.AddproductBox1{
-    width: 99%;
-    height: 25%;
-    display: flex;
-    align-items: center;
-    
-}
-
-.AddproductBox1 h3{
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 2.6rem;
-    margin-top: 10px;
-    font-family: sans-serif;
- 
-}
-
-.Addproductarrow{
-    color: white;
-    font-size: 18px;
-}
-
-.AddproductBox2{
-    width: 100%;
-    height: 50%;
-   
-}
-
-.Chooseaproductbox{
-    width: 70%;
-    height: 30%;
-   
-}
-
-.Chooseaproductbox button{
-    width: 100%;
-    height: 100%;
-    color: white;
-    border-radius: 5px;
-    font-size: 12px;
-    font-family: sans-serif;
-    font-weight: 600;
-    line-height: 2rem;
-    background-color: rgba(184, 142, 47, 1);
-}
-     
-} */
-
-
-
-
-
-
