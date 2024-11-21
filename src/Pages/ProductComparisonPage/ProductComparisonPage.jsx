@@ -8,11 +8,18 @@ import Warrantycomparison from "./Warrantycomparison";
 import { IoIosArrowDown } from "react-icons/io";
 import ReuseableHero from "../../Components/ReuseableHero";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ProductComparisonPage = () => {
   const [rating, setRating] = useState([1, 2, 3, 4, 5]);
-  const [product, setProduct] = useState();
   const { productID } = useParams();
+  const nav = useNavigate();
+
+  const handleClick = (route) => {
+    if (route === "shop") {
+      return nav("/shop");
+    }
+  };
 
   return (
     <>
@@ -23,7 +30,10 @@ const ProductComparisonPage = () => {
             <h3 className="lg:text-lg font-medium font-[poppins] lg:w-40 text-left">
               Go to Product page for more Products
             </h3>
-            <div className="relative space-x-2 ">
+            <div
+              className="relative space-x-2"
+              onClick={() => handleClick("shop")}
+            >
               <p className="text-[#727272] text-left cursor-pointer">
                 View More
               </p>
@@ -38,7 +48,10 @@ const ProductComparisonPage = () => {
               <h3 className="lg:text-lg font-medium font-[poppins] lg:w-40 text-left mt-2">
                 Go to Product page for more Products
               </h3>
-              <div className="relative space-x-2 ">
+              <div
+                className="relative space-x-2 "
+                onClick={() => handleClick("shop")}
+              >
                 <p className="text-[#727272] text-left cursor-pointer">
                   View More
                 </p>
