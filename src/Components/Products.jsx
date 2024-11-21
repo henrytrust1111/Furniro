@@ -29,7 +29,7 @@ const Products = ({ Title }) => {
   };
   const { isLoading, data, isError, error, isFetching, refetch } =
     UseQueryCustomHook(onError, onSuccess);
-  console.log(data);
+  console.log(data?.map(e => e.category.categoryName === "Dinning"? e : "not identifiable"));
 
   const [visibleProducts, setVisibleProducts] = useState(4);
   const [error1, setError] = useState(null);
@@ -68,8 +68,8 @@ const Products = ({ Title }) => {
     nav(`/single-product/${id}`);
   };
 
-  const handleCompare = (id) => {
-    nav(`/comparison/${id}`);
+  const handleCompare = (product) => {
+    nav(`/comparison/${product._id}`, { state: { product } });
   };
 
   const formatNumber = (number) => {
@@ -167,7 +167,7 @@ const Products = ({ Title }) => {
                     </div>
                     <div
                       className="flex items-center gap-1 hover:-text--clr-primary text-base"
-                      onClick={() => handleCompare(product._id)}
+                      onClick={() => handleCompare(product)}
                     >
                       <MdCompareArrows className="text-base" />{" "}
                       <span className="text-base">Compare</span>

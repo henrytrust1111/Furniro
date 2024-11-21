@@ -9,11 +9,23 @@ import { IoIosArrowDown } from "react-icons/io";
 import ReuseableHero from "../../Components/ReuseableHero";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import ScrollToTop from "../../Containers/ScrollToTop";
+import SelectProduct from "./SelectProduct";
 
 const ProductComparisonPage = () => {
   const [rating, setRating] = useState([1, 2, 3, 4, 5]);
   const { productID } = useParams();
   const nav = useNavigate();
+  const location = useLocation();
+  const { product } = location.state;
+  console.log(product);
+
+  console.log(productID);
+
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat("en-US").format(number);
+  };
 
   const handleClick = (route) => {
     if (route === "shop") {
@@ -23,6 +35,7 @@ const ProductComparisonPage = () => {
 
   return (
     <>
+      <ScrollToTop />
       <ReuseableHero page={"Product Comparison"} page1={"Comparison"} />
       <div className="container mx-auto">
         <div className="flex-col w-full hidden sm:!flex lg:!hidden mt-4">
@@ -59,29 +72,44 @@ const ProductComparisonPage = () => {
               </div>
             </div>
           </div>
-          <div className="">
-            <img src={image1} alt="" className="w-full rounded" />
-            <div className="mt-5 space-y-1 text-left">
-              <h3 className="text-lg font-semibold">Asgaard Sofa</h3>
-              <p className="text-gray-500 font-medium text-sm">Rs.250.000.00</p>
-              <div className="flex items-center space-x-1">
-                <p className="text-sm font-semibold">4.7</p>
-                {rating?.map((_e, i) => {
-                  return (
-                    <div className="" key={i}>
-                      <IoStar className="text-yellow-500 w-3 h-3" />
-                    </div>
-                  );
-                })}
 
-                {/* veritical rule */}
-                <div className="h-6 w-px -bg--clr-light-gray-v2"></div>
+          {
+            <div className="">
+              <img
+                src={product.images[0].url}
+                alt="image"
+                className="w-full rounded"
+              />
+              <div className="mt-5 space-y-1 text-left">
+                <h3 className="text-lg font-semibold">{product.itemName}</h3>
+                <p className="text-gray-500 font-medium text-sm">
+                  {product.price && (
+                    <span className="-text--clr-black-shade-v1 font-semibold text-base">
+                      ₦ {formatNumber(product?.discountedGeneralPrice)}
+                    </span>
+                  )}
+                </p>
+                <div className="flex items-center space-x-1">
+                  <p className="text-sm font-semibold">4.7</p>
+                  {rating?.map((_e, i) => {
+                    return (
+                      <div className="" key={i}>
+                        <IoStar className="text-yellow-500 w-3 h-3" />
+                      </div>
+                    );
+                  })}
 
-                {/* Replaced star image with IoStar */}
-                <p className="-text--clr-light-gray-v2 text-sm">250 Reviews</p>
+                  {/* veritical rule */}
+                  <div className="h-6 w-px -bg--clr-light-gray-v2"></div>
+
+                  {/* Replaced star image with IoStar */}
+                  <p className="-text--clr-light-gray-v2 text-sm">
+                    250 Reviews
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          }
 
           <div className="">
             <img src={image1} alt="" className="w-full rounded" />
@@ -109,8 +137,9 @@ const ProductComparisonPage = () => {
           <div className="text-left">
             <div className="space-y-1 mt-4">
               <h3 className="text-lg font-semibold">Add A Product</h3>
-              <button className="px-5 py-1 -bg--clr-primary text-white rounded-md hover:-bg--clr-primar-light-v1">
+              <button className="relative px-5 py-1 -bg--clr-primary text-white rounded-md hover:-bg--clr-primar-light-v1">
                 Choose a product <IoIosArrowDown className="inline ml-2" />
+                {/* <SelectProduct /> */}
               </button>
             </div>
           </div>
