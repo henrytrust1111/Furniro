@@ -26,36 +26,36 @@ const Products = ({ Title }) => {
   console.log(data);
 
   const [visibleProducts, setVisibleProducts] = useState(4);
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(data);
   const [loading, setLoading] = useState(true);
   const [error1, setError] = useState(null);
   const [noProducts, setNoProducts] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const nav = useNavigate();
 
-  const fetchProducts = async () => {
-    try {
-      const response = await axios.get(
-        "https://funiro-furnitures.onrender.com/get-products"
-      );
-      if (response.data.length === 0) {
-        setNoProducts(true);
-      } else {
-        setProducts(response.data.data);
-        localStorage.setItem("products", JSON.stringify(response.data.data));
-        setNoProducts(false);
-      }
-    } catch (err) {
-      setError("Network Error");
-      toast.error("Network Error");
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const fetchProducts = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       "https://funiro-furnitures.onrender.com/get-products"
+  //     );
+  //     if (response.data.length === 0) {
+  //       setNoProducts(true);
+  //     } else {
+  //       setProducts(response.data.data);
+  //       localStorage.setItem("products", JSON.stringify(response.data.data));
+  //       setNoProducts(false);
+  //     }
+  //   } catch (err) {
+  //     setError("Network Error");
+  //     toast.error("Network Error");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  // useEffect(() => {
+  //   fetchProducts();
+  // }, []);
 
   const showMoreProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 4);
@@ -77,7 +77,7 @@ const Products = ({ Title }) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
 
-  if (loading) {
+  if (isLoading) {
     return (
       <section className="py-16 font-[poppins]">
         <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
@@ -94,7 +94,7 @@ const Products = ({ Title }) => {
         <div className="container mx-auto px-4 text-center grid place-items-center">
           <p className="text-lg font-semibold text-red-500">Network Error</p>
           <button
-            onClick={handleRefresh}
+            onClick={refetch}
             className="mt-4 -bg--clr-primar-light-v1 text--clr-primary px-4 py-2 border border--clr-primary flex items-center gap-2 hover:scale-110 font-semibold"
           >
             <BiRefresh size={20} />
