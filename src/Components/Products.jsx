@@ -10,10 +10,16 @@ import { BiRefresh } from "react-icons/bi";
 import UseQueryCustomHook from "../hooks/UseQueryCustomHook";
 
 const Products = ({ Title }) => {
-  const [post, setPost] = useState();
+  const [noProducts, setNoProducts] = useState();
+
   // const [alterEgo, setAlterEgo] = useState();
   const onSuccess = (data) => {
     console.log("perform side effect after data fecting", data);
+    if (data.length === 0) {
+      setNoProducts(true);
+    }
+    setNoProducts(false);
+
     // toast.success("Fetched data successfully");
   };
 
@@ -26,10 +32,7 @@ const Products = ({ Title }) => {
   console.log(data);
 
   const [visibleProducts, setVisibleProducts] = useState(4);
-  const [products, setProducts] = useState(data);
-  const [loading, setLoading] = useState(true);
   const [error1, setError] = useState(null);
-  const [noProducts, setNoProducts] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const nav = useNavigate();
 
@@ -68,7 +71,6 @@ const Products = ({ Title }) => {
   const handleCompare = (id) => {
     nav(`/comparison/${id}`);
   };
-
 
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
@@ -112,8 +114,6 @@ const Products = ({ Title }) => {
     );
   }
 
-
-  
   return (
     <section className="py-16 font-[poppins]">
       <div className="container mx-auto px-4 text-center">
