@@ -2,6 +2,7 @@ import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 SwiperCore.use([Navigation]);
+import UseQueryCustomHook from "../../hooks/UseQueryCustomHook";
 // import syltherine from "/images/products/syltherine.png";
 // import lolito from "/images/products/lolito.png";
 // import leviosa from "/images/products/leviosa.png";
@@ -23,7 +24,10 @@ SwiperCore.use([Navigation]);
 //     // Add more products as needed
 //   ];
 const Slider1 = () => {
-  const product = JSON.parse(localStorage.getItem("products"));
+  // const product = JSON.parse(localStorage.getItem("products"));
+  const {data} =
+  UseQueryCustomHook();
+console.log(data);
 
   const formatNumber = (number) => {
     return new Intl.NumberFormat('en-US').format(number);
@@ -46,7 +50,7 @@ const Slider1 = () => {
           nextEl: ".custom_next",
         }}
       >
-        {product?.map((product) => (
+        {data?.map((product) => (
           <SwiperSlide key={product?._id}>
             <div className="px-3 pb-5">
               <div className="card-slider group">
