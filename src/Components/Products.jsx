@@ -114,6 +114,10 @@ const Products = ({ Title }) => {
       </section>
     );
   }
+
+
+  console.log(products);
+  
   return (
     <section className="py-16 font-[poppins]">
       <div className="container mx-auto px-4 text-center">
