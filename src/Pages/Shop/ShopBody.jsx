@@ -210,7 +210,7 @@ const ShopBody = () => {
                     className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold"
                     onClick={() => handlePreview(shopproduct._id)}
                   >
-                    Add to Cart
+                    Preview
                   </button>
                   <div className="flex text-white gap-3 font-semibold max-w-full flex-wrap justify-center">
                     <div className="flex items-center gap-1 hover:-text--clr-primary">
