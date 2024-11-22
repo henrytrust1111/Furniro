@@ -41,7 +41,6 @@ const Products = ({ Title }) => {
 
   const [visibleProducts, setVisibleProducts] = useState(4);
   const [error1, setError] = useState(null);
-  const [showAll, setShowAll] = useState(false);
   const nav = useNavigate();
 
   // const fetchProducts = async () => {
@@ -100,7 +99,7 @@ const Products = ({ Title }) => {
     );
   }
 
-  if (error1) {
+  if (error) {
     return (
       <section className="py-16 font-[poppins]">
         <div className="container mx-auto px-4 text-center grid place-items-center">
@@ -126,6 +125,7 @@ const Products = ({ Title }) => {
       </section>
     );
   }
+
 
   return (
     <section className="py-16 font-[poppins]">

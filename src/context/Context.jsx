@@ -17,10 +17,12 @@ const Context = ({ children }) => {
   //   setNoProducts(false);
   // };
 
+ 
+
   const onSuccess = (data) => {
     console.log("Perform side effect after data fetching:", data);
 
-    if (data.length === 0) {
+    if (data?.length === 0) {
       setNoProducts(true);
     } else {
       setNoProducts(false);
