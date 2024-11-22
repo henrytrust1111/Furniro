@@ -2,18 +2,30 @@ import React, { useState } from "react";
 import { createContext } from "react";
 import UseQueryCustomHook from "../hooks/UseQueryCustomHook";
 import { useDispatch } from "react-redux";
+import { DB } from "../Global/Features";
 
 export const MyContext = createContext(null);
 const Context = ({ children }) => {
   const dispatch = useDispatch();
   const [noProducts, setNoProducts] = useState();
 
+  // const onSuccess = (data) => {
+  //   console.log("perform side effect after data fecting", data);
+  //   if (data.length === 0) {
+  //     setNoProducts(true);
+  //   }
+  //   setNoProducts(false);
+  // };
+
   const onSuccess = (data) => {
-    console.log("perform side effect after data fecting", data);
+    console.log("Perform side effect after data fetching:", data);
+
     if (data.length === 0) {
       setNoProducts(true);
+    } else {
+      setNoProducts(false);
+      dispatch(DB(data)); // Dispatching the fetched data
     }
-    setNoProducts(false);
   };
 
   const onError = (error) => {
@@ -29,14 +41,8 @@ const Context = ({ children }) => {
   );
 
   console.log(data);
-  
-  
 
-  return (
-    <MyContext.Provider value={{}}>
-      {children}
-    </MyContext.Provider>
-  );
+  return <MyContext.Provider value={{}}>{children}</MyContext.Provider>;
 };
 
 export default Context;
