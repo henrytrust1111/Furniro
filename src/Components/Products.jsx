@@ -194,7 +194,7 @@ const Products = ({ Title }) => {
         </div>
         <button
           onClick={showMoreProducts}
-          className="bg-white -text--clr-primary px-4 py-2 z-40 hover:scale-110 font-semibold border -border--clr-primary mt-8 max-w-[300px] md:w-[300px]"
+          className="bg-white -text--clr-primary px-4 py-2 z-40 font-semibold border -border--clr-primary mt-8 max-w-[300px] md:w-[300px]"
         >
           {showAll ? "Show Less" : "Show More"}
         </button>
