@@ -29,7 +29,11 @@ const Products = ({ Title }) => {
   };
   const { isLoading, data, isError, error, isFetching, refetch } =
     UseQueryCustomHook(onError, onSuccess);
-  console.log(data?.map(e => e.category.categoryName === "Dinning"? e : "not identifiable"));
+  console.log(
+    data?.map((e) =>
+      e.category.categoryName === "Dinning" ? e : "not identifiable"
+    )
+  );
 
   const [visibleProducts, setVisibleProducts] = useState(4);
   const [error1, setError] = useState(null);
@@ -192,12 +196,13 @@ const Products = ({ Title }) => {
             </div>
           ))}
         </div>
-        <button
+        <div
           onClick={showMoreProducts}
-          className="bg-white -text--clr-primary px-4 py-2 z-40 font-semibold border -border--clr-primary mt-8 max-w-[300px] md:w-[300px]"
+          className="bg-white -text--clr-primary px-4 py-2 z-40 font-semibold border -border--clr-primary mt-8 max-w-[300px] md:w-[300px] text-center justify-self-center cursor-pointer"
         >
-          {showAll ? "Show Less" : "Show More"}
-        </button>
+          {/* {showAll ? "Show Less" : "Show More"} */}
+          Load More
+        </div>
       </div>
     </section>
   );
