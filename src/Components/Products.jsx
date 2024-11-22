@@ -8,9 +8,14 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { BiRefresh } from "react-icons/bi";
 import UseQueryCustomHook from "../hooks/UseQueryCustomHook";
+import { useSelector } from "react-redux";
 
 const Products = ({ Title }) => {
   const [noProducts, setNoProducts] = useState();
+
+  const products1 = useSelector((state) => state?.persistedReducer?.products);
+  console.log(products1);
+  
 
   // const [alterEgo, setAlterEgo] = useState();
   const onSuccess = (data) => {
@@ -19,7 +24,6 @@ const Products = ({ Title }) => {
       setNoProducts(true);
     }
     setNoProducts(false);
-
     // toast.success("Fetched data successfully");
   };
 
