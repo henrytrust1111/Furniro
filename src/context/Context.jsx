@@ -3,6 +3,9 @@ import { createContext } from "react";
 
 export const MyContext = createContext(null);
 const Context = ({ children }) => {
+ 
+  console.log("hello world");
+  
 
   return (
     <MyContext.Provider value={{}}>
