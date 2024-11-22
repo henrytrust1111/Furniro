@@ -42,6 +42,10 @@ const Context = ({ children }) => {
     )
   );
 
+  console.log(isLoading);
+
+  
+
   console.log(data);
 
   return <MyContext.Provider value={{}}>{children}</MyContext.Provider>;

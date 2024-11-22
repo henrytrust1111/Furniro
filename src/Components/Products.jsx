@@ -88,6 +88,9 @@ const Products = ({ Title }) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
 
+  console.log(isLoading);
+  
+
   if (isLoading) {
     return (
       <section className="py-16 font-[poppins]">
