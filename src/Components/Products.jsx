@@ -31,7 +31,7 @@ const Products = ({ Title }) => {
     UseQueryCustomHook(onError, onSuccess);
   console.log(
     data?.map((e) =>
-      e.category.categoryName === "Dinning" ? e : "not identifiable"
+      e.category.categoryName === "Living" ? e : "not identifiable"
     )
   );
 
@@ -73,7 +73,12 @@ const Products = ({ Title }) => {
   };
 
   const handleCompare = (product) => {
-    nav(`/comparison/${product._id}`, { state: { product } });
+    console.log(product.category.categoryName);
+    console.log(data?.category?.categoryName);
+    const cat = data?.map(prod => prod.category.categoryName === product.category.categoryName ? prod : null)  
+    console.log(cat);
+    
+    return nav(`/comparison/${product._id}`, { state: { product } });
   };
 
   const formatNumber = (number) => {

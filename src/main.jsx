@@ -8,6 +8,7 @@ import { store } from './Global/Store.jsx'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
+import Context from "./context/Context.jsx";
 
 const queryClient = new QueryClient();
 let myPersistorVariable = persistStore(store)
@@ -16,7 +17,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
     <Provider store={store}>
       <PersistGate loading={null} persistor={myPersistorVariable}>
+      <Context>
       <App />
+      </Context>
       </PersistGate>
     </Provider>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
