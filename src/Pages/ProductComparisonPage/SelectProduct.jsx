@@ -6,7 +6,7 @@ const SelectProduct = ({ drowDownList }) => {
   const [data, setData] = useState(drowDownList);
  
  useEffect(() => {
-  const filteredData = data.filter((item) => item !== null);
+  const filteredData = data?.filter((item) => item !== null);
   setData(filteredData); 
 }, []);
 
