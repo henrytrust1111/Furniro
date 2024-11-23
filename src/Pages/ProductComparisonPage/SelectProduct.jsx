@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const SelectProduct = ({ drowDownList }) => {
-  console.log(drowDownList);
   const [data, setData] = useState(drowDownList);
 
   return (
