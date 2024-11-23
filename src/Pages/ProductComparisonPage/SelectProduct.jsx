@@ -7,14 +7,18 @@ const SelectProduct = ({ drowDownList }) => {
 
   useEffect(() => {
     AOS.init({
-      duration: 800, 
-      once: true, 
+      duration: 400,
+      once: true,
     });
   }, []);
+
   return (
-    <div className="absolute -text--clr-primary bg-black w-full left-0">
-      {data?.map((e) => (
-        <ul>
+    <div
+      data-aos="fade-down"
+      className="absolute -text--clr-primary bg-black w-full left-0"
+    >
+      {data?.map((e,i) => (
+        <ul key={i}>
           <li>{e}</li>
         </ul>
       ))}

@@ -16,7 +16,8 @@ import { useSelector } from "react-redux";
 
 const ProductComparisonPage = () => {
   const [rating, setRating] = useState([1, 2, 3, 4, 5]);
-  const { productID } = useParams();
+  const [show, setShow] = useState(false);
+  // const { productID } = useParams();
   const nav = useNavigate();
   const location = useLocation();
   const { product } = location.state;
@@ -31,7 +32,7 @@ const ProductComparisonPage = () => {
   );
 
   console.log(drowDownList);
-  
+
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
@@ -146,9 +147,12 @@ const ProductComparisonPage = () => {
           <div className="text-left">
             <div className="space-y-1 mt-4">
               <h3 className="text-lg font-semibold">Add A Product</h3>
-              <button className="relative px-5 py-1 -bg--clr-primary text-white rounded-md hover:-bg--clr-primar-light-v1">
+              <button
+                className="relative px-5 py-1 -bg--clr-primary text-white rounded-md hover:-bg--clr-primar-light-v1"
+                onClick={() => setShow(!show)}
+              >
                 Choose a product <IoIosArrowDown className="inline ml-2" />
-                <SelectProduct drowDownList = {drowDownList} />
+                {show ? <SelectProduct drowDownList={drowDownList} /> : null}
               </button>
             </div>
           </div>
