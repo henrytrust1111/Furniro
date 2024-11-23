@@ -12,63 +12,16 @@ import { useSelector } from "react-redux";
 import Context, { MyContext } from "../context/Context";
 
 const Products = ({ Title }) => {
-  const [noProducts, setNoProducts] = useState();
-  const {isLoading: loading} = useContext(MyContext);
-  console.log(loading);
+  const {isLoading, noProducts, refetch, error } = useContext(MyContext);
+  console.log(isLoading);
   
-  const products1 = useSelector((state) => state?.persistedReducer?.products);
-  console.log(products1);
+  const data = useSelector((state) => state?.persistedReducer?.products);
+  console.log(data);
   
-
-  // const [alterEgo, setAlterEgo] = useState();
-  const onSuccess = (data) => {
-    console.log("perform side effect after data fecting", data);
-    if (data.length === 0) {
-      setNoProducts(true);
-    }
-    setNoProducts(false);
-    // toast.success("Fetched data successfully");
-  };
-
-  const onError = (error) => {
-    toast.error("An Error occurred", error);
-    console.log("perform side effect after encountering error");
-  };
-  const { isLoading, data, isError, error, isFetching, refetch } =
-    UseQueryCustomHook(onError, onSuccess);
-  console.log(
-    data?.map((e) =>
-      e.category.categoryName === "Living" ? e : "not identifiable"
-    )
-  );
 
   const [visibleProducts, setVisibleProducts] = useState(4);
   const [error1, setError] = useState(null);
   const nav = useNavigate();
-
-  // const fetchProducts = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       "https://funiro-furnitures.onrender.com/get-products"
-  //     );
-  //     if (response.data.length === 0) {
-  //       setNoProducts(true);
-  //     } else {
-  //       setProducts(response.data.data);
-  //       localStorage.setItem("products", JSON.stringify(response.data.data));
-  //       setNoProducts(false);
-  //     }
-  //   } catch (err) {
-  //     setError("Network Error");
-  //     toast.error("Network Error");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchProducts();
-  // }, []);
 
   const showMoreProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 4);
