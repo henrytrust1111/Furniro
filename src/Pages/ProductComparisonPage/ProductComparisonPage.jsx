@@ -24,14 +24,14 @@ const ProductComparisonPage = () => {
 
   const data = useSelector((state) => state?.persistedReducer?.products);
   console.log(data);
-
-  console.log(
-    data?.map((e) =>
-      e.category.categoryName === "Living" ? e : "not identifiable"
-    )
+  const drowDownList = data?.map((e) =>
+    e.category.categoryName === product.category.categoryName
+      ? e
+      : null
   );
-  console.log(productID);
 
+  console.log(drowDownList);
+  
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
