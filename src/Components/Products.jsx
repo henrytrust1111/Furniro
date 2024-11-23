@@ -13,8 +13,8 @@ import Context, { MyContext } from "../context/Context";
 
 const Products = ({ Title }) => {
   const [noProducts, setNoProducts] = useState();
-  const {isLoading: loading1} = useContext(MyContext);
-  console.log(loading1);
+  const {isLoading: loading} = useContext(MyContext);
+  console.log(loading);
   
   const products1 = useSelector((state) => state?.persistedReducer?.products);
   console.log(products1);
