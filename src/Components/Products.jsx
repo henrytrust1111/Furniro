@@ -9,11 +9,11 @@ import axios from "axios";
 import { BiRefresh } from "react-icons/bi";
 import UseQueryCustomHook from "../hooks/UseQueryCustomHook";
 import { useSelector } from "react-redux";
-import Context from "../context/Context";
+import Context, { MyContext } from "../context/Context";
 
 const Products = ({ Title }) => {
   const [noProducts, setNoProducts] = useState();
-  const {isLoading: loading1} = useContext(Context);
+  const {isLoading: loading1} = useContext(MyContext);
   console.log(loading1);
   
   const products1 = useSelector((state) => state?.persistedReducer?.products);
