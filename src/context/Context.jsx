@@ -41,7 +41,7 @@ const Context = ({ children }) => {
       e.category.categoryName === "Living" ? e : "not identifiable"
     )
   );
-  return <MyContext.Provider value={{isLoading, refetch, error}}>{children}</MyContext.Provider>;
+  return <MyContext.Provider value={{isLoading, refetch, error, noProducts}}>{children}</MyContext.Provider>;
 };
 
 export default Context;
