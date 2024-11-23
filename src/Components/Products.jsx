@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { IoMdCart, IoMdShare } from "react-icons/io";
 import { MdCompareArrows } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -9,10 +9,13 @@ import axios from "axios";
 import { BiRefresh } from "react-icons/bi";
 import UseQueryCustomHook from "../hooks/UseQueryCustomHook";
 import { useSelector } from "react-redux";
+import Context from "../context/Context";
 
 const Products = ({ Title }) => {
   const [noProducts, setNoProducts] = useState();
-
+  const {isLoading: loading1} = useContext(Context);
+  console.log(loading1);
+  
   const products1 = useSelector((state) => state?.persistedReducer?.products);
   console.log(products1);
   

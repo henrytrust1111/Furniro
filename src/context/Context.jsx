@@ -41,14 +41,7 @@ const Context = ({ children }) => {
       e.category.categoryName === "Living" ? e : "not identifiable"
     )
   );
-
-  console.log(isLoading);
-
-  
-
-  console.log(data);
-
-  return <MyContext.Provider value={{}}>{children}</MyContext.Provider>;
+  return <MyContext.Provider value={{isLoading}}>{children}</MyContext.Provider>;
 };
 
 export default Context;
