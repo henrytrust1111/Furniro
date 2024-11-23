@@ -4,6 +4,11 @@ import "aos/dist/aos.css";
 
 const SelectProduct = ({ drowDownList }) => {
   const [data, setData] = useState(drowDownList);
+ 
+ useEffect(() => {
+  const filteredData = data.filter((item) => item !== null);
+  setData(filteredData); 
+}, []);
 
   useEffect(() => {
     AOS.init({
@@ -15,7 +20,7 @@ const SelectProduct = ({ drowDownList }) => {
   return (
     <div
       data-aos="fade-down"
-      className="absolute -text--clr-primary shadow-lg w-full left-0 -z-10 mt-1 bg-black"
+      className="absolute -text--clr-primary shadow-lg w-full left-0 -z-10 mt-1"
     >
       {data?.map((e,i) => (
         <div key={i} className="cursor-pointer" >
