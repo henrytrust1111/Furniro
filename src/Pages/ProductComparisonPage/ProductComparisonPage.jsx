@@ -26,7 +26,7 @@ const ProductComparisonPage = () => {
   console.log(data);
   const drowDownList = data?.map((e) =>
     e.category.categoryName === product.category.categoryName
-      ? e
+      ? e.itemName
       : null
   );
 
@@ -148,7 +148,7 @@ const ProductComparisonPage = () => {
               <h3 className="text-lg font-semibold">Add A Product</h3>
               <button className="relative px-5 py-1 -bg--clr-primary text-white rounded-md hover:-bg--clr-primar-light-v1">
                 Choose a product <IoIosArrowDown className="inline ml-2" />
-                <SelectProduct />
+                <SelectProduct drowDownList = {drowDownList} />
               </button>
             </div>
           </div>
