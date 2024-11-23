@@ -36,11 +36,7 @@ const Context = ({ children }) => {
   };
   const { isLoading, data, isError, error, isFetching, refetch } =
     UseQueryCustomHook(onError, onSuccess);
-  console.log(
-    data?.map((e) =>
-      e.category.categoryName === "Living" ? e : "not identifiable"
-    )
-  );
+ 
   return <MyContext.Provider value={{isLoading, refetch, error, noProducts}}>{children}</MyContext.Provider>;
 };
 

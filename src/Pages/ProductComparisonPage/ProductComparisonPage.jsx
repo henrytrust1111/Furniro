@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ScrollToTop from "../../Containers/ScrollToTop";
 import SelectProduct from "./SelectProduct";
+import { useSelector } from "react-redux";
 
 const ProductComparisonPage = () => {
   const [rating, setRating] = useState([1, 2, 3, 4, 5]);
@@ -21,6 +22,14 @@ const ProductComparisonPage = () => {
   const { product } = location.state;
   console.log(product);
 
+  const data = useSelector((state) => state?.persistedReducer?.products);
+  console.log(data);
+
+  console.log(
+    data?.map((e) =>
+      e.category.categoryName === "Living" ? e : "not identifiable"
+    )
+  );
   console.log(productID);
 
   const formatNumber = (number) => {
