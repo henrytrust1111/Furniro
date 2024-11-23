@@ -20,7 +20,7 @@ const SelectProduct = ({ drowDownList }) => {
   return (
     <div
       data-aos="fade-down"
-      className="absolute -text--clr-primary shadow-lg w-full left-0 -z-10 mt-1"
+      className="absolute -text--clr-primary shadow-lg w-full left-0 lg:-z-10 mt-1"
     >
       {data?.map((e,i) => (
         <div key={i} className="cursor-pointer" >
