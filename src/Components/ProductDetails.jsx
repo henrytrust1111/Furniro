@@ -22,36 +22,6 @@ const ProductDetails = ({ onAddtocart,quantity,setQuantity }) => {
     // Add more colors as needed
   };
 
-  // <div className="flex gap-4">
-  //   {product[0]?.colors.map((color, index) => (
-  //     <div
-  //       key={index}
-  //       className={`w-6 h-6 rounded-full ${colorClasses[color]} flex items-center justify-center text-xs cursor-pointer`}
-  //       onClick={() => onColorChange(color)}
-  //     ></div>
-  //   ))}
-  // </div>;
-
-  // useEffect(() => {
-  //   const fetchProduct = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         `https://funiro-furnitures.onrender.com/get-one-product/${productID}`
-  //       );
-  //       if (!response.ok) {
-  //         throw new Error("Failed to fetch product details");
-  //       }
-  //       const data = await response.json();
-  //       setProduct(data);
-  //       console.log(product);
-  //       setImage(data.data.images[0]?.url || null);
-  //     } catch (error) {
-  //       console.error("Error fetching product details:", error.message);
-  //     }
-  //   };
-
-  //   fetchProduct();
-  // }, [productID]);
 
   const fetchProducts = async () => {
     try {
@@ -60,7 +30,6 @@ const ProductDetails = ({ onAddtocart,quantity,setQuantity }) => {
       );
 
       setProduct(response.data);
-      console.log(response.data[0].images);
     } catch (err) {
       toast.error(err);
     }
@@ -165,10 +134,8 @@ const ProductDetails = ({ onAddtocart,quantity,setQuantity }) => {
       }
 
       const data = await response.json();
-      console.log("Rating submitted successfully:", data);
       alert("Rating submitted successfully");
     } catch (error) {
-      console.log("Submitting error:", error.message);
       alert(error.message);
     }
   };

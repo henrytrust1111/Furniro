@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const initialReview = [
   {
@@ -25,7 +25,7 @@ const Review = () => {
   const [reviews, setReviews] = useState(initialReview);
   const [loading, setLoading] = useState(false);
   const { productID } = useParams();
-  const navigate = useNavigate();  // <-- Moved to the top level
+  const navigate = useNavigate(); // <-- Moved to the top level
 
   const fetchProducts = async () => {
     try {
@@ -66,7 +66,6 @@ const Review = () => {
       setLoading(true);
       try {
         const token = localStorage.getItem("token");
-        console.log("Retrieved Token:", token);
 
         if (!token) {
           throw new Error("No token found. Please log in.");
@@ -111,7 +110,7 @@ const Review = () => {
       } catch (error) {
         console.error("Error:", error.message);
         if (error.message === "No token found. Please log in.") {
-          navigate('/login'); // Redirect to login page
+          navigate("/login"); // Redirect to login page
         }
       } finally {
         setLoading(false);
