@@ -40,7 +40,6 @@ const OTPComponent = () => {
 
     try {
       const id = localStorage.getItem("userId"); // Assuming you store the user's ID in localStorage
-      console.log(id);
       
       const response = await axios.post(`https://funiro-furnitures.onrender.com/verify-otp/${id}`, {
         otp: enteredOtp,
