@@ -3,33 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 SwiperCore.use([Navigation]);
 import UseQueryCustomHook from "../../hooks/UseQueryCustomHook";
-// import syltherine from "/images/products/syltherine.png";
-// import lolito from "/images/products/lolito.png";
-// import leviosa from "/images/products/leviosa.png";
-// import respira from "/images/products/respira.png";
-// import grifo from "/images/products/grifo.png";
-// import muggo from "/images/products/muggo.png";
-// import pingky from "/images/products/pingky.png";
-// import potty from "/images/products/potty.png";
 
-// const products = [
-//     { id: 1, new:'', name: 'Syltherine', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-30%', image: syltherine, des: "Stylish cafe chair" },
-//     { id: 2, new:'New', name: 'Leviosa', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '', image: leviosa, des: "Stylish cafe chair" },
-//     { id: 3, new:'', name: 'Lolito', price: 'Rp 7.000.000', deprecated: 'Rp 14.000.000', discount: '-50%', image: lolito, des: "Luxury big sofa" },
-//     { id: 4, new:'New', name: 'respira', price: 'Rp 500.000', deprecated: '', discount: '', image: respira, des: "Outdoor bar table and stool" },
-//     { id: 5, new:'', name: 'grifo', price: 'Rp 1.500.000', deprecated: '', discount: '', image: grifo, des: "Night lamp" },
-//     { id: 6, new:'New', name: 'muggo', price: 'Rp 150.000', deprecated: '', discount: '', image: muggo, des: "small mug" },
-//     { id: 7, new:'', name: 'pingky', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '-50%', image: pingky, des: "Cute bed sets" },
-//     { id: 8, new:'New', name: 'potty', price: 'Rp 2.500.000', deprecated: 'Rp 3.500.000', discount: '', image: potty, des: "Stylish cafe chair" },
-//     // Add more products as needed
-//   ];
 const Slider1 = () => {
   // const product = JSON.parse(localStorage.getItem("products"));
-  const {data} =
-  UseQueryCustomHook();
+  const { data, isLoading } = UseQueryCustomHook();
 
   const formatNumber = (number) => {
-    return new Intl.NumberFormat('en-US').format(number);
+    return new Intl.NumberFormat("en-US").format(number);
   };
 
   return (
@@ -70,8 +50,8 @@ const Slider1 = () => {
                     </h1>
                     <p className="mt-2 text-xs text-gray-500">
                       {" "}
-                      {/* ₦{product?.price} */}
-                      ₦{formatNumber(product?.discountedGeneralPrice)}
+                      {/* ₦{product?.price} */}₦
+                      {formatNumber(product?.discountedGeneralPrice)}
                     </p>
                   </div>
                   <div>
