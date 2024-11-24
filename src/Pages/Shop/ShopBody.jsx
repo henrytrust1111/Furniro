@@ -76,7 +76,7 @@ const ShopBody = () => {
         setFilteredProducts(response.data.data);
         setLoading(false);
       } catch (error) {
-        console.log(error.message);
+        // console.log(error.message);
         setLoading(false);
       }
     };

@@ -19,7 +19,6 @@ const RecentPost = () => {
       const response = await axios.get(
         "https://funiro-furnitures.onrender.com/recentPost?limit=5"
       );
-      console.log(response.data)
       // toast.success(response.data.message);
       const postsData = response.data.data;
       if (response.data.data.length === 0) {
