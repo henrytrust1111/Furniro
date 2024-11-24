@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 SwiperCore.use([Navigation]);
 import UseQueryCustomHook from "../../hooks/UseQueryCustomHook";
+import SliderLoading from "./SliderLoading";
 
 const Slider1 = () => {
   // const product = JSON.parse(localStorage.getItem("products"));
@@ -11,6 +12,8 @@ const Slider1 = () => {
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
+
+  if (isLoading) return <SliderLoading />;
 
   return (
     <>
