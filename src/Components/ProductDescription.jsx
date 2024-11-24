@@ -15,7 +15,6 @@ const ProductDescription = () => {
       );
 
       setProduct(response.data);
-      console.log(response.data[0].images);
     } catch (err) {
       toast.error(err);
     }

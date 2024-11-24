@@ -14,7 +14,6 @@ const Breadcrumbs = () => {
         `https://funiro-furnitures.onrender.com/get-one-product/${productID}`
       );
       setProduct(response.data);
-      console.log(response.data[0].images);
     } catch (err) {
       toast.error(err.message);
     }
