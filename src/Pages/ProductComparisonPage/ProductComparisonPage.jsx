@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import image1 from "../ProductComparisonPage/imagess/image1.jpg";
 import { IoStar } from "react-icons/io5";
 import General from "./Generalcomparisonpage";
@@ -18,10 +18,13 @@ const ProductComparisonPage = () => {
   const [rating, setRating] = useState([1, 2, 3, 4, 5]);
   const [show, setShow] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [product2, setProduct2] = useState();
   // const { productID } = useParams();
   const nav = useNavigate();
   const location = useLocation();
   const { product } = location.state;
+  console.log(selectedProduct);
+  
 
   const data = useSelector((state) => state?.persistedReducer?.products);
   const drowDownList = data?.map((e) =>
@@ -29,6 +32,17 @@ const ProductComparisonPage = () => {
       ? e.itemName
       : null
   );
+// const data2 = data?.find((e) =>
+//   e.itemName === selectedProduct
+//     ? e
+//     : null
+// );
+
+useEffect(() => {
+  const foundProduct = data?.find((e) => e.itemName === selectedProduct);
+  setProduct2(foundProduct);
+}, [selectedProduct, data]);
+
 
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
@@ -44,6 +58,9 @@ const ProductComparisonPage = () => {
       return nav("/shop");
     }
   };
+
+  console.log(product2);
+  
 
   return (
     <>
@@ -123,7 +140,44 @@ const ProductComparisonPage = () => {
             </div>
           }
 
-          <div className="">
+          {
+            product2 &&
+            <div className="">
+              <img
+                src={product2?.images[0].url}
+                alt="image"
+                className="w-full rounded"
+              />
+              <div className="mt-5 space-y-1 text-left">
+                <h3 className="text-lg font-semibold">{product2?.itemName}</h3>
+                <p className="text-gray-500 font-medium text-sm">
+                  {product2.price && (
+                    <span className="-text--clr-black-shade-v1 font-semibold text-base">
+                      ₦ {formatNumber(product2?.discountedGeneralPrice)}
+                    </span>
+                  )}
+                </p>
+                <div className="flex items-center space-x-1">
+                  <p className="text-sm font-semibold">4.7</p>
+                  {rating?.map((_e, i) => {
+                    return (
+                      <div className="" key={i}>
+                        <IoStar className="text-yellow-500 w-3 h-3" />
+                      </div>
+                    );
+                  })}
+
+                  <div className="h-6 w-px -bg--clr-light-gray-v2"></div>
+
+                  <p className="-text--clr-light-gray-v2 text-sm">
+                    250 Reviews
+                  </p>
+                </div>
+              </div>
+            </div>
+          }
+
+          {/* <div className="">
             <img src={image1} alt="" className="w-full rounded" />
             <div className="mt-5 space-y-1 text-left">
               <h3 className="text-lg font-semibold">Asgaard Sofa</h3>
@@ -138,14 +192,15 @@ const ProductComparisonPage = () => {
                   );
                 })}
 
-                {/* veritical rule */}
+            
                 <div className="h-6 w-px -bg--clr-light-gray-v2"></div>
 
-                {/* Replaced star image with IoStar */}
+                
                 <p className="-text--clr-light-gray-v2 text-sm">250 Reviews</p>
               </div>
             </div>
-          </div>
+          </div> 
+          */}
           <div className="text-left">
             <div className="space-y-1 mt-4">
               <h3 className="text-lg font-semibold">Add A Product</h3>
