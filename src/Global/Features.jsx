@@ -11,11 +11,11 @@ const ProductState = createSlice({
   reducers: {
     DB: (state, { payload }) => {
       state.products = payload;
-      console.log("Dispatched payload:", payload);
+      // console.log("Dispatched payload:", payload);
     },
     userProfile: (state, { payload }) => {
       state.userProfile = payload;
-      console.log(payload);
+      // console.log(payload);
     },
   },
 });

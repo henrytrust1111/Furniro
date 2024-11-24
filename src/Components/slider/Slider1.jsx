@@ -27,7 +27,6 @@ const Slider1 = () => {
   // const product = JSON.parse(localStorage.getItem("products"));
   const {data} =
   UseQueryCustomHook();
-console.log(data);
 
   const formatNumber = (number) => {
     return new Intl.NumberFormat('en-US').format(number);

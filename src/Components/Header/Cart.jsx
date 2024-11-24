@@ -19,7 +19,6 @@ const Cart = ({ onClose,quantity }) => {
         `https://funiro-furnitures.onrender.com/get-one-product/${productID}`
       );
       setProduct(response.data);
-      console.log(response.data[0].images);
     } catch (err) {
       toast.error(err.message);
     }
@@ -29,39 +28,6 @@ const Cart = ({ onClose,quantity }) => {
     fetchProducts();
   }, [productID]);
 
-  //       {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           Authorization: `Bearer ${token}`,
-  //         },
-  //         body: JSON.stringify({ size }),
-  //       }
-  //     );
-  
-  //     if (!response.ok) {
-  //       if (response.status === 400) {
-  //         throw new Error("Bad Request. Please check the product details.");
-  //       } else if (response.status === 500) {
-  //         throw new Error("Server error. Please try again later.");
-  //       } else {
-  //         throw new Error("An unexpected error occurred.");
-  //       }
-  //     }
-  
-  //     const data = await response.json();
-  //     setProduct((prevProducts) => {
-  //       const updatedProducts = [...prevProducts, data.data];
-  //       saveToLocalStorage(data.data);
-  //       return updatedProducts;
-  //     });
-  //     console.log(data.data);
-  //     alert(data.message);
-  //   } catch (error) {
-  //     console.error("Error adding to cart:", error);
-  //     alert(error.message);
-  //   }
-  // };
 
   const handleAddToCart = () => {
     const token = localStorage.getItem("token");

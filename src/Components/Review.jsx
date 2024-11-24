@@ -100,7 +100,6 @@ const Review = () => {
             ]);
 
             setExp("");
-            console.log("Comment posted:", data);
           } else {
             console.error("Failed to get user's full name for initials:", data);
           }
