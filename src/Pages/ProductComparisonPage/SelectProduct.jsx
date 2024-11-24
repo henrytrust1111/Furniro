@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const SelectProduct = ({ drowDownList }) => {
+const SelectProduct = ({ drowDownList, onProductSelect }) => {
   const [data, setData] = useState(drowDownList);
  
  useEffect(() => {
@@ -17,6 +17,7 @@ const SelectProduct = ({ drowDownList }) => {
     });
   }, []);
 
+
   return (
     <div
       data-aos="fade-down"
@@ -24,7 +25,7 @@ const SelectProduct = ({ drowDownList }) => {
     >
       {data?.map((e,i) => (
         <div key={i} className="cursor-pointer" >
-          <p className="cursor-pointer text-base border-b -border--clr-primary">{e}</p>
+          <p className="cursor-pointer text-base border-b -border--clr-primary" onClick={() => onProductSelect(e)}>{e}</p>
         </div>
       ))}
     </div>

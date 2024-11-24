@@ -17,6 +17,7 @@ import { useSelector } from "react-redux";
 const ProductComparisonPage = () => {
   const [rating, setRating] = useState([1, 2, 3, 4, 5]);
   const [show, setShow] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   // const { productID } = useParams();
   const nav = useNavigate();
   const location = useLocation();
@@ -29,9 +30,13 @@ const ProductComparisonPage = () => {
       : null
   );
 
-
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
+  };
+
+  const handleProductSelect = (productName) => {
+    setSelectedProduct(productName); 
+    setShow(false); 
   };
 
   const handleClick = (route) => {
@@ -148,8 +153,15 @@ const ProductComparisonPage = () => {
                 className="relative px-5 py-1 -bg--clr-primary text-white rounded-md hover:-bg--clr-primar-light-v1 mb-2 lg:mb-0"
                 onClick={() => setShow(!show)}
               >
-                Choose a product <IoIosArrowDown className="inline ml-2" />
-                {show ? <SelectProduct drowDownList={drowDownList} /> : null}
+                {selectedProduct? selectedProduct: "Choose A Product"} <IoIosArrowDown className="inline ml-2" />
+                {/* {show ? <SelectProduct drowDownList={drowDownList} /> : null} */}
+                {show && (
+                  <SelectProduct
+                    drowDownList={drowDownList}
+                    onProductSelect={handleProductSelect} // Pass the handler
+                  />
+                )}
+               
               </button>
             </div>
           </div>
