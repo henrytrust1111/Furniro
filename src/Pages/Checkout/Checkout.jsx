@@ -111,7 +111,6 @@ const Checkout = () => {
 
         setIsLoading(false);
       } catch (error) {
-        console.log(error.response);
         // setIsLoading(false);
         // toast.error("Failed to load cart.");
         // toast.error(error.response);
@@ -265,12 +264,10 @@ const Checkout = () => {
         setIsLoading(false);
         toast.success("Payment successful!");
         handleFormSubmission();
-        console.log(response);
       },
       onError: (error) => {
         setIsLoading(false);
         toast.error("Payment failed. Please try again.");
-        console.error(error);
       },
     });
   };
