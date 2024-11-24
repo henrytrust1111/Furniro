@@ -108,7 +108,6 @@ const Checkout = () => {
           }
         );
         setCart(response.data.data.products);
-        console.log(response.data.data.products);
 
         setIsLoading(false);
       } catch (error) {

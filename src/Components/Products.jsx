@@ -13,10 +13,8 @@ import Context, { MyContext } from "../context/Context";
 
 const Products = ({ Title }) => {
   const {isLoading, noProducts, refetch, error } = useContext(MyContext);
-  console.log(isLoading);
   
   const data = useSelector((state) => state?.persistedReducer?.products);
-  console.log(data);
   
 
   const [visibleProducts, setVisibleProducts] = useState(4);
@@ -32,10 +30,7 @@ const Products = ({ Title }) => {
   };
 
   const handleCompare = (product) => {
-    console.log(product.category.categoryName);
-    console.log(data?.category?.categoryName);
     const cat = data?.map(prod => prod.category.categoryName === product.category.categoryName ? prod : null)  
-    console.log(cat);
     
     return nav(`/comparison/${product._id}`, { state: { product } });
   };
@@ -44,7 +39,6 @@ const Products = ({ Title }) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
 
-  console.log(isLoading);
   
 
   if (isLoading) {

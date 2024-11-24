@@ -10,18 +10,13 @@ const Context = ({ children }) => {
   const [noProducts, setNoProducts] = useState();
 
   // const onSuccess = (data) => {
-  //   console.log("perform side effect after data fecting", data);
   //   if (data.length === 0) {
   //     setNoProducts(true);
   //   }
   //   setNoProducts(false);
   // };
 
- 
-
   const onSuccess = (data) => {
-    console.log("Perform side effect after data fetching:", data);
-
     if (data?.length === 0) {
       setNoProducts(true);
     } else {
@@ -32,12 +27,15 @@ const Context = ({ children }) => {
 
   const onError = (error) => {
     toast.error("An Error occurred", error);
-    console.log("perform side effect after encountering error");
   };
   const { isLoading, data, isError, error, isFetching, refetch } =
     UseQueryCustomHook(onError, onSuccess);
- 
-  return <MyContext.Provider value={{isLoading, refetch, error, noProducts}}>{children}</MyContext.Provider>;
+
+  return (
+    <MyContext.Provider value={{ isLoading, refetch, error, noProducts }}>
+      {children}
+    </MyContext.Provider>
+  );
 };
 
 export default Context;

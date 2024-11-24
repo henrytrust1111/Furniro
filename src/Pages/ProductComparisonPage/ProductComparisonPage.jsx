@@ -21,17 +21,14 @@ const ProductComparisonPage = () => {
   const nav = useNavigate();
   const location = useLocation();
   const { product } = location.state;
-  console.log(product);
 
   const data = useSelector((state) => state?.persistedReducer?.products);
-  console.log(data);
   const drowDownList = data?.map((e) =>
     e.category.categoryName === product.category.categoryName
       ? e.itemName
       : null
   );
 
-  console.log(drowDownList);
 
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
@@ -148,7 +145,7 @@ const ProductComparisonPage = () => {
             <div className="space-y-1 mt-4">
               <h3 className="text-lg font-semibold">Add A Product</h3>
               <button
-                className="relative px-5 py-1 -bg--clr-primary text-white rounded-md hover:-bg--clr-primar-light-v1"
+                className="relative px-5 py-1 -bg--clr-primary text-white rounded-md hover:-bg--clr-primar-light-v1 mb-2 lg:mb-0"
                 onClick={() => setShow(!show)}
               >
                 Choose a product <IoIosArrowDown className="inline ml-2" />
