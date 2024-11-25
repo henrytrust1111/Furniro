@@ -10,7 +10,6 @@ const Slider1 = () => {
   // const product = JSON.parse(localStorage.getItem("products"));
   const { isLoading } = UseQueryCustomHook();
   const data = useSelector((state) => state?.persistedReducer?.products);
-  console.log(data);
   
 
   const formatNumber = (number) => {
