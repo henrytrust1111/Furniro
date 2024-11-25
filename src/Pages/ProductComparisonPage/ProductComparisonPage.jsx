@@ -54,7 +54,6 @@ useEffect(() => {
     }
   };
 
-  console.log(product2);
   
 
   return (
