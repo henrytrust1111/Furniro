@@ -21,7 +21,7 @@ const Context = ({ children }) => {
       setNoProducts(true);
     } else {
       setNoProducts(false);
-      dispatch(DB(data)); // Dispatching the fetched data
+      dispatch(DB(data)); 
     }
   };
 
@@ -32,7 +32,7 @@ const Context = ({ children }) => {
     UseQueryCustomHook(onError, onSuccess);
 
   return (
-    <MyContext.Provider value={{ isLoading, refetch, error, noProducts }}>
+    <MyContext.Provider value={{ isLoading, refetch, error, noProducts, data }}>
       {children}
     </MyContext.Provider>
   );
