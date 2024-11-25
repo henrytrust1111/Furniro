@@ -1,8 +1,10 @@
 const General = () => {
   return (
     <>
-      <div className="container mx-auto grid grid-cols-4">
-        <div className="grid grid-rows-7">
+      <div className="container mx-auto grid grid-cols-4 border-t-2 mt-11">
+{/* col 1 */}
+
+        <div className="grid grid-rows-7 gap-4 border-r-2">
         <p className="row-start-1 col-start-1 row-end-1 col-end-1"> General</p>
          <p className="col-start-1 col-end-1 row-start-2 row-end-2">Sales Package</p>
          <p className="col-start-1 col-end-1 row-start-3 row-end-3">Model Number</p>
@@ -14,7 +16,7 @@ const General = () => {
 
 
                    {/* col 2 */}
-       <div className="grid grid-rows-7">
+       <div className="grid grid-rows-7 border-r-2">
        <p className="col-start-2 col-end-2 row-start-2 row-end-2">1 sectional sofa</p>
         <p className="col-start-2 col-end-2 row-start-3 row-end-3">TFCBLIGRBL6SRHS</p>
         <p className="col-start-2 col-end-2 row-start-4 row-end-4">Solid Wood</p>
@@ -25,7 +27,7 @@ const General = () => {
 
         {/* col 3 */}
 
-        <div className="grid grid-rows-7">
+        <div className="grid grid-rows-7 border-r-2">
         <p className="col-start-3 col-end-3 row-start-2 row-end-2">1 Three Seater, 2 Single Seater</p>
         <p className="col-start-3 col-end-3 row-start-3 row-end-3">DTUBLIGRBL568</p>
         <p className="col-start-3 col-end-3 row-start-4 row-end-4">Solid Wood</p>
