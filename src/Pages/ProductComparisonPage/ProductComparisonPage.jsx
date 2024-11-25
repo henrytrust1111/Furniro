@@ -198,7 +198,7 @@ useEffect(() => {
           */}
           <div className="text-left">
             <div className="space-y-1 mt-4">
-              <h3 className="text-lg font-semibold">Add A Product</h3>
+              <h3 className="text-lg font-semibold"> {product2? "Change Product": "Add A Product"} </h3>
               <button
                 className="relative px-5 py-1 -bg--clr-primary text-white rounded-md hover:-bg--clr-primar-light-v1 mb-2 lg:mb-0"
                 onClick={() => setShow(!show)}
