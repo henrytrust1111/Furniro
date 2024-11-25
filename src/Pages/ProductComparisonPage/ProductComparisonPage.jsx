@@ -31,11 +31,7 @@ const ProductComparisonPage = () => {
       ? e.itemName
       : null
   );
-// const data2 = data?.find((e) =>
-//   e.itemName === selectedProduct
-//     ? e
-//     : null
-// );
+
 
 useEffect(() => {
   const foundProduct = data?.find((e) => e.itemName === selectedProduct);
