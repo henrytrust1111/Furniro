@@ -1,0 +1,51 @@
+<div className="w-[90%] h-full flex items-center justify-between">
+            <div className="w-[25%] h-full rounded shadow-md">
+              <div className="w-full h-[18%] flex items-center">
+                <h3 className="text-[23px] font-semibold leading-[2.8rem] pl-4">General</h3>
+              </div>
+              <div className="w-full h-[82%] flex items-center justify-center">
+                <div className="w-[95%] h-full flex flex-col gap-10">
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Sales Package</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Model Number</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Secondary Materials</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Configuration</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Upholstery Material</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Upholstery Color</p>
+                </div>
+              </div>
+            </div>
+  
+            <div className="w-[25%] h-full rounded shadow-md">
+              <div className="w-full h-[18%] flex items-center"></div>
+              <div className="w-full h-[82%] flex items-center justify-center">
+                <div className="w-[75%] h-full flex flex-col gap-10">
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Sales Package</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Model Number</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Secondary Materials</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Configuration</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Upholstery Material</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Upholstery Color</p>
+                </div>
+              </div>
+            </div>
+  
+            <div className="w-[25%] h-full rounded shadow-md">
+              <div className="w-full h-[18%] flex items-center"></div>
+              <div className="w-full h-[82%] flex items-center justify-center">
+                <div className="w-[75%] h-full flex flex-col gap-10">
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Sales Package</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Model Number</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Secondary Materials</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Configuration</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Upholstery Material</p>
+                  <p className="text-[16px] font-medium leading-[1.8rem] pl-2">Upholstery Color</p>
+                </div>
+              </div>
+            </div>
+  
+            <div className="w-[25%] h-full rounded shadow-md">
+              <div className="w-full h-[18%] flex items-center"></div>
+              <div className="w-full h-[82%] flex items-center"></div>
+            </div>
+          </div>
+    
