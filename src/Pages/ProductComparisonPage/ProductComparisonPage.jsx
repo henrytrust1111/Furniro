@@ -171,30 +171,6 @@ useEffect(() => {
             </div>
           }
 
-          {/* <div className="">
-            <img src={image1} alt="" className="w-full rounded" />
-            <div className="mt-5 space-y-1 text-left">
-              <h3 className="text-lg font-semibold">Asgaard Sofa</h3>
-              <p className="text-gray-500 font-medium text-sm">Rs.250.000.00</p>
-              <div className="flex items-center space-x-1">
-                <p className="text-sm font-semibold">4.7</p>
-                {rating?.map((_e, i) => {
-                  return (
-                    <div className="" key={i}>
-                      <IoStar className="text-yellow-500 w-3 h-3" />
-                    </div>
-                  );
-                })}
-
-            
-                <div className="h-6 w-px -bg--clr-light-gray-v2"></div>
-
-                
-                <p className="-text--clr-light-gray-v2 text-sm">250 Reviews</p>
-              </div>
-            </div>
-          </div> 
-          */}
           <div className="text-left">
             <div className="space-y-1 mt-4">
               <h3 className="text-lg font-semibold"> {product2? "Change Product": "Add A Product"} </h3>
