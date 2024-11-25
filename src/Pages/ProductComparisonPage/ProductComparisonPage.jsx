@@ -23,7 +23,6 @@ const ProductComparisonPage = () => {
   const nav = useNavigate();
   const location = useLocation();
   const { product } = location.state;
-  console.log(selectedProduct);
   
 
   const data = useSelector((state) => state?.persistedReducer?.products);
