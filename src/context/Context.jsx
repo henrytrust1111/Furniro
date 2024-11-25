@@ -28,8 +28,11 @@ const Context = ({ children }) => {
   const onError = (error) => {
     toast.error("An Error occurred", error);
   };
-  const { isLoading, data, isError, error, isFetching, refetch } =
+  const { isLoading, data, isError, error, isFetching, refetch, loading } =
     UseQueryCustomHook(onError, onSuccess);
+
+    // console.log(isLoading, data);
+    
 
   return (
     <MyContext.Provider value={{ isLoading, refetch, error, noProducts, data }}>

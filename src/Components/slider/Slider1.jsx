@@ -16,7 +16,7 @@ const Slider1 = () => {
     return new Intl.NumberFormat("en-US").format(number);
   };
 
-  if (isLoading && !data) return <SliderLoading />;
+  if (isLoading) return <SliderLoading />;
 
   return (
     <>

@@ -15,7 +15,6 @@ const Products = ({ Title }) => {
   const {isLoading, noProducts, refetch, error } = useContext(MyContext);
   
   const data = useSelector((state) => state?.persistedReducer?.products);
-  console.log(isLoading);
   
   
 
@@ -43,7 +42,7 @@ const Products = ({ Title }) => {
 
   
 
-  if (isLoading && !data) {
+  if (isLoading) {
     return (
       <section className="py-16 font-[poppins]">
         <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
