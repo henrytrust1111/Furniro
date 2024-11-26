@@ -194,7 +194,7 @@ useEffect(() => {
       </div>
       <General />
       <Productcomparison />
-      {/* <Dimensioncomparison /> */}
+      <Dimensioncomparison />
       {/* <Warrantycomparison /> */}
     </>
   );
