@@ -6,7 +6,7 @@ const General = () => {
 
         <div className="grid grid-rows-7 gap-4 border-r-2">
          <p className="row-start-1 col-start-1 row-end-1 col-end-1 font-medium text-2xl"> General</p>
-         <p className="col-start-1 col-end-1 row-start-2 row-end-2 text-xs md:text-sm lg:text-base break-words w-20">Sales Package</p>
+         <p className="col-start-1 col-end-1 row-start-2 row-end-2 text-xs md:text-sm lg:text-base break-words w-20 sm:w-full">Sales Package</p>
          <p className="col-start-1 col-end-1 row-start-3 row-end-3 text-xs md:text-sm lg:text-base break-words w-20">Model Number</p>
          <p className="col-start-1 col-end-1 row-start-4 row-end-4 text-xs md:text-sm lg:text-base break-words w-20">Secondary Materials</p>
          <p className="col-start-1 col-end-1 row-start-5 row-end-5 text-xs md:text-sm lg:text-base break-words w-20">Configuration</p>
