@@ -1,7 +1,7 @@
 const Warrantycomparison = () => {
     return (
       <>
-        <div className="container mx-auto grid grid-cols-3 lg:grid-cols-4 ">
+        <div className="container mx-auto grid grid-cols-3 lg:grid-cols-4 mb-6 ">
   {/* col 1 */}
   
           <div className="grid grid-rows-7 gap-4 border-r-2">
