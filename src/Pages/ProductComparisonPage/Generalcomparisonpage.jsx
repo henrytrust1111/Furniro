@@ -18,7 +18,7 @@ const General = () => {
                    {/* col 2 */}
        <div className="grid grid-rows-7 border-r-2">
         <p className="col-start-2 col-end-2 row-start-2 row-end-2 text-sm lg:text-base">1 sectional sofa</p>
-        <p className="col-start-2 col-end-2 row-start-3 row-end-3 text-sm lg:text-base">TFCBLIGRBL6SRHS</p>
+        <p className="col-start-2 col-end-2 row-start-3 row-end-3 text-sm lg:text-base w-2 text-green-600">TFCBLIGRBL6SRHS</p>
         <p className="col-start-2 col-end-2 row-start-4 row-end-4 text-sm lg:text-base">Solid Wood</p>
         <p className="col-start-2 col-end-2 row-start-5 row-end-5 text-sm lg:text-base">L-shaped</p>
         <p className="col-start-2 col-end-2 row-start-6 row-end-6 text-sm lg:text-base">Fabric + Cotton</p>
