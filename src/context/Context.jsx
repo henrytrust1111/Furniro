@@ -31,7 +31,7 @@ const Context = ({ children }) => {
   const { isLoading, data, isError, error, isFetching, refetch, loading } =
     UseQueryCustomHook(onError, onSuccess);
 
-    // console.log(isLoading, data);
+    console.log(isLoading, data);
     
 
   return (
