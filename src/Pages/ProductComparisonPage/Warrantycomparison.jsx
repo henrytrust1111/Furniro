@@ -5,7 +5,7 @@ const Warrantycomparison = () => {
   {/* col 1 */}
   
           <div className="grid grid-rows-7 gap-4 border-r-2">
-           <p className="row-start-1 col-start-1 row-end-1 col-end-1 font-medium text-2xl "></p>
+           {/* <p className="row-start-1 col-start-1 row-end-1 col-end-1 font-medium text-2xl h-2"></p> */}
            <p className="row-start-2 col-start-1 row-end-2 col-end-1 font-medium text-lg md:text-xl lg:text-2xl flex items-center">Warranty</p>
            <p className="col-start-1 col-end-1 row-start-3 row-end-3 text-xs md:text-sm lg:text-base break-words w-20 sm:w-full flex items-center">Warranty Summary</p>
            <p className="col-start-1 col-end-1 row-start-4 row-end-4 text-xs md:text-sm lg:text-base break-words w-20 sm:w-full flex items-center">Warranty Service Type</p>
@@ -16,7 +16,7 @@ const Warrantycomparison = () => {
           </div>
                      {/* col 2 */}
          <div className="grid grid-rows-7 border-r-2 px-4">
-          <p className="col-start-2 col-end-2 row-start-2 row-end-2 text-xs md:text-sm lg:text-base break-words w-20 sm:w-full h-full flex items-center"></p>
+          {/* <p className="col-start-2 col-end-2 row-start-2 row-end-2 text-xs md:text-sm lg:text-base break-words w-20 sm:w-full h-2 flex items-center"></p> */}
           <p className="col-start-2 col-end-2 row-start-3 row-end-3 text-xs md:text-sm lg:text-base break-words w-20 sm:w-full h-full flex items-center">1 Year Manufacturing Warranty</p>
           <p className="col-start-2 col-end-2 row-start-4 row-end-4 text-xs md:text-sm lg:text-base break-words w-11 sm:w-full h-full flex items-center">For Warranty Claims or Any Product Related Issues Please Email at furniture.com</p>
           <p className="col-start-2 col-end-2 row-start-5 row-end-5 text-xs md:text-sm lg:text-base break-words w-20 sm:w-full h-full flex items-center">Warranty Against Manufacturing Defect</p>
@@ -28,7 +28,7 @@ const Warrantycomparison = () => {
           {/* col 3 */}
   
           <div className="grid grid-rows-7 border-r-2 px-4">
-          <p className="col-start-3 col-end-3 row-start-2 row-end-2 text-xs md:text-sm lg:text-base break-words w-20 sm:w-full h-full flex items-center"></p>
+          {/* <p className="col-start-3 col-end-3 row-start-2 row-end-2 text-xs md:text-sm lg:text-base break-words w-20 sm:w-full h-full flex items-center"></p> */}
           <p className="col-start-3 col-end-3 row-start-3 row-end-3 text-xs md:text-sm lg:text-base break-words w-20 sm:w-full h-full flex items-center">1.2 Year Manufacturing Warranty</p>
           <p className="col-start-3 col-end-3 row-start-4 row-end-4 text-xs md:text-sm lg:text-base break-words w-20 sm:w-full h-full flex items-center">For Warranty Claims or Any Product Related Issues Please Email at support@xyz.com</p>
           <p className="col-start-3 col-end-3 row-start-5 row-end-5 text-xs md:text-sm lg:text-base break-words w-20 sm:w-full h-full flex items-center">Warranty of the product is limited to manufacturing defects only.</p>
@@ -40,7 +40,7 @@ const Warrantycomparison = () => {
           {/* col 4 */}
   
           <div className="lg:grid grid-rows-7 hidden lg:invisible">
-          <p className="col-start-4 col-end-4 row-start-2 row-end-2 h-full">1 Three Seater, 2 Single Seater</p>
+          {/* <p className="col-start-4 col-end-4 row-start-2 row-end-2 h-2">1 Three Seater, 2 Single Seater</p> */}
           <p className="col-start-4 col-end-4 row-start-3 row-end-3 h-full">1 Three Seater, 2 Single Seater</p>
           <p className="col-start-4 col-end-4 row-start-4 row-end-4 h-full">DTUBLIGRBL568</p>
           <p className="col-start-4 col-end-4 row-start-5 row-end-5 h-full">Solid Wood</p>
