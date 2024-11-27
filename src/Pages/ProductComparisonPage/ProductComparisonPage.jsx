@@ -23,16 +23,13 @@ const ProductComparisonPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-    useLayoutEffect(() => {
+  useLayoutEffect(() => {
     if (!location.state?.product) {
       navigate("/", { replace: true });
     }
   }, [location.state, navigate]);
 
-
   const { product } = location.state || {};
-  
-  
 
   const data = useSelector((state) => state?.persistedReducer?.products);
   const drowDownList = data?.map((e) =>
@@ -41,20 +38,18 @@ const ProductComparisonPage = () => {
       : null
   );
 
-
-useEffect(() => {
-  const foundProduct = data?.find((e) => e.itemName === selectedProduct);
-  setProduct2(foundProduct);
-}, [selectedProduct, data]);
-
+  useEffect(() => {
+    const foundProduct = data?.find((e) => e.itemName === selectedProduct);
+    setProduct2(foundProduct);
+  }, [selectedProduct, data]);
 
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
 
   const handleProductSelect = (productName) => {
-    setSelectedProduct(productName); 
-    setShow(false); 
+    setSelectedProduct(productName);
+    setShow(false);
   };
 
   const handleClick = (route) => {
@@ -62,8 +57,6 @@ useEffect(() => {
       return navigate("/shop");
     }
   };
-
-  
 
   return (
     <>
@@ -143,8 +136,7 @@ useEffect(() => {
             </div>
           }
 
-          {
-            product2 &&
+          {product2 && (
             <div className="">
               <img
                 src={product2?.images[0].url}
@@ -178,16 +170,20 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-          }
+          )}
 
           <div className="text-left">
             <div className="space-y-1 mt-4">
-              <h3 className="text-lg font-semibold"> {product2? "Change Product": "Add A Product"} </h3>
+              <h3 className="text-lg font-semibold">
+                {" "}
+                {product2 ? "Change Product" : "Add A Product"}{" "}
+              </h3>
               <button
                 className="relative px-5 py-1 -bg--clr-primary text-white rounded-md hover:-bg--clr-primar-light-v1 mb-2 lg:mb-0"
                 onClick={() => setShow(!show)}
               >
-                {selectedProduct? selectedProduct: "Choose A Product"} <IoIosArrowDown className="inline ml-2" />
+                {selectedProduct ? selectedProduct : "Choose A Product"}{" "}
+                <IoIosArrowDown className="inline ml-2" />
                 {/* {show ? <SelectProduct drowDownList={drowDownList} /> : null} */}
                 {show && (
                   <SelectProduct
@@ -195,20 +191,21 @@ useEffect(() => {
                     onProductSelect={handleProductSelect} // Pass the handler
                   />
                 )}
-               
               </button>
             </div>
           </div>
         </div>
       </div>
-      <General />
-      <Productcomparison />
-      <Dimensioncomparison />
-      <Warrantycomparison />
+      {selectedProduct && (
+        <>
+          <General />
+          <Productcomparison />
+          <Dimensioncomparison />
+          <Warrantycomparison />
+        </>
+      )}
     </>
   );
 };
 
 export default ProductComparisonPage;
-
-
