@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import image1 from "../ProductComparisonPage/imagess/image1.jpg";
 import { IoStar } from "react-icons/io5";
 import General from "./Generalcomparisonpage";
@@ -20,14 +20,23 @@ const ProductComparisonPage = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [product2, setProduct2] = useState();
   // const { productID } = useParams();
-  const nav = useNavigate();
+  const navigate = useNavigate();
   const location = useLocation();
-  const { product } = location.state;
+
+    useLayoutEffect(() => {
+    if (!location.state?.product) {
+      navigate("/", { replace: true });
+    }
+  }, [location.state, navigate]);
+
+
+  const { product } = location.state || {};
+  
   
 
   const data = useSelector((state) => state?.persistedReducer?.products);
   const drowDownList = data?.map((e) =>
-    e.category.categoryName === product.category.categoryName
+    e.category.categoryName === product?.category?.categoryName
       ? e.itemName
       : null
   );
@@ -50,7 +59,7 @@ useEffect(() => {
 
   const handleClick = (route) => {
     if (route === "shop") {
-      return nav("/shop");
+      return navigate("/shop");
     }
   };
 
@@ -99,14 +108,14 @@ useEffect(() => {
           {
             <div className="">
               <img
-                src={product.images[0].url}
+                src={product?.images[0].url}
                 alt="image"
                 className="w-full rounded"
               />
               <div className="mt-5 space-y-1 text-left">
-                <h3 className="text-lg font-semibold">{product.itemName}</h3>
+                <h3 className="text-lg font-semibold">{product?.itemName}</h3>
                 <p className="text-gray-500 font-medium text-sm">
-                  {product.price && (
+                  {product?.price && (
                     <span className="-text--clr-black-shade-v1 font-semibold text-base">
                       ₦ {formatNumber(product?.discountedGeneralPrice)}
                     </span>
@@ -145,7 +154,7 @@ useEffect(() => {
               <div className="mt-5 space-y-1 text-left">
                 <h3 className="text-lg font-semibold">{product2?.itemName}</h3>
                 <p className="text-gray-500 font-medium text-sm">
-                  {product2.price && (
+                  {product2?.price && (
                     <span className="-text--clr-black-shade-v1 font-semibold text-base">
                       ₦ {formatNumber(product2?.discountedGeneralPrice)}
                     </span>
@@ -201,3 +210,5 @@ useEffect(() => {
 };
 
 export default ProductComparisonPage;
+
+
