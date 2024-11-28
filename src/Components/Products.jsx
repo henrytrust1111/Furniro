@@ -42,7 +42,7 @@ const Products = ({ Title }) => {
 
   
 
-  if (isLoading) {
+  if (isLoading && !data) {
     return (
       <section className="py-16 font-[poppins]">
         <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
