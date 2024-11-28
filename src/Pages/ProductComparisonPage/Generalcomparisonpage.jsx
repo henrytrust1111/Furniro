@@ -18,7 +18,7 @@ const Generalcomparisonpage = () => {
 
 
                  {/* col 2 */}
-     <div className="grid grid-rows-7 border-r-2 bg-yellow-400 w-full">
+     <div className="grid grid-rows-7 border-r-2  w-full">
       <p className="col-start-2 col-end-2 row-start-2 row-end-2 text-xs md:text-sm lg:text-base break-words w-20 break-all sm:w-full h-16 flex items-center">1 sectional sofa</p>
       <p className="col-start-2 col-end-2 row-start-3 row-end-3 text-xs md:text-sm lg:text-base break-words w-20 break-all md:w-full h-16 flex items-center ">TFCBLIGRBL6SRHS</p>
       <p className="col-start-2 col-end-2 row-start-4 row-end-4 text-xs md:text-sm lg:text-base break-words w-20 break-all sm:w-full h-16 flex items-center">Solid Wood</p>
