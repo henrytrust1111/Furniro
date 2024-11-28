@@ -12,7 +12,7 @@ const Warrantycomparison = () => {
            <p className="col-start-1 col-end-1 row-start-5 row-end-5 text-xs md:text-sm lg:text-base break-words sm:w-full flex items-center break-all">Covered in Warranty</p>
            <p className="col-start-1 col-end-1 row-start-6 row-end-6 text-xs md:text-sm lg:text-base break-words sm:w-full flex items-center break-all">Not Covered in Warranty</p>
            <div className="col-start-1 col-end-1 row-start-7 row-end-7 text-xs md:text-sm lg:text-base break-words sm:w-full flex items-center break-all ">Domestic Warranty</div>
-           <p className="col-start-1 col-end-1 row-start-8 row-end-8 text-xs md:text-sm lg:text-base break-words sm:w-full flex items-center break-all">Leg Height</p>
+           <p className="col-start-1 col-end-1 row-start-8 row-end-8 text-xs md:text-sm lg:text-base break-words sm:w-full flex items-center break-all"></p>
           </div>
                      {/* col 2 */}
          <div className="grid grid-rows-7 border-r-2 gap-2">
