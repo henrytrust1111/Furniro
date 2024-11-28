@@ -37,12 +37,12 @@ const Productcomparison = () => {
           {/* col 4 */}
   
           <div className="lg:grid grid-rows-7 hidden lg:invisible">
-          <p className="col-start-4 col-end-4 row-start-2 row-end-2 h-16"></p>
-          <p className="col-start-4 col-end-4 row-start-3 row-end-3 h-16">1 Three Seater, 2 Single Seater</p>
-          <p className="col-start-4 col-end-4 row-start-4 row-end-4 h-16">DTUBLIGRBL568</p>
-          <p className="col-start-4 col-end-4 row-start-5 row-end-5 h-16">Solid Wood</p>
-          <p className="col-start-4 col-end-4 row-start-6 row-end-6 h-16">L-shaped</p>
-          <p className="col-start-4 col-end-4 row-start-7 row-end-7 h-16">Fabric + Cotton</p>
+          <p className="col-start-4 col-end-4 row-start-2 row-end-2 h-16 break-all"></p>
+          <p className="col-start-4 col-end-4 row-start-3 row-end-3 h-16 break-all"></p>
+          <p className="col-start-4 col-end-4 row-start-4 row-end-4 h-16 break-all"></p>
+          <p className="col-start-4 col-end-4 row-start-5 row-end-5 h-16 break-all">Solid Wood</p>
+          <p className="col-start-4 col-end-4 row-start-6 row-end-6 h-16 break-all">L-shaped</p>
+          <p className="col-start-4 col-end-4 row-start-7 row-end-7 h-16 break-all">Fabric + Cotton</p>
           {/* <p className="col-start-4 col-end-4 row-start-7 row-end-7 h-16">Bright Grey & Lion</p> */}
           </div>
         </div>
