@@ -26,7 +26,10 @@ export default {
       backgroundImage: {
         'room': "url('/images/room.png')",
         'room1': "url('/images/room1.png')",
-      }
+      },
+      hyphens: {
+        auto: 'auto',
+      },
     },
   },
   plugins: [],

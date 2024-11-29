@@ -30,7 +30,7 @@ const Warrantycomparison = () => {
           <div className="grid grid-rows-7 border-r-2 gap-2">
           <p className="col-start-3 col-end-3 row-start-2 row-end-2 text-xs md:text-sm lg:text-base break-words sm:w-full break-all flex items-center"></p>
           <p className="col-start-3 col-end-3 row-start-3 row-end-3 text-xs md:text-sm lg:text-base break-words sm:w-full break-all flex items-center">1.2 Year Manufacturing Warranty</p>
-          <p className="col-start-3 col-end-3 row-start-4 row-end-4 text-xs md:text-sm lg:text-base break-words sm:w-full break-all flex items-center hyphens-auto">For Warranty Claims or Any Product Related Issues Please Email at support@xyz.com</p>
+          <p className="col-start-3 col-end-3 row-start-4 row-end-4 text-xs md:text-sm lg:text-base break-words sm:w-full  flex items-center hyphenated">For Warranty Claims or Any Product Related Issues Please Email at support@xyz.com</p>
           <p className="col-start-3 col-end-3 row-start-5 row-end-5 text-xs md:text-sm lg:text-base break-words sm:w-full break-all flex items-center">Warranty of the product is limited to manufacturing defects only.</p>
           <p className="col-start-3 col-end-3 row-start-6 row-end-6 text-xs md:text-sm lg:text-base break-words sm:w-full break-all flex items-center">The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.</p>
           <p className="col-start-3 col-end-3 row-start-7 row-end-7 text-xs md:text-sm lg:text-base break-words sm:w-full break-all flex items-center">3 Months</p>

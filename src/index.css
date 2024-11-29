@@ -3,3 +3,8 @@
 @tailwind utilities;
 
 
+.hyphenated {
+    hyphens: auto;
+    word-wrap: break-word;
+  }
+  
