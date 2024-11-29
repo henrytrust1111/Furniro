@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 
   theme: {
     extend: {
@@ -24,14 +21,17 @@ export default {
         "--clr-black-shade-v1": "#3A3A3A",
       },
       backgroundImage: {
-        'room': "url('/images/room.png')",
-        'room1': "url('/images/room1.png')",
+        room: "url('/images/room.png')",
+        room1: "url('/images/room1.png')",
       },
       hyphens: {
-        auto: 'auto',
+        auto: "auto",
+        none: "none",
+      },
+      variants: {
+        hyphens: ["responsive"],
       },
     },
   },
   plugins: [],
-}
-
+};

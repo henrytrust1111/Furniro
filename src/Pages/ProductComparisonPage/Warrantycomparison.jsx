@@ -49,6 +49,8 @@ const Warrantycomparison = () => {
           {/* <p className="col-start-4 col-end-4 row-start-7 row-end-7 ">Bright Grey & Lion</p> */}
           </div>
         </div>
+
+  
       </>
     );
   };
