@@ -4,7 +4,7 @@
 
 
 .hyphenated {
-    hyphens: auto;
+    hyphens: auto !important;
     word-wrap: break-word;
   }
   
