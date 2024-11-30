@@ -244,7 +244,7 @@ const ShopBody = () => {
                         <IoMdShare /> <span>Share</span>
                       </div>
                       <div
-                        onClick={() => handleCompare(product)}
+                        onClick={() => handleCompare(shopproduct)}
                         className="flex items-center gap-1 hover:-text--clr-primary"
                       >
                         <MdCompareArrows /> <span>Compare</span>
