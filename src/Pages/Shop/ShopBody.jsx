@@ -140,9 +140,6 @@ const ShopBody = () => {
   };
 
   const handleCompare = (product) => {
-    const cat = data?.map((prod) =>
-      prod.category.categoryName === product.category.categoryName ? prod : null
-    );
     return nav(`/comparison/${product._id}`, { state: { product } });
   };
 
