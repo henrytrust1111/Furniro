@@ -6,7 +6,7 @@ const Warrantycomparison = () => {
   
           <div className="grid grid-rows-7 gap-2 border-r-2 w-full hyphenated">
            <p className="row-start-1 col-start-1 row-end-1 col-end-1 font-medium text-2xl "></p>
-           <p className="row-start-2 col-start-1 row-end-2 col-end-1 font-medium text-xl lg:text-2xl flex items-center sm:w-full"></p>
+           <p className="row-start-2 col-start-1 row-end-2 col-end-1 font-medium text-xl lg:text-2xl flex items-center sm:w-full">Warranty</p>
            <p className="col-start-1 col-end-1 row-start-3 row-end-3 text-xs md:text-sm lg:text-base break-words w-full flex items-center">Warranty Summary</p>
            <p className="col-start-1 col-end-1 row-start-4 row-end-4 text-xs md:text-sm lg:text-base break-words w-full flex items-center">Warranty Service</p>
            <p className="col-start-1 col-end-1 row-start-5 row-end-5 text-xs md:text-sm lg:text-base break-words w-full flex items-center">Covered in Warranty</p>
