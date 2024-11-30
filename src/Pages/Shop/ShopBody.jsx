@@ -232,7 +232,12 @@ const ShopBody = () => {
                          ₦ {formatNumber(shopproduct?.discountedGeneralPrice)}
                       </span>
                     )}
-                    <s className="text-xs">{shopproduct.deprecated}</s>
+                     <p className="text-xs">
+                    ₦{" "}
+                    <span className="line-through">
+                      {formatNumber(shopproduct.price)}
+                    </span>
+                  </p>
                   </div>
                 </div>
                 <div className="-bg--clr-secondary absolute inset-0 opacity-0 hover:opacity-75  transition-all ease cursor-pointer grid place-items-center">
