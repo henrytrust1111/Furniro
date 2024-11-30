@@ -6,7 +6,7 @@ const Dimensioncomparison = () => {
   
           <div className="grid grid-rows-7 gap-4 border-r-2 w-full hyphenated">
            <p className="row-start-1 col-start-1 row-end-1 col-end-1 font-medium text-2xl h-2 "></p>
-           <p className="row-start-2 col-start-1 row-end-2 col-end-1 font-medium text-xl lg:text-2xl flex items-center h-16 w-full"> Dimension</p>
+           <p className="row-start-2 col-start-1 row-end-2 col-end-1 font-medium text-xl lg:text-2xl flex items-center h-16 w-full break-all"> Dimension</p>
            <p className="col-start-1 col-end-1 row-start-3 row-end-3 text-xs md:text-sm lg:text-base break-words sm:w-full flex items-center h-16 ">Width</p>
            <p className="col-start-1 col-end-1 row-start-4 row-end-4 text-xs md:text-sm lg:text-base break-words sm:w-full flex items-center h-16 ">Height</p>
            <p className="col-start-1 col-end-1 row-start-5 row-end-5 text-xs md:text-sm lg:text-base break-words sm:w-full flex items-center h-16 ">Depth</p>
