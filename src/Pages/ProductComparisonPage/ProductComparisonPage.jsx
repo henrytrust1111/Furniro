@@ -198,9 +198,9 @@ const ProductComparisonPage = () => {
       </div>
       {selectedProduct && (
         <>
-          <General />
-          <Productcomparison />
-          <Dimensioncomparison />
+          {/* <General /> */}
+          {/* <Productcomparison /> */}
+          {/* <Dimensioncomparison /> */}
           <Warrantycomparison />
         </>
       )}
