@@ -22,7 +22,7 @@ const Warrantycomparison = () => {
           <div className="col-start-2 col-end-2 row-start-5 row-end-5 text-xs md:text-sm lg:text-base break-words w-full flex items-center">Warranty Against Manufacturing Defect</div>
           <p className="col-start-2 col-end-2 row-start-6 row-end-6 text-xs md:text-sm lg:text-base break-words w-full flex items-center">The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.</p>
           <div className="col-start-2 col-end-2 row-start-7 row-end-7 text-xs md:text-sm lg:text-base break-words w-full  flex items-center">1 Year</div>
-          <p className="col-start-2 col-end-2 row-start-8 row-end-8 text-xs md:text-sm lg:text-base break-words w-full  flex items-center"> <button className="-bg--clr-primary text-white h-11 px-4 hidden">Add To Cart</button> </p>
+          <p className="col-start-2 col-end-2 row-start-8 row-end-8 text-xs md:text-sm lg:text-base break-words w-full  flex items-center"> <button className="-bg--clr-primary text-white h-11 px-4 ">Add To Cart</button> </p>
          </div>
   
           {/* col 3 */}
@@ -34,7 +34,7 @@ const Warrantycomparison = () => {
           <p className="col-start-3 col-end-3 row-start-5 row-end-5 text-xs md:text-sm lg:text-base break-words w-full flex items-center">Warranty of the product is limited to manufacturing defects only.</p>
           <p className="col-start-3 col-end-3 row-start-6 row-end-6 text-xs md:text-sm lg:text-base break-words w-full flex items-center">The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.</p>
           <p className="col-start-3 col-end-3 row-start-7 row-end-7 text-xs md:text-sm lg:text-base break-words w-full flex items-center">3 Months</p>
-          <p className="col-start-3 col-end-3 row-start-8 row-end-8 text-xs md:text-sm lg:text-base break-words w-full flex items-center"><button className="-bg--clr-primary text-white h-11 px-4 hidden">Add To Cart</button></p>
+          <p className="col-start-3 col-end-3 row-start-8 row-end-8 text-xs md:text-sm lg:text-base break-words w-full flex items-center"><button className="-bg--clr-primary text-white h-11 px-4 ">Add To Cart</button></p>
           </div>
   
           {/* col 4 */}
