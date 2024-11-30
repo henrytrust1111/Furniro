@@ -6,7 +6,7 @@ const Warrantycomparison = () => {
   
           <div className="grid grid-rows-7 gap-2 border-r-2 w-full hyphenated">
            <p className="row-start-1 col-start-1 row-end-1 col-end-1 font-medium text-2xl "></p>
-           <p className="row-start-2 col-start-1 row-end-2 col-end-1 font-medium text-xl lg:text-2xl flex items-center w-11 sm:w-full"></p>
+           <p className="row-start-2 col-start-1 row-end-2 col-end-1 font-medium text-xl lg:text-2xl flex items-center sm:w-full"></p>
            <p className="col-start-1 col-end-1 row-start-3 row-end-3 text-xs md:text-sm lg:text-base break-words w-full flex items-center">Warranty Summary</p>
            <p className="col-start-1 col-end-1 row-start-4 row-end-4 text-xs md:text-sm lg:text-base break-words w-full flex items-center">Warranty Service</p>
            <p className="col-start-1 col-end-1 row-start-5 row-end-5 text-xs md:text-sm lg:text-base break-words w-full flex items-center">Covered in Warranty</p>
@@ -40,12 +40,12 @@ const Warrantycomparison = () => {
           {/* col 4 */}
   
           <div className="lg:grid grid-rows-7 hidden lg:invisible gap-2">
-          <p className="col-start-4 col-end-4 row-start-2 row-end-2"></p>
-          <p className="col-start-4 col-end-4 row-start-3 row-end-3">1 </p>
-          <p className="col-start-4 col-end-4 row-start-4 row-end-4"></p>
-          <p className="col-start-4 col-end-4 row-start-5 row-end-5">Solid </p>
-          <p className="col-start-4 col-end-4 row-start-6 row-end-6">L-shaped</p>
-          <p className="col-start-4 col-end-4 row-start-7 row-end-7">Fabric + Cotton</p>
+          <p className="col-start-4 col-end-4 row-start-2 row-end-2 break-words"></p>
+          <p className="col-start-4 col-end-4 row-start-3 row-end-3 break-words">1 </p>
+          <p className="col-start-4 col-end-4 row-start-4 row-end-4 break-words"></p>
+          <p className="col-start-4 col-end-4 row-start-5 row-end-5 break-words">Solid </p>
+          <p className="col-start-4 col-end-4 row-start-6 row-end-6 break-words">L-shaped</p>
+          <p className="col-start-4 col-end-4 row-start-7 row-end-7 break-words">Fabric + Cotton</p>
           {/* <p className="col-start-4 col-end-4 row-start-7 row-end-7 ">Bright Grey & Lion</p> */}
           </div>
         </div>
