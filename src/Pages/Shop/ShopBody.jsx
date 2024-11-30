@@ -73,6 +73,10 @@ const ShopBody = () => {
   const [filterBy, setFilterBy] = useState("all");
   const [productsPerPage, setProductsPerPage] = useState(8);
 
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat("en-US").format(number);
+  };
+
   useEffect(() => {
     const fetchuser = async () => {
       try {
@@ -225,7 +229,7 @@ const ShopBody = () => {
                   <div className="flex items-center space-x-2 justify-between">
                     {shopproduct.price && (
                       <span className="-text--clr-black-shade-v1 font-semibold">
-                        {shopproduct.price}
+                         ₦ {formatNumber(shopproduct?.discountedGeneralPrice)}
                       </span>
                     )}
                     <s className="text-xs">{shopproduct.deprecated}</s>
