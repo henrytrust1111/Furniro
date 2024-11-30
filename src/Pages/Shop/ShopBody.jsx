@@ -139,6 +139,13 @@ const ShopBody = () => {
     setCurrentPage(1);
   };
 
+  const handleCompare = (product) => {
+    const cat = data?.map((prod) =>
+      prod.category.categoryName === product.category.categoryName ? prod : null
+    );
+    return nav(`/comparison/${product._id}`, { state: { product } });
+  };
+
   if (loading) {
     return <ShopLoading />;
   }
@@ -239,7 +246,10 @@ const ShopBody = () => {
                       <div className="flex items-center gap-1 hover:-text--clr-primary">
                         <IoMdShare /> <span>Share</span>
                       </div>
-                      <div className="flex items-center gap-1 hover:-text--clr-primary">
+                      <div
+                        onClick={() => handleCompare(product)}
+                        className="flex items-center gap-1 hover:-text--clr-primary"
+                      >
                         <MdCompareArrows /> <span>Compare</span>
                       </div>
                       <div className="flex items-center gap-1 hover:-text--clr-primary">
