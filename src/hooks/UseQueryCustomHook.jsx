@@ -3,12 +3,10 @@ import { useQuery, useMutation, useQueryClient } from "react-query";
 import { request } from "../utils/axios.utils";
 
 const getData = () => {
-  // return axios.get("http://localhost:4000/posts");
   return request({ url: "/get-products" });
 };
 
 const addPost = (post) => {
-  // return axios.post("http://localhost:4000/posts", post);
   return request({ url: "/posts", method: "post", data: post });
 };
 
