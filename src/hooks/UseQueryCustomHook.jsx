@@ -10,6 +10,11 @@ const addPost = (post) => {
   return request({ url: "/posts", method: "post", data: post });
 };
 
+const addToCart = ({ userId, productId, size }) => {
+  const url = `/add-to-cart/${userId}/${productId}`;
+  return request({ url, method: "post", data: { size } });
+};
+
 const UseQueryCustomHook = (onError, onSuccess) => {
   return useQuery("rq-endpoint", getData, {
     //   cacheTime: 5000,
