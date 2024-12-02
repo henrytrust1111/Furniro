@@ -17,8 +17,7 @@ const Products = ({ Title }) => {
   const [visibleProducts, setVisibleProducts] = useState(4);
   const [error1, setError] = useState(null);
   const nav = useNavigate();
-
-  useAddToCart();
+  const {mutate} = useAddToCart();
 
   const showMoreProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 4);
