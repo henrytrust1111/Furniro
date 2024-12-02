@@ -80,5 +80,5 @@ export const useAddPostData = () => {
 
 
 export const useAddToCart = ()=>{
-  return useMutation()
+  return useMutation(addToCart)
 }
