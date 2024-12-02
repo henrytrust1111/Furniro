@@ -16,9 +16,10 @@ const Products = ({ Title }) => {
   const [visibleProducts, setVisibleProducts] = useState(4);
   const nav = useNavigate();
   const { mutate: AddToCart } = useAddToCart();
+  const userId = localStorage.getItem('userId')
   
 
-  const handleAddToCart = () => {};
+  const handleAddToCart = (product) => {};
 
   const showMoreProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 4);
