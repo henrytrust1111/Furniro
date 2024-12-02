@@ -12,12 +12,8 @@ import { useSelector } from "react-redux";
 import Context, { MyContext } from "../context/Context";
 
 const Products = ({ Title }) => {
-  const {isLoading, noProducts, refetch, error } = useContext(MyContext);
-  
+  const { isLoading, noProducts, refetch, error } = useContext(MyContext);
   const data = useSelector((state) => state?.persistedReducer?.products);
-  
-  
-
   const [visibleProducts, setVisibleProducts] = useState(4);
   const [error1, setError] = useState(null);
   const nav = useNavigate();
@@ -31,15 +27,15 @@ const Products = ({ Title }) => {
   };
 
   const handleCompare = (product) => {
-    const cat = data?.map(prod => prod.category.categoryName === product.category.categoryName ? prod : null)  
+    const cat = data?.map((prod) =>
+      prod.category.categoryName === product.category.categoryName ? prod : null
+    );
     return nav(`/comparison/${product._id}`, { state: { product } });
   };
 
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
-
-  
 
   if (isLoading && !data) {
     return (
@@ -78,7 +74,6 @@ const Products = ({ Title }) => {
       </section>
     );
   }
-
 
   return (
     <section className="py-16 font-[poppins]">
