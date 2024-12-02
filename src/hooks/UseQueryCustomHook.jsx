@@ -79,4 +79,6 @@ export const useAddPostData = () => {
 };
 
 
-export const useAddToCart = ()=>{}
+export const useAddToCart = ()=>{
+  return
+}
