@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import logo from "/icons/logo.svg";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
 import { BiRefresh } from "react-icons/bi";
 import UseQueryCustomHook, { useAddToCart } from "../hooks/UseQueryCustomHook";
 import { useSelector } from "react-redux";
@@ -15,7 +14,6 @@ const Products = ({ Title }) => {
   const { isLoading, noProducts, refetch, error } = useContext(MyContext);
   const data = useSelector((state) => state?.persistedReducer?.products);
   const [visibleProducts, setVisibleProducts] = useState(4);
-  const [error1, setError] = useState(null);
   const nav = useNavigate();
   const {mutate} = useAddToCart();
 
