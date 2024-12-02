@@ -18,8 +18,13 @@ const Products = ({ Title }) => {
   const { mutate: AddToCart } = useAddToCart();
   const userId = localStorage.getItem('userId')
   
+  
 
-  const handleAddToCart = (product) => {};
+  const handleAddToCart = (product) => {
+    if (!userId){
+      toast.error('please login to add to cart')
+    }
+  };
 
   const showMoreProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 4);
