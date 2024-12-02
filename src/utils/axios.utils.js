@@ -4,7 +4,10 @@ import axios from "axios";
 const client = axios.create({ baseURL: "https://funiro-furnitures.onrender.com" });
 
 export const request = ({ ...options }) => {
-  client.defaults.headers.common.Authorization = `Bearer token`;
+  const token = localStorage.getItem("token");
+   console.log(token);
+   
+  client.defaults.headers.common.Authorization = `Bearer ${token}`;
   const onSuccess = (response) => response;
   const onError = (error) => {
     // Additional catch errors and additional logging in here
