@@ -22,7 +22,8 @@ const Products = ({ Title }) => {
     if (!userId) {
       toast.error("please login to add to cart");
     }
-    console.log(product.id);
+    const productId = product._id
+    const req_body = {product}
   };
 
   const showMoreProducts = () => {
