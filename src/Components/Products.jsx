@@ -24,6 +24,7 @@ const Products = ({ Title }) => {
     if (!userId){
       toast.error('please login to add to cart')
     }
+
   };
 
   const showMoreProducts = () => {
@@ -141,7 +142,9 @@ const Products = ({ Title }) => {
                       <MdCompareArrows className="text-base" />{" "}
                       <span className="text-base">Compare</span>
                     </div>
-                    <div className="flex items-center gap-1 hover:-text--clr-primary text-base">
+                    <div
+                    onClick={()=>handleAddToCart()}
+                     className="flex items-center gap-1 hover:-text--clr-primary text-base">
                       <IoMdCart className="text-base" />{" "}
                       <span className="text-base">Cart</span>
                     </div>
