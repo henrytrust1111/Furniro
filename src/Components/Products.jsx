@@ -16,15 +16,13 @@ const Products = ({ Title }) => {
   const [visibleProducts, setVisibleProducts] = useState(4);
   const nav = useNavigate();
   const { mutate: AddToCart } = useAddToCart();
-  const userId = localStorage.getItem('userId')
-  
-  
+  const userId = localStorage.getItem("userId");
 
   const handleAddToCart = (product) => {
-    if (!userId){
-      toast.error('please login to add to cart')
+    if (!userId) {
+      toast.error("please login to add to cart");
     }
-
+    console.log(product.id);
   };
 
   const showMoreProducts = () => {
@@ -143,8 +141,9 @@ const Products = ({ Title }) => {
                       <span className="text-base">Compare</span>
                     </div>
                     <div
-                    onClick={()=>handleAddToCart(product)}
-                     className="flex items-center gap-1 hover:-text--clr-primary text-base">
+                      onClick={() => handleAddToCart(product)}
+                      className="flex items-center gap-1 hover:-text--clr-primary text-base"
+                    >
                       <IoMdCart className="text-base" />{" "}
                       <span className="text-base">Cart</span>
                     </div>
