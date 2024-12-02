@@ -24,7 +24,8 @@ const Products = ({ Title }) => {
     }
     const productId = product._id;
     const size = product.sizes;
-    const req_body = { userId, productId, size };
+    const reqBody = { userId, productId, size };
+    return AddToCart(reqBody);
   };
 
   const showMoreProducts = () => {
