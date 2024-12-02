@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { BiRefresh } from "react-icons/bi";
-import UseQueryCustomHook from "../hooks/UseQueryCustomHook";
+import UseQueryCustomHook, { useAddToCart } from "../hooks/UseQueryCustomHook";
 import { useSelector } from "react-redux";
 import Context, { MyContext } from "../context/Context";
 
@@ -17,6 +17,8 @@ const Products = ({ Title }) => {
   const [visibleProducts, setVisibleProducts] = useState(4);
   const [error1, setError] = useState(null);
   const nav = useNavigate();
+
+  useAddToCart();
 
   const showMoreProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 4);
