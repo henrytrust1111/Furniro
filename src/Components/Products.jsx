@@ -143,7 +143,7 @@ const Products = ({ Title }) => {
                       <span className="text-base">Compare</span>
                     </div>
                     <div
-                    onClick={()=>handleAddToCart()}
+                    onClick={()=>handleAddToCart(product)}
                      className="flex items-center gap-1 hover:-text--clr-primary text-base">
                       <IoMdCart className="text-base" />{" "}
                       <span className="text-base">Cart</span>
