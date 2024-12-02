@@ -22,9 +22,6 @@ const Products = ({ Title }) => {
     if (!userId) {
       toast.error("please login to add to cart");
     }
-    console.log(product);
-    console.log(product.sizes);
-
     const productId = product._id;
     const size = product.sizes;
     const req_body = { userId, productId, size };
