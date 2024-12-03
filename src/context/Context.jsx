@@ -26,7 +26,7 @@ const Context = ({ children }) => {
   };
 
   const onError = (error) => {
-    toast.error("An Error occurred", error);
+    console.log("An Error occurred", error);
   };
   const { isLoading, data, isError, error, isFetching, refetch, loading } =
     UseQueryCustomHook(onError, onSuccess);  
