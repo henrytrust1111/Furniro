@@ -39,6 +39,25 @@ const UseQueryCustomHook = (onError, onSuccess) => {
 };
 
 export default UseQueryCustomHook;
+export const useViewCart = (onError, onSuccess) => {
+  return useQuery("rq-endpoint", getData, {
+    //   cacheTime: 5000,
+    // The Default staleTime is zero seconds && and the default cacheTime is 5minutes
+    // staleTime: 30000,
+    // refetchOnMount: true,
+    // refetchOnWindowFocus: 'always',
+    // refetchInterval: 2000,
+    // refetchIntervalInBackground: true,
+    //   enabled: false,
+    onSuccess,
+    onError,
+    select: (data) => {
+      const transformData = data?.data?.data.map((e) => e);
+      return transformData;
+    },
+  });
+};
+
 
 export const useAddToCart = (onSuccess) => {
   return useMutation(addToCart, { onSuccess });

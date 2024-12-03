@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 import Context, { MyContext } from "../context/Context";
 
 const onSuccess = (data) => {
-  toast.success(data.data.message);
+  toast.success(data?.data?.message);
 };
 const Products = ({ Title }) => {
   const { isLoading, noProducts, refetch, error } = useContext(MyContext);
