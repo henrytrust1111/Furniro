@@ -11,10 +11,14 @@ const getData = () => {
 // };
 
 const addToCart = ({ userId, productId, size }) => {
-  console.log( userId, productId, size);
-  
+  console.log(userId, productId, size);
+
   const url = `/add-to-cart/${userId}/${productId}`;
-  return request({ url, method: "post", data : size && size.length > 0 ? {size} : {}  });
+  return request({
+    url,
+    method: "post",
+    data: size && size.length > 0 ? { size } : {},
+  });
 };
 
 const UseQueryCustomHook = (onError, onSuccess) => {
@@ -32,7 +36,7 @@ const UseQueryCustomHook = (onError, onSuccess) => {
     select: (data) => {
       // console.log(data.data.data);
 
-      const transformData = data?.data?.data.map(e => e)
+      const transformData = data?.data?.data.map((e) => e);
       return transformData;
     },
   });
@@ -40,6 +44,6 @@ const UseQueryCustomHook = (onError, onSuccess) => {
 
 export default UseQueryCustomHook;
 
-export const useAddToCart = ()=>{
-  return useMutation(addToCart)
-}
+export const useAddToCart = () => {
+  return useMutation(addToCart);
+};
