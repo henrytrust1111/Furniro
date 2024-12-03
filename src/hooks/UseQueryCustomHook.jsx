@@ -42,6 +42,8 @@ const UseQueryCustomHook = (onError, onSuccess) => {
 
 export default UseQueryCustomHook;
 
-export const useAddToCart = () => {
-  return useMutation(addToCart);
+export const useAddToCart = (onSuccess) => {
+  return useMutation(addToCart,{
+    onSuccess,
+  });
 };

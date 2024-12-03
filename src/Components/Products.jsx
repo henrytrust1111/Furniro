@@ -15,7 +15,7 @@ const Products = ({ Title }) => {
   const data = useSelector((state) => state?.persistedReducer?.products);
   const [visibleProducts, setVisibleProducts] = useState(4);
   const nav = useNavigate();
-  const { mutate: AddToCart } = useAddToCart();
+  const { mutate: AddToCart, onSuccess } = useAddToCart();
   const userId = localStorage.getItem("userId");
 
   const handleAddToCart = (product) => {
