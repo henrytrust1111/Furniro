@@ -11,7 +11,6 @@ import { useSelector } from "react-redux";
 import Context, { MyContext } from "../context/Context";
 
 const onSuccess = (data) => {
-  console.log("added to cart successfully", data);
   toast.success(data.data.message);
 };
 const Products = ({ Title }) => {
