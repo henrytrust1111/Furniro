@@ -15,7 +15,7 @@ const Products = ({ Title }) => {
   const data = useSelector((state) => state?.persistedReducer?.products);
   const [visibleProducts, setVisibleProducts] = useState(4);
   const nav = useNavigate();
-  const { mutate: AddToCart, onSuccess } = useAddToCart();
+  const { mutate: AddToCart } = useAddToCart();
   const userId = localStorage.getItem("userId");
 
   const handleAddToCart = (product) => {
@@ -27,6 +27,7 @@ const Products = ({ Title }) => {
     const reqBody = { userId, productId, size };
     return AddToCart(reqBody);
   };
+
 
   const showMoreProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 4);

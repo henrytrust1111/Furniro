@@ -11,8 +11,6 @@ const getData = () => {
 // };
 
 const addToCart = ({ userId, productId, size }) => {
-  console.log(userId, productId, size);
-
   const url = `/add-to-cart/${userId}/${productId}`;
   return request({
     url,
@@ -42,8 +40,10 @@ const UseQueryCustomHook = (onError, onSuccess) => {
 
 export default UseQueryCustomHook;
 
-export const useAddToCart = (onSuccess) => {
-  return useMutation(addToCart,{
-    onSuccess,
+export const useAddToCart = () => {
+  return useMutation(addToCart, {
+    onSuccess: (data) => {
+      console.log(data);
+    },
   });
 };
