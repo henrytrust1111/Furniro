@@ -14,7 +14,7 @@ const addToCart = ({ userId, productId, size }) => {
   console.log( userId, productId, size);
   
   const url = `/add-to-cart/${userId}/${productId}`;
-  return request({ url, method: "post", data : ""  });
+  return request({ url, method: "post", data : size && size.length > 0 ? {size} : {}  });
 };
 
 const UseQueryCustomHook = (onError, onSuccess) => {
