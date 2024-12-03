@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { createContext } from "react";
-import UseQueryCustomHook from "../hooks/UseQueryCustomHook";
+import UseQueryCustomHook, { useViewCart } from "../hooks/UseQueryCustomHook";
 import { useDispatch } from "react-redux";
 import { DB } from "../Global/Features";
 
@@ -29,7 +29,10 @@ const Context = ({ children }) => {
     toast.error("An Error occurred", error);
   };
   const { isLoading, data, isError, error, isFetching, refetch, loading } =
-    UseQueryCustomHook(onError, onSuccess);    
+    UseQueryCustomHook(onError, onSuccess);  
+
+  const { isLoading:isLoadingCart, data:cart } =
+    useViewCart(onError, onSuccess);    
 
   return (
     <MyContext.Provider value={{ isLoading, refetch, error, noProducts, data }}>
