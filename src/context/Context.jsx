@@ -28,7 +28,7 @@ const Context = ({ children }) => {
   const onError = (error) => {
     console.log("An Error occurred", error);
   };
-  const { isLoading, data, isError, error, isFetching, refetch, loading } =
+  const { isLoading, data, isError, error, isFetching, refetch, } =
     UseQueryCustomHook(onError, onSuccess);  
 
   const { isLoading:isLoadingCart, data:cart } =
