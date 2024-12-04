@@ -29,7 +29,7 @@ const Context = ({ children }) => {
     onSuccess
   );
 
-  console.log(data);
+  console.log(isLoadingCart);
 
   return (
     <MyContext.Provider

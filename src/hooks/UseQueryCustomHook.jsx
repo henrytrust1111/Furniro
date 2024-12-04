@@ -48,7 +48,8 @@ export const useViewCart = (onError, onSuccess) => {
     onSuccess,
     onError,
     select: (data) => {
-      console.log(data);
+      console.log(data.data.data);
+      
 
       // const transformData = data?.data?.data.map((e) => e);
       // return transformData;
