@@ -30,7 +30,6 @@ const Context = ({ children }) => {
   );
 
   console.log(data);
-  
 
   return (
     <MyContext.Provider
