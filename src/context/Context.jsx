@@ -35,7 +35,7 @@ const Context = ({ children }) => {
     useViewCart(onError, onSuccess);    
 
   return (
-    <MyContext.Provider value={{ isLoading, refetch, error, noProducts, data }}>
+    <MyContext.Provider value={{ isLoading, refetch, error, noProducts, data, cart }}>
       {children}
     </MyContext.Provider>
   );
