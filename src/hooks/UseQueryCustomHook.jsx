@@ -49,8 +49,7 @@ export const useViewCart = (onError, onSuccess) => {
     onError,
     select: (data) => {
       const cartItems = data?.data?.data
-      return cartItems
-
+      return cartItems;
     },
   });
 };
