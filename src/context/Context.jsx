@@ -29,6 +29,9 @@ const Context = ({ children }) => {
     onSuccess
   );
 
+  console.log(data);
+  
+
   return (
     <MyContext.Provider
       value={{
