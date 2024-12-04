@@ -9,7 +9,6 @@ const Context = ({ children }) => {
   const dispatch = useDispatch();
   const [noProducts, setNoProducts] = useState();
 
-
   const onSuccess = (data) => {
     if (data?.length === 0) {
       setNoProducts(true);
