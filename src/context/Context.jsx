@@ -21,7 +21,7 @@ const Context = ({ children }) => {
       setNoProducts(true);
     } else {
       setNoProducts(false);
-      dispatch(DB(data)); 
+      dispatch(DB(data));
     }
   };
 
@@ -29,13 +29,25 @@ const Context = ({ children }) => {
     console.log("An Error occurred", error);
   };
   const { isLoading, data, isError, error, isFetching, refetch } =
-    UseQueryCustomHook(onError, onSuccess);  
+    UseQueryCustomHook(onError, onSuccess);
 
-  const { isLoading:isLoadingCart, data:cart } =
-    useViewCart(onError, onSuccess);    
+  const { isLoading: isLoadingCart, data: cart } = useViewCart(
+    onError,
+    onSuccess
+  );
 
   return (
-    <MyContext.Provider value={{ isLoading, refetch, error, noProducts, data, cart, isLoadingCart }}>
+    <MyContext.Provider
+      value={{
+        isLoading,
+        refetch,
+        error,
+        noProducts,
+        data,
+        cart,
+        isLoadingCart,
+      }}
+    >
       {children}
     </MyContext.Provider>
   );
