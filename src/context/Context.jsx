@@ -18,6 +18,10 @@ const Context = ({ children }) => {
     }
   };
 
+  const onSuccessCart = (data) => {
+    console.log(data);
+  };
+
   const onError = (error) => {
     console.log("An Error occurred", error);
   };
@@ -26,10 +30,8 @@ const Context = ({ children }) => {
 
   const { isLoading: isLoadingCart, data: cart } = useViewCart(
     onError,
-    onSuccess
+    onSuccessCart
   );
-
-  console.log(isLoadingCart);
 
   return (
     <MyContext.Provider
