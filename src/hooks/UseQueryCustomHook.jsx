@@ -50,7 +50,7 @@ export const useViewCart = (onError, onSuccess) => {
     select: (data) => {
       console.log(data.data.data);
       const cartItems = data?.data?.data
-      
+      return cartItems
       // const transformData = data?.data?.data.map((e) => e);
       // return transformData;
     },
