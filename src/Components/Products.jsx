@@ -179,5 +179,4 @@ const Products = ({ Title }) => {
     </section>
   );
 };
-
 export default Products;
