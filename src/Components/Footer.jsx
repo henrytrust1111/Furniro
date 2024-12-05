@@ -5,7 +5,7 @@ import Services from "./Services";
 const Footer = () => {
   return (
     <>
-    <Services />
+      <Services />
       <footer className="bg-white py-8 lg:px-9 border-t-[1px] border-[#D9D9D9]">
         <div className="container mx-auto px-6 lg:!px-[10px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
           <div>
@@ -68,17 +68,26 @@ const Footer = () => {
                 </a>
               </li>
               <li className="mb-2">
-                <a href="/#/return" className="text-gray-600 hover:!-text--clr-primary">
+                <a
+                  href="/#/return"
+                  className="text-gray-600 hover:!-text--clr-primary"
+                >
                   Returns
                 </a>
               </li>
               <li className="mb-2">
-                <a href="/#/track" className="text-gray-600 hover:!-text--clr-primary">
+                <a
+                  href="/#/track"
+                  className="text-gray-600 hover:!-text--clr-primary"
+                >
                   Track
                 </a>
               </li>
               <li className="mb-2">
-                <a href="/#/privacy-policy" className="text-gray-600 hover:!-text--clr-primary">
+                <a
+                  href="/#/privacy-policy"
+                  className="text-gray-600 hover:!-text--clr-primary"
+                >
                   Privacy Policies
                 </a>
               </li>
