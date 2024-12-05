@@ -46,9 +46,7 @@ const Breadcrumbs = () => {
       <div>
         <div className="w-[1px] h-[18px] bg-[#141414]"></div>
       </div>
-      {product.length > 0 && (
-        <p className="text-xs">{product[0].itemName}</p>
-      )}
+      {product.length > 0 && <p className="text-xs">{product[0].itemName}</p>}
     </section>
   );
 };
