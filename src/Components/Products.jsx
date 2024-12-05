@@ -19,6 +19,7 @@ const Products = ({ Title }) => {
   const [visibleProducts, setVisibleProducts] = useState(4);
   const nav = useNavigate();
   const { mutate: AddToCart } = useAddToCart(onSuccess);
+  
   const userId = localStorage.getItem("userId");
 
   const handleAddToCart = (product) => {
