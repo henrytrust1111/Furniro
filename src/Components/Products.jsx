@@ -15,7 +15,6 @@ const onSuccess = (data) => {
 };
 const Products = ({ Title }) => {
   const { isLoading, noProducts, refetch, error } = useContext(MyContext);
-  
   const data = useSelector((state) => state?.persistedReducer?.products);
   const [visibleProducts, setVisibleProducts] = useState(4);
   const nav = useNavigate();
