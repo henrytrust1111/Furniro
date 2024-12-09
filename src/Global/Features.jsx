@@ -18,8 +18,12 @@ const ProductState = createSlice({
       state.blog = payload;
       // console.log(payload);
     },
+    cart: (state, { payload }) => {
+      state.blog = payload;
+      // console.log(payload);
+    },
   },
 });
 
-export const { DB, blog, getAllStates, userProfile } = ProductState.actions;
+export const { DB, blog, getAllStates, userProfile, cart } = ProductState.actions;
 export default ProductState.reducer;
