@@ -2,24 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-.hyphenated {
-  hyphens: auto !important;
-  word-wrap: break-word;
-}
 
-/* Custom scrollbar styles */
+.hyphenated {
+    hyphens: auto !important;
+    word-wrap: break-word;
+  }
+
+  /* Custom scrollbar styles */
 @layer utilities {
-  .scrollbar-green::-webkit-scrollbar {
+  .scrollbar-custom::-webkit-scrollbar {
     width: 8px;
   }
-  .scrollbar-green::-webkit-scrollbar-track {
+  .scrollbar-custom::-webkit-scrollbar-track {
     background: #f1f1f1;
   }
-  .scrollbar-green::-webkit-scrollbar-thumb {
-    background: #32cd32; /* Green scrollbar */
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: #b08a30; /* Green scrollbar */
     border-radius: 4px;
   }
-  .scrollbar-green::-webkit-scrollbar-thumb:hover {
-    background: #228b22; /* Darker green on hover */
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: #c09225; /* Darker green on hover */
   }
 }
+  

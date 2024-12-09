@@ -9,9 +9,9 @@ const Maincart = () => {
     <div className="p-6 md:p-10 lg:p-16">
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Product Details Section */}
-        <div className="lg:col-span-2 h-64 overflow-auto -scrollba">
+        <div className="lg:col-span-2 h-64 overflow-auto scrollbar-custom">
           <table className="w-full text-left border-collapse">
-            <thead>
+            <thead className="fixed">
               <tr className="-bg--clr-primar-light-v3 text-gray-700">
                 <th className="p-4">Product</th>
                 <th className="p-4">Price</th>
