@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   products: [],
-  Cart: [],
+  cart: [],
   blog: [],
 };
 
@@ -18,12 +18,12 @@ const ProductState = createSlice({
       state.blog = payload;
       // console.log(payload);
     },
-    cart: (state, { payload }) => {
-      state.blog = payload;
+    Cart: (state, { payload }) => {
+      state.cart = payload;
       // console.log(payload);
     },
   },
 });
 
-export const { DB, blog, getAllStates, userProfile, cart } = ProductState.actions;
+export const { DB, blog, getAllStates, userProfile, Cart } = ProductState.actions;
 export default ProductState.reducer;
