@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createContext } from "react";
 import UseQueryCustomHook, { useViewCart } from "../hooks/UseQueryCustomHook";
 import { useDispatch } from "react-redux";
-import { DB } from "../Global/Features";
+import { DB, cart } from "../Global/Features";
 
 export const MyContext = createContext(null);
 const Context = ({ children }) => {
@@ -20,6 +20,7 @@ const Context = ({ children }) => {
 
   const onSuccessCart = (data) => {
     console.log(data);
+    dispatch(cart(data));
   };
 
   const onError = (error) => {
