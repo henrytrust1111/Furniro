@@ -12,7 +12,7 @@ const Maincart = () => {
         <div className="lg:col-span-2">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-beige-light text-gray-700">
+              <tr className="-bg--clr-primar-light-v3 text-gray-700">
                 <th className="p-4">Product</th>
                 <th className="p-4">Price</th>
                 <th className="p-4">Quantity</th>
@@ -42,7 +42,7 @@ const Maincart = () => {
                   </td>
                   <td className="p-4 text-gray-500">Rs. {item.price * item.quantity}</td>
                   <td className="p-4 text-center text-gold cursor-pointer">
-                    <FaTrashAlt />
+                    <FaTrashAlt className="-text--clr-primary" />
                   </td>
                 </tr>
               ))}
@@ -51,7 +51,7 @@ const Maincart = () => {
         </div>
 
         {/* Cart Totals Section */}
-        <div className="bg-beige-light p-6 rounded-lg shadow-md">
+        <div className="-bg--clr-primar-light-v3 p-6 rounded-lg shadow-md">
           <h2 className="text-lg font-bold text-gray-800 mb-4">Cart Totals</h2>
           <div className="flex justify-between items-center mb-2">
             <span className="text-gray-500">Subtotal</span>
