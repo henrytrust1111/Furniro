@@ -6,7 +6,7 @@ import logo from "/icons/logo.svg";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BiRefresh } from "react-icons/bi";
-import UseQueryCustomHook, { useAddToCart } from "../hooks/UseQueryCustomHook";
+import { useAddToCart } from "../hooks/UseQueryCustomHook";
 import { useSelector } from "react-redux";
 import { MyContext } from "../context/Context";
 
