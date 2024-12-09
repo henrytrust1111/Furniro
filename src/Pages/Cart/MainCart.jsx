@@ -1,4 +1,3 @@
-import React from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
