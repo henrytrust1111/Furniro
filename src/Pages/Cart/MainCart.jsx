@@ -9,24 +9,11 @@ import { useSelector } from "react-redux";
 const Maincart = () => {
   const [product, setProduct] = useState([]);
   const { productID } = useParams();
-  const data = useSelector((state) => state?.persistedReducer?.products);
+  const data = useSelector((state) => state?.persistedReducer?.cart);
+  console.log(data);
+  
 
-  const fetchProducts = async () => {
-    try {
-      const response = await axios.get(
-        `https://funiro-furnitures.onrender.com/get-one-product/${productID}`
-      );
-      setProduct(response.data);
-      // console.log(response.data[0].images);
-    } catch (err) {
-      toast.error(err.message);
-    }
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, [productID]);
-
+  
   return (
     <>
       <div className="w-full mb-14 mt-14">
