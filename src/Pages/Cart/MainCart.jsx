@@ -4,10 +4,13 @@ import { useParams } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { useSelector } from "react-redux";
+
 
 const Maincart = () => {
     const [product, setProduct] = useState([]);
   const { productID } = useParams();
+  const data = useSelector((state) => state?.persistedReducer?.products);
 
   const fetchProducts = async () => {
     try {
