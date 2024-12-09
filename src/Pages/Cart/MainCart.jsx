@@ -25,8 +25,8 @@ const Maincart = () => {
                 <tr key={index} className="border-b">
                   <td className="p-4 flex items-center">
                     <img
-                      src={item.image}
-                      alt={item.name}
+                     src={item.images[0].url}
+                     alt={item.itemName}
                       className="w-16 h-16 object-cover rounded-lg bg-beige-light"
                     />
                     <span className="ml-4 text-gray-700">{item.name}</span>
