@@ -11,7 +11,7 @@ const Maincart = () => {
         {/* Product Details Section */}
         <div className="lg:col-span-2 h-64 overflow-auto scrollbar-custom">
           <table className="w-full text-left border-collapse">
-            <thead className="fixed">
+            <thead className="sticky w-full">
               <tr className="-bg--clr-primar-light-v3 text-gray-700">
                 <th className="p-4">Product</th>
                 <th className="p-4">Price</th>
