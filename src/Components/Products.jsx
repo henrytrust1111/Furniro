@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { BiRefresh } from "react-icons/bi";
 import UseQueryCustomHook, { useAddToCart } from "../hooks/UseQueryCustomHook";
 import { useSelector } from "react-redux";
-import Context, { MyContext } from "../context/Context";
+import { MyContext } from "../context/Context";
 
 const onSuccess = (data) => {
   toast.success(data?.data?.message);
