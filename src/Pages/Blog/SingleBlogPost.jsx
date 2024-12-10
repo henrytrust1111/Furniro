@@ -10,7 +10,7 @@ import RecentPost from './RecentPost';
 const SingleBlogPost = () => {
   const location = useLocation();
   const { post } = location.state;
-  console.log(post);
+  // console.log(post);
   const formattedDate = (dateString) => {
     const date = new Date(dateString);
 

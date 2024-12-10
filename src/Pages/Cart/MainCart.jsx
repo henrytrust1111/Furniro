@@ -14,7 +14,9 @@ const Maincart = () => {
 
   // Scroll function
   const moveScroll = () => {
-    const scroll = window.scrollY;
+    const scroll = tableRef.current;
+    console.log(scroll);
+    
     const anchorTop = tableRef.current?.getBoundingClientRect().top + window.scrollY;
     const anchorBottom = document.body.offsetHeight; // Assumes the bottom is the end of the page
 
