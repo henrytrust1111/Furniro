@@ -30,8 +30,8 @@ const Maincart = () => {
                 <tr key={index} className="border-b">
                   <td className="p-4 flex items-center">
                     <img
-                      // src={item?.images[0].url}
-                      src={"https://lazesoftware.com/img/en/tool/dummyimg/default_480x320.png"}
+                      src={item?.productImage[0].url}
+                      // src={"https://lazesoftware.com/img/en/tool/dummyimg/default_480x320.png"}
                       alt={""}
                       className="w-16 h-16 object-cover rounded-lg bg-beige-light"
                     />
