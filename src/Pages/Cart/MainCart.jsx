@@ -35,7 +35,7 @@ const Maincart = () => {
                       alt={""}
                       className="w-16 h-16 object-cover rounded-lg bg-beige-light"
                     />
-                    <span className="ml-4 text-gray-700">{item?.name}</span>
+                    <span className="ml-4 text-gray-700">{item?.productName}</span>
                   </td>
                   <td className="p-4 text-gray-500">
                     ₦ {formatNumber(item?.price)}
@@ -49,7 +49,7 @@ const Maincart = () => {
                     />
                   </td>
                   <td className="p-4 text-gray-500">
-                    ₦ {formatNumber(item?.price * item?.quantity)}
+                    ₦ {formatNumber(item?.sub_total)}
                   </td>
                   <td className="p-4 text-center text-gold cursor-pointer">
                     <FaTrashAlt className="-text--clr-primary" />
@@ -67,7 +67,7 @@ const Maincart = () => {
             <span className="text-gray-500">Subtotal</span>
             <span className="text-gray-700">
               ₦{" "}
-              {products?.reduce(
+              {products?.products.reduce(
                 (acc, item) => acc + item?.price * item?.quantity,
                 0
               )}
@@ -77,7 +77,7 @@ const Maincart = () => {
             <span className="text-lg font-bold text-gray-800">Total</span>
             <span className="text-lg font-bold text-gold">
               ₦{" "}
-              {products?.reduce(
+              {products?.products?.reduce(
                 (acc, item) => acc + item?.price * item?.quantity,
                 0
               )}
