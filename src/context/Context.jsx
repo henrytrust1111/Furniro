@@ -20,7 +20,7 @@ const Context = ({ children }) => {
   };
 
   const onSuccessCart = (data) => {
-    // console.log(data);
+    console.log(data);
     dispatch(Cart(data));
   };
 

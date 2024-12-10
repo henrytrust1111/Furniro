@@ -5,7 +5,8 @@ import { request } from "../utils/axios.utils";
 const getData = () => {
   return request({ url: "/get-products" });
 };
-const getCart = (userId) => {
+const getCart = () => {
+  const userId = localStorage.getItem("userId");
   return request({ url: `/view-cart/${userId}` });
 };
 
