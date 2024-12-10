@@ -13,49 +13,14 @@ const Maincart = () => {
   };
 
   // Scroll function
-  const moveScroll = () => {
-    const scroll = tableRef.current;
-    console.log(scroll);
+ useEffect(() => {
+   console.log(tableRef.current.onscroll);
+  window.addEventListener("scroll", ()=>{
+    console.log(window.scrollY);
     
-    const anchorTop = tableRef.current?.getBoundingClientRect().top + window.scrollY;
-    const anchorBottom = document.body.offsetHeight; // Assumes the bottom is the end of the page
-
-    if (scroll > anchorTop && scroll < anchorBottom) {
-      if (!cloneRef.current) {
-        // Create the clone table if it doesn't exist
-        const originalTable = tableRef.current;
-        const cloneTable = originalTable.cloneNode(true);
-        cloneTable.setAttribute('id', 'clone');
-        cloneTable.style.position = 'fixed';
-        cloneTable.style.pointerEvents = 'none';
-        cloneTable.style.top = '0';
-        cloneTable.style.width = `${originalTable.offsetWidth}px`;
-        cloneTable.style.visibility = 'hidden';
-        cloneTable.querySelector('thead').style.visibility = 'visible';
-        cloneTable.querySelector('thead').style.pointerEvents = 'auto';
-
-        document.body.appendChild(cloneTable);
-        cloneRef.current = cloneTable;
-      }
-    } else {
-      if (cloneRef.current) {
-        // Remove the clone table if it exists
-        document.body.removeChild(cloneRef.current);
-        cloneRef.current = null;
-      }
-    }
-  };
-
-  // Attach scroll event listener
-  useEffect(() => {
-    window.addEventListener("scroll", moveScroll);
-
-    // Cleanup function to remove event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", moveScroll);
-    };
-  }, []);
-   
+  })
+ }, [])
+ 
 
   return (
     <div className="container p-6 md:p-10 lg:p-16">
