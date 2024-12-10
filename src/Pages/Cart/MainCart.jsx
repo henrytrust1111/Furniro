@@ -36,7 +36,9 @@ const Maincart = () => {
                     />
                     <span className="ml-4 text-gray-700">{item?.name}</span>
                   </td>
-                  <td className="p-4 text-gray-500">Rs. {item?.price}</td>
+                  <td className="p-4 text-gray-500">
+                    ₦ {formatNumber(item?.price)}
+                  </td>
                   <td className="p-4">
                     <input
                       type="number"
@@ -46,7 +48,7 @@ const Maincart = () => {
                     />
                   </td>
                   <td className="p-4 text-gray-500">
-                    Rs. {item?.price * item?.quantity}
+                    ₦ {formatNumber(item?.price * item?.quantity)}
                   </td>
                   <td className="p-4 text-center text-gold cursor-pointer">
                     <FaTrashAlt className="-text--clr-primary" />
@@ -63,7 +65,7 @@ const Maincart = () => {
           <div className="flex justify-between items-center mb-2">
             <span className="text-gray-500">Subtotal</span>
             <span className="text-gray-700">
-              Rs.{" "}
+              ₦{" "}
               {products?.reduce(
                 (acc, item) => acc + item?.price * item?.quantity,
                 0
@@ -73,7 +75,7 @@ const Maincart = () => {
           <div className="flex justify-between items-center mb-6">
             <span className="text-lg font-bold text-gray-800">Total</span>
             <span className="text-lg font-bold text-gold">
-              Rs.{" "}
+              ₦{" "}
               {products?.reduce(
                 (acc, item) => acc + item?.price * item?.quantity,
                 0
@@ -101,7 +103,7 @@ export default Maincart;
     </div>
     <div className="flex items-center gap-4">
       <div>Price:</div>
-      <p className="text-[#9F9F9F] text-sm">Rs.250,000.00</p>
+      <p className="text-[#9F9F9F] text-sm">₦250,000.00</p>
     </div>
     <div className="flex items-center gap-4">
       <div>Quantity:</div>
@@ -111,7 +113,7 @@ export default Maincart;
     </div>
     <div className="flex items-center gap-4">
       <div>Subtotal:</div>
-      <p className="text-[#000000] text-sm">Rs.250,000.00</p>
+      <p className="text-[#000000] text-sm">₦250,000.00</p>
     </div>
   </div>
   <div className=" lg:w-[60%] hidden lg:flex flex-col gap-6">
@@ -132,11 +134,11 @@ export default Maincart;
       {product.length > 0 && (
         <p className="text-xs">{product[0].itemName}</p>
       )}
-      <p className="text-[#9F9F9F] text-sm">Rs.250,000.00</p>
+      <p className="text-[#9F9F9F] text-sm">₦250,000.00</p>
       <p className="w-6 h-6 rounded-sm border-[0.5px] flex items-center justify-center text-sm border-[#9F9F9F] text-[#000000]">
         1
       </p>
-      <p className="text-[#000000] text-sm">Rs.250,000.00</p>
+      <p className="text-[#000000] text-sm">₦250,000.00</p>
       <p>
         <img src="/ant-design_delete-filled.png" alt="" />
       </p>
@@ -146,11 +148,11 @@ export default Maincart;
     <p className="text-[#000000]">Cart Totals</p>
     <div className="flex items-center gap-6">
       <p className="text-sm">Subtotal</p>
-      <p className="text-xs">Rs.250,000.00</p>
+      <p className="text-xs">₦250,000.00</p>
     </div>
     <div className="flex items-center gap-6">
       <p className="text-sm">Total</p>
-      <p className="text-sm -text--clr-primary">Rs.250,000.00</p>
+      <p className="text-sm -text--clr-primary">₦250,000.00</p>
     </div>
     <button className="text-[#000000] px-3 py-2 rounded-lg border-[0.5px] text-sm border-[#000000]">
       Check Out
