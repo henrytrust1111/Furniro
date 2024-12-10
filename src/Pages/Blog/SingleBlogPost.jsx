@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReuseableHero from '../../Components/ReuseableHero';
 import ScrollToTop from '../../Containers/ScrollToTop';
 import { FaUser, FaCalendarAlt, FaTag } from 'react-icons/fa';
-import { recentPosts } from './Blog'; 
+// import { recentPosts } from './Blog'; 
 import { useLocation } from 'react-router-dom';
-import axios from 'axios';
 import RecentPost from './RecentPost';
 
 const SingleBlogPost = () => {
