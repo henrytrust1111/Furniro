@@ -13,24 +13,6 @@ const Maincart = () => {
     return new Intl.NumberFormat("en-US").format(number);
   };
 
-  // Attach scroll event listener
-  useEffect(() => {
-    const tableElement = tableRef.current; // Get the actual DOM element from ref
-
-    if (!tableElement) return; // Ensure the element exists
-
-    const handleScroll = () => {
-      console.log('Table scrollY:', tableElement.scrollTop); // Log the current scroll position
-    };
-
-    tableElement.addEventListener('scroll', handleScroll); // Attach scroll event
-
-    // Clean up to avoid memory leaks
-    return () => {
-      tableElement.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
 
   return (
     <div className="container p-6 md:p-10 lg:p-16">
