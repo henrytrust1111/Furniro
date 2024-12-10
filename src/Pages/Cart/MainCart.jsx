@@ -4,6 +4,8 @@ import { FaTrashAlt } from "react-icons/fa";
 
 const Maincart = () => {
   const products = useSelector((state) => state?.persistedReducer?.cart);
+  console.log(products);
+  
 
   return (
     <div className="p-6 md:p-10 lg:p-16">
@@ -59,7 +61,7 @@ const Maincart = () => {
           </div>
           <div className="flex justify-between items-center mb-6">
             <span className="text-lg font-bold text-gray-800">Total</span>
-            <span className="text-lg font-bold text-gold">Rs. {products.reduce((acc, item) => acc + item.price * item.quantity, 0)}</span>
+            <span className="text-lg font-bold text-gold">Rs. {products?.reduce((acc, item) => acc + item?.price * item?.quantity, 0)}</span>
           </div>
           <button className="w-full py-3 text-white bg-gold rounded-lg hover:bg-gold-dark transition">
             Check Out
