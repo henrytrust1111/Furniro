@@ -5,8 +5,8 @@ import { request } from "../utils/axios.utils";
 const getData = () => {
   return request({ url: "/get-products" });
 };
-const getCart = () => {
-  return request({ url: "/get-products" });
+const getCart = (userId) => {
+  return request({ url: `/view-cart/${userId}` });
 };
 
 // const addPost = (post) => {
