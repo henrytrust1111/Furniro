@@ -27,16 +27,15 @@ const Context = ({ children }) => {
   const onError = (error) => {
     console.log("An Error occurred", error);
   };
-  const { isLoading, data, error, refetch } =
-    UseQueryCustomHook(onError, onSuccess);
+  const { isLoading, data, error, refetch } = UseQueryCustomHook(
+    onError,
+    onSuccess
+  );
 
   const { isLoading: isLoadingCart, data: cart } = useViewCart(
     onError,
     onSuccessCart
   );
-
-  console.log(isLoadingCart);
-  
 
   return (
     <MyContext.Provider
