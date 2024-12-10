@@ -62,7 +62,7 @@ const Maincart = () => {
 
         {/* Cart Totals Section */}
         <div className="-bg--clr-primar-light-v3 p-6 rounded-lg shadow-md">
-          <h2 className="text-lg font-bold text-gray-800 mb-4 text-center">Cart Totals</h2>
+          <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center">Cart Totals</h2>
           <div className="flex justify-between items-center mb-2">
             <span className="text-gray-500">Subtotal</span>
             <span className="text-gray-700">
@@ -83,7 +83,7 @@ const Maincart = () => {
               )}
             </span>
           </div>
-          <button className="w-full py-3 text-white bg-gold rounded-lg hover:bg-gold-dark transition">
+          <button className="w-full py-3 text-black border -border--clr-secondary rounded-lg transition">
             Check Out
           </button>
         </div>
