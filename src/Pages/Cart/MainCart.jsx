@@ -5,7 +5,10 @@ import { FaTrashAlt } from "react-icons/fa";
 const Maincart = () => {
   const products = useSelector((state) => state?.persistedReducer?.cart);
   console.log(products);
-  
+
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat("en-US").format(number);
+  };
 
   return (
     <div className="p-6 md:p-10 lg:p-16">
@@ -27,8 +30,8 @@ const Maincart = () => {
                 <tr key={index} className="border-b">
                   <td className="p-4 flex items-center">
                     <img
-                     src={item?.images[0].url}
-                     alt={item?.itemName}
+                      src={item?.images[0].url}
+                      alt={item?.itemName}
                       className="w-16 h-16 object-cover rounded-lg bg-beige-light"
                     />
                     <span className="ml-4 text-gray-700">{item?.name}</span>
@@ -42,7 +45,9 @@ const Maincart = () => {
                       className="w-12 px-2 py-1 border rounded-md"
                     />
                   </td>
-                  <td className="p-4 text-gray-500">Rs. {item?.price * item?.quantity}</td>
+                  <td className="p-4 text-gray-500">
+                    Rs. {item?.price * item?.quantity}
+                  </td>
                   <td className="p-4 text-center text-gold cursor-pointer">
                     <FaTrashAlt className="-text--clr-primary" />
                   </td>
@@ -57,11 +62,23 @@ const Maincart = () => {
           <h2 className="text-lg font-bold text-gray-800 mb-4">Cart Totals</h2>
           <div className="flex justify-between items-center mb-2">
             <span className="text-gray-500">Subtotal</span>
-            <span className="text-gray-700">Rs. {products?.reduce((acc, item) => acc + item?.price * item?.quantity, 0)}</span>
+            <span className="text-gray-700">
+              Rs.{" "}
+              {products?.reduce(
+                (acc, item) => acc + item?.price * item?.quantity,
+                0
+              )}
+            </span>
           </div>
           <div className="flex justify-between items-center mb-6">
             <span className="text-lg font-bold text-gray-800">Total</span>
-            <span className="text-lg font-bold text-gold">Rs. {products?.reduce((acc, item) => acc + item?.price * item?.quantity, 0)}</span>
+            <span className="text-lg font-bold text-gold">
+              Rs.{" "}
+              {products?.reduce(
+                (acc, item) => acc + item?.price * item?.quantity,
+                0
+              )}
+            </span>
           </div>
           <button className="w-full py-3 text-white bg-gold rounded-lg hover:bg-gold-dark transition">
             Check Out
@@ -74,9 +91,8 @@ const Maincart = () => {
 
 export default Maincart;
 
-
-
-{/* <div className="w-full mb-14 mt-14">
+{
+  /* <div className="w-full mb-14 mt-14">
 <div className="w-full lg:!px-32 px-8 flex flex-col lg:flex-row gap-14">
   <div className="flex flex-col gap-6 lg:hidden">
     <div className="flex items-center gap-2">
@@ -142,4 +158,5 @@ export default Maincart;
   </div>
 </div>
 <div></div>
-</div> */}
+</div> */
+}
