@@ -116,7 +116,7 @@ const Blog = () => {
   }, []);
 
   const generateCategories = (posts) => {
-    const categoryCounts = posts.reduce((acc, post) => {
+    const categoryCounts = posts?.reduce((acc, post) => {
       acc[post.category] = (acc[post.category] || 0) + 1;
       return acc;
     }, {});

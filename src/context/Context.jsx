@@ -35,6 +35,9 @@ const Context = ({ children }) => {
     onSuccessCart
   );
 
+  console.log(isLoadingCart);
+  
+
   return (
     <MyContext.Provider
       value={{

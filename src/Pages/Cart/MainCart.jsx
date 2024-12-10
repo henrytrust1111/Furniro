@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { FaTrashAlt } from "react-icons/fa";
 
 const Maincart = () => {
   const products = useSelector((state) => state?.persistedReducer?.cart);
-  const tableRef = useRef(null); // Reference for the main table
-  const cloneRef = useRef(null); // Reference for the clone table
+  const tableRef = useRef(null);
+  const { isLoadingCart } = useContext(MyContext);
 
   // Format number function
   const formatNumber = (number) => {
@@ -99,7 +99,7 @@ const Maincart = () => {
             <span className="text-gray-500">Subtotal</span>
             <span className="text-gray-700">
               ₦{" "}
-              {products?.products.reduce(
+              {products?.products?.reduce(
                 (acc, item) => acc + item?.price * item?.quantity,
                 0
               )}
