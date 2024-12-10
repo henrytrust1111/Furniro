@@ -29,9 +29,9 @@ const Maincart = () => {
                      alt={item?.itemName}
                       className="w-16 h-16 object-cover rounded-lg bg-beige-light"
                     />
-                    <span className="ml-4 text-gray-700">{item.name}</span>
+                    <span className="ml-4 text-gray-700">{item?.name}</span>
                   </td>
-                  <td className="p-4 text-gray-500">Rs. {item.price}</td>
+                  <td className="p-4 text-gray-500">Rs. {item?.price}</td>
                   <td className="p-4">
                     <input
                       type="number"
@@ -40,7 +40,7 @@ const Maincart = () => {
                       className="w-12 px-2 py-1 border rounded-md"
                     />
                   </td>
-                  <td className="p-4 text-gray-500">Rs. {item.price * item.quantity}</td>
+                  <td className="p-4 text-gray-500">Rs. {item?.price * item?.quantity}</td>
                   <td className="p-4 text-center text-gold cursor-pointer">
                     <FaTrashAlt className="-text--clr-primary" />
                   </td>
