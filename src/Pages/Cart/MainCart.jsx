@@ -75,7 +75,7 @@ const Maincart = () => {
           </div>
           <div className="flex justify-between items-center mb-6">
             <span className="text-lg font-bold text-gray-800">Total</span>
-            <span className="text-lg font-bold text-gold">
+            <span className="text-lg font-bold text-gold -text--clr-primary">
               ₦{" "}
               {products?.products?.reduce(
                 (acc, item) => acc + item?.price * item?.quantity,
