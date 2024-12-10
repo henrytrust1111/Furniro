@@ -11,7 +11,7 @@
   /* Custom scrollbar styles */
 @layer utilities {
   .scrollbar-custom::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
     height: 5px;
   }
   .scrollbar-custom::-webkit-scrollbar-track {

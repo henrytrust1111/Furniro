@@ -12,7 +12,7 @@ const Maincart = () => {
     return new Intl.NumberFormat("en-US").format(number);
   };
 
-  // Scroll function
+  // Attach scroll event listener
   useEffect(() => {
     const tableElement = tableRef.current; // Get the actual DOM element from ref
 
@@ -28,7 +28,6 @@ const Maincart = () => {
     return () => {
       tableElement.removeEventListener('scroll', handleScroll);
     };
-    
   }, []);
 
 
@@ -39,22 +38,22 @@ const Maincart = () => {
         <div
           id="table-container"
           ref={tableRef}
-          className="lg:col-span-2 h-64 overflow-auto scrollbar-custom"
+          className="lg:col-span-2 h-72 overflow-auto scrollbar-custom"
         >
           <table
             id="maintable"
             className="min-w-full text-left border-collapse"
           >
             <thead className="bg-green-600 z-0">
-              <tr className="-bg--clr-primar-light-v3 text-gray-700">
-                <th className="p-4">Product</th>
-                <th className="p-4">Price</th>
-                <th className="p-4">Quantity</th>
-                <th className="p-4">Subtotal</th>
-                <th className="p-4"></th>
+              <tr className="-bg--clr-primar-light-v3 text-gray-700 sticky top-0 z-10">
+                <th className="p-4 sticky top-0">Product</th>
+                <th className="p-4 sticky top-0">Price</th>
+                <th className="p-4 sticky top-0">Quantity</th>
+                <th className="p-4 sticky top-0">Subtotal</th>
+                <th className="p-4 sticky top-0"></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="">
               {products?.products?.map((item, index) => (
                 <tr key={index} className="border-b">
                   <td className="p-4 flex items-center">
