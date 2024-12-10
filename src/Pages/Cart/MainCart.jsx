@@ -1,22 +1,67 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { FaTrashAlt } from "react-icons/fa";
 
 const Maincart = () => {
   const products = useSelector((state) => state?.persistedReducer?.cart);
-  console.log(products.products);
+  const tableRef = useRef (null); // Reference for the main table
+  const cloneRef = useRef(null); // Reference for the clone table
 
+  // Format number function
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
+
+  // Scroll function
+  const moveScroll = () => {
+    const scroll = window.scrollY;
+    const anchorTop = tableRef.current?.getBoundingClientRect().top + window.scrollY;
+    const anchorBottom = document.body.offsetHeight; // Assumes the bottom is the end of the page
+
+    if (scroll > anchorTop && scroll < anchorBottom) {
+      if (!cloneRef.current) {
+        // Create the clone table if it doesn't exist
+        const originalTable = tableRef.current;
+        const cloneTable = originalTable.cloneNode(true);
+        cloneTable.setAttribute('id', 'clone');
+        cloneTable.style.position = 'fixed';
+        cloneTable.style.pointerEvents = 'none';
+        cloneTable.style.top = '0';
+        cloneTable.style.width = `${originalTable.offsetWidth}px`;
+        cloneTable.style.visibility = 'hidden';
+        cloneTable.querySelector('thead').style.visibility = 'visible';
+        cloneTable.querySelector('thead').style.pointerEvents = 'auto';
+
+        document.body.appendChild(cloneTable);
+        cloneRef.current = cloneTable;
+      }
+    } else {
+      if (cloneRef.current) {
+        // Remove the clone table if it exists
+        document.body.removeChild(cloneRef.current);
+        cloneRef.current = null;
+      }
+    }
+  };
+
+  // Attach scroll event listener
+  useEffect(() => {
+    window.addEventListener("scroll", moveScroll);
+
+    // Cleanup function to remove event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", moveScroll);
+    };
+  }, []);
+   
 
   return (
     <div className="container p-6 md:p-10 lg:p-16">
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Product Details Section */}
-        <div className="lg:col-span-2 h-64 overflow-auto scrollbar-custom">
-          <table className="min-w-full text-left border-collapse">
-            <thead className="sticky bg-green-600 z-0">
+        <div id="table-container" className="lg:col-span-2 h-64 overflow-auto scrollbar-custom">
+          <table id="maintable" ref={tableRef} className="min-w-full text-left border-collapse">
+            <thead className="bg-green-600 z-0">
               <tr className="-bg--clr-primar-light-v3 text-gray-700">
                 <th className="p-4">Product</th>
                 <th className="p-4">Price</th>
