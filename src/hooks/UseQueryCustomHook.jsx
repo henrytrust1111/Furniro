@@ -7,6 +7,7 @@ const getData = () => {
 };
 const getCart = () => {
   const userId = localStorage.getItem("userId");
+  console.log(userId);
   return request({ url: `/view-cart/${userId}` });
 };
 
@@ -50,6 +51,8 @@ export const useViewCart = (onError, onSuccess) => {
     onError,
     select: (data) => {
       const cartItems = data?.data?.data;
+      console.log(cartItems);
+
       return cartItems;
     },
   });
