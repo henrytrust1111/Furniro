@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { FaTrashAlt } from "react-icons/fa";
+import { MyContext } from "../../context/Context";
 
 const Maincart = () => {
   const products = useSelector((state) => state?.persistedReducer?.cart);
