@@ -4,7 +4,7 @@ import { FaTrashAlt } from "react-icons/fa";
 
 const Maincart = () => {
   const products = useSelector((state) => state?.persistedReducer?.cart);
-  const tableRef = useRef (null); // Reference for the main table
+  const tableRef = useRef(null); // Reference for the main table
   const cloneRef = useRef(null); // Reference for the clone table
 
   // Format number function
@@ -13,21 +13,38 @@ const Maincart = () => {
   };
 
   // Scroll function
- useEffect(() => {
-   console.log(tableRef.current.onscroll);
-  window.addEventListener("scroll", ()=>{
-    console.log(window.scrollY);
+  useEffect(() => {
+    const tableElement = tableRef.current; // Get the actual DOM element from ref
+
+    if (!tableElement) return; // Ensure the element exists
+
+    const handleScroll = () => {
+      console.log('Table scrollY:', tableElement.scrollTop); // Log the current scroll position
+    };
+
+    tableElement.addEventListener('scroll', handleScroll); // Attach scroll event
+
+    // Clean up to avoid memory leaks
+    return () => {
+      tableElement.removeEventListener('scroll', handleScroll);
+    };
     
-  })
- }, [])
- 
+  }, []);
+
 
   return (
     <div className="container p-6 md:p-10 lg:p-16">
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Product Details Section */}
-        <div id="table-container" className="lg:col-span-2 h-64 overflow-auto scrollbar-custom">
-          <table id="maintable" ref={tableRef} className="min-w-full text-left border-collapse">
+        <div
+          id="table-container"
+          ref={tableRef}
+          className="lg:col-span-2 h-64 overflow-auto scrollbar-custom"
+        >
+          <table
+            id="maintable"
+            className="min-w-full text-left border-collapse"
+          >
             <thead className="bg-green-600 z-0">
               <tr className="-bg--clr-primar-light-v3 text-gray-700">
                 <th className="p-4">Product</th>
@@ -47,7 +64,9 @@ const Maincart = () => {
                       alt={""}
                       className="w-16 h-16 object-cover rounded-lg bg-beige-light"
                     />
-                    <span className="ml-4 text-gray-700">{item?.productName}</span>
+                    <span className="ml-4 text-gray-700">
+                      {item?.productName}
+                    </span>
                   </td>
                   <td className="p-4 text-gray-500">
                     ₦ {formatNumber(item?.price)}
@@ -74,7 +93,9 @@ const Maincart = () => {
 
         {/* Cart Totals Section */}
         <div className="-bg--clr-primar-light-v3 p-6 rounded-lg shadow-md">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center">Cart Totals</h2>
+          <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center">
+            Cart Totals
+          </h2>
           <div className="flex justify-between items-center mb-2">
             <span className="text-gray-500">Subtotal</span>
             <span className="text-gray-700">
