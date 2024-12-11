@@ -26,9 +26,11 @@ const Maincart = () => {
     const size = [];
     const reqBody = { userId, productId, size };
 
-    const updatedCart = products?.product.filter(
+    const updatedCart = products?.products.filter(
       (item) => item.productId !== productId
     );
+
+    dispatch(Cart({ products: updatedCart }));
 
     return RemoveFromCart(reqBody);
   };
