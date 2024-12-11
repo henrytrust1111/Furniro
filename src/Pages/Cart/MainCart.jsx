@@ -32,7 +32,15 @@ const Maincart = () => {
 
     dispatch(Cart({ products: updatedCart }));
 
-    return RemoveFromCart(reqBody);
+    // return RemoveFromCart(reqBody);
+    
+    RemoveFromCart(reqBody, {
+      onError: () => {
+        toast.error("Failed to remove item from the cart.");
+        dispatch(Cart({ products: [...updatedCart, product] }));
+      },
+    });
+    
   };
 
   // Format number function
