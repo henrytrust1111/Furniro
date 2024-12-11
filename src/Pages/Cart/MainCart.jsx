@@ -2,13 +2,23 @@ import React, { useContext, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { FaTrashAlt } from "react-icons/fa";
 import { MyContext } from "../../context/Context";
+import { useRemoveFromCart } from "../../hooks/UseQueryCustomHook";
 
 const Maincart = () => {
   const products = useSelector((state) => state?.persistedReducer?.cart);
   const tableRef = useRef(null);
   const { isLoadingCart } = useContext(MyContext);
-  console.log(isLoadingCart);
-  console.log(products);
+  const { mutate: RemoveFromCart } = useRemoveFromCart(onSuccess);
+  const userId = localStorage.getItem("userId");
+  const handleRemoveFromCart = (product) => {
+    if (!userId) {
+      toast.error("please login to add to cart");
+    }
+    const productId = product._id;
+    const size = product.sizes;
+    const reqBody = { userId, productId, size };
+    return RemoveFromCart(reqBody);
+  };
 
   // Format number function
   const formatNumber = (number) => {

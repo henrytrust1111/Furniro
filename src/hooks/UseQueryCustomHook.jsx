@@ -1,4 +1,9 @@
-import { useQuery, useMutation, useQueryClient } from "react-query";
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+} from "react-query";
 // import axios from "axios";
 import { request } from "../utils/axios.utils";
 
@@ -23,6 +28,17 @@ const addToCart = ({ userId, productId, size }) => {
     data: size && size.length > 0 ? { size } : {},
   });
 };
+
+
+const removeFromCart = ({ userId, productId, size }) => {
+  const url = `/add-to-cart/${userId}/${productId}`;
+  return request({
+    url,
+    method: "delete",
+    data: size && size.length > 0 ? { size } : {},
+  });
+};
+
 
 const UseQueryCustomHook = (onError, onSuccess) => {
   return useQuery("rq-endpoint", getData, {
@@ -58,5 +74,13 @@ export const useViewCart = (onError, onSuccess) => {
 };
 
 export const useAddToCart = (onSuccess) => {
-  return useMutation(addToCart, { onSuccess });
+  return useMutation(addToCart, {
+    onSuccess,
+  });
+};
+
+export const useRemoveFromCart = (onSuccess) => {
+  return useMutation(removeFromCart, {
+    onSuccess,
+  });
 };
