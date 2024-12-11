@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Cart } from "../../Global/Features";
 import { useNavigate } from "react-router-dom";
+import logo from "/icons/logo.svg";
 
 const onSuccess = (data) => {
   toast.success(data?.data?.message);
@@ -14,6 +15,8 @@ const onSuccess = (data) => {
 const Maincart = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state?.persistedReducer?.cart);
+  console.log(products);
+  
   const navigate = useNavigate();
 
   const tableRef = useRef(null);
@@ -84,8 +87,13 @@ const Maincart = () => {
               </tr>
             </thead>
             <tbody className="">
-              {false && !products ? (
-                <div className="">Loading...</div>
+              {true && products ? (
+                <section className="py-16 font-[poppins]">
+                <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
+                  <img src={logo} alt="" className="mr-2 animate-spin " />
+                  <p className="text-lg font-semibold">Loading...</p>
+                </div>
+              </section>
               ) : products?.products?.length === 0 ? (
                 <div className="">cart is empty </div>
               ) : (
