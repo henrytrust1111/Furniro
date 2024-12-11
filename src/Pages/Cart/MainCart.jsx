@@ -21,7 +21,6 @@ const Maincart = () => {
   const { mutate: RemoveFromCart } = useRemoveFromCart(onSuccess);
   const userId = localStorage.getItem("userId");
   const token = localStorage.getItem("token");
-  console.log(token);
 
  
   useLayoutEffect(() => {
