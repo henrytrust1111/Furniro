@@ -87,7 +87,7 @@ const Maincart = () => {
               </tr>
             </thead>
             <tbody className="">
-              {true && products ? (
+              {isLoadingCart && !products ? (
                 <section className="py-16 font-[poppins]">
                 <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
                   <img src={logo} alt="" className="mr-2 animate-spin " />
