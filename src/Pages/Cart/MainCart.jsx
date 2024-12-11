@@ -4,18 +4,24 @@ import { FaTrashAlt } from "react-icons/fa";
 import { MyContext } from "../../context/Context";
 import { useRemoveFromCart } from "../../hooks/UseQueryCustomHook";
 
+const onSuccess = (data) => {
+  toast.success(data?.data?.message);
+};
 const Maincart = () => {
   const products = useSelector((state) => state?.persistedReducer?.cart);
+  console.log(products);
+  
   const tableRef = useRef(null);
   const { isLoadingCart } = useContext(MyContext);
   const { mutate: RemoveFromCart } = useRemoveFromCart(onSuccess);
   const userId = localStorage.getItem("userId");
+
   const handleRemoveFromCart = (product) => {
     if (!userId) {
       toast.error("please login to add to cart");
     }
-    const productId = product._id;
-    const size = product.sizes;
+    const productId = product.productId;
+    const size = [];
     const reqBody = { userId, productId, size };
     return RemoveFromCart(reqBody);
   };
@@ -81,7 +87,7 @@ const Maincart = () => {
                       ₦ {formatNumber(item?.sub_total)}
                     </td>
                     <td className="p-4 text-center text-gold cursor-pointer">
-                      <FaTrashAlt className="-text--clr-primary" />
+                      <FaTrashAlt className="-text--clr-primary" onClick={()=>handleRemoveFromCart(item)} />
                     </td>
                   </tr>
                 ))
