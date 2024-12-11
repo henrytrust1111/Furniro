@@ -7,12 +7,13 @@ const Maincart = () => {
   const products = useSelector((state) => state?.persistedReducer?.cart);
   const tableRef = useRef(null);
   const { isLoadingCart } = useContext(MyContext);
+  console.log(isLoadingCart);
+  console.log(products);
 
   // Format number function
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
-
 
   return (
     <div className="container p-6 md:p-10 lg:p-16">
@@ -37,38 +38,44 @@ const Maincart = () => {
               </tr>
             </thead>
             <tbody className="">
-              {products?.products?.map((item, index) => (
-                <tr key={index} className="border-b">
-                  <td className="p-4 flex items-center">
-                    <img
-                      src={item?.productImage[0].url}
-                      // src={"https://lazesoftware.com/img/en/tool/dummyimg/default_480x320.png"}
-                      alt={""}
-                      className="w-16 h-16 object-cover rounded-lg bg-beige-light"
-                    />
-                    <span className="ml-4 text-gray-700">
-                      {item?.productName}
-                    </span>
-                  </td>
-                  <td className="p-4 text-gray-500">
-                    ₦ {formatNumber(item?.price)}
-                  </td>
-                  <td className="p-4">
-                    <input
-                      type="number"
-                      value={item.quantity}
-                      min="1"
-                      className="w-12 px-2 py-1 border rounded-md"
-                    />
-                  </td>
-                  <td className="p-4 text-gray-500">
-                    ₦ {formatNumber(item?.sub_total)}
-                  </td>
-                  <td className="p-4 text-center text-gold cursor-pointer">
-                    <FaTrashAlt className="-text--clr-primary" />
-                  </td>
-                </tr>
-              ))}
+              {false && !products ? (
+                <div className="">Loading...</div>
+              ) : products?.products.length === 0 ? (
+                <div className="">cart is empty </div>
+              ) : (
+                products?.products?.map((item, index) => (
+                  <tr key={index} className="border-b">
+                    <td className="p-4 flex items-center">
+                      <img
+                        src={item?.productImage[0].url}
+                        // src={"https://lazesoftware.com/img/en/tool/dummyimg/default_480x320.png"}
+                        alt={""}
+                        className="w-16 h-16 object-cover rounded-lg bg-beige-light"
+                      />
+                      <span className="ml-4 text-gray-700">
+                        {item?.productName}
+                      </span>
+                    </td>
+                    <td className="p-4 text-gray-500">
+                      ₦ {formatNumber(item?.price)}
+                    </td>
+                    <td className="p-4">
+                      <input
+                        type="number"
+                        value={item.quantity}
+                        min="1"
+                        className="w-12 px-2 py-1 border rounded-md"
+                      />
+                    </td>
+                    <td className="p-4 text-gray-500">
+                      ₦ {formatNumber(item?.sub_total)}
+                    </td>
+                    <td className="p-4 text-center text-gold cursor-pointer">
+                      <FaTrashAlt className="-text--clr-primary" />
+                    </td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>
