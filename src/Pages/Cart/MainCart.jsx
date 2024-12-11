@@ -86,7 +86,7 @@ const Maincart = () => {
             <tbody className="">
               {false && !products ? (
                 <div className="">Loading...</div>
-              ) : products?.products.length === 0 ? (
+              ) : products?.products?.length === 0 ? (
                 <div className="">cart is empty </div>
               ) : (
                 products?.products?.map((item, index) => (
