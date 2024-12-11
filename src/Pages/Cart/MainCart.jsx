@@ -138,7 +138,8 @@ const Maincart = () => {
         </div>
 
         {/* Cart Totals Section */}
-        <div className="-bg--clr-primar-light-v3 p-6 rounded-lg shadow-md">
+        <div className="-bg--clr-primar-light-v3 p-6 rounded-lg shadow-md flex justify-center">
+          <div className="bg-green-700 w-[90%]">
           <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center">
             Cart Totals
           </h2>
@@ -165,6 +166,7 @@ const Maincart = () => {
           <button className="w-full py-3 text-black border -border--clr-secondary rounded-lg transition">
             Check Out
           </button>
+          </div>
         </div>
       </div>
     </div>
