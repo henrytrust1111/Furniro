@@ -163,9 +163,11 @@ const Maincart = () => {
               )}
             </span>
           </div>
-          <button className="w-full py-3 text-black border -border--clr-secondary rounded-lg transition">
+          <div className="w-full flex justify-center">
+          <button className="w-[80%]  py-3 text-black border -border--clr-secondary rounded-lg transition">
             Check Out
           </button>
+          </div>
           </div>
         </div>
       </div>
