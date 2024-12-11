@@ -1,24 +1,26 @@
 import React, { useContext, useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FaTrashAlt } from "react-icons/fa";
 import { MyContext } from "../../context/Context";
 import { useRemoveFromCart } from "../../hooks/UseQueryCustomHook";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const onSuccess = (data) => {
   toast.success(data?.data?.message);
 };
 const Maincart = () => {
+  const dispatch = useDispatch()
   const products = useSelector((state) => state?.persistedReducer?.cart);
-  console.log(products);
   
   const tableRef = useRef(null);
   const { isLoadingCart } = useContext(MyContext);
   const { mutate: RemoveFromCart } = useRemoveFromCart(onSuccess);
   const userId = localStorage.getItem("userId");
-
+  
   const handleRemoveFromCart = (product) => {
     if (!userId) {
-      toast.error("please login to add to cart");
+      toast.error("please login to continue");
     }
     const productId = product.productId;
     const size = [];

@@ -31,7 +31,7 @@ const addToCart = ({ userId, productId, size }) => {
 
 
 const removeFromCart = ({ userId, productId, size }) => {
-  const url = `/add-to-cart/${userId}/${productId}`;
+  const url = `/remove-from-cart/${userId}/${productId}`;
   return request({
     url,
     method: "delete",
