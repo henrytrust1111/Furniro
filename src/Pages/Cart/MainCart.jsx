@@ -1,10 +1,12 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useLayoutEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTrashAlt } from "react-icons/fa";
 import { MyContext } from "../../context/Context";
 import { useRemoveFromCart } from "../../hooks/UseQueryCustomHook";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Cart } from "../../Global/Features";
+import { useNavigate } from "react-router-dom";
 
 const onSuccess = (data) => {
   toast.success(data?.data?.message);
@@ -12,11 +14,23 @@ const onSuccess = (data) => {
 const Maincart = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state?.persistedReducer?.cart);
+  const navigate = useNavigate();
 
   const tableRef = useRef(null);
   const { isLoadingCart } = useContext(MyContext);
   const { mutate: RemoveFromCart } = useRemoveFromCart(onSuccess);
   const userId = localStorage.getItem("userId");
+  const token = localStorage.getItem("token");
+  console.log(token);
+
+ 
+  useLayoutEffect(() => {
+    if (!token) {
+      toast.error("Please login to view your cart");
+      navigate(-1); 
+    }
+  }, [token, navigate]);
+  
 
   const handleRemoveFromCart = (product) => {
     if (!userId) {
@@ -33,7 +47,7 @@ const Maincart = () => {
     dispatch(Cart({ products: updatedCart }));
 
     // return RemoveFromCart(reqBody);
-    
+
     RemoveFromCart(reqBody, {
       onError: () => {
         toast.error("Failed to remove item from the cart.");
