@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createContext } from "react";
 import UseQueryCustomHook, { useViewCart } from "../hooks/UseQueryCustomHook";
 import { useDispatch } from "react-redux";
@@ -20,9 +20,11 @@ const Context = ({ children }) => {
   };
 
   const onSuccessCart = (data) => {
-    refetchCart();
+    refetchCart()
     dispatch(Cart(data));
   };
+
+  
 
   const onError = (error) => {
     console.log("An Error occurred", error);
