@@ -8,16 +8,15 @@ const CartTotalLoading = () => {
         </h2>
         <div className="flex justify-between items-center mb-2">
           <span className="text-gray-500">Subtotal</span>
-          <span className="text-gray-700 h-6 w-6 bg-gray-300"></span>
+          <span className="text-gray-700 h-4 w-20 bg-gray-300"></span>
         </div>
         <div className="flex justify-between items-center mb-6">
           <span className="text-lg font-bold text-gray-800">Total</span>
-          <span className="text-lg font-bold text-gold -text--clr-primary h-6 bg-gray-300">
+          <span className="text-lg font-bold text-gold -text--clr-primary h-4 w-20 bg-gray-300">
           </span>
         </div>
         <div className="w-full flex justify-center">
-          <button className="w-[80%]  py-3 text-black border -border--clr-secondary rounded-lg transition">
-            Check Out
+          <button className="w-[80%]  py-3 text-black border -border--clr-secondary rounded-lg transition bg-gray-300">
           </button>
         </div>
       </div>
