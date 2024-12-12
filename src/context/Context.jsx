@@ -32,7 +32,7 @@ const Context = ({ children }) => {
     onSuccess
   );
 
-  const { isLoading: isLoadingCart, data: cart } = useViewCart(
+  const { isLoading: isLoadingCart, data: cart, refetch:refetchCart } = useViewCart(
     onError,
     onSuccessCart
   );
