@@ -47,6 +47,7 @@ const Context = ({ children }) => {
         data,
         cart,
         isLoadingCart,
+        refetchCart
       }}
     >
       {children}
