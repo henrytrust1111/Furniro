@@ -14,7 +14,7 @@ const CartTotalLoading = () => {
           <span className="text-lg font-bold text-gold -text--clr-primary h-4 w-20 bg-gray-300"></span>
         </div>
         <div className="w-full flex justify-center">
-          <button className="w-[80%]  py-3 text-black border -border--clr-secondary rounded-lg transition bg-gray-300"></button>
+          <button className="w-[80%] py-3 rounded-lg h-8 bg-gray-300"></button>
         </div>
       </div>
     </div>
