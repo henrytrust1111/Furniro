@@ -9,13 +9,7 @@ const CartTotalLoading = () => {
         </h2>
         <div className="flex justify-between items-center mb-2">
           <span className="text-gray-500">Subtotal</span>
-          <span className="text-gray-700">
-            ₦{" "}
-            {products?.products?.reduce(
-              (acc, item) => acc + item?.price * item?.quantity,
-              0
-            )}
-          </span>
+          <span className="text-gray-700"></span>
         </div>
         <div className="flex justify-between items-center mb-6">
           <span className="text-lg font-bold text-gray-800">Total</span>
