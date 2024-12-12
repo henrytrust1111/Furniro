@@ -165,9 +165,12 @@ const Maincart = () => {
                 </span>
               </div>
               <div className="w-full flex justify-center">
-                <button className="w-[80%]  py-3 text-black border -border--clr-secondary rounded-lg transition">
+                {products?.products?.length === 0 ? <button className="w-[80%]  py-3 text-black border -border--clr-secondary rounded-lg transition">
+                
+                </button> : <button className="w-[80%]  py-3 text-black border -border--clr-secondary rounded-lg transition">
                   Check Out
-                </button>
+                </button>}
+                
               </div>
             </div>
           </div>
