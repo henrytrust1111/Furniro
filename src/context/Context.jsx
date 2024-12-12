@@ -20,8 +20,8 @@ const Context = ({ children }) => {
   };
 
   const onSuccessCart = (data) => {
-    dispatch(Cart(data));
     refetchCart();
+    dispatch(Cart(data));
   };
 
   const onError = (error) => {
