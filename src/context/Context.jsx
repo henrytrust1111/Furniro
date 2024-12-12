@@ -19,8 +19,6 @@ const Context = ({ children }) => {
     }
   };
 
-  let timeoutId;
-
   const onSuccessCart = (data) => {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
@@ -28,8 +26,6 @@ const Context = ({ children }) => {
     }, 1000);
     dispatch(Cart(data));
   };
-
-  const [shouldRefetch, setShouldRefetch] = useState(false);
 
   const onError = (error) => {
     console.log("An Error occurred", error);
