@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { createContext } from "react";
-import UseQueryCustomHook, { useViewCart } from "../hooks/UseQueryCustomHook";
+import UseQueryCustomHook, {
+  useAddToCart,
+  useViewCart,
+} from "../hooks/UseQueryCustomHook";
 import { useDispatch } from "react-redux";
 import { DB } from "../Global/Features";
 import { Cart } from "../Global/Features";
@@ -36,6 +39,12 @@ const Context = ({ children }) => {
     data: cart,
     refetch: refetchCart,
   } = useViewCart(onError, onSuccessCart);
+
+  const onSuccessAddToCart = () => {
+    console.log("hello world");
+  };
+
+  const { mutate: AddToCart } = useAddToCart(onSuccessAddToCart);
 
   return (
     <MyContext.Provider

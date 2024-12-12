@@ -10,14 +10,17 @@ import { useAddToCart } from "../hooks/UseQueryCustomHook";
 import { useSelector } from "react-redux";
 import { MyContext } from "../context/Context";
 
-const onSuccess = (data) => {
-  toast.success(data?.data?.message);
-};
+
 const Products = ({ Title }) => {
   const { isLoading, noProducts, refetch, error, refetchCart } = useContext(MyContext);
   const data = useSelector((state) => state?.persistedReducer?.products);
   const [visibleProducts, setVisibleProducts] = useState(4);
   const nav = useNavigate();
+  const onSuccess = (data) => {
+    toast.success(data?.data?.message);
+    console.log("helloWorld");
+    
+  };
   const { mutate: AddToCart } = useAddToCart(onSuccess);
   const userId = localStorage.getItem("userId");
   const handleAddToCart = (product) => {
@@ -27,7 +30,6 @@ const Products = ({ Title }) => {
     const productId = product._id;
     const size = product.sizes;
     const reqBody = { userId, productId, size };
-    refetchCart()
     return AddToCart(reqBody);
   };
 

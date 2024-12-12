@@ -29,7 +29,6 @@ const addToCart = ({ userId, productId, size }) => {
   });
 };
 
-
 const removeFromCart = ({ userId, productId, size }) => {
   const url = `/remove-from-cart/${userId}/${productId}`;
   return request({
@@ -38,7 +37,6 @@ const removeFromCart = ({ userId, productId, size }) => {
     data: size && size.length > 0 ? { size } : {},
   });
 };
-
 
 const UseQueryCustomHook = (onError, onSuccess) => {
   return useQuery("rq-endpoint", getData, {
