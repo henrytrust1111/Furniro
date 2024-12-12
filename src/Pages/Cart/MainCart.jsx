@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Cart } from "../../Global/Features";
 import { useNavigate } from "react-router-dom";
 import logo from "/icons/logo.svg";
+import CartTotalLoading from "./CartTotalLoading";
 
 const onSuccess = (data) => {
   toast.success(data?.data?.message);
@@ -16,7 +17,7 @@ const Maincart = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state?.persistedReducer?.cart);
   console.log(products);
-  
+
   const navigate = useNavigate();
 
   const tableRef = useRef(null);
@@ -25,14 +26,12 @@ const Maincart = () => {
   const userId = localStorage.getItem("userId");
   const token = localStorage.getItem("token");
 
- 
   useLayoutEffect(() => {
     if (!token) {
       toast.error("Please login to view your cart");
-      navigate(-1); 
+      navigate(-1);
     }
   }, [token, navigate]);
-  
 
   const handleRemoveFromCart = (product) => {
     if (!userId) {
@@ -56,7 +55,6 @@ const Maincart = () => {
         dispatch(Cart({ products: [...updatedCart, product] }));
       },
     });
-    
   };
 
   // Format number function
@@ -89,11 +87,11 @@ const Maincart = () => {
             <tbody className="">
               {isLoadingCart && !products ? (
                 <section className="py-16 font-[poppins]">
-                <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
-                  <img src={logo} alt="" className="mr-2 animate-spin " />
-                  <p className="text-lg font-semibold">Loading...</p>
-                </div>
-              </section>
+                  <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
+                    <img src={logo} alt="" className="mr-2 animate-spin " />
+                    <p className="text-lg font-semibold">Loading...</p>
+                  </div>
+                </section>
               ) : products?.products?.length === 0 ? (
                 <div className="">cart is empty </div>
               ) : (
@@ -138,36 +136,37 @@ const Maincart = () => {
         </div>
 
         {/* Cart Totals Section */}
+        <CartTotalLoading />
         <div className="-bg--clr-primar-light-v3 h-96 p-6 rounded-lg shadow-md flex justify-center">
           <div className="w-[85%] space-y-8">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center">
-            Cart Totals
-          </h2>
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-gray-500">Subtotal</span>
-            <span className="text-gray-700">
-              ₦{" "}
-              {products?.products?.reduce(
-                (acc, item) => acc + item?.price * item?.quantity,
-                0
-              )}
-            </span>
-          </div>
-          <div className="flex justify-between items-center mb-6">
-            <span className="text-lg font-bold text-gray-800">Total</span>
-            <span className="text-lg font-bold text-gold -text--clr-primary">
-              ₦{" "}
-              {products?.products?.reduce(
-                (acc, item) => acc + item?.price * item?.quantity,
-                0
-              )}
-            </span>
-          </div>
-          <div className="w-full flex justify-center">
-          <button className="w-[80%]  py-3 text-black border -border--clr-secondary rounded-lg transition">
-            Check Out
-          </button>
-          </div>
+            <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center">
+              Cart Totals
+            </h2>
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-gray-500">Subtotal</span>
+              <span className="text-gray-700">
+                ₦{" "}
+                {products?.products?.reduce(
+                  (acc, item) => acc + item?.price * item?.quantity,
+                  0
+                )}
+              </span>
+            </div>
+            <div className="flex justify-between items-center mb-6">
+              <span className="text-lg font-bold text-gray-800">Total</span>
+              <span className="text-lg font-bold text-gold -text--clr-primary">
+                ₦{" "}
+                {products?.products?.reduce(
+                  (acc, item) => acc + item?.price * item?.quantity,
+                  0
+                )}
+              </span>
+            </div>
+            <div className="w-full flex justify-center">
+              <button className="w-[80%]  py-3 text-black border -border--clr-secondary rounded-lg transition">
+                Check Out
+              </button>
+            </div>
           </div>
         </div>
       </div>
