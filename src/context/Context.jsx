@@ -19,8 +19,13 @@ const Context = ({ children }) => {
     }
   };
 
+  let timeoutId;
+
   const onSuccessCart = (data) => {
-    refetchCart()
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      refetchCart();
+    }, 1000);
     dispatch(Cart(data));
   };
 
