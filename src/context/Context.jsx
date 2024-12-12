@@ -21,6 +21,7 @@ const Context = ({ children }) => {
 
   const onSuccessCart = (data) => {
     // console.log(data);
+    refetchCart()
     dispatch(Cart(data));
   };
 
