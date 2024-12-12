@@ -14,11 +14,7 @@ const CartTotalLoading = () => {
         <div className="flex justify-between items-center mb-6">
           <span className="text-lg font-bold text-gray-800">Total</span>
           <span className="text-lg font-bold text-gold -text--clr-primary">
-            ₦{" "}
-            {products?.products?.reduce(
-              (acc, item) => acc + item?.price * item?.quantity,
-              0
-            )}
+
           </span>
         </div>
         <div className="w-full flex justify-center">
