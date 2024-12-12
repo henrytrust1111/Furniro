@@ -14,7 +14,7 @@ const onSuccess = (data) => {
   toast.success(data?.data?.message);
 };
 const Products = ({ Title }) => {
-  const { isLoading, noProducts, refetch, error} = useContext(MyContext);
+  const { isLoading, noProducts, refetch, error } = useContext(MyContext);
   const data = useSelector((state) => state?.persistedReducer?.products);
   const [visibleProducts, setVisibleProducts] = useState(4);
   const nav = useNavigate();
@@ -93,10 +93,7 @@ const Products = ({ Title }) => {
         <h2 className="text-2xl font-bold mb-8 text-center">{Title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-11 lg:px-11 md:px-0 ">
           {data?.slice(0, visibleProducts).map((product, index) => (
-            <div
-              key={index}
-              className="bg-[#F4F5F7] shadow-custom relative"
-            >
+            <div key={index} className="bg-[#F4F5F7] shadow-custom relative">
               <img
                 src={product.images[0].url}
                 alt={product.itemName}
@@ -179,44 +176,5 @@ const Products = ({ Title }) => {
     </section>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default Products;
