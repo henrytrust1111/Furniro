@@ -29,6 +29,8 @@ const Context = ({ children }) => {
     dispatch(Cart(data));
   };
 
+  const [shouldRefetch, setShouldRefetch] = useState(false);
+
   const onError = (error) => {
     console.log("An Error occurred", error);
   };
