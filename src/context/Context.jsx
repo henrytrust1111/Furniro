@@ -21,7 +21,7 @@ const Context = ({ children }) => {
 
   const onSuccessCart = (data) => {
     dispatch(Cart(data));
-    refetchCart()
+    refetchCart();
   };
 
   const onError = (error) => {
@@ -32,10 +32,11 @@ const Context = ({ children }) => {
     onSuccess
   );
 
-  const { isLoading: isLoadingCart, data: cart, refetch:refetchCart } = useViewCart(
-    onError,
-    onSuccessCart
-  );
+  const {
+    isLoading: isLoadingCart,
+    data: cart,
+    refetch: refetchCart,
+  } = useViewCart(onError, onSuccessCart);
 
   return (
     <MyContext.Provider
@@ -47,7 +48,7 @@ const Context = ({ children }) => {
         data,
         cart,
         isLoadingCart,
-        refetchCart
+        refetchCart,
       }}
     >
       {children}
