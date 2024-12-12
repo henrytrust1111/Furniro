@@ -136,8 +136,8 @@ const Maincart = () => {
         </div>
 
         {/* Cart Totals Section */}
-        <CartTotalLoading />
-        <div className="-bg--clr-primar-light-v3 h-96 p-6 rounded-lg shadow-md flex justify-center">
+        {
+          true?  <CartTotalLoading />  : <div className="-bg--clr-primar-light-v3 h-96 p-6 rounded-lg shadow-md flex justify-center">
           <div className="w-[85%] space-y-8">
             <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center">
               Cart Totals
@@ -169,6 +169,8 @@ const Maincart = () => {
             </div>
           </div>
         </div>
+        }
+        
       </div>
     </div>
   );
