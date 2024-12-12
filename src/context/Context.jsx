@@ -23,7 +23,6 @@ const Context = ({ children }) => {
     refetchCart()
     dispatch(Cart(data));
   };
-  
 
   const onError = (error) => {
     console.log("An Error occurred", error);
