@@ -20,7 +20,6 @@ const Products = ({ Title }) => {
   const nav = useNavigate();
   const onSuccess = (data) => {
     toast.success(data?.data?.message);
-    console.log("helloWorld");
     refetchCart();
   };
   const { mutate: AddToCart } = useAddToCart(onSuccess);
