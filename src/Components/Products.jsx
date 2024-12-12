@@ -14,7 +14,7 @@ const onSuccess = (data) => {
   toast.success(data?.data?.message);
 };
 const Products = ({ Title }) => {
-  const { isLoading, noProducts, refetch, error } = useContext(MyContext);
+  const { isLoading, noProducts, refetch, error, refetchCart} = useContext(MyContext);
   const data = useSelector((state) => state?.persistedReducer?.products);
   const [visibleProducts, setVisibleProducts] = useState(4);
   const nav = useNavigate();
@@ -92,9 +92,9 @@ const Products = ({ Title }) => {
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl font-bold mb-8 text-center">{Title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-11 lg:px-11 md:px-0 ">
-          {data?.slice(0, visibleProducts).map((product) => (
+          {data?.slice(0, visibleProducts).map((product, index) => (
             <div
-              key={product.id}
+              key={index}
               className="bg-[#F4F5F7] shadow-custom relative"
             >
               <img
