@@ -6,7 +6,7 @@ const CartTotalLoading = () => {
       <div className="w-[85%] space-y-8">
         <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center h-6 bg-gray-300"></h2>
         <div className="flex justify-between items-center mb-2">
-          <span className="text-gray-500">Subtotal</span>
+          <span className="text-gray-500"></span>
           <span className="text-gray-700 h-4 w-20 bg-gray-300"></span>
         </div>
         <div className="flex justify-between items-center mb-6">
