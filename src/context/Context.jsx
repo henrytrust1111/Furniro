@@ -20,10 +20,7 @@ const Context = ({ children }) => {
   };
 
   const onSuccessCart = (data) => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      refetchCart();
-    }, 1000);
+    refetchCart();
     dispatch(Cart(data));
   };
 
