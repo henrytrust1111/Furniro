@@ -14,7 +14,7 @@ const onSuccess = (data) => {
   toast.success(data?.data?.message);
 };
 const Products = ({ Title }) => {
-  const { isLoading, noProducts, refetch, error } = useContext(MyContext);
+  const { isLoading, noProducts, refetch, error, refetchCart } = useContext(MyContext);
   const data = useSelector((state) => state?.persistedReducer?.products);
   const [visibleProducts, setVisibleProducts] = useState(4);
   const nav = useNavigate();
@@ -27,6 +27,7 @@ const Products = ({ Title }) => {
     const productId = product._id;
     const size = product.sizes;
     const reqBody = { userId, productId, size };
+    refetchCart()
     return AddToCart(reqBody);
   };
 

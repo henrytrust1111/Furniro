@@ -73,9 +73,10 @@ export const useViewCart = (onError, onSuccess) => {
   });
 };
 
-export const useAddToCart = (onSuccess) => {
+export const useAddToCart = (onSuccess, onSettled) => {
   return useMutation(addToCart, {
     onSuccess,
+    onSettled,
   });
 };
 
