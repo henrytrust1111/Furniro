@@ -14,7 +14,6 @@ const CartTotalLoading = () => {
         <div className="flex justify-between items-center mb-6">
           <span className="text-lg font-bold text-gray-800">Total</span>
           <span className="text-lg font-bold text-gold -text--clr-primary">
-
           </span>
         </div>
         <div className="w-full flex justify-center">
