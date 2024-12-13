@@ -76,7 +76,10 @@ const ShopBody = () => {
   const [sortBy, setSortBy] = useState("az");
   const [filterBy, setFilterBy] = useState("all");
   const [productsPerPage, setProductsPerPage] = useState(8);
-  const { refetchCart } = useContext(MyContext);
+  const { isLoading, refetchCart } = useContext(MyContext);
+
+  const data = useSelector((state) => state?.persistedReducer?.products);
+  const cart = useSelector((state) => state?.persistedReducer?.cart);
 
   const onSuccess = (data) => {
     toast.success(data?.data?.message);
