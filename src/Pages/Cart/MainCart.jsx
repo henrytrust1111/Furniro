@@ -104,7 +104,7 @@ const Maincart = () => {
                         alt={""}
                         className="w-16 h-16 object-cover rounded-lg bg-beige-light"
                       />
-                      <span className="ml-4 text-gray-700 break-words break-all w-full bg-yellow-400">
+                      <span className="ml-4 text-gray-700 break-words break-all w-full">
                         {item?.productName}
                       </span>
                     </td>
