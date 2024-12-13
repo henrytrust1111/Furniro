@@ -13,7 +13,6 @@ import { MyContext } from "../context/Context";
 const Products = ({ Title }) => {
   const { isLoading, noProducts, refetch, error, refetchCart } =
     useContext(MyContext);
-  console.log(isLoading);
 
   const data = useSelector((state) => state?.persistedReducer?.products);
   const [visibleProducts, setVisibleProducts] = useState(4);
