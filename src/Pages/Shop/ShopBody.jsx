@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import ShopLoading from "./ShopLoading";
 import "./ShopBody.css";
 import "./ShopPagination.css";
+import { useAddToCart } from "../../hooks/UseQueryCustomHook";
 
 const ShopPage = ({
   productsPerPage,
@@ -72,6 +73,13 @@ const ShopBody = () => {
   const [sortBy, setSortBy] = useState("az");
   const [filterBy, setFilterBy] = useState("all");
   const [productsPerPage, setProductsPerPage] = useState(8);
+
+  const onSuccess = (data) => {
+    toast.success(data?.data?.message);
+    refetchCart();
+  };
+  const { mutate: AddToCart } = useAddToCart(onSuccess);
+  const userId = localStorage.getItem("userId");
 
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
@@ -147,15 +155,15 @@ const ShopBody = () => {
     return nav(`/comparison/${product._id}`, { state: { product } });
   };
 
-    const handleAddToCart = (product) => {
-      if (!userId) {
-        toast.error("please login to add to cart");
-      }
-      const productId = product._id;
-      const size = product.sizes;
-      const reqBody = { userId, productId, size };
-      return AddToCart(reqBody);
-    };
+  const handleAddToCart = (product) => {
+    if (!userId) {
+      toast.error("please login to add to cart");
+    }
+    const productId = product._id;
+    const size = product.sizes;
+    const reqBody = { userId, productId, size };
+    return AddToCart(reqBody);
+  };
 
   if (loading) {
     return <ShopLoading />;
