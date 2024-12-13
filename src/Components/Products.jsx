@@ -13,10 +13,11 @@ import { MyContext } from "../context/Context";
 const Products = ({ Title }) => {
   const { isLoading, noProducts, refetch, error, refetchCart } =
     useContext(MyContext);
+    
 
   const data = useSelector((state) => state?.persistedReducer?.products);
   const cart = useSelector((state) => state?.persistedReducer?.cart);
-  console.log(cart);
+  console.log(cart.products);
 
   const [visibleProducts, setVisibleProducts] = useState(4);
   const nav = useNavigate();
