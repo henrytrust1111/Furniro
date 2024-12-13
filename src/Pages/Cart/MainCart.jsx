@@ -68,7 +68,7 @@ const Maincart = () => {
         <div
           id="table-container"
           ref={tableRef}
-          className="lg:col-span-2 h-72 overflow-auto scrollbar-custom"
+          className="lg:col-span-2 h-96 overflow-auto scrollbar-custom"
         >
           <table
             id="maintable"
