@@ -229,15 +229,15 @@ const ShopBody = () => {
                   <div className="flex items-center space-x-2 justify-between">
                     {shopproduct.price && (
                       <span className="-text--clr-black-shade-v1 font-semibold">
-                         ₦ {formatNumber(shopproduct?.discountedGeneralPrice)}
+                        ₦ {formatNumber(shopproduct?.discountedGeneralPrice)}
                       </span>
                     )}
-                     <p className="text-xs">
-                    ₦{" "}
-                    <span className="line-through">
-                      {formatNumber(shopproduct.price)}
-                    </span>
-                  </p>
+                    <p className="text-xs">
+                      ₦{" "}
+                      <span className="line-through">
+                        {formatNumber(shopproduct.price)}
+                      </span>
+                    </p>
                   </div>
                 </div>
                 <div className="-bg--clr-secondary absolute inset-0 opacity-0 hover:opacity-75  transition-all ease cursor-pointer grid place-items-center">
@@ -258,7 +258,10 @@ const ShopBody = () => {
                       >
                         <MdCompareArrows /> <span>Compare</span>
                       </div>
-                      <div className="flex items-center gap-1 hover:-text--clr-primary">
+                      <div
+                        onClick={() => handleAddToCart(shopproduct)}
+                        className="flex items-center gap-1 hover:-text--clr-primary"
+                      >
                         <IoMdCart /> <span>Cart</span>
                       </div>
                     </div>
