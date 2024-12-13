@@ -16,7 +16,6 @@ const onSuccess = (data) => {
 const Maincart = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state?.persistedReducer?.cart);
-  console.log(products);
 
   const navigate = useNavigate();
 
