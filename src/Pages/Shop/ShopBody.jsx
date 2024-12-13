@@ -147,6 +147,16 @@ const ShopBody = () => {
     return nav(`/comparison/${product._id}`, { state: { product } });
   };
 
+    const handleAddToCart = (product) => {
+      if (!userId) {
+        toast.error("please login to add to cart");
+      }
+      const productId = product._id;
+      const size = product.sizes;
+      const reqBody = { userId, productId, size };
+      return AddToCart(reqBody);
+    };
+
   if (loading) {
     return <ShopLoading />;
   }
