@@ -97,15 +97,16 @@ const Maincart = () => {
               ) : (
                 products?.products?.map((item, index) => (
                   <tr key={index} className="border-b">
-                    <td className="p-4 flex items-center">
+                    <td className="p-4 flex items-center bg-green-600 w-48">
                       <img
                         src={item?.productImage[0].url}
                         // src={"https://lazesoftware.com/img/en/tool/dummyimg/default_480x320.png"}
                         alt={""}
                         className="w-16 h-16 object-cover rounded-lg bg-beige-light"
                       />
-                      <span className="ml-4 text-gray-700">
-                        {item?.productName}
+                      <span className="ml-4 text-gray-700 break-words min-w-24 bg-yellow-400">
+                        {/* {item?.productName} */}
+                        sdgghnvcvzsdsdwdsdwswscw
                       </span>
                     </td>
                     <td className="p-4 text-gray-500">
