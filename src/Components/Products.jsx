@@ -13,7 +13,7 @@ import { MyContext } from "../context/Context";
 const Products = ({ Title }) => {
   const { isLoading, noProducts, refetch, error, refetchCart } =
     useContext(MyContext);
-    
+  const [addedToCart, setAddedToCart] = useState();
 
   const data = useSelector((state) => state?.persistedReducer?.products);
   const cart = useSelector((state) => state?.persistedReducer?.cart);
