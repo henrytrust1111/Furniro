@@ -8,6 +8,8 @@ import "./ShopBody.css";
 import "./ShopPagination.css";
 import { useAddToCart } from "../../hooks/UseQueryCustomHook";
 import { MyContext } from "../../context/Context";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ShopPage = ({
   productsPerPage,
