@@ -15,6 +15,9 @@ const Products = ({ Title }) => {
     useContext(MyContext);
 
   const data = useSelector((state) => state?.persistedReducer?.products);
+  const cart = useSelector((state) => state?.persistedReducer?.cart);
+  console.log(cart);
+
   const [visibleProducts, setVisibleProducts] = useState(4);
   const nav = useNavigate();
   const onSuccess = (data) => {
@@ -179,71 +182,5 @@ const Products = ({ Title }) => {
     </section>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default Products;
