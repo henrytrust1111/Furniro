@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { IoMdCart, IoMdShare } from "react-icons/io";
 import { MdCompareArrows } from "react-icons/md";
@@ -7,6 +7,7 @@ import ShopLoading from "./ShopLoading";
 import "./ShopBody.css";
 import "./ShopPagination.css";
 import { useAddToCart } from "../../hooks/UseQueryCustomHook";
+import { MyContext } from "../../context/Context";
 
 const ShopPage = ({
   productsPerPage,
@@ -73,6 +74,7 @@ const ShopBody = () => {
   const [sortBy, setSortBy] = useState("az");
   const [filterBy, setFilterBy] = useState("all");
   const [productsPerPage, setProductsPerPage] = useState(8);
+  const { refetchCart } = useContext(MyContext);
 
   const onSuccess = (data) => {
     toast.success(data?.data?.message);
