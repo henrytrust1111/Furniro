@@ -294,7 +294,7 @@ const ShopBody = () => {
                     <div className="flex flex-col items-center space-y-2 justify-center max-w-full">
                       <button
                         className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold"
-                        onClick={() => handlePreview(shopproduct._id)}
+                        onClick={() => handlePreview(shopproduct?._id)}
                       >
                         Preview
                       </button>
@@ -321,8 +321,8 @@ const ShopBody = () => {
                   </div>
                   {/* {shopproduct.discountPercentage > 0 && <span className="text-white absolute bg-[#E97171] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4 ">{shopproduct.discountPercentage}</span>}
               {shopproduct.label && <span className="text-white absolute bg-[#2EC1AC] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4">{shopproduct.label}</span>} */}
-                  {(shopproduct.discountPercentage > 0 ||
-                    shopproduct.label) && (
+                  {(shopproduct?.discountPercentage > 0 ||
+                    shopproduct?.label) && (
                     <span
                       className={`text-white absolute w-12 h-12 rounded-full flex items-center justify-center top-4 right-4 ${
                         shopproduct.discountPercentage > 0
