@@ -66,10 +66,11 @@ export const useViewCart = (onSuccess) => {
       console.log(error);
     },
     select: (data) => {
-    const  cartMessage = data.response.status;
+      const cartMessage = data.response.status;
       const cartItems = data;
       console.log(cartItems);
-      console.log(cartMessage);
+      const status = JSON.stringify(cartMessage);
+      console.log(JSON.stringify(cartMessage));
 
       return cartItems;
     },
