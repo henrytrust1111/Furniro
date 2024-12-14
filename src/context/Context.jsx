@@ -37,6 +37,9 @@ const Context = ({ children }) => {
     refetch: refetchCart,
   } = useViewCart(onError, onSuccessCart);
 
+  console.log(cart);
+  
+
   return (
     <MyContext.Provider
       value={{
