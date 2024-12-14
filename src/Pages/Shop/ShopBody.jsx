@@ -310,7 +310,9 @@ const ShopBody = () => {
                         </div>
                         <div
                           onClick={() => handleAddToCart(shopproduct)}
-                          className="flex items-center gap-1 hover:-text--clr-primary"
+                          className={`flex items-center gap-1 hover:-text--clr-primary ${
+                            isProductInCart ? "-text--clr-primary" : ""
+                          }`}
                         >
                           <IoMdCart /> <span>Cart</span>
                         </div>
