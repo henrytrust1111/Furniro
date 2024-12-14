@@ -16,6 +16,8 @@ const onSuccess = (data) => {
 const Maincart = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state?.persistedReducer?.cart);
+  console.log(products);
+  
 
   const navigate = useNavigate();
 
@@ -84,7 +86,7 @@ const Maincart = () => {
               </tr>
             </thead>
             <tbody className="">
-              {isLoadingCart && !products ? (
+              {isLoadingCart || !products ? (
                 <section className="py-16 font-[poppins]">
                   <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
                     <img src={logo} alt="" className="mr-2 animate-spin " />
@@ -135,7 +137,7 @@ const Maincart = () => {
         </div>
 
         {/* Cart Totals Section */}
-        {isLoadingCart && !products ? (
+        {isLoadingCart || !products ? (
           <CartTotalLoading />
         ) : (
           <div className="-bg--clr-primar-light-v3 h-96 p-6 rounded-lg shadow-md flex justify-center">

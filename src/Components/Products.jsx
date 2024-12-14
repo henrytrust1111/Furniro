@@ -27,7 +27,7 @@ const Products = ({ Title }) => {
   };
   const { mutate: AddToCart } = useAddToCart(onSuccess);
   const userId = localStorage.getItem("userId");
-  
+
   const handleAddToCart = (product) => {
     if (!userId) {
       toast.error("Please login to add to cart");
@@ -67,7 +67,7 @@ const Products = ({ Title }) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
 
-  if (isLoading && !data) {
+  if (isLoading || !data) {
     return (
       <section className="py-16 font-[poppins]">
         <div className="container mx-auto px-4 text-center -text--clr-primary flex items-center justify-center">
@@ -112,13 +112,13 @@ const Products = ({ Title }) => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-11 lg:px-11 md:px-0 ">
           {data?.slice(0, visibleProducts).map((product, index) => {
             const isProductInCart = cart?.products?.some(
-              (item) => item.productId === product._id
+              (item) => item?.productId === product?._id
             );
             return (
               <div key={index} className="bg-[#F4F5F7] shadow-custom relative">
                 <img
-                  src={product.images[0].url}
-                  alt={product.itemName}
+                  src={product?.images[0].url}
+                  alt={product?.itemName}
                   className="mb-4 w-full h-72 object-cover "
                 />
                 <div className="px-3 mb-5 flex flex-col gap-2">
