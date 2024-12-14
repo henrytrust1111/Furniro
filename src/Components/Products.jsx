@@ -27,6 +27,7 @@ const Products = ({ Title }) => {
   };
   const { mutate: AddToCart } = useAddToCart(onSuccess);
   const userId = localStorage.getItem("userId");
+  
   const handleAddToCart = (product) => {
     if (!userId) {
       toast.error("Please login to add to cart");
