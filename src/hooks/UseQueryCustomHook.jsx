@@ -67,10 +67,10 @@ export const useViewCart = (onSuccess) => {
     },
     select: (data) => {
       const cartMessage = data.response.status;
-      const cartItems = data;
+      const cartItems = data?.data?.data;
       console.log(cartItems);
       const status = JSON.stringify(cartMessage);
-      console.log(JSON.stringify(cartMessage));
+      if (status == "401") localStorage.removeItem("token");
 
       return cartItems;
     },
