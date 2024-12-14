@@ -10,6 +10,7 @@ import { useAddToCart } from "../../hooks/UseQueryCustomHook";
 import { MyContext } from "../../context/Context";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useSelector } from "react-redux";
 
 const ShopPage = ({
   productsPerPage,
@@ -93,21 +94,23 @@ const ShopBody = () => {
   };
 
   useEffect(() => {
-    const fetchuser = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get(
-          `https://funiro-furnitures.onrender.com/get-products`
-        );
-        setShopproduct(response.data.data);
-        setFilteredProducts(response.data.data);
-        setLoading(false);
-      } catch (error) {
-        // console.log(error.message);
-        setLoading(false);
-      }
-    };
-    fetchuser();
+    // const fetchuser = async () => {
+    //   try {
+    //     setLoading(true);
+    //     const response = await axios.get(
+    //       `https://funiro-furnitures.onrender.com/get-products`
+    //     );
+    //     setShopproduct(response.data.data);
+    //     setFilteredProducts(response.data.data);
+    //     setLoading(false);
+    //   } catch (error) {
+    //     // console.log(error.message);
+    //     setLoading(false);
+    //   }
+    // };
+    // fetchuser();
+    setShopproduct(data);
+    setFilteredProducts(data);
   }, []);
 
   useEffect(() => {
@@ -172,7 +175,7 @@ const ShopBody = () => {
     return AddToCart(reqBody);
   };
 
-  if (loading) {
+  if (isLoading || !filteredProducts || !shopproduct) {
     return <ShopLoading />;
   }
 
