@@ -174,23 +174,23 @@ const ShopBody = () => {
     // const reqBody = { userId, productId, size };
     // return AddToCart(reqBody);
 
-       if (!userId) {
-          toast.error("Please login to add to cart");
-          return;
-        }
-    
-        const isProductInCart = cart?.products?.some(
-          (item) => item.productId === product._id
-        );
-    
-        if (isProductInCart) {
-          toast.info("This item is already in your cart!");
-        } else {
-          const productId = product._id;
-          const size = product.sizes;
-          const reqBody = { userId, productId, size };
-          AddToCart(reqBody);
-        }
+    if (!userId) {
+      toast.error("Please login to add to cart");
+      return;
+    }
+
+    const isProductInCart = cart?.products?.some(
+      (item) => item.productId === product._id
+    );
+
+    if (isProductInCart) {
+      toast.info("This item is already in your cart!");
+    } else {
+      const productId = product._id;
+      const size = product.sizes;
+      const reqBody = { userId, productId, size };
+      AddToCart(reqBody);
+    }
   };
 
   if (isLoading || !filteredProducts || !shopproduct) {
@@ -254,85 +254,88 @@ const ShopBody = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-11 lg:px-11 md:px-0 ">
             {currentProducts.map((shopproduct) => {
-
+              const isProductInCart = cart?.products?.some(
+                (item) => item.productId === product._id
+              );
               return (
                 <div
-                key={shopproduct._id}
-                className="bg-[#F4F5F7] shadow-custom relative"
-              >
-                <img
-                  src={shopproduct.images[0].url}
-                  alt={shopproduct.name}
-                  className="mb-4 w-full h-72 object-cover "
-                />
-                <div className="px-3 mb-5 flex flex-col gap-2">
-                  <div className="w-full flex flex-col items-start ">
-                    <h3 className="text-lg font-bold -text--clr-black-shade-v1 capitalize">
-                      {shopproduct.itemName}
-                    </h3>
-                    <p className="-text--clr-light-gray text-sm font-medium text-left">
-                      {shopproduct.description}
-                    </p>
+                  key={shopproduct._id}
+                  className="bg-[#F4F5F7] shadow-custom relative"
+                >
+                  <img
+                    src={shopproduct.images[0].url}
+                    alt={shopproduct.name}
+                    className="mb-4 w-full h-72 object-cover "
+                  />
+                  <div className="px-3 mb-5 flex flex-col gap-2">
+                    <div className="w-full flex flex-col items-start ">
+                      <h3 className="text-lg font-bold -text--clr-black-shade-v1 capitalize">
+                        {shopproduct.itemName}
+                      </h3>
+                      <p className="-text--clr-light-gray text-sm font-medium text-left">
+                        {shopproduct.description}
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-2 justify-between">
+                      {shopproduct.price && (
+                        <span className="-text--clr-black-shade-v1 font-semibold">
+                          ₦ {formatNumber(shopproduct?.discountedGeneralPrice)}
+                        </span>
+                      )}
+                      <p className="text-xs">
+                        ₦{" "}
+                        <span className="line-through">
+                          {formatNumber(shopproduct.price)}
+                        </span>
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-2 justify-between">
-                    {shopproduct.price && (
-                      <span className="-text--clr-black-shade-v1 font-semibold">
-                        ₦ {formatNumber(shopproduct?.discountedGeneralPrice)}
-                      </span>
-                    )}
-                    <p className="text-xs">
-                      ₦{" "}
-                      <span className="line-through">
-                        {formatNumber(shopproduct.price)}
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div className="-bg--clr-secondary absolute inset-0 opacity-0 hover:opacity-75  transition-all ease cursor-pointer grid place-items-center">
-                  <div className="flex flex-col items-center space-y-2 justify-center max-w-full">
-                    <button
-                      className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold"
-                      onClick={() => handlePreview(shopproduct._id)}
-                    >
-                      Preview
-                    </button>
-                    <div className="flex text-white gap-3 font-semibold max-w-full flex-wrap justify-center">
-                      <div className="flex items-center gap-1 hover:-text--clr-primary">
-                        <IoMdShare /> <span>Share</span>
-                      </div>
-                      <div
-                        onClick={() => handleCompare(shopproduct)}
-                        className="flex items-center gap-1 hover:-text--clr-primary"
+                  <div className="-bg--clr-secondary absolute inset-0 opacity-0 hover:opacity-75  transition-all ease cursor-pointer grid place-items-center">
+                    <div className="flex flex-col items-center space-y-2 justify-center max-w-full">
+                      <button
+                        className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold"
+                        onClick={() => handlePreview(shopproduct._id)}
                       >
-                        <MdCompareArrows /> <span>Compare</span>
-                      </div>
-                      <div
-                        onClick={() => handleAddToCart(shopproduct)}
-                        className="flex items-center gap-1 hover:-text--clr-primary"
-                      >
-                        <IoMdCart /> <span>Cart</span>
+                        Preview
+                      </button>
+                      <div className="flex text-white gap-3 font-semibold max-w-full flex-wrap justify-center">
+                        <div className="flex items-center gap-1 hover:-text--clr-primary">
+                          <IoMdShare /> <span>Share</span>
+                        </div>
+                        <div
+                          onClick={() => handleCompare(shopproduct)}
+                          className="flex items-center gap-1 hover:-text--clr-primary"
+                        >
+                          <MdCompareArrows /> <span>Compare</span>
+                        </div>
+                        <div
+                          onClick={() => handleAddToCart(shopproduct)}
+                          className="flex items-center gap-1 hover:-text--clr-primary"
+                        >
+                          <IoMdCart /> <span>Cart</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                {/* {shopproduct.discountPercentage > 0 && <span className="text-white absolute bg-[#E97171] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4 ">{shopproduct.discountPercentage}</span>}
+                  {/* {shopproduct.discountPercentage > 0 && <span className="text-white absolute bg-[#E97171] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4 ">{shopproduct.discountPercentage}</span>}
               {shopproduct.label && <span className="text-white absolute bg-[#2EC1AC] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4">{shopproduct.label}</span>} */}
-                {(shopproduct.discountPercentage > 0 || shopproduct.label) && (
-                  <span
-                    className={`text-white absolute w-12 h-12 rounded-full flex items-center justify-center top-4 right-4 ${
-                      shopproduct.discountPercentage > 0
-                        ? "bg-red-500"
-                        : "bg-[#2EC1AC]"
-                    }`}
-                  >
-                    {shopproduct.discountPercentage > 0
-                      ? `-${shopproduct.discountPercentage}%`
-                      : shopproduct.label}
-                  </span>
-                )}
-              </div>
-              )
-            } )}
+                  {(shopproduct.discountPercentage > 0 ||
+                    shopproduct.label) && (
+                    <span
+                      className={`text-white absolute w-12 h-12 rounded-full flex items-center justify-center top-4 right-4 ${
+                        shopproduct.discountPercentage > 0
+                          ? "bg-red-500"
+                          : "bg-[#2EC1AC]"
+                      }`}
+                    >
+                      {shopproduct.discountPercentage > 0
+                        ? `-${shopproduct.discountPercentage}%`
+                        : shopproduct.label}
+                    </span>
+                  )}
+                </div>
+              );
+            })}
           </div>
           <ShopPage
             productsPerPage={productsPerPage}
