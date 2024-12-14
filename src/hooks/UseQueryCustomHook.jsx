@@ -59,12 +59,10 @@ const UseQueryCustomHook = (onError, onSuccess) => {
 
 export default UseQueryCustomHook;
 
-export const useViewCart = (onSuccess) => {
+export const useViewCart = (onError, onSuccess) => {
   return useQuery("view-cart", getCart, {
     onSuccess,
-    onError: (error) => {
-      console.log(error);
-    },
+    onError,
     select: (data) => {
       const cartMessage = data.response.status;
       const cartItems = data?.data?.data;

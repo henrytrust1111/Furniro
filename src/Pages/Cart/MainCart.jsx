@@ -29,7 +29,7 @@ const Maincart = () => {
 
   useLayoutEffect(() => {
     if (!token) {
-      toast.error("Please login to view your cart");
+      toast.info("Please login to view your cart");
       navigate(-1);
     }
   }, [token, navigate]);
