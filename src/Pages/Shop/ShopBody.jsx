@@ -174,22 +174,23 @@ const ShopBody = () => {
     // const reqBody = { userId, productId, size };
     // return AddToCart(reqBody);
 
-       if (!userId) {
-          toast.error("Please login to add to cart");
-          return;
-        }
-    
-        const isProductInCart = cart?.products?.some(
-          (item) => item.productId === product._id
-        );
-    
-        if (isProductInCart) {
-          toast.info("This item is already in your cart!");
-        } else {
-          const productId = product._id;
-          const size = product.sizes;
-          const reqBody = { userId, productId, size };
-          AddToCart(reqBody);
+    if (!userId) {
+      toast.error("Please login to add to cart");
+      return;
+    }
+
+    const isProductInCart = cart?.products?.some(
+      (item) => item.productId === product._id
+    );
+
+    if (isProductInCart) {
+      toast.info("This item is already in your cart!");
+    } else {
+      const productId = product._id;
+      const size = product.sizes;
+      const reqBody = { userId, productId, size };
+      AddToCart(reqBody);
+    }
   };
 
   if (isLoading || !filteredProducts || !shopproduct) {
