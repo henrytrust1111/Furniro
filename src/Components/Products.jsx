@@ -124,14 +124,14 @@ const Products = ({ Title }) => {
                 <div className="px-3 mb-5 flex flex-col gap-2">
                   <div className="w-full flex flex-col items-start ">
                     <h3 className="text-lg font-bold -text--clr-black-shade-v1 capitalize">
-                      {product.itemName}
+                      {product?.itemName}
                     </h3>
                     <p className="-text--clr-light-gray text-sm font-medium text-left">
-                      {product.description}
+                      {product?.description}
                     </p>
                   </div>
                   <div className="flex items-center space-x-2 justify-between">
-                    {product.price && (
+                    {product?.price && (
                       <span className="-text--clr-black-shade-v1 font-semibold text-base">
                         ₦ {formatNumber(product?.discountedGeneralPrice)}
                       </span>
