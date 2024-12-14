@@ -178,7 +178,7 @@ const Products = ({ Title }) => {
                 </div>
                 {product?.discountPercentage > 0 && (
                   <span className="text-white absolute bg-[#E97171] w-12 h-12 rounded-full flex items-center justify-center top-4 right-4 text-base">
-                    -{product.discountPercentage}%
+                    -{product?.discountPercentage}%
                   </span>
                 )}
                 {product.new && (
