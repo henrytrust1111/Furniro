@@ -40,11 +40,7 @@ const Context = ({ children }) => {
     refetch: refetchCart,
   } = useViewCart(onError, onSuccessCart);
 
-  const onSuccessAddToCart = () => {
-    console.log("hello world");
-  };
 
-  const { mutate: AddToCart } = useAddToCart(onSuccessAddToCart);
 
   return (
     <MyContext.Provider

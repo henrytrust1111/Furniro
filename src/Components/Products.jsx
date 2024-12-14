@@ -17,7 +17,7 @@ const Products = ({ Title }) => {
 
   const data = useSelector((state) => state?.persistedReducer?.products);
   const cart = useSelector((state) => state?.persistedReducer?.cart);
-  console.log(cart.products);
+  console.log(cart?.products);
 
   const [visibleProducts, setVisibleProducts] = useState(4);
   const nav = useNavigate();
