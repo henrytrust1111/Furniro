@@ -139,7 +139,7 @@ const Products = ({ Title }) => {
                     <p className="text-xs">
                       ₦{" "}
                       <span className="line-through">
-                        {formatNumber(product.price)}
+                        {formatNumber(product?.price)}
                       </span>
                     </p>
                   </div>
@@ -148,7 +148,7 @@ const Products = ({ Title }) => {
                   <div className="flex flex-col items-center space-y-2 justify-center max-w-full">
                     <button
                       className="bg-white -text--clr-primary px-4 py-2 mt-2 z-40 hover:scale-110 font-semibold"
-                      onClick={() => handlePreview(product._id)}
+                      onClick={() => handlePreview(product?._id)}
                     >
                       Preview
                     </button>
