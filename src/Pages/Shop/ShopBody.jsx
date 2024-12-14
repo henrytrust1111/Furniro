@@ -174,23 +174,23 @@ const ShopBody = () => {
     // const reqBody = { userId, productId, size };
     // return AddToCart(reqBody);
 
-    if (!userId) {
-      toast.error("Please login to add to cart");
-      return;
-    }
-
-    const isProductInCart = cart?.products?.some(
-      (item) => item.productId === product._id
-    );
-
-    if (isProductInCart) {
-      toast.info("This item is already in your cart!");
-    } else {
-      const productId = product._id;
-      const size = product.sizes;
-      const reqBody = { userId, productId, size };
-      AddToCart(reqBody);
-    }
+       if (!userId) {
+          toast.error("Please login to add to cart");
+          return;
+        }
+    
+        const isProductInCart = cart?.products?.some(
+          (item) => item.productId === product._id
+        );
+    
+        if (isProductInCart) {
+          toast.info("This item is already in your cart!");
+        } else {
+          const productId = product._id;
+          const size = product.sizes;
+          const reqBody = { userId, productId, size };
+          AddToCart(reqBody);
+        }
   };
 
   if (isLoading || !filteredProducts || !shopproduct) {
@@ -253,8 +253,10 @@ const ShopBody = () => {
       <section className="py-16 font-[poppins]">
         <div className="container mx-auto px-4 text-center">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-11 lg:px-11 md:px-0 ">
-            {currentProducts.map((shopproduct) => (
-              <div
+            {currentProducts.map((shopproduct) => {
+
+              return (
+                <div
                 key={shopproduct._id}
                 className="bg-[#F4F5F7] shadow-custom relative"
               >
@@ -329,7 +331,8 @@ const ShopBody = () => {
                   </span>
                 )}
               </div>
-            ))}
+              )
+            } )}
           </div>
           <ShopPage
             productsPerPage={productsPerPage}
