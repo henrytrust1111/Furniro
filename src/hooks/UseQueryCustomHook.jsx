@@ -68,7 +68,7 @@ export const useViewCart = (onError, onSuccess) => {
       const cartItems = data?.data?.data;
       console.log(cartItems);
       const status = JSON.stringify(cartMessage);
-      if (status == "401") localStorage.removeItem("token");
+      // if (status == "401") localStorage.removeItem("token");
 
       return cartItems;
     },
